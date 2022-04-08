@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "name": "work",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "thub": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "area": {
+      "type": "float"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "HOCHIMINH",
+        "HANOI",
+        "HAIPHONG",
+        "HALONG",
+        "DANANG",
+        "BINHDUONG",
+        "NHATRANG",
+        "BENTRE",
+        "MYTHO",
+        "PHNOMPENH_CAMBODIA"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "office",
+        "mall",
+        "hospital"
+      ]
+    }
+  }
+}

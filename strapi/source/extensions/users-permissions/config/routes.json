@@ -1,0 +1,63 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/app/users/count",
+      "handler": "app-user.count",
+      "config": {
+        "prefix": "",
+        "policies": [],
+        "tag": {
+          "plugin": "App",
+          "name": "User",
+          "actionType": "count"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/users",
+      "handler": "app-user.find",
+      "config": {
+        "policies": [],
+        "prefix": "",
+        "description": "Retrieve all user documents",
+        "tag": {
+          "plugin": "App",
+          "name": "User",
+          "actionType": "find"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/users/:id",
+      "handler": "app-user.findOne",
+      "config": {
+        "policies": [],
+        "prefix": "",
+        "description": "Retrieve a single user depending on his id",
+        "tag": {
+          "plugin": "App",
+          "name": "User",
+          "actionType": "findOne"
+        }
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/app/users/:id",
+      "handler": "app-user.update",
+      "config": {
+        "policies": [],
+        "prefix": "",
+        "description": "Update an existing user",
+        "tag": {
+          "plugin": "App",
+          "name": "User",
+          "actionType": "update"
+        }
+      }
+    }
+  ]
+}

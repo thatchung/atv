@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/innovations",
+      "handler": "innovation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/innovations/count",
+      "handler": "innovation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/innovations/:id",
+      "handler": "innovation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/innovations",
+      "handler": "innovation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/innovations/:id",
+      "handler": "innovation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/innovations/:id",
+      "handler": "innovation.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

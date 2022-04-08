@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  atv.apis:
+    container_name: atv.apis
+    image: atv.apis
+    build: .
+    ports:
+      - "1337:1337"
+    volumes:
+      - ../uploads:/app/node/public/uploads
+    network_mode: bridge

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "type_categories",
+  "info": {
+    "name": "TypeCategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

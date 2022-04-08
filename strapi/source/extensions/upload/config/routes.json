@@ -1,0 +1,18 @@
+{
+    "routes": [
+        {
+            "method": "POST",
+            "path": "/by-ckeditor",
+            "handler": "app-upload.uploadByCkeditor",
+            "config": {
+                "policies": [],
+                "description": "Upload a file in ckeditor",
+                "tag": {
+                    "plugin": "App",
+                    "name": "Upload",
+                    "actionType": "create"
+                }
+            }
+        }
+    ]
+}
