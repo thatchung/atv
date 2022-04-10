@@ -5,4 +5,4 @@ RUN pwd && ls
 RUN yarn
 ENV NODE_ENV=production
 RUN yarn build
-CMD [ "yarn", "release:production" ]
+CMD [ "yarn", "production" ]
