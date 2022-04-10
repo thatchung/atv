@@ -1,0 +1,9 @@
+version: "3.5"
+
+services:
+    atv.site:
+        container_name: atv.site
+        image: atv.site
+        build: .
+        ports:
+        - "8085:8085"

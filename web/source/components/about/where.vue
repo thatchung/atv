@@ -1,0 +1,274 @@
+<template>
+  <div class="container">
+    <h2 class="about-where-title">
+      Where we work ?
+    </h2>
+    <ThumbImage src="images/map.jpg" ratio="16-9" />
+    <div class="location-list">
+      <div v-for="(item, index) in locations" :key="index" class="location-item">
+        {{ item }}
+      </div>
+    </div>
+    <div class="line-all" />
+    <div class="where-des font-pp-bold">
+      HO CHI MINH CITY (Electrolux Office)
+    </div>
+    <div>
+      A Scandinavian-inspired office where everyone can feel the comfort of home
+    </div>
+    <h2 class="about-where-title">
+      Our Network
+    </h2>
+    <div class="line-all" />
+    <div class="row" style="margin-top: 2rem;">
+      <div class="col-12 col-md-4">
+        <div class="about-where-a_name font-pp-bold">
+          9PMP - Systematic Partner
+        </div>
+        <div class="a_description">
+          9PMP specializes in providing project management solutions for construction industry. As of the moment, AVT is utilizing 9PMP system in all current projects.
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="about-where-a_name font-pp-bold">
+          The Sentry – Technical Partner
+        </div>
+        <div class="a_description">
+          The Sentry is a Vietnam-based property management and project marketing firm.
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="about-where-a_name font-pp-bold">
+          K-net Japan – Design Partner
+        </div>
+        <div class="">
+          K-net is a Japanese design company founded by Kuni Hasegawa.
+        </div>
+        <div class="a_description">
+          K-net assists AVT in developing concepts for large-scaled projects.
+        </div>
+      </div>
+    </div>
+    <h2 class="about-where-title">
+      Our Uniqueness
+    </h2>
+    <div class="line-all" />
+    <div style="margin-top: 2rem;">
+      AVT is the only interior company in Vietnam to inherit all resources from 9PMP, especially AECIS – the 8-point project management system :
+    </div>
+    <div class="efficency font-pp-bold">
+      9PMP (Efficency)
+    </div>
+    <div>
+      9PMP specializes in providing project management solutions for construction industry.
+    </div>
+    <div>
+      As of the moment, AVT is utilizing 9PMP system in all current projects.
+    </div>
+    <div class="row where-table" style="margin-top: 1rem;">
+      <div class="col-6 col-md-6">
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            01
+          </div>
+          <div class="col-7 col-md-4">
+            Issue
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            02
+          </div>
+          <div class="col-7 col-md-4">
+            Submittal
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            03
+          </div>
+          <div class="col-7 col-md-4">
+            Milestone
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            04
+          </div>
+          <div class="col-7 col-md-4">
+            DMAP
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            05
+          </div>
+          <div class="col-7 col-md-4">
+            Cost/Change Order
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            06
+          </div>
+          <div class="col-7 col-md-4">
+            Risk
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            07
+          </div>
+          <div class="col-7 col-md-4">
+            MDaily report
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            08
+          </div>
+          <div class="col-7 col-md-4">
+            Reports
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+      </div>
+    </div>
+    <div class="efficency font-pp-bold">
+      Kuni Hasegawa (Aesthetic)
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6 last-img" style="position: relative;">
+        <ThumbImage src="images/slide1.jpg" ratio="16-9" />
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="hase-name font-pp-bold">
+          “DESIGN IS A NEVER-ENDING JOURNEY.”
+        </div>
+        <div class="hase-des">
+          Kuni Hasegawa – the consultant/architect/partner that we often dearly call “Kuni-san” – excels in delivering beauty in an efficient and flexible manner, as seen in his impressive portfolio.
+        </div>
+        <div class="hase-des">
+          With more than 40 years of experience in the industry, Kuni Hasegawa has left his mark on the world’s biggest cities – New York, Tokyo, Mumbai, Bangkok, and more. His design process does not have an end, because he believes that each and every design can always evolve into a better version of itself with time.
+        </div>
+        <div class="back-top" @click="toTopAction">
+          <b-icon-arrow-up />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'WherePage',
+  data() {
+    return {
+      locations: ['HO CHI MINH', 'HA NOI', 'HAI PHONG', 'HA LONG', 'DA NANG', 'BINH DUONG',
+        'NHA TRANG', 'BEN TRE', 'MY THO', 'PHNOMPENH (CAMBODIA)']
+    }
+  },
+  methods: {
+    toTopAction () {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+}
+</script>
+<style lang="scss">
+.container{
+  padding-bottom: 4rem;
+}
+.about-where-a_name{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.a_description{
+  width: 90%;
+}
+.about-where-title{
+  font-size: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+}
+.where-des{
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+.location-list{
+  margin-top: 2rem;
+  height: 6rem;
+  .location-item:first-child {
+    border: 1px solid;
+    padding: 0rem 0.5rem;
+    height: 40px;
+    line-height: 40px;
+  }
+}
+.location-item{
+  display: inline-block;
+  padding: 0rem 1rem;
+  float: left;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  height: 40px;
+  line-height: 40px;
+}
+.efficency{
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.line-all-s{
+  width: 100%;
+  margin: 1rem 0rem;
+  border-top: 2px solid #7E8083;
+}
+.hase-name{
+  font-weight: 600;
+}
+.hase-des{
+  margin-top: 2rem;
+}
+.back-top{
+  position: absolute;
+  bottom: 0rem;
+  right: 0rem;
+  cursor: pointer;
+}
+</style>
