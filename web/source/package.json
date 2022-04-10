@@ -8,7 +8,7 @@
     "build_production": "NUXT_ENV_STAGE=production node build.js",
     "generate": "nuxt generate",
     "start:local": "cross-env NODE_ENV=local NUXT_ENV_STAGE=local node ./server.js",
-    "start:production": "NODE_ENV=production  NUXT_ENV_STAGE=production node ./server.js"
+    "start:production": "pm2-runtime start ./server.js"
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.5.4",

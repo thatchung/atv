@@ -4,6 +4,8 @@ COPY ./source .
 RUN pwd && ls
 RUN echo "====== BUILD APPS ======"
 RUN yarn
-RUN yarn build
+RUN yarn global add pm2
 RUN yarn build_production
+ENV NODE_ENV=production
+ENV NUXT_ENV_STAGE=production
 CMD [ "yarn", "start:production" ]
