@@ -5,7 +5,7 @@ RUN pwd && ls
 RUN echo "====== BUILD APPS ======"
 RUN yarn
 RUN yarn global add pm2
-RUN yarn build_production
+RUN yarn build
 ENV NODE_ENV=production
 ENV NUXT_ENV_STAGE=production
 CMD [ "yarn", "start:production" ]
