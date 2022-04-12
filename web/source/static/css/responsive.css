@@ -115,6 +115,9 @@
   .section-inno{
     padding-bottom: 2rem;
   }
+  .section-inno .item-date{
+    width: 100%;
+  }
   .inno-item .item-title-2{
     width: 100%;
     margin-bottom: 0.5rem;
