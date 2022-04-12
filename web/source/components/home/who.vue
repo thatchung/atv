@@ -4,8 +4,8 @@
       Who we are ?
     </h2>
     <div class="line-all" />
-    <div class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
-      <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+    <div v-if="!isMobile" class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
             MISSION
@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
             VISION
@@ -25,12 +25,44 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
             CORE VALUES
           </div>
           <div class="description">
+            Trust, Honesty, Boldness, Innovation,Commitment.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="isMobile" class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4 name font-pp-bold">
+            MISSION
+          </div>
+          <div class="col-8 description">
+            We grow with each client on the path to success.
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4 name font-pp-bold">
+            VISION
+          </div>
+          <div class="col-8 description">
+            Apply the latest Technology in Project Management and Construction Supervision to Design & Build with high creativity and proven professionalism
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4 name font-pp-bold">
+            CORE VALUES
+          </div>
+          <div class="col-8 description">
             Trust, Honesty, Boldness, Innovation,Commitment.
           </div>
         </div>
@@ -80,7 +112,26 @@
 
 <script>
 export default {
-  name: 'WhoPage'
+  name: 'WhoPage',
+  data() {
+    return {
+      isMobile: false
+    }
+  },
+  mounted() {
+    this.checkMobile()
+  },
+  methods: {
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          this.isMobile = true
+        } else {
+          this.isMobile = false
+        }
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">

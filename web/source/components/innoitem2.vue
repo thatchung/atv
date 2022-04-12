@@ -4,12 +4,12 @@
       {{ item.date }}
     </div>
     <nuxt-link :to="'/innovation/' + item.url">
-      <ThumbImage :src="item.thub" ratio="8-5" />
-    </nuxt-link>
-    <nuxt-link :to="'/innovation/' + item.url">
-      <h2 class="item-title font-pp-bold">
+      <h2 class="item-title-2 font-pp-bold">
         {{ item.title }}
       </h2>
+    </nuxt-link>
+    <nuxt-link :to="'/innovation/' + item.url">
+      <ThumbImage :src="item.thub" ratio="8-5" />
     </nuxt-link>
     <div class="item-content">
       {{ item.content }}
@@ -41,25 +41,6 @@ export default {
       default: 'left-p'
     }
   }
-  // data() {
-  //   return {
-  //     isMobile: false
-  //   }
-  // },
-  // mounted() {
-  //   this.checkMobile()
-  // },
-  // methods: {
-  //   checkMobile() {
-  //     if (!process.server) {
-  //       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  //         this.isMobile = true
-  //       } else {
-  //         this.isMobile = false
-  //       }
-  //     }
-  //   }
-  // }
 }
 </script>
 <style lang="scss">

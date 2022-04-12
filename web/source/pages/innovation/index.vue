@@ -26,7 +26,7 @@
       </div>
     </div>
     <div v-if="!loading && listInnovation.length >= 0" class="inno-list-data row">
-      <div v-for="index in 3" :key="index" class="inno-item col-4 col-md-4">
+      <div v-for="index in 3" :key="index" class="inno-item col-12 col-md-4">
         <Item position="right-p" />
       </div>
     </div>

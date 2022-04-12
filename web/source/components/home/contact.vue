@@ -4,7 +4,7 @@
       Contact
     </h2>
     <div class="line-all" style="margin-bottom: 3rem;" />
-    <div class="row">
+    <div v-if="!isMobile" class="row">
       <div class="col-4 col-md-4">
         <div>
           <div class="place font-pp-bold">
@@ -45,6 +45,49 @@
         </div>
       </div>
     </div>
+    <div v-if="isMobile" class="row">
+      <div class="col-12">
+        <div>
+          <div class="place font-pp-bold">
+            Ho Chi Minh
+          </div>
+          <div class="address">
+            Level 9, Doxaco Building, 307B Nguyen Van Troi st., W1, Tan Binh Dict., HCMC
+          </div>
+          <div class="type">
+            Head Office
+          </div>
+        </div>
+      </div>
+      <div class="line-all-c" />
+      <div class="col-12">
+        <div>
+          <div class="place font-pp-bold">
+            Ha Noi
+          </div>
+          <div class="address">
+            Level 5, Sentinel Place, 41A Ly Thai To st., Hoan Kiem dist., Ha Noi
+          </div>
+          <div class="type">
+            Branch
+          </div>
+        </div>
+      </div>
+      <div class="line-all-c" />
+      <div class="col-12">
+        <div>
+          <div class="place font-pp-bold">
+            Da Nang
+          </div>
+          <div class="address">
+            267 Tran Phu, Q. Hai Chau,Da Nang City
+          </div>
+          <div class="type">
+            Branch
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="line-all" style="margin: 3rem 0rem;" />
     <div class="phone">
       Hotline
@@ -59,9 +102,26 @@
 <script>
 export default {
   name: 'ContactPage',
+  data() {
+    return {
+      isMobile: false
+    }
+  },
+  mounted() {
+    this.checkMobile()
+  },
   methods: {
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
+    },
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          this.isMobile = true
+        } else {
+          this.isMobile = false
+        }
+      }
     }
   }
 }

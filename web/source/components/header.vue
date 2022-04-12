@@ -15,7 +15,7 @@
     <div v-if="showMenu" class="full-menu" @click="closeMenu()">
       <div class="menu-content">
         <div class="row">
-          <div class="col-4 col-md-4">
+          <div class="col-12 col-md-4">
             <nuxt-link to="/">
               <div class="menu-title">
                 Home
@@ -27,7 +27,7 @@
               </div>
             </nuxt-link>
           </div>
-          <div class="col-4 col-md-4">
+          <div class="col-12 col-md-4">
             <nuxt-link to="/about">
               <div class="menu-title">
                 About Us
@@ -52,7 +52,7 @@
               </div>
             </nuxt-link>
           </div>
-          <div class="col-4 col-md-4">
+          <div class="col-12 col-md-4">
             <nuxt-link to="/innovation">
               <div class="menu-title">
                 Innovation

@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=local NUXT_ENV_STAGE=local nuxt",
     "build": "nuxt build",
-    "build_production": "NUXT_ENV_STAGE=production node build.js",
     "generate": "nuxt generate",
     "start:local": "cross-env NODE_ENV=local NUXT_ENV_STAGE=local node ./server.js",
     "start:production": "pm2-runtime start ./server.js"

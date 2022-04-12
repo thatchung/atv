@@ -16,7 +16,7 @@
       THE DESIGN-BUILD ADVANTAGES
     </div>
     <div class="line-all" style="margin: 2rem 0rem 1rem 0rem;" />
-    <div class="row">
+    <div v-if="!isMobile" class="row">
       <div class="col-4 col-md-4">
         <div class="row">
           <div class="col-3 col-md-3">
@@ -84,12 +84,99 @@
         </div>
       </div>
     </div>
+    <div v-if="isMobile" class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3 col-md-3">
+            01
+          </div>
+          <div class="col-9 col-md-9">
+            Faster Delivery
+          </div>
+          <div class="line-all-d" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3 col-md-3">
+            02
+          </div>
+          <div class="col-9 col-md-9">
+            Singular Responsibility
+          </div>
+          <div class="line-all-d" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3 col-md-3">
+            03
+          </div>
+          <div class="col-9 col-md-9">
+            Better Quality
+          </div>
+          <div class="line-all-d" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3 col-md-3">
+            04
+          </div>
+          <div class="col-9 col-md-9">
+            Cost Control
+          </div>
+          <div class="line-all-d" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3 col-md-3">
+            05
+          </div>
+          <div class="col-9 col-md-9">
+            Reduced Risk
+          </div>
+          <div class="line-all-d" />
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3 col-md-3">
+            06
+          </div>
+          <div class="col-9 col-md-9">
+            Decreased Administrative Burden
+          </div>
+          <div class="line-all-d" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'WhatPage'
+  name: 'WhatPage',
+  data() {
+    return {
+      isMobile: false
+    }
+  },
+  mounted() {
+    this.isMobile = this.checkMobile()
+  },
+  methods: {
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">

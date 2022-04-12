@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="line-all" />
-    <div class="where-des font-pp-bold">
+    <div class="where-des font-pp-bold" v-if="!isMobile">
       HO CHI MINH CITY (Electrolux Office)
     </div>
     <div>
@@ -28,6 +28,7 @@
         <div class="a_description">
           9PMP specializes in providing project management solutions for construction industry. As of the moment, AVT is utilizing 9PMP system in all current projects.
         </div>
+        <div v-if="isMobile" class="line-all-w" />
       </div>
       <div class="col-12 col-md-4">
         <div class="about-where-a_name font-pp-bold">
@@ -36,6 +37,7 @@
         <div class="a_description">
           The Sentry is a Vietnam-based property management and project marketing firm.
         </div>
+        <div v-if="isMobile" class="line-all-w" />
       </div>
       <div class="col-12 col-md-4">
         <div class="about-where-a_name font-pp-bold">
@@ -65,7 +67,7 @@
     <div>
       As of the moment, AVT is utilizing 9PMP system in all current projects.
     </div>
-    <div class="row where-table" style="margin-top: 1rem;">
+    <div v-if="!isMobile" class="row where-table" style="margin-top: 1rem;">
       <div class="col-6 col-md-6">
         <div class="line-all-s" />
         <div class="row">
@@ -169,6 +171,107 @@
         <div class="line-all-s" />
       </div>
     </div>
+    <div v-if="isMobile" class="row where-table" style="margin-top: 1rem;">
+      <div class="col-12">
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            01
+          </div>
+          <div class="col-7 col-md-4">
+            Issue
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            02
+          </div>
+          <div class="col-7 col-md-4">
+            Submittal
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            03
+          </div>
+          <div class="col-7 col-md-4">
+            Milestone
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            04
+          </div>
+          <div class="col-7 col-md-4">
+            DMAP
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            05
+          </div>
+          <div class="col-7 col-md-4">
+            Cost/Change Order
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            06
+          </div>
+          <div class="col-7 col-md-4">
+            Risk
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            07
+          </div>
+          <div class="col-7 col-md-4">
+            MDaily report
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+        <div class="row">
+          <div class="col-2 col-md-2">
+            08
+          </div>
+          <div class="col-7 col-md-4">
+            Reports
+          </div>
+          <div class="col-3 col-md-4">
+            <b-icon-arrow-down />
+          </div>
+        </div>
+        <div class="line-all-s" />
+      </div>
+    </div>
     <div class="efficency font-pp-bold">
       Kuni Hasegawa (Aesthetic)
     </div>
@@ -200,12 +303,25 @@ export default {
   data() {
     return {
       locations: ['HO CHI MINH', 'HA NOI', 'HAI PHONG', 'HA LONG', 'DA NANG', 'BINH DUONG',
-        'NHA TRANG', 'BEN TRE', 'MY THO', 'PHNOMPENH (CAMBODIA)']
+        'NHA TRANG', 'BEN TRE', 'MY THO', 'PHNOMPENH (CAMBODIA)'],
+        isMobile: false
     }
+  },
+  mounted() {
+    this.isMobile = this.checkMobile()
   },
   methods: {
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
+    },
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          return true
+        } else {
+          return false
+        }
+      }
     }
   }
 }

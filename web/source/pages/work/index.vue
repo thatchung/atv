@@ -65,7 +65,7 @@
       </div>
     </div>
     <div v-if="!loading && listWork.length >= 0" class="work-list-data row">
-      <div v-for="index in 15" :key="index" class="work-item col-4 col-md-4">
+      <div v-for="index in 15" :key="index" class="work-item col-12 col-md-4">
         <Item />
       </div>
     </div>

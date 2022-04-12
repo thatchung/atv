@@ -2,7 +2,7 @@
   <div class="convention">
     <div class="container">
       <div class="row">
-        <div class="col-6 col-md-6">
+        <div class="col-12 col-md-6">
           <h2 class="convention-title font-pp-bold">
             CONVENTIONAL METHOD
           </h2>
@@ -10,7 +10,7 @@
           <div class="convention-name">
             OWNER (PROJECT BURDEN)
           </div>
-          <div class="row">
+          <div v-if="!isMobile" class="row">
             <div class="col-2 col-md-2" />
             <div class="col-10 col-md-10">
               <div class="about-con-line-all" />
@@ -51,8 +51,74 @@
               </div>
             </div>
           </div>
+          <div v-if="isMobile">
+            <div class="about-con-line-all" />
+            <div class="row">
+              <div class="col-2 col-md-2" />
+              <div class="col-10 col-md-10">
+                <div class="convention-text">
+                  ARCHITECT
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all" />
+            <div class="row">
+              <div class="col-2 col-md-2" />
+              <div class="col-10 col-md-10">
+                <div class="convention-text">
+                  MAIN CONTRACTOR
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all" />
+            <div class="row">
+              <div class="col-4 col-md-2" />
+              <div class="col-6 col-md-10">
+                <div class="convention-text">
+                  Subs & Suppliers 1
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all" />
+            <div class="row">
+              <div class="col-4 col-md-2" />
+              <div class="col-6 col-md-10">
+                <div class="convention-text">
+                  Subs & Suppliers 2
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all-d" />
+            <div class="row">
+              <div class="col-4 col-md-2" />
+              <div class="col-6 col-md-10">
+                <div class="convention-text">
+                  Subs & Suppliers 3
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all-d" />
+            <div class="row">
+              <div class="col-4 col-md-2" />
+              <div class="col-6 col-md-10">
+                <div class="convention-text">
+                  Subs & Suppliers 4
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all"/>
+            <div class="row">
+              <div class="col-2 col-md-2" />
+              <div class="col-10 col-md-10">
+                <div class="convention-text">
+                  PROJECT MANAGER
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all"/>
+          </div>
         </div>
-        <div class="col-6 col-md-6">
+        <div class="col-12 col-md-6">
           <h2 class="convention-title font-pp-bold">
             DESIGN - BUILD METHOD
           </h2>
@@ -60,7 +126,7 @@
           <div class="convention-name">
             OWNER (PROJECT BURDEN)
           </div>
-          <div class="row">
+          <div v-if="!isMobile" class="row">
             <div class="col-2 col-md-2" />
             <div class="col-10 col-md-10">
               <div class="about-con-line-all" />
@@ -77,6 +143,36 @@
               </div>
             </div>
           </div>
+          <div v-if="isMobile">
+            <div class="about-con-line-all" />
+            <div class="row">
+              <div class="col-2 col-md-2" />
+              <div class="col-10 col-md-10">
+                <div class="convention-text">
+                  AVT PROJECT MANAGER
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all" />
+            <div class="row">
+              <div class="col-2 col-md-2" />
+              <div class="col-10 col-md-10">
+                <div class="convention-text">
+                  AVT DESIGNER
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all" />
+            <div class="row">
+              <div class="col-2 col-md-2" />
+              <div class="col-10 col-md-10">
+                <div class="convention-text">
+                  SUBS & SUPPLIERS
+                </div>
+              </div>
+            </div>
+            <div class="about-con-line-all" />
+          </div>
         </div>
       </div>
     </div>
@@ -85,7 +181,36 @@
 
 <script>
 export default {
-  name: 'WhatPage'
+  name: 'WhatPage',
+  data() {
+    return {
+      team1:[
+        {
+          thub: '/images/slide4.jpg',
+          content: 'Integrity is AVT’s most important recruitment criterion. As a result, the team at AVT has not only excellent expertise and on-theeld experience but also professional and trustworthy manner.'
+        },
+        {
+          thub: '/images/slide2.jpg',
+          content: 'At AVT, our goal is to harmonize between discipline and creativity.Hence, the working environment at AVT is built around openness and transparency in order to foster innovation and cooperation.'
+        }
+      ],
+      isMobile: false
+    }
+  },
+  mounted() {
+    this.isMobile = this.checkMobile()
+  },
+  methods: {
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">

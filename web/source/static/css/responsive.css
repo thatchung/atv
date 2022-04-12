@@ -45,7 +45,7 @@
 }
 @media (max-width: 575px) {
   html {
-    font-size: 12px;
+    font-size: 16px;
   }
   #main{
     padding-bottom: 0rem !important;
@@ -69,16 +69,30 @@
     margin-left: -10px !important;
     margin-top: -35px !important;
   }
+  .section-title{
+    font-size: 4rem;
+  }
   .list-work .slick-arrow{
-      margin-top: -55px !important;
+    margin-top: -25px !important;
   }
   .list-inno .slick-arrow{
-      margin-top: -45px !important;
+    margin-top: -25px !important;
   }
   .section-work{
     padding-bottom: 0rem !important;
   }
-  
+  .link-page{
+    margin-bottom: 0px !important;
+  }
+  .item-title-2{
+    margin-top: 0rem !important;
+  }
+  .work-info{
+    margin-top: 0.5rem;
+  }
+  .section-who .section-title{
+    width: 70%;
+  }
   .section-who .description{
     margin-bottom: 1.5rem;
   }
@@ -89,36 +103,113 @@
     bottom: 2rem;
     right: 1rem;
   }
+  .section-who .what-title{
+    width:  70%;
+  }
+  .section-who .what-text{
+    font-size: 1.5rem;
+  }
   .a_description{
     margin-bottom: 2rem;
   }
-  .where-table{
-    font-size: 8px;
+  .section-inno{
+    padding-bottom: 2rem;
   }
-  
+  .inno-item .item-title-2{
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .inno-item .item-content{
+    margin-top: 1rem;
+  }
+  .section-contact{
+    margin-top: 2rem;
+  }
+  .section-contact .line-all-c{
+    border-top: 2px solid #7E8083;
+    margin: 1rem 0px;
+    width: calc(100% - 30px);
+    margin-left: 15px;
+  }
+  .section-contact .type{
+    float: right;
+  }
+  .work-filter-list{
+    height: 4rem;
+  }
+  .filter-item-active{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 40px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .filter-list{
+    width: 150px;
+    display: inline-block;
+    left: 0px;
+    top: 80px;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+  }
+  .filter-item-active svg{
+    left: 160px;
+    top: 4px;
+    position: absolute;
+  }
+  .filter-item{
+    font-size: 1rem;
+  }
+  .paging-content{
+    float: left !important;
+  }
+  .about-who-title{
+    width:  70%;
+  }
+  .about-who-container .slick-arrow{
+    margin-top: -10px !important;
+  }
+  .about-who-container .ex-title{
+    margin-top: 1rem;
+  }
+  .about-what-section-title{
+    width:  70%;
+  }
+  .about-what-description{
+    font-size: 1.5rem !important;
+  }
   .convention .convention-title {
   	font-size: 1.5rem;
+    margin-top: 2rem;
   }
   .convention .sub {
     font-size: 0.8rem;
-  }
-  .convention div{
-    padding-right: 5px;
-    padding-left: 5px;
   }
   .about-where-title{
     font-size: 3.5rem !important;
   }
   .location-list{
-    height: 10rem !important;
+    height: 15rem !important;
   }
   .location-item{
     font-size: 1rem;
     padding: 0rem 0.5rem !important;
     height: 30px !important;
     line-height:30px !important;
+    margin-bottom: 0.5rem;
   }
   .last-img{
     margin-bottom: 2rem;
+  }
+  .line-all-w{
+    border-top: 2px solid #7E8083;
+    margin: 1rem 0px;
+    width: 100%;
+  }
+  .back-top{
+    bottom: -2rem;
+    right: 2rem;
   }
 }

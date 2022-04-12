@@ -11,7 +11,8 @@
     </nuxt-link>
     <VueSlickCarousel v-bind="settings" class="list-inno">
       <div v-for="index in 10" :key="index" class="inno-slider-item">
-        <Item />
+        <Item v-if="!isMobile" />
+        <Item2 v-if="isMobile" />
       </div>
       <template slot="prevArrow">
         <div class="pre-arrow">
@@ -30,10 +31,12 @@
 <script>
 import { mapGetters, mapActions } from "vuex"
 import Item from "~/components/innoitem.vue"
+import Item2 from "~/components/innoitem2.vue"
 export default {
   name: 'InnoPage',
   components: {
-    Item
+    Item,
+    Item2
   },
   data() {
     return {
@@ -43,9 +46,10 @@ export default {
         "edgeFriction": 0.35,
         "infinite": true,
         "speed": 500,
-        "slidesToShow": this.isMobile() ? 1 : 3,
+        "slidesToShow": this.checkMobile() ? 1 : 3,
         "slidesToScroll": 1
-      }
+      },
+      isMobile: false
     }
   },
   computed: {
@@ -55,12 +59,13 @@ export default {
   },
   mounted() {
     this.loadData()
+    this.isMobile = this.checkMobile()
   },
   methods: {
     ...mapActions({
       getListInnovation: "innovation/getListInnovation"
     }),
-    isMobile() {
+    checkMobile() {
       if (!process.server) {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           return true

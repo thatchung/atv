@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container about-who-container">
     <h2 class="about-who-title">
       Who we are ?
     </h2>
     <div class="line-all" />
-    <div class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
+    <div v-if="!isMobile" class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
       <div class="col-12 col-sm-4 col-md-4 col-lg-4">
         <div class="a_name">
           MISSION
@@ -27,6 +27,38 @@
         </div>
         <div class="a_description">
           Trust, Honesty, Boldness, Innovation,Commitment.
+        </div>
+      </div>
+    </div>
+    <div v-if="isMobile" class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4 a_name">
+            MISSION
+          </div>
+          <div class="col-8 a_description">
+            We grow with each client on the path to success.
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4 a_name">
+            VISION
+          </div>
+          <div class="col-8 a_description">
+            Apply the latest Technology in Project Management and Construction Supervision to Design & Build with high creativity and proven professionalism
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-4 a_name">
+            CORE VALUES
+          </div>
+          <div class="col-8 a_description">
+            Trust, Honesty, Boldness, Innovation,Commitment.
+          </div>
         </div>
       </div>
     </div>
@@ -86,9 +118,25 @@ export default {
           thub: '/images/slide2.jpg',
           content: 'At AVT, our goal is to harmonize between discipline and creativity.Hence, the working environment at AVT is built around openness and transparency in order to foster innovation and cooperation.'
         }
-      ]
+      ],
+      isMobile: false
+    }
+  },
+  mounted() {
+    this.isMobile = this.checkMobile()
+  },
+  methods: {
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          return true
+        } else {
+          return false
+        }
+      }
     }
   }
+
 }
 </script>
 <style lang="scss">
