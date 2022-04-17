@@ -355,7 +355,7 @@ export default {
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
           case 'DA NANG':
-            el.scrollTo({ top: 150, behavior: 'smooth' })
+            el.scrollTo({ top: 140, behavior: 'smooth' })
             break
           case 'BINH DUONG':
             el.scrollTo({ top: 250, behavior: 'smooth' })
@@ -390,28 +390,28 @@ export default {
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
           case 'DA NANG':
-            el.scrollTo({ top: 500, behavior: 'smooth' })
+            el.scrollTo({ top: 600, behavior: 'smooth' })
             break
           case 'BINH DUONG':
-            el.scrollTo({ top: 870, behavior: 'smooth' })
+            el.scrollTo({ top: 970, behavior: 'smooth' })
             break
           case 'NHA TRANG':
-            el.scrollTo({ top: 790, behavior: 'smooth' })
+            el.scrollTo({ top: 890, behavior: 'smooth' })
             break
           case 'HO CHI MINH':
-            el.scrollTo({ top: 900, behavior: 'smooth' })
+            el.scrollTo({ top: 1000, behavior: 'smooth' })
             break
           case 'BEN TRE':
-            el.scrollTo({ top: 1000, behavior: 'smooth' })
+            el.scrollTo({ top: 1100, behavior: 'smooth' })
             break
           case 'MY THO':
-            el.scrollTo({ top: 1000, behavior: 'smooth' })
+            el.scrollTo({ top: 1100, behavior: 'smooth' })
             break
           case 'PHNOMPENH (CAMBODIA)':
-            el.scrollTo({ top: 900, behavior: 'smooth' })
+            el.scrollTo({ top: 1000, behavior: 'smooth' })
             break
           default:
-            el.scrollTo({ top: 900, behavior: 'smooth' })
+            el.scrollTo({ top: 1000, behavior: 'smooth' })
         }
       }
     }
@@ -496,36 +496,36 @@ export default {
   cursor: pointer;
 }
 .map-item-1{
-  left: 465px;
-  top: 295px;
+  left: 505px;
+  top: 370px;
 }
 .map-item-2{
-  left: 525px;
-  top: 315px;
+  left: 569px;
+  top: 400px;
 }
 .map-item-3{
-  left: 685px;
-  top: 765px;
+  left: 727px;
+  top: 840px;
 }
 .map-item-4{
-  left: 750px;
-  top: 1035px;
-}
-.map-item-5{
-  left: 580px;
+  left: 792px;
   top: 1110px;
 }
+.map-item-5{
+  left: 626px;
+  top: 1188px;
+}
 .map-item-6{
-  left: 575px;
-  top: 1150px;
+  left: 619px;
+  top: 1226px;
 }
 .map-item-7{
-  left: 425px;
-  top: 1055px;
+  left: 468px;
+  top: 1138px;
 }
 .map-item-8{
-  left: 500px;
-  top: 1205px;
+  left: 542px;
+  top: 1283px;
 }
 @media (max-width: 575px) {
   .map-container{
@@ -541,39 +541,38 @@ export default {
     width: 10px;
     height: 10px;
     cursor: pointer;
-    background-color: red;
   }
   .map-item-1{
-    left: 153px;
-    top: 97px;
+    left: 167px;
+    top: 122px;
   }
   .map-item-2{
-    left: 173px;
-    top: 104px;
+    left: 187px;
+    top: 129px;
   }
   .map-item-3{
-    left: 226px;
-    top: 250px;
+    left: 240px;
+    top: 277px;
   }
   .map-item-4{
-    left: 246px;
-    top: 340px;
+    left: 261px;
+    top: 367px;
   }
   .map-item-5{
-    left: 192px;
-    top: 365px;
+    left: 207px;
+    top: 391px;
   }
   .map-item-6{
-    left: 189px;
-    top: 378px;
+    left: 204px;
+    top: 405px;
   }
   .map-item-7{
-    left: 140px;
-    top: 349px;
+    left: 155px;
+    top: 375px;
   }
   .map-item-8{
-    left: 163px;
-    top: 397px;
+    left: 179px;
+    top: 424px;
   }
 }
 </style>

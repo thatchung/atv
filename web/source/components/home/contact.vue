@@ -161,6 +161,7 @@ export default {
 }
 .phone div{
   display: inline-block;
+  margin-left: 2rem;
 }
 .back-top{
   position: relative;
