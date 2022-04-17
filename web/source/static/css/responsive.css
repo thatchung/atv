@@ -52,10 +52,16 @@
     min-height: calc(100vh - 70px) !important;
   }
   .menu-title{
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .menu-sub{
-    font-size: 0.7rem;
+    font-size: 1rem;
+  }
+  .menu-title-about{
+    margin-bottom: 0rem;
+  }
+  .menu-title-inno{
+    margin-top: 1rem;
   }
   .banner-img{
   	height: 300px !important;
@@ -71,9 +77,6 @@
   }
   .section-title{
     font-size: 4rem;
-  }
-  .list-work .slick-arrow{
-    margin-top: -25px !important;
   }
   .list-inno .slick-arrow{
     margin-top: -25px !important;
@@ -91,7 +94,7 @@
     margin-top: 0.5rem;
   }
   .section-who .section-title{
-    width: 70%;
+    width: 90%;
   }
   .section-who .description{
     margin-bottom: 1.5rem;
@@ -104,7 +107,7 @@
     right: 1rem;
   }
   .section-who .what-title{
-    width:  70%;
+    width:  90%;
   }
   .section-who .what-text{
     font-size: 1.5rem;
@@ -137,39 +140,11 @@
   .section-contact .type{
     float: right;
   }
-  .work-filter-list{
-    height: 4rem;
-  }
-  .filter-item-active{
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 40px;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-  .filter-list{
-    width: 150px;
-    display: inline-block;
-    left: 0px;
-    top: 80px;
-    position: absolute;
-    background-color: white;
-    z-index: 1;
-  }
-  .filter-item-active svg{
-    left: 160px;
-    top: 4px;
-    position: absolute;
-  }
-  .filter-item{
-    font-size: 1rem;
-  }
   .paging-content{
     float: left !important;
   }
   .about-who-title{
-    width:  70%;
+    width:  90%;
   }
   .about-who-container .slick-arrow{
     margin-top: -10px !important;
@@ -178,17 +153,10 @@
     margin-top: 1rem;
   }
   .about-what-section-title{
-    width:  70%;
+    width:  90%;
   }
   .about-what-description{
     font-size: 1.5rem !important;
-  }
-  .convention .convention-title {
-  	font-size: 1.5rem;
-    margin-top: 2rem;
-  }
-  .convention .sub {
-    font-size: 0.8rem;
   }
   .about-where-title{
     font-size: 3.5rem !important;
@@ -214,5 +182,8 @@
   .back-top{
     bottom: -2rem;
     right: 2rem;
+  }
+  .footer-content{
+    text-align: left;
   }
 }

@@ -6,7 +6,7 @@
     <div class="line-all" />
     <nuxt-link to="/work">
       <div class="link-page">
-        All <b-icon-arrow-right />
+        All  <b-icon-arrow-right />
       </div>
     </nuxt-link>
     <VueSlickCarousel v-bind="settings" class="list-work">
@@ -101,6 +101,9 @@ export default {
   margin-top: 1rem;
   cursor: pointer;
   margin-bottom: 1rem;
+  svg{
+    margin-left: 5px;
+  }
 }
 .pre-arrow{
   z-index: 2;
@@ -122,6 +125,12 @@ export default {
   }
   img{
     width: 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-work{
+    margin-top: 3rem;
   }
 }
 </style>

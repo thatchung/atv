@@ -16,7 +16,8 @@
     </VueSlickCarousel>
     <div class="slide-sub">
       <div v-for="(img, idx) in images" :key="idx" class="sub-img-item" :style="style[idx]" @click="render(idx)">
-        <img class="sub-imgage" :src="img"></img>
+        <!-- <img class="sub-imgage" :src="img"></img> -->
+        <img class="sub-imgage" src="/images/b_img.png"></img>
       </div>
     </div>
   </div>
@@ -49,15 +50,17 @@ export default {
     },
     render(idx) {
       let t_slider = []
-      for (let i = 0;i < this.images.length; i++) {
+      let deg = 40
+      let len = this.images.length
+      for (let i = 0;i < len; i++) {
         if (i < idx) {
-          t_slider[i] = `transform: translateX(-${70 * (idx - i)}%) rotateY(45deg); z-index: ${5 + i};`
+          t_slider[i] = `transform: translateX(-${70 * (idx - i)}%) rotateY(${deg + (len * 5 - i)}deg); z-index: ${5 + i};`
         }
         if (i === idx) {
-          t_slider[i] = 'transform: rotateY( 0deg ) translateZ( 140px ); z-index: 10;'
+          t_slider[i] = 'transform: rotateY( 0deg ) translateZ( 100px ); z-index: 10;opacity: 1;'
         }
         if (i > idx) {
-          t_slider[i] = `transform: translateX(${70 * (i - idx)}% ) rotateY(-45deg); z-index: ${5 - i};`
+          t_slider[i] = `transform: translateX(${70 * (i - idx)}% ) rotateY(-${deg + (len * 2 - i)}deg); z-index: ${5 - i};`
         }
       }
       this.style = t_slider
@@ -82,7 +85,7 @@ export default {
 }
 .slide-sub{
   position: absolute;
-  bottom: 50px;
+  bottom: 90px;
   left: 50%;
   transform: translate(-50%);
   -webkit-perspective: 600px;
@@ -98,10 +101,10 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 70px;
-  height: 50px;
+  width: 50px;
+  height: 40px;
   margin-left: -25px;
-  margin-top: -90px;
+  margin-top: -30px;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -111,6 +114,9 @@ export default {
   -ms-transition: all 300ms ease-in;
   -o-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
+  opacity: 0.7;
+}
+.sub-img-item-old{
   -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));
 }
 .sub-imgage{

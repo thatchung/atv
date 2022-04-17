@@ -34,7 +34,7 @@
       <div class="col-12">
         <div class="row">
           <div class="col-4 a_name">
-            MISSION
+            VISION
           </div>
           <div class="col-8 a_description">
             We grow with each client on the path to success.
@@ -44,7 +44,7 @@
       <div class="col-12">
         <div class="row">
           <div class="col-4 a_name">
-            VISION
+            MISSION
           </div>
           <div class="col-8 a_description">
             Apply the latest Technology in Project Management and Construction Supervision to Design & Build with high creativity and proven professionalism
@@ -144,7 +144,7 @@ export default {
   padding-bottom: 4rem;
 }
 .about-who-title{
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: 4rem;
 }
 .a_name{
@@ -162,5 +162,10 @@ export default {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 3rem;
+}
+@media (max-width: 575px) {
+  .about-who-title{
+    margin-top: 3rem;
+  }
 }
 </style>

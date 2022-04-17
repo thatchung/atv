@@ -106,6 +106,11 @@ export default {
         }
     },
     methods: {
+        get_excerpt(value, maxLength) {
+            if (value && value.length > maxLength)
+                return `${value.substr(0, maxLength)}...`
+            return value
+        },
         formatPrice(value) {
             let val = (value / 1).toFixed(0).replace('.', ',')
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")

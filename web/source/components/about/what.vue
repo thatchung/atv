@@ -25,8 +25,8 @@
           <div class="col-9 col-md-9">
             Faster Delivery
           </div>
-          <div class="line-all-d" />
         </div>
+        <div class="line-all-what" />
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
@@ -36,8 +36,8 @@
           <div class="col-9 col-md-9">
             Better Quality
           </div>
-          <div class="line-all-d" />
         </div>
+        <div class="line-all-what" />
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
@@ -47,8 +47,8 @@
           <div class="col-9 col-md-9">
             Decreased Administrative Burden
           </div>
-          <div class="line-all-d" />
         </div>
+        <div class="line-all-what" />
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
@@ -58,8 +58,8 @@
           <div class="col-9 col-md-9">
             Singular Responsibility
           </div>
-          <div class="line-all-d" />
         </div>
+        <div class="line-all-what" />
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
@@ -69,8 +69,8 @@
           <div class="col-9 col-md-9">
             Cost Control
           </div>
-          <div class="line-all-d" />
         </div>
+        <div class="line-all-what" />
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
@@ -80,8 +80,8 @@
           <div class="col-9 col-md-9">
             Reduced Risk
           </div>
-          <div class="line-all-d" />
         </div>
+        <div class="line-all-what" />
       </div>
     </div>
     <div v-if="isMobile" class="row">
@@ -93,7 +93,7 @@
           <div class="col-9 col-md-9">
             Faster Delivery
           </div>
-          <div class="line-all-d" />
+          <div class="line-all-what" />
         </div>
       </div>
       <div class="col-12">
@@ -104,7 +104,7 @@
           <div class="col-9 col-md-9">
             Singular Responsibility
           </div>
-          <div class="line-all-d" />
+          <div class="line-all-what" />
         </div>
       </div>
       <div class="col-12">
@@ -115,7 +115,7 @@
           <div class="col-9 col-md-9">
             Better Quality
           </div>
-          <div class="line-all-d" />
+          <div class="line-all-what" />
         </div>
       </div>
       <div class="col-12">
@@ -126,7 +126,7 @@
           <div class="col-9 col-md-9">
             Cost Control
           </div>
-          <div class="line-all-d" />
+          <div class="line-all-what" />
         </div>
       </div>
       <div class="col-12">
@@ -137,7 +137,7 @@
           <div class="col-9 col-md-9">
             Reduced Risk
           </div>
-          <div class="line-all-d" />
+          <div class="line-all-what" />
         </div>
       </div>
       <div class="col-12">
@@ -148,7 +148,7 @@
           <div class="col-9 col-md-9">
             Decreased Administrative Burden
           </div>
-          <div class="line-all-d" />
+          <div class="line-all-what" />
         </div>
       </div>
     </div>
@@ -184,7 +184,7 @@ export default {
   padding-bottom: 4rem;
 }
 .about-what-section-title{
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: 2rem;
 }
 .about-what-description{
@@ -197,9 +197,14 @@ export default {
   font-weight: 600;
   margin-top: 4rem;
 }
-.line-all-d{
+.line-all-what{
   width: 100%;
-  margin: 1rem;
+  margin: 0.5rem 0rem;
   border-top: 2px solid #7E8083;
+}
+@media (max-width: 575px) {
+  .about-what-design-title{
+    font-size: 2rem;
+  }
 }
 </style>

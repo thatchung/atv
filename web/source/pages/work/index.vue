@@ -251,20 +251,23 @@ export default {
   border: 1px solid #7E8083;
 }
 .filter-item-active{
+  text-transform: uppercase;
   display: inline-block;
   float: right;
-  font-family: 'pp-semi';
+  font-family: 'pp-reg';
+  font-size: 2rem;
   svg{
     margin-left: 0.5rem;
     cursor: pointer;
   }
 }
 .filter-list{
-  max-height: 200px;
+  max-height: 100px;
+  height: 50px;
   overflow-y: scroll;
   width: 130px;
   display: inline-block;
-  right: 20px;
+  right: 30px;
   top: 0px;
   position: absolute;
   &::-webkit-scrollbar{
@@ -282,6 +285,7 @@ export default {
 }
 .filter-item{
   cursor: pointer;
+  font-size: 1.2rem;
   &:hover{
     background-color: #7E8083;
     color: #fff;
@@ -328,5 +332,40 @@ export default {
 .btn-left img{
   width: 45px;
   height: 30px;
+}
+@media (max-width: 575px) {
+  .filter-item-active{
+    text-transform: uppercase;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 40px;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'pp-reg';
+  }
+  .filter-item-active span{
+    float: left;
+  }
+  .filter-list{
+    width: 150px;
+    display: inline-block;
+    left: 0px;
+    position: relative;
+    background-color: white;
+    z-index: 1;
+    float: left;
+    height: 40px;
+  }
+  .filter-item-active svg{
+    position: relative;
+  }
+  .filter-item{
+    font-size: 1rem;
+  }
+  .work-filter-list{
+    height: 4rem;
+  }
 }
 </style>

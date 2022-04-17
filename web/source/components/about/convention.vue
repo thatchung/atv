@@ -239,4 +239,13 @@ export default {
     font-weight: 400;
   }
 }
+@media (max-width: 575px) {
+  .convention .convention-title {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  .convention .sub {
+    font-size: 1rem;
+  }
+}
 </style>

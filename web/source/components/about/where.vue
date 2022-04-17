@@ -3,14 +3,30 @@
     <h2 class="about-where-title">
       Where we work ?
     </h2>
-    <ThumbImage src="images/map.jpg" ratio="16-9" />
+    <!-- <ThumbImage src="images/map.jpg" ratio="16-9" /> -->
+    <div ref="map" class="map-container">
+      <div ref="map1" class="map-item map-item-1" @click="clickMapItem('HA NOI')" />
+      <div ref="map2" class="map-item map-item-2" @click="clickMapItem('HAI PHONG')" />
+      <div ref="map3" class="map-item map-item-3" @click="clickMapItem('DA NANG')" />
+      <div ref="map4" class="map-item map-item-4" @click="clickMapItem('NHA TRANG')" />
+      <div ref="map5" class="map-item map-item-5" @click="clickMapItem('BINH DUONG')" />
+      <div ref="map6" class="map-item map-item-6" @click="clickMapItem('HO CHI MINH')" />
+      <div ref="map7" class="map-item map-item-7" @click="clickMapItem('PHNOMPENH (CAMBODIA)')" />
+      <div ref="map8" class="map-item map-item-8" @click="clickMapItem('MY THO')"></div>
+      <img class="map-img" src="images/AVT_MAP.jpg"></img>
+    </div>
     <div class="location-list">
-      <div v-for="(item, index) in locations" :key="index" class="location-item">
+      <div
+        v-for="(item, index) in locations"
+        :key="index"
+        :class="'location-item ' + ( item_active === item ? 'location-active' : '' )"
+        @click="clickMapItem(item)"
+      >
         {{ item }}
       </div>
     </div>
     <div class="line-all" />
-    <div class="where-des font-pp-bold" v-if="!isMobile">
+    <div v-if="!isMobile" class="where-des font-pp-bold">
       HO CHI MINH CITY (Electrolux Office)
     </div>
     <div>
@@ -23,7 +39,7 @@
     <div class="row" style="margin-top: 2rem;">
       <div class="col-12 col-md-4">
         <div class="about-where-a_name font-pp-bold">
-          9PMP - Systematic Partner
+          9PMP - </br>Systematic Partner
         </div>
         <div class="a_description">
           9PMP specializes in providing project management solutions for construction industry. As of the moment, AVT is utilizing 9PMP system in all current projects.
@@ -32,7 +48,7 @@
       </div>
       <div class="col-12 col-md-4">
         <div class="about-where-a_name font-pp-bold">
-          The Sentry – Technical Partner
+          The Sentry – </br>Technical Partner
         </div>
         <div class="a_description">
           The Sentry is a Vietnam-based property management and project marketing firm.
@@ -41,7 +57,7 @@
       </div>
       <div class="col-12 col-md-4">
         <div class="about-where-a_name font-pp-bold">
-          K-net Japan – Design Partner
+          K-net Japan – </br>Design Partner
         </div>
         <div class="">
           K-net is a Japanese design company founded by Kuni Hasegawa.
@@ -304,7 +320,8 @@ export default {
     return {
       locations: ['HO CHI MINH', 'HA NOI', 'HAI PHONG', 'HA LONG', 'DA NANG', 'BINH DUONG',
         'NHA TRANG', 'BEN TRE', 'MY THO', 'PHNOMPENH (CAMBODIA)'],
-        isMobile: false
+      item_active: 'HO CHI MINH',
+      isMobile: false
     }
   },
   mounted() {
@@ -320,6 +337,81 @@ export default {
           return true
         } else {
           return false
+        }
+      }
+    },
+    clickMapItem(item) {
+      this.item_active = item
+      const el = this.$refs.map
+      if (el && this.isMobile) {
+        switch (item) {
+          case 'HA NOI':
+            el.scrollTo({ top: 0, behavior: 'smooth' })
+            break
+          case 'HAI PHONG':
+            el.scrollTo({ top: 0, behavior: 'smooth' })
+            break
+          case 'HA LONG':
+            el.scrollTo({ top: 0, behavior: 'smooth' })
+            break
+          case 'DA NANG':
+            el.scrollTo({ top: 150, behavior: 'smooth' })
+            break
+          case 'BINH DUONG':
+            el.scrollTo({ top: 250, behavior: 'smooth' })
+            break
+          case 'NHA TRANG':
+            el.scrollTo({ top: 220, behavior: 'smooth' })
+            break
+          case 'HO CHI MINH':
+            el.scrollTo({ top: 300, behavior: 'smooth' })
+            break
+          case 'BEN TRE':
+            el.scrollTo({ top: 300, behavior: 'smooth' })
+            break
+          case 'MY THO':
+            el.scrollTo({ top: 300, behavior: 'smooth' })
+            break
+          case 'PHNOMPENH (CAMBODIA)':
+            el.scrollTo({ top: 240, behavior: 'smooth' })
+            break
+          default:
+            el.scrollTo({ top: 300, behavior: 'smooth' })
+        }
+      } else if (el && !this.isMobile) {
+        switch (item) {
+          case 'HA NOI':
+            el.scrollTo({ top: 0, behavior: 'smooth' })
+            break
+          case 'HAI PHONG':
+            el.scrollTo({ top: 0, behavior: 'smooth' })
+            break
+          case 'HA LONG':
+            el.scrollTo({ top: 0, behavior: 'smooth' })
+            break
+          case 'DA NANG':
+            el.scrollTo({ top: 500, behavior: 'smooth' })
+            break
+          case 'BINH DUONG':
+            el.scrollTo({ top: 870, behavior: 'smooth' })
+            break
+          case 'NHA TRANG':
+            el.scrollTo({ top: 790, behavior: 'smooth' })
+            break
+          case 'HO CHI MINH':
+            el.scrollTo({ top: 900, behavior: 'smooth' })
+            break
+          case 'BEN TRE':
+            el.scrollTo({ top: 1000, behavior: 'smooth' })
+            break
+          case 'MY THO':
+            el.scrollTo({ top: 1000, behavior: 'smooth' })
+            break
+          case 'PHNOMPENH (CAMBODIA)':
+            el.scrollTo({ top: 900, behavior: 'smooth' })
+            break
+          default:
+            el.scrollTo({ top: 900, behavior: 'smooth' })
         }
       }
     }
@@ -338,7 +430,7 @@ export default {
   width: 90%;
 }
 .about-where-title{
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: 5rem;
   margin-bottom: 1rem;
 }
@@ -349,12 +441,12 @@ export default {
 .location-list{
   margin-top: 2rem;
   height: 6rem;
-  .location-item:first-child {
-    border: 1px solid;
-    padding: 0rem 0.5rem;
-    height: 40px;
-    line-height: 40px;
-  }
+}
+.location-active {
+  border: 1px solid;
+  padding: 0rem 0.5rem;
+  height: 40px;
+  line-height: 40px;
 }
 .location-item{
   display: inline-block;
@@ -364,6 +456,7 @@ export default {
   margin-right: 1rem;
   height: 40px;
   line-height: 40px;
+  cursor: pointer;
 }
 .efficency{
   font-size: 1.5rem;
@@ -386,5 +479,101 @@ export default {
   bottom: 0rem;
   right: 0rem;
   cursor: pointer;
+}
+.map-container{
+  width: 100%;
+  height: 500px;
+  overflow-y: scroll;
+  position: relative;
+}
+.map-img{
+  width: 100%;
+}
+.map-item{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.map-item-1{
+  left: 465px;
+  top: 295px;
+}
+.map-item-2{
+  left: 525px;
+  top: 315px;
+}
+.map-item-3{
+  left: 685px;
+  top: 765px;
+}
+.map-item-4{
+  left: 750px;
+  top: 1035px;
+}
+.map-item-5{
+  left: 580px;
+  top: 1110px;
+}
+.map-item-6{
+  left: 575px;
+  top: 1150px;
+}
+.map-item-7{
+  left: 425px;
+  top: 1055px;
+}
+.map-item-8{
+  left: 500px;
+  top: 1205px;
+}
+@media (max-width: 575px) {
+  .map-container{
+    width: 360px;
+    margin: auto;
+    height: 200px;
+    overflow-y: scroll;
+  }
+  .map-img{
+    width: 100%;
+  }
+  .map-item{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    background-color: red;
+  }
+  .map-item-1{
+    left: 153px;
+    top: 97px;
+  }
+  .map-item-2{
+    left: 173px;
+    top: 104px;
+  }
+  .map-item-3{
+    left: 226px;
+    top: 250px;
+  }
+  .map-item-4{
+    left: 246px;
+    top: 340px;
+  }
+  .map-item-5{
+    left: 192px;
+    top: 365px;
+  }
+  .map-item-6{
+    left: 189px;
+    top: 378px;
+  }
+  .map-item-7{
+    left: 140px;
+    top: 349px;
+  }
+  .map-item-8{
+    left: 163px;
+    top: 397px;
+  }
 }
 </style>

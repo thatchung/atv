@@ -4,7 +4,9 @@ class ApiService {
         options = options[0];
         let response, error;
         const header = options.header || {};
-        const url = process.env.host_api ? process.env.host_api : 'http://103.39.93.99:1333/' + options.url;
+        const host_api = 'http://103.39.93.99:1333/'
+        // const host_api = 'http://127.0.0.1:1337/'
+        const url = process.env.host_api ? process.env.host_api : host_api + options.url;
         try {
             const data = {
                 method: options.method.trim().toLowerCase(),

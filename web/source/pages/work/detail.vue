@@ -14,7 +14,7 @@
     <h1 class="work-title font-pp-bold">
       {{ work.title }}
     </h1>
-    <div class="work-info">
+    <div v-if="!isMobile" class="work-info">
       <div class="work-info">
         <div class="detail-text">
           Year: {{ work.year }}
@@ -55,6 +55,7 @@ export default {
   name: 'IndexPage',
   data() {
     return {
+      isMobile: false,
       work:{
         title: 'Harley Davidson Da Nang',
         url: '/images/slide4.jpg',
@@ -75,6 +76,7 @@ export default {
   },
   mounted() {
     this.loadData()
+    this.checkMobile()
   },
   methods: {
     ...mapActions({
@@ -85,6 +87,15 @@ export default {
     },
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
+    },
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          this.isMobile = true
+        } else {
+          this.isMobile = false
+        }
+      }
     }
   }
 }
@@ -125,5 +136,10 @@ export default {
 }
 .detail-text{
   display: inline-block;
+}
+@media (max-width: 575px) {
+  .work-back-content svg{
+    margin-right: 5px;
+  }
 }
 </style>

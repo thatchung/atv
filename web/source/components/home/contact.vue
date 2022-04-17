@@ -3,7 +3,7 @@
     <h2 class="section-title">
       Contact
     </h2>
-    <div class="line-all" style="margin-bottom: 3rem;" />
+    <div class="line-all line-all-contact" />
     <div v-if="!isMobile" class="row">
       <div class="col-4 col-md-4">
         <div>
@@ -88,10 +88,10 @@
         </div>
       </div>
     </div>
-    <div class="line-all" style="margin: 3rem 0rem;" />
+    <div class="line-all line-all-last" />
     <div class="phone">
       Hotline
-      <span>+84 908 734 134</span>
+      <div><a href="tel:0123456789">+84 908 734 134</a></div>
     </div>
     <div class="back-top" @click="toTopAction">
       <b-icon-arrow-up />
@@ -131,6 +131,13 @@ export default {
   margin-top: 4rem;
   padding-bottom: 4rem;
 }
+.line-all-contact{
+  margin-bottom: 3rem;
+}
+.line-all-last{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 .section-title{
   font-size: 4rem;
 }
@@ -149,13 +156,33 @@ export default {
   font-size: 1.5rem;
   font-weight: 600;
 }
-.phone span{
-  color: #7E8083;
+.phone a{
+  color: #9D9FA2;
+}
+.phone div{
+  display: inline-block;
 }
 .back-top{
-  position: absolute;
-  bottom: 0rem;
-  right: 0rem;
+  position: relative;
+  margin-top: 1rem;
   cursor: pointer;
+  float: right;
+}
+@media (max-width: 575px) {
+  .section-contact{
+    margin-top: 0rem;
+    padding-bottom: 4rem;
+  }
+  .line-all-contact{
+    margin-bottom: 1rem;
+  }
+  .line-all-last{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .phone div{
+    display: block;
+    font-size: 2rem;
+  }
 }
 </style>

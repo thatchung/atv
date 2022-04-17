@@ -5,14 +5,17 @@
       {{ item.name }} - {{ item.role }}
     </h3>
     <div class="item-content">
-      {{ item.description }}
-      <b-icon-arrow-down />
+      {{ description }}
     </div>
+    <b-icon-arrow-down v-if="!show" @click="showMore" />
+    <b-icon-arrow-up v-if="show" @click="showLess" />
   </div>
 </template>
 
 <script>
+import general from "~/mixins/general"
 export default {
+  mixins: [general],
   props: {
     item: {
       type: Object,
@@ -20,7 +23,7 @@ export default {
         return {
           name: 'Harada Shinji',
           role: 'Business Development Manager',
-          description: 'Mau considers AVT as his second home. After becoming a part of AVT in 2019, his skill set expanded into full. . .',
+          description: 'Mau considers AVT as his second home. After becoming a part of AVT in 2019, his skill set expanded into full is skill set expanded into full is skill set expanded into full',
           thub: '/images/slide4.jpg'
         }
       }
@@ -29,16 +32,26 @@ export default {
       type: String,
       default: 'left-p'
     }
+  },
+  data() {
+    return {
+      show: false,
+      description: ''
+    }
+  },
+  mounted () {
+    this.description = this.get_excerpt(this.item.description, 150)
+  },
+  methods: {
+    showMore() {
+      this.show = true
+      this.description = this.item.description
+    },
+    showLess() {
+      this.show = false
+      this.description = this.get_excerpt(this.item.description, 150)
+    }
   }
-  // methods: {
-  //   ...mapActions({
-  //     getListitem: "item/getListitem"
-  //   }),
-  //   async loadData() {
-  //     await this.getListitem()
-  //     console.log(this.listitem)
-  //   }
-  // }
 }
 </script>
 <style lang="scss">
@@ -55,5 +68,10 @@ export default {
 }
 .item-content svg{
   margin-left: 0.5rem;
+}
+@media (max-width: 575px) {
+  .item svg{
+    margin-top: 1rem;
+  }
 }
 </style>

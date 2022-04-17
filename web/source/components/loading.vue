@@ -23,7 +23,7 @@ export default {
     this.show = true
     setTimeout(() => {
       this.show = false
-    }, 4000)
+    }, 6000)
   }
 }
 </script>
@@ -50,58 +50,50 @@ export default {
     height: 100%;
     position: relative;
     z-index: 5;
-    background: radial-gradient(#000000, #00000000 50%, #00000000);
+    animation: imgbg 6s ease-out;
+    animation-fill-mode: forwards;
     img{
+      animation: image 6s ease-out;
+      animation-fill-mode: forwards;
       width: 50%;
       margin-left: 85px;
       margin-top: 61px;
     }
 }
+@keyframes image {
+    0%{content:url(/images/logo.png)}
+    75%{content:url(/images/logo.png)}
+    95%{content:url(/images/logo.png)}
+    100%{content:url(/images/logo_b.png)}
+}
+@keyframes imgbg {
+    0%{background: radial-gradient(#000000, #00000000 50%, #00000000)}
+    75%{background: radial-gradient(#000000, #00000000 50%, #00000000)}
+    100%{background: none}
+}
 @keyframes color1 {
-    0%{background-position: 100% 0%}
-    5%{background-position: 90% 0%}
-    10%{background-position: 80% 0%}
-    15%{background-position: 70% 0%}
-    20%{background-position: 60% 0%}
-    25%{background-position: 50% 0%}
-    30%{background-position: 40% 1%}
-    35%{background-position: 30% 0%}
-    40%{background-position: 35% 0%}
-    45%{background-position: 40% 0%}
-    50%{background-position: 45% 0%}
-    55%{background-position: 50% 1%}
-    60%{background-position: 55% 2%}
-    65%{background-position: 60% 3%}
-    70%{background-position: 65% 4%}
-    75%{background-position: 60% 5%}
-    80%{background-position: 59% 6%}
-    85%{background-position: 58% 7%}
-    90%{background-position: 57% 8%}
-    95%{background-position: 56% 9%}
-    100%{background-position: 55% 10%}
+    0%{background-position: 100% 5%}
+    75%{background-position: 0% 5%}
+    100%{background-position: 50% 50%}
 }
 @keyframes color2 {
-    0%{background-position: 100% 0%}
-    5%{background-position: 100% 0%}
-    10%{background-position: 100% 0%}
-    15%{background-position: 100% 0%}
-    20%{background-position: 90% 0%}
-    25%{background-position: 80% 0%}
-    30%{background-position: 70% 0%}
-    35%{background-position: 60% 0%}
-    40%{background-position: 50% 0%}
-    45%{background-position: 40% 1%}
-    50%{background-position: 30% 0%}
-    55%{background-position: 35% 0%}
-    60%{background-position: 40% 0%}
-    65%{background-position: 45% 0%}
-    70%{background-position: 50% 0%}
-    75%{background-position: 60% 5%}
-    80%{background-position: 59% 6%}
-    85%{background-position: 58% 7%}
-    90%{background-position: 57% 8%}
-    95%{background-position: 56% 9%}
-    100%{background-position: 55% 10%}
+    0%{background-position: 50% 5%}
+    50%{background-position: 0% 5%}
+    75%{background-position: 0% 5%}
+    100%{background-position: 50% 50%}
+}
+@keyframes color3 {
+    0%{background-position: 100% 5%}
+    50%{background-position: 100% 5%}
+    75%{background-position: 75% 5%}
+    100%{background-position: 50% 50%}
+}
+@keyframes color4 {
+    0%{background-position: 100% 5%}
+    25%{background-position: 100% 5%}
+    50%{background-position: 50% 5%}
+    75%{background-position: 25% 5%}
+    100%{background-position: 50% 50%}
 }
 .rect-1{
     position: absolute;
@@ -115,21 +107,23 @@ export default {
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 600% 600%;
     animation: color1 6s ease-out;
-    background-position: 100% 0%;
+    animation-fill-mode: forwards;
+    background-position: 100% 10%;
 }
 .rect-2{
     position: absolute;
     z-index: 2;
     left: 0px;
-    top: 36px;
-    width: 178px;
+    top: 37px;
+    width: 179px;
     height: 133px;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     transform: rotate(90deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 600% 600%;
-    background-position: 55% 30%;
+    background-position: 0% 0%;
     animation: color2 6s ease-out;
+    animation-fill-mode: forwards;
 }
 .rect-3{
     position: absolute;
@@ -142,21 +136,23 @@ export default {
     transform: rotate(174.5deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 600% 600%;
-    background-position: 55% 30%;
-    animation: color2 6s ease-out;
+    background-position: 0% 0%;
+    animation: color3 6s ease-out;
+    animation-fill-mode: forwards;
 }
 .rect-4{
     position: absolute;
     z-index: 2;
-    left: 118px;
+    left: 117px;
     top: 17px;
-    width: 235px;
-    height: 172px;
+    width: 238px;
+    height: 173px;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     transform: rotate(270deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 600% 600%;
     background-position: 100% 0%;
-    animation: color1 6s ease-out;
+    animation: color4 6s ease-out;
+    animation-fill-mode: forwards;
 }
 </style>

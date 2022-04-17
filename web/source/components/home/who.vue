@@ -40,7 +40,7 @@
       <div class="col-12">
         <div class="row">
           <div class="col-4 name font-pp-bold">
-            MISSION
+            VISION
           </div>
           <div class="col-8 description">
             We grow with each client on the path to success.
@@ -50,7 +50,7 @@
       <div class="col-12">
         <div class="row">
           <div class="col-4 name font-pp-bold">
-            VISION
+            MISSION
           </div>
           <div class="col-8 description">
             Apply the latest Technology in Project Management and Construction Supervision to Design & Build with high creativity and proven professionalism
@@ -71,12 +71,15 @@
     <div class="line-all" />
     <div class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
       <div class="col-12 col-sm-6 col-md-6 col-lg-8">
+        <div v-if="isMobile" class="who-name font-pp-bold">
+          EXPERIENCED LEADERS
+        </div>
         <nuxt-link to="/about">
           <ThumbImage :src="'/images/temp.jpg'" ratio="16-9" />
         </nuxt-link>
       </div>
       <div class="col-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
-        <div class="who-name font-pp-bold">
+        <div v-if="!isMobile" class="who-name font-pp-bold">
           EXPERIENCED LEADERS
         </div>
         <div class="who-description">
@@ -184,6 +187,12 @@ export default {
   right: 0px;
   svg{
     margin-left: 1rem;
+  }
+}
+@media (max-width: 575px) {
+  .who-name{
+    margin-top: 0rem;
+    margin-bottom: 2rem;
   }
 }
 </style>

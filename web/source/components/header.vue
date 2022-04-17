@@ -29,7 +29,7 @@
           </div>
           <div class="col-12 col-md-4">
             <nuxt-link to="/about">
-              <div class="menu-title">
+              <div class="menu-title menu-title-about">
                 About Us
               </div>
               <div class="menu-sub">
@@ -54,7 +54,7 @@
           </div>
           <div class="col-12 col-md-4">
             <nuxt-link to="/innovation">
-              <div class="menu-title">
+              <div class="menu-title menu-title-inno">
                 Innovation
               </div>
             </nuxt-link>

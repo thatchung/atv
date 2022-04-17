@@ -11,21 +11,21 @@
     <div class="work-info">
       <div class="work-info">
         <div class="detail-text">
-          Year: {{ work.year }}
+          Year : {{ work.year }}
         </div>
         /
         <div class="detail-text">
-          Year: {{ work.area }}m2
+          Area : {{ work.area }}m2
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Type of project: {{ work.type_category }}
+          Type of project : {{ work.type_category }}
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Location: {{ work.location }}
+          Location : {{ work.location }}
         </div>
         <nuxt-link :to="'/work/' + work.url">
           <b-icon-arrow-right style="margin-left: 1rem;" />
