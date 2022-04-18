@@ -12,7 +12,7 @@
       </h2>
     </nuxt-link>
     <div class="item-content">
-      {{ item.description }}
+      {{ get_excerpt(item.description, 150) }}
       <nuxt-link :to="'/innovation/' + item.url">
         <b-icon-arrow-right />
       </nuxt-link>
@@ -21,8 +21,9 @@
 </template>
 
 <script>
+import general from "~/mixins/general"
 export default {
-  // name: 'innoitem',
+  mixins: [general],
   props: {
     item: {
       type: Object,
