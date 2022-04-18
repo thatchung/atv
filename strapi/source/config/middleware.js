@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
     settings: {
       cache: {
-        enabled: false,
+        enabled: true,
         maxAge: 3600000,
         withStrapiMiddleware: true,
         clearRelatedCache: true,

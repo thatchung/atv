@@ -640,6 +640,9 @@
           },
           "address": {
             "type": "string"
+          },
+          "scope": {
+            "type": "string"
           }
         }
       },
@@ -695,6 +698,9 @@
             ]
           },
           "address": {
+            "type": "string"
+          },
+          "scope": {
             "type": "string"
           },
           "created_by": {
