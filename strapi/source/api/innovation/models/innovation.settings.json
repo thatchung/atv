@@ -2,12 +2,13 @@
   "kind": "collectionType",
   "collectionName": "innovations",
   "info": {
-    "name": "Innovation"
+    "name": "Innovation",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
