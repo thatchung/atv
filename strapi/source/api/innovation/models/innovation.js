@@ -26,7 +26,7 @@ module.exports = {
         async afterUpdate(result, params, data) {
             await clearCacheData(result);
         },
-        async afterCreate(params, data) {
+        async afterCreate(result, params, data) {
             await clearCacheData(result);
         },
     }
