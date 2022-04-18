@@ -167,6 +167,8 @@ export default {
     $route(to, from) {
       if (this.$route.hash) {
         this.goto(this.$route.hash.replace('#', ''))
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
       }
     }
   },
@@ -174,6 +176,8 @@ export default {
     this.isMobile = this.checkMobile()
     if (this.$route.hash) {
       this.goto(this.$route.hash.replace('#', ''))
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   },
   methods: {

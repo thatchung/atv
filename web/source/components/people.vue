@@ -5,7 +5,8 @@
       {{ item.name }} - {{ item.role }}
     </h3>
     <div class="item-content">
-      {{ description }}
+      <!-- {{ description }} -->
+      <div class="content" v-html="description" />
     </div>
     <b-icon-arrow-down v-if="!show" @click="showMore" />
     <b-icon-arrow-up v-if="show" @click="showLess" />
@@ -40,7 +41,7 @@ export default {
     }
   },
   mounted () {
-    this.description = this.get_excerpt(this.item.description, 150)
+    this.description = this.get_excerpt(this.item.description, 100)
   },
   methods: {
     showMore() {
@@ -49,7 +50,7 @@ export default {
     },
     showLess() {
       this.show = false
-      this.description = this.get_excerpt(this.item.description, 150)
+      this.description = this.get_excerpt(this.item.description, 100)
     }
   }
 }
