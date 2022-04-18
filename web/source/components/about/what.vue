@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="about-what-section-title">
+    <h2 ref="whatwedo" class="about-what-section-title">
       What we do ?
     </h2>
     <div class="line-all" />
@@ -163,8 +163,18 @@ export default {
       isMobile: false
     }
   },
+  watch: {
+    $route(to, from) {
+      if (this.$route.hash) {
+        this.goto(this.$route.hash.replace('#', ''))
+      }
+    }
+  },
   mounted() {
     this.isMobile = this.checkMobile()
+    if (this.$route.hash) {
+      this.goto(this.$route.hash.replace('#', ''))
+    }
   },
   methods: {
     checkMobile() {
@@ -174,6 +184,12 @@ export default {
         } else {
           return false
         }
+      }
+    },
+    goto(hash) {
+      const el = this.$refs[('' + hash)]
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
       }
     }
   }

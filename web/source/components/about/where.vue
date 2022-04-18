@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="about-where-title">
+    <h2 ref="wherewework" class="about-where-title">
       Where we work ?
     </h2>
     <!-- <ThumbImage src="images/map.jpg" ratio="16-9" /> -->
@@ -12,7 +12,7 @@
       <div ref="map5" class="map-item map-item-5" @click="clickMapItem('BINH DUONG')" />
       <div ref="map6" class="map-item map-item-6" @click="clickMapItem('HO CHI MINH')" />
       <div ref="map7" class="map-item map-item-7" @click="clickMapItem('PHNOMPENH (CAMBODIA)')" />
-      <div ref="map8" class="map-item map-item-8" @click="clickMapItem('MY THO')"></div>
+      <div ref="map8" class="map-item map-item-8" @click="clickMapItem('MY THO')" />
       <img class="map-img" src="images/AVT_MAP.jpg"></img>
     </div>
     <div class="location-list">
@@ -32,7 +32,7 @@
     <div>
       A Scandinavian-inspired office where everyone can feel the comfort of home
     </div>
-    <h2 class="about-where-title">
+    <h2 ref="ournetwork" class="about-where-title">
       Our Network
     </h2>
     <div class="line-all" />
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    <h2 class="about-where-title">
+    <h2 ref="ouruniqueness" class="about-where-title">
       Our Uniqueness
     </h2>
     <div class="line-all" />
@@ -288,7 +288,7 @@
         <div class="line-all-s" />
       </div>
     </div>
-    <div class="efficency font-pp-bold">
+    <div ref="process" class="efficency font-pp-bold">
       Kuni Hasegawa (Aesthetic)
     </div>
     <div class="row">
@@ -324,8 +324,18 @@ export default {
       isMobile: false
     }
   },
+  watch: {
+    $route(to, from) {
+      if (this.$route.hash) {
+        this.goto(this.$route.hash.replace('#', ''))
+      }
+    }
+  },
   mounted() {
     this.isMobile = this.checkMobile()
+    if (this.$route.hash) {
+      this.goto(this.$route.hash.replace('#', ''))
+    }
   },
   methods: {
     toTopAction () {
@@ -338,6 +348,12 @@ export default {
         } else {
           return false
         }
+      }
+    },
+    goto(hash) {
+      const el = this.$refs[('' + hash)]
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
       }
     },
     clickMapItem(item) {

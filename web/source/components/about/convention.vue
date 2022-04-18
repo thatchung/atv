@@ -106,7 +106,7 @@
                 </div>
               </div>
             </div>
-            <div class="about-con-line-all"/>
+            <div class="about-con-line-all" />
             <div class="row">
               <div class="col-2 col-md-2" />
               <div class="col-10 col-md-10">
@@ -115,7 +115,7 @@
                 </div>
               </div>
             </div>
-            <div class="about-con-line-all"/>
+            <div class="about-con-line-all" />
           </div>
         </div>
         <div class="col-12 col-md-6">

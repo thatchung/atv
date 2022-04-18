@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <header class="container-fluid">
-      <div class="container d-flex container-header">
+    <header class="container-header">
+      <div class="container d-flex">
         <div>
           <nuxt-link to="/">
             <img class="logo" src="/images/logo.png" alt="Riviu logo"></img>
@@ -13,7 +13,7 @@
       </div>
     </header>
     <div v-if="showMenu" class="full-menu" @click="closeMenu()">
-      <div class="menu-content">
+      <div class="container menu-content">
         <div class="row">
           <div class="col-12 col-md-4">
             <nuxt-link to="/">
@@ -32,21 +32,33 @@
               <div class="menu-title menu-title-about">
                 About Us
               </div>
+            </nuxt-link>
+            <nuxt-link to="/about#whoweare">
               <div class="menu-sub">
                 WHO WE ARE
               </div>
+            </nuxt-link>
+            <nuxt-link to="/about#whatwedo">
               <div class="menu-sub">
                 WHAT WE DO
               </div>
+            </nuxt-link>
+            <nuxt-link to="/about#wherewework">
               <div class="menu-sub">
                 WHERE WE WORK
               </div>
+            </nuxt-link>
+            <nuxt-link to="/about#ouruniqueness">
               <div class="menu-sub">
                 OUR UNIQUENESS
               </div>
+            </nuxt-link>
+            <nuxt-link to="/about#ournetwork">
               <div class="menu-sub">
                 OUR NETWORK
               </div>
+            </nuxt-link>
+            <nuxt-link to="/about#process">
               <div class="menu-sub">
                 PROCESS
               </div>
@@ -66,6 +78,7 @@
           </div>
         </div>
       </div>
+      <div class="menu-backgroud" />
     </div>
     <Loading />
   </div>
@@ -100,7 +113,8 @@ export default {
 .header{
   position: relative;
 }
-.container-fluid{
+.container-header{
+  width: 100%;
   background-color: #010101;
   height: 70px;
   z-index: 10;
@@ -114,7 +128,7 @@ export default {
 }
 .div-right{
   position: absolute;
-  right: 0px;
+  right: 15px;
 }
 .lang{
   height: 40px;
@@ -133,13 +147,18 @@ export default {
   z-index: 12;
 }
 .menu-content{
-  background-color: #010101;
-  width: 80%;
-  height: 100vh;
   position: relative;
   padding-top: 15%;
-  padding-left: 10%;
   z-index: 3;
+}
+.menu-backgroud{
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #010101;
+  width: 80%;
+  z-index: 2;
+  height: 100vh;
 }
 .menu-title{
   color: #fff;
