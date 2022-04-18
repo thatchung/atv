@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      listWork: "work/getListWork"
+      innovation: "innovation/getInnovation"
     }),
   },
   mounted() {
@@ -50,11 +50,13 @@ export default {
   },
   methods: {
     ...mapActions({
-      getListWork: "work/getListWork"
+      getInnovationBySlug: "innovation/getInnovationBySlug"
     }),
     async loadData() {
-      await this.getListWork()
-      this.html_content = marked.parse(this.work.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+      if (this.$route.params.id) {
+        await this.getInnovationBySlug({ url: this.$route.params.id })
+        this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+      }
     },
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })

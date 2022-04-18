@@ -91,7 +91,6 @@ export default {
       if (this.$route.params.id) {
         await this.getWorkBySlug({ url: this.$route.params.id })
         this.html_content = marked.parse(this.work.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
-        // this.work.content = this.item_default.content
       }
     },
     toTopAction () {

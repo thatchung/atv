@@ -21,6 +21,18 @@ export default {
         commit('set_innovation', {
             innovation: res
         })
+    },
+
+    getInnovationBySlug: async ({ commit }, data = {}) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: `innovations?url=${data.url}`
+        })
+        if (res && res.length > 0) {
+            commit('set_innovation', {
+                innovation: res[0]
+            })
+        }
     }
 
 }

@@ -9,7 +9,7 @@
       </h2>
     </nuxt-link>
     <nuxt-link :to="'/innovation/' + item.url">
-      <ThumbImage :src="item.thub" ratio="8-5" />
+      <ThumbImage :src="'http://103.39.93.99:1333' + item.thub.url" ratio="8-5" />
     </nuxt-link>
     <div class="item-content">
       {{ get_excerpt(item.description, 150) }}

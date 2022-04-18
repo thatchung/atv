@@ -26,7 +26,7 @@
       </div>
     </div>
     <div v-if="!loading && listInnovation.length >= 0" class="inno-list-data row">
-      <div v-for="(item,index) in listData" :key="index" class="inno-item col-12 col-md-4">
+      <div v-for="(item,index) in listInnovation" :key="index" class="inno-item col-12 col-md-4">
         <Item position="right-p" :item="item" />
       </div>
     </div>
@@ -80,14 +80,6 @@ export default {
         pageCount: 4,
         totalItem: 33
       },
-      listData: [{
-        id: 1,
-        title: 'Crescent Mall C Club Lounge',
-        url: 'crescent-mall-c-club-lounge',
-        thub: '/images/inno1.jpg',
-        description: 'Located at the ground floor of Crescent Mall - one of the deluxe shopping centers in South Saigon, C Club Lounge is where Cresent Mall’s Platinum card holders can enjoy the exclusive perks. To turn the empty space into a luxurious and classy hub for the elites, many innovative methods were utilized during the execution of this VIP lounge.',
-        date: 'Dec 27, 2021'
-      }],
       settings:{
         "dots": false,
         "edgeFriction": 0.35,
@@ -123,12 +115,11 @@ export default {
       }
       const query = {
         _start : page,
-        _limit: 15,
-        _sort: this.sort ? 'id:DESC' : 'id:ASC'
+        _limit: 15
+        // _sort: this.sort ? 'id:DESC' : 'id:ASC'
       }
       this.meta.page = page + 1
       await this.getListInnovation({ params :query })
-      this.listInnovation = this.listData
       this.loading = false
     }
   }
