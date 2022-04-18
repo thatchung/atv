@@ -34,7 +34,7 @@ export default {
     position: fixed;
     left: 0px;
     top: 0px;
-    background-color: #000000db;
+    background-color: #000000f7;
     z-index: 15;
 }
 .logo-main{
@@ -42,8 +42,8 @@ export default {
     top: calc(50% - 120px);
     left: 50%;
     transform: translate(-50%);
-    width: 345px;
-    height: 240px;
+    width: 170px;
+    height: 120px;
 }
 .logo-loading{
     width: 100%;
@@ -52,18 +52,20 @@ export default {
     z-index: 5;
     animation: imgbg 6s ease-out;
     animation-fill-mode: forwards;
+    top: 42px;
+    left: 15px;
     img{
       animation: image 6s ease-out;
       animation-fill-mode: forwards;
       width: 50%;
-      margin-left: 85px;
-      margin-top: 61px;
+      margin-left: 45px;
+      margin-top: 42px;
     }
 }
 @keyframes image {
     0%{content:url(/images/logo.png)}
     75%{content:url(/images/logo.png)}
-    95%{content:url(/images/logo.png)}
+    94%{content:url(/images/logo_b.png)}
     100%{content:url(/images/logo_b.png)}
 }
 @keyframes imgbg {
@@ -100,8 +102,8 @@ export default {
     z-index: 4;
     left: 27px;
     top: 106px;
-    width: 300px;
-    height: 100px;
+    width: 150px;
+    height: 50px;
     clip-path: polygon(0% 100%, 40% 0%, 100% 100%);
     transform: rotate(5.5deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
@@ -113,10 +115,10 @@ export default {
 .rect-2{
     position: absolute;
     z-index: 2;
-    left: 0px;
-    top: 37px;
-    width: 179px;
-    height: 133px;
+    left: 13px;
+    top: 72px;
+    width: 89px;
+    height: 66px;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     transform: rotate(90deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
@@ -129,9 +131,9 @@ export default {
     position: absolute;
     z-index: 4;
     left: 27px;
-    top: 0px;
-    width: 300px;
-    height: 100px;
+    top: 54px;
+    width: 150px;
+    height: 50px;
     clip-path: polygon(0% 100%, 60% 0%, 100% 100%);
     transform: rotate(174.5deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
@@ -143,10 +145,10 @@ export default {
 .rect-4{
     position: absolute;
     z-index: 2;
-    left: 117px;
-    top: 17px;
-    width: 238px;
-    height: 173px;
+    left: 72px;
+    top: 62px;
+    width: 117px;
+    height: 86px;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     transform: rotate(270deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);

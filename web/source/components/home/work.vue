@@ -6,7 +6,7 @@
     <div class="line-all" />
     <nuxt-link to="/work">
       <div class="link-page">
-        All  <b-icon-arrow-right />
+        All <b-icon-arrow-right />
       </div>
     </nuxt-link>
     <VueSlickCarousel v-if="listWork && listWork.length > 0" v-bind="settings" class="list-work">
