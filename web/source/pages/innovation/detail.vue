@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       item:{
-        title: 'Harley Davidson Da Nang',
+        title: 'Crescent Mall C Club Lounge',
         url: '/images/slide4.jpg',
         thub: '/images/slide4.jpg',
         date: 'Dec 27, 2021',

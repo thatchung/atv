@@ -2,6 +2,7 @@
   <div class="banner-slide">
     <VueSlickCarousel
       ref="slide1"
+      :autoplay='true'
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
     >
@@ -27,12 +28,13 @@
 export default {
   data() {
     return {
-      images : ['/images/slide1.jpg',
-        '/images/slide2.jpg',
-        '/images/slide3.jpg',
-        '/images/slide4.jpg',
-        '/images/slide5.jpg',
-        '/images/slide6.jpg'],
+      images : ['/images/banner1.jpg',
+        '/images/banner2.jpg',
+        '/images/banner3.jpg',
+        '/images/banner4.jpg',
+        '/images/banner5.jpg',
+        '/images/banner6.jpg',
+        '/images/banner7.jpg'],
       style: ['', '', '', '', '', ''],
       slide1: undefined,
       focusOnSelect: true,

@@ -597,6 +597,9 @@
                 "type": "string"
               }
             }
+          },
+          "description": {
+            "type": "string"
           }
         }
       },
@@ -609,6 +612,9 @@
             "type": "string"
           },
           "content": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "created_by": {

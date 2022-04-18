@@ -10,9 +10,9 @@
       </div>
     </nuxt-link>
     <VueSlickCarousel v-bind="settings" class="list-inno">
-      <div v-for="index in 10" :key="index" class="inno-slider-item">
-        <Item v-if="!isMobile" />
-        <Item2 v-if="isMobile" />
+      <div v-for="(item,index) in listData" :key="index" class="inno-slider-item">
+        <Item v-if="!isMobile" :item="item" />
+        <Item2 v-if="isMobile" :item="item" />
       </div>
       <template slot="prevArrow">
         <div class="pre-arrow">
@@ -49,6 +49,14 @@ export default {
         "slidesToShow": this.checkMobile() ? 1 : 3,
         "slidesToScroll": 1
       },
+      listData: [{
+        id: 1,
+        title: 'Crescent Mall C Club Lounge',
+        url: 'crescent-mall-c-club-lounge',
+        thub: '/images/inno1.jpg',
+        description: 'Located at the ground floor of Crescent Mall - one of the deluxe shopping centers in South Saigon, C Club Lounge is where Cresent Mall’s Platinum card holders can enjoy the exclusive perks. To turn the empty space into a luxurious and classy hub for the elites, many innovative methods were utilized during the execution of this VIP lounge.',
+        date: 'Dec 27, 2021'
+      }],
       isMobile: false
     }
   },

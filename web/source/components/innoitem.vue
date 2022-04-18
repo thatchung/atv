@@ -12,7 +12,7 @@
       </h2>
     </nuxt-link>
     <div class="item-content">
-      {{ item.content }}
+      {{ item.description }}
       <nuxt-link :to="'/innovation/' + item.url">
         <b-icon-arrow-right />
       </nuxt-link>
@@ -31,7 +31,7 @@ export default {
           title: 'Viet Creadit Office',
           url: 'imagesae',
           thub: '/images/slide4.jpg',
-          content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam tetuer nonummy nibh euismod',
+          description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam tetuer nonummy nibh euismod',
           date: 'Dec 27, 2021'
         }
       }

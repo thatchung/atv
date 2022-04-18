@@ -75,7 +75,7 @@
           EXPERIENCED LEADERS
         </div>
         <nuxt-link to="/about">
-          <ThumbImage :src="'/images/temp.jpg'" ratio="16-9" />
+          <ThumbImage :src="'/images/lead.jpg'" ratio="16-9" />
         </nuxt-link>
       </div>
       <div class="col-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">

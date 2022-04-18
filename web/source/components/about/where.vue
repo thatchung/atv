@@ -293,7 +293,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-md-6 last-img" style="position: relative;">
-        <ThumbImage src="images/slide1.jpg" ratio="16-9" />
+        <ThumbImage src="images/kumi.jpg" ratio="16-9" />
       </div>
       <div class="col-12 col-md-6">
         <div class="hase-name font-pp-bold">
