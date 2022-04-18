@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
@@ -8,6 +8,11 @@ import Breadcrumb from '~/components/breadcrumb.vue'
 import People from '~/components/people.vue'
 import TeamList from '~/components/teamlist.vue'
 
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 Vue.component('VueSlickCarousel', VueSlickCarousel)
 // import VueLazyload from 'vue-lazyload'
 // Vue.use(VueLazyload, {
