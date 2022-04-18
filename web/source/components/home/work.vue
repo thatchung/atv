@@ -9,10 +9,10 @@
         All  <b-icon-arrow-right />
       </div>
     </nuxt-link>
-    <VueSlickCarousel v-bind="settings" class="list-work">
-      <div v-for="index in 10" :key="index" class="work-slider-item">
-        <Item v-if="!isMobile" />
-        <Item2 v-if="isMobile" />
+    <VueSlickCarousel v-if="listWork && listWork.length > 0" v-bind="settings" class="list-work">
+      <div v-for="(item, index) in listWork" :key="index" class="work-slider-item">
+        <Item v-if="!isMobile" :work="item" />
+        <Item2 v-if="isMobile" :work="item" />
       </div>
       <template slot="prevArrow">
         <div class="pre-arrow">
@@ -58,8 +58,8 @@ export default {
       listWork: "work/getListWork"
     }),
   },
-  mounted() {
-    this.loadData()
+  async mounted() {
+    await this.loadData()
     this.isMobile = this.checkMobile()
   },
   methods: {

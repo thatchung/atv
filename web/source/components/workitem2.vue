@@ -6,7 +6,7 @@
       </h2>
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
-      <ThumbImage :src="work.thub" ratio="8-5" />
+      <ThumbImage :src="'http://103.39.93.99:1333' + work.thub.url" ratio="8-5" />
     </nuxt-link>
     <div class="work-panel">
       <div class="work-info">

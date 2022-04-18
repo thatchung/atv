@@ -65,8 +65,8 @@
       </div>
     </div>
     <div v-if="!loading && listWork.length >= 0" class="work-list-data row">
-      <div v-for="index in 15" :key="index" class="work-item col-12 col-md-4">
-        <Item />
+      <div v-for="(item, index) in listWork" :key="index" class="work-item col-12 col-md-4">
+        <Item :work="item" />
       </div>
     </div>
     <!-- <div v-if="!loading && listWork.length === 0" class="work-list-empty" >No Data</div> -->
@@ -103,6 +103,7 @@
 import { mapGetters, mapActions } from "vuex"
 import general from "~/mixins/general"
 import Item from "~/components/workitem.vue"
+
 export default {
   name: 'IndexPage',
   components: {
@@ -127,7 +128,7 @@ export default {
       filters: {},
       meta : {
         page: 1,
-        pageSize: 3,
+        pageSize: 15,
         pageCount: 4,
         totalItem: 33
       },
@@ -148,10 +149,16 @@ export default {
   },
   async mounted() {
     await this.loadData()
+    let res = await this.getCountWork()
+    if (res) {
+      this.meta.totalItem = res
+      this.meta.pageCount = this.meta.totalItem / this.meta.pageSize
+    }
   },
   methods: {
     ...mapActions({
-      getListWork: "work/getListWork"
+      getListWork: "work/getListWork",
+      getCountWork: "work/getCountWork"
     }),
     async loadData(page) {
       this.loading = true

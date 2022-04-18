@@ -9,7 +9,7 @@
         All <b-icon-arrow-right />
       </div>
     </nuxt-link>
-    <VueSlickCarousel v-bind="settings" class="list-inno">
+    <VueSlickCarousel v-if="listData" v-bind="settings" class="list-inno">
       <div v-for="(item,index) in listData" :key="index" class="inno-slider-item">
         <Item v-if="!isMobile" :item="item" />
         <Item2 v-if="isMobile" :item="item" />

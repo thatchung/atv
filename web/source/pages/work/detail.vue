@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       isMobile: false,
-      work:{
+      item_default:{
         title: 'Harley Davidson Da Nang',
         url: '/images/slide4.jpg',
         thub: '/images/slide4.jpg',
@@ -71,7 +71,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      listWork: "work/getListWork"
+      work: "work/getWork"
     }),
   },
   mounted() {
@@ -80,10 +80,13 @@ export default {
   },
   methods: {
     ...mapActions({
-      getListWork: "work/getListWork"
+      getWorkBySlug: "work/getWorkBySlug"
     }),
     async loadData() {
-      await this.getListWork()
+      if (this.$route.params.id) {
+        await this.getWorkBySlug({ url: this.$route.params.id })
+        this.work.content = this.item_default.content
+      }
     },
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
