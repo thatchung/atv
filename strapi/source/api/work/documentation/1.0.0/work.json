@@ -623,9 +623,23 @@
             "type": "string",
             "enum": [
               "office",
+              "office_showroom",
+              "retail",
+              "retail_showroom",
               "mall",
-              "hospital"
+              "hospital",
+              "hotel",
+              "apartment",
+              "residential",
+              "lounge",
+              "complex",
+              "epg",
+              "cinema",
+              "store"
             ]
+          },
+          "address": {
+            "type": "string"
           }
         }
       },
@@ -665,9 +679,23 @@
             "type": "string",
             "enum": [
               "office",
+              "office_showroom",
+              "retail",
+              "retail_showroom",
               "mall",
-              "hospital"
+              "hospital",
+              "hotel",
+              "apartment",
+              "residential",
+              "lounge",
+              "complex",
+              "epg",
+              "cinema",
+              "store"
             ]
+          },
+          "address": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

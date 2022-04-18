@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/18/2022 4:45:50 PM"
+    "x-generation-date": "04/18/2022 11:04:55 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3922,9 +3922,23 @@
             "type": "string",
             "enum": [
               "office",
+              "office_showroom",
+              "retail",
+              "retail_showroom",
               "mall",
-              "hospital"
+              "hospital",
+              "hotel",
+              "apartment",
+              "residential",
+              "lounge",
+              "complex",
+              "epg",
+              "cinema",
+              "store"
             ]
+          },
+          "address": {
+            "type": "string"
           }
         }
       },
@@ -3964,9 +3978,23 @@
             "type": "string",
             "enum": [
               "office",
+              "office_showroom",
+              "retail",
+              "retail_showroom",
               "mall",
-              "hospital"
+              "hospital",
+              "hotel",
+              "apartment",
+              "residential",
+              "lounge",
+              "complex",
+              "epg",
+              "cinema",
+              "store"
             ]
+          },
+          "address": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

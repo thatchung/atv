@@ -93,11 +93,44 @@ export default {
                 case 'office':
                     stringState = 'Office'
                     break
+                case 'office_showroom':
+                    stringState = 'Office / Showroom'
+                    break
                 case 'mall':
                     stringState = 'Shopping Mall'
                     break
                 case 'hospital':
                     stringState = 'Hospitality'
+                    break
+                case 'hotel':
+                    stringState = 'Hotel'
+                    break
+                case 'cinema':
+                    stringState = 'Cinema'
+                    break
+                case 'epg':
+                    stringState = 'Entertainment Play Ground'
+                    break
+                case 'lounge':
+                    stringState = 'Lounge'
+                    break
+                case 'complex':
+                    stringState = 'Complex city'
+                    break
+                case 'retail':
+                    stringState = 'Retail'
+                    break
+                case 'retail_showroom':
+                    stringState = 'Retail / Showroom'
+                    break
+                case 'apartment':
+                    stringState = 'Apartment'
+                    break
+                case 'residential':
+                    stringState = 'Residential'
+                    break
+                case 'store':
+                    stringState = 'Flagship Store'
                     break
                 default:
                     break

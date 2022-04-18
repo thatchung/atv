@@ -31,7 +31,7 @@
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Location: {{ work.location }}
+          Location: {{ work.address ? work.address : work.location }}
         </div>
       </div>
       <div class="work-info">
