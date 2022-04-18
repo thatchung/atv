@@ -181,6 +181,7 @@ export default {
     loadFilter (type) {
       this.typeActive = type
       if (type === 'featured' || type === 'all') {
+        this.filters = { }
         this.loadData()
       } else if (type === 'category') {
         this.filters = {
@@ -273,7 +274,7 @@ export default {
   max-height: 100px;
   height: 50px;
   overflow-y: scroll;
-  width: 130px;
+  width: 150px;
   display: inline-block;
   right: 30px;
   top: 0px;

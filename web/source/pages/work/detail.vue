@@ -26,7 +26,7 @@
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Type of project: {{ work.category }}
+          Type of project: {{ work.category | categoryFilter }}
         </div>
       </div>
       <div class="work-info">
@@ -36,7 +36,7 @@
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Scope of work : Construction
+          Scope of work : {{ work.scope }}
         </div>
       </div>
     </div>
@@ -52,8 +52,11 @@
 <script>
 import { mapGetters, mapActions } from "vuex"
 import { marked } from 'marked'
+import general from "~/mixins/general"
+
 export default {
   name: 'IndexPage',
+  mixins: [general],
   data() {
     return {
       isMobile: false,

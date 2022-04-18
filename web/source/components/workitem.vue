@@ -20,7 +20,7 @@
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Type of project : {{ work.type_category }}
+          Type of project : {{ work.category | categoryFilter }}
         </div>
       </div>
       <div class="work-info">
@@ -36,8 +36,10 @@
 </template>
 
 <script>
+import general from "~/mixins/general"
 export default {
   name: 'WorkItem',
+  mixins: [general],
   props: {
     work: {
       type: Object,
