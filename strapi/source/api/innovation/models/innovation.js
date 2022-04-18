@@ -5,4 +5,29 @@
  * to customize this model
  */
 
-module.exports = {};
+async function clearCacheData(data) {
+    let cache = {};
+    if(strapi.middleware){
+        if(strapi.middleware.cache){
+            cache = strapi.middleware.cache
+        }
+    }
+
+    if (cache && typeof cache.clearCache === "function") {
+        const articleCache = cache.getCacheConfig("innovations");
+        if (articleCache && typeof data.slug === "string") {
+            await cache.clearCache(articleCache, { id: data.slug });
+            return;
+        }
+    }
+}
+module.exports = {
+    lifecycles: {
+        async afterUpdate(result, params, data) {
+            await clearCacheData(result);
+        },
+        async afterCreate(params, data) {
+            await clearCacheData(result);
+        },
+    }
+};
