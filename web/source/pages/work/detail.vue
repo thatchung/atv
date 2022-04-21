@@ -9,10 +9,10 @@
       Back
     </div>
     <div class="work-date-content">
-      {{ work.create_date }}
+      {{ s_work ? s_work.create_date : work.create_date }}
     </div>
     <h1 class="work-title font-pp-bold">
-      {{ work.title }}
+      {{ s_work ? s_work.title : work.title }}
     </h1>
     <div v-if="!isMobile" class="work-info">
       <div class="work-info">
@@ -52,11 +52,27 @@
 <script>
 import { mapGetters, mapActions } from "vuex"
 import { marked } from 'marked'
+import ApiService from '@/service/api.service'
 import general from "~/mixins/general"
 
 export default {
   name: 'IndexPage',
   mixins: [general],
+  async asyncData({ route, req, app, redirect }) {
+    let res = await ApiService.request({
+      method: 'get',
+      url: `works?url=${route.params.id}`
+    })
+    let item = {}
+    if (res && res.length > 0) {
+      item = res[0]
+      item.titleShare = res[0].title
+      item.description = res[0].content
+      item.image = res[0].thub ? res[0].thub.url : ''
+      item.current_url = res[0].url
+    }
+    return { s_work: item }
+  },
   data() {
     return {
       isMobile: false,
@@ -74,14 +90,123 @@ export default {
       html_content: ''
     }
   },
+  head() {
+    let headJson = {
+      title:
+        this.s_work !== undefined
+          ? this.s_work.name
+          : "ATV - Công ty Cổ Phần Quản Lý Xây Dựng ATV",
+      meta: [
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.s_work !== undefined ? this.s_work.titleShare : ""
+        },
+        {
+          hid: "description",
+          property: "description",
+          content: this.s_work !== undefined ? this.s_work.description : ""
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.s_work !== undefined ? this.s_work.description : ""
+        },
+        {
+          hid: "robots",
+          property: "robots",
+          content:
+            this.s_work !== undefined && this.s_work.meta_robots
+              ? this.s_work.meta_robots
+              : "INDEX,FOLLOW"
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content:
+            this.s_work !== undefined && this.s_work.image !== ""
+              ? this.s_work.image
+              : ""
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: this.s_work !== undefined ? this.s_work.current_url : ""
+        },
+        {
+          hid: "keywords",
+          property: "keywords",
+          content: this.s_work !== undefined ? this.s_work.keywords : ""
+        }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: this.s_work.current_url
+        }
+      ]
+    }
+    return headJson
+  },
   computed: {
     ...mapGetters({
       work: "work/getWork"
     }),
   },
+  // jsonld() {
+  //   return {
+  //     "@context": "https://schema.org/",
+  //     "@type": "Review",
+  //     itemReviewed: {
+  //       "@type": "Restaurant",
+  //       image: this.review !== undefined ? this.review.image : "",
+  //       name: this.review !== undefined ? this.review.place_name : "",
+  //       priceRange:
+  //         this.review && this.review.avg_cost
+  //           ? `${this.review.avg_cost} đồng/người`
+  //           : "",
+  //       address: {
+  //         "@type": "PostalAddress",
+  //         streetAddress:
+  //           this.review !== undefined ? this.review.place_full_address : "",
+  //         addressCountry: {
+  //           "@type": "Country",
+  //           name: "Việt Nam"
+  //         }
+  //       }
+  //     },
+  //     reviewRating: {
+  //       "@type": "Rating",
+  //       bestRating: "5",
+  //       worstRating: "1",
+  //       ratingValue: this.data ?
+  //           ( (this.data.overview_rating / 2) <= 1 ? 1
+  //             : (this.data.overview_rating / 2) > 5 ? 5 : (this.data.overview_rating / 2) )
+  //           : 1,
+  //       reviewCount: this.review ? this.review.view_count : 0
+  //     },
+  //     name:
+  //       this.review !== undefined
+  //         ? this.review.titleShare
+  //         : "Riviu - Ẩm Thực & Đời Sống",
+  //     author: {
+  //       "@type": "Person",
+  //       name:
+  //         this.review !== undefined ? this.review.author_name : "Thánh Riviu"
+  //     },
+  //     reviewBody:
+  //       this.review !== undefined
+  //         ? this.review.body
+  //         : "Riviu - Ẩm Thực & Đời Sống",
+  //     publisher: {
+  //       "@type": "Organization",
+  //       name: "Riviu - Ẩm Thực & Đời Sống"
+  //     }
+  //   };
+  // },
   mounted() {
-    this.loadData()
     this.checkMobile()
+    this.loadData()
   },
   methods: {
     ...mapActions({

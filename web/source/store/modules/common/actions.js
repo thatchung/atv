@@ -1,38 +1,29 @@
 import ApiService from '@/service/api.service'
 export default {
 
-    getbyUrlOrigin: async function ({
-        commit
-    }, data) {
+    getbyUrlOrigin: async ({ commit }, data) => {
         let res = await ApiService.request({
-            lixi_review: true,
             method: 'get',
             service: 'origin',
             url: data.url,
             data: data.params ? data.params : {}
-        });
-        return res;
+        })
+        return res
     },
 
-    getbyUrl: async function ({
-        commit
-    }, data) {
+    getbyUrl: async ({ commit }, data) =>  {
         let res = await ApiService.request({
-            lixi_review: true,
             method: 'get',
             service: data.service ? data.service : 'review',
             header: data.header ? data.header : {},
             url: data.url,
             data: data.params ? data.params : {}
-        });
-        return res;
+        })
+        return res
     },
 
-    postbyUrl: async function ({
-        commit
-    }, data) {
+    postbyUrl: async ({ commit }, data) => {
         let res = await ApiService.request({
-            lixi_review: true,
             method: 'post',
             timeout: 300000,
             url: data.url,
@@ -42,31 +33,25 @@ export default {
             imageFile: data.imageFile ? data.imageFile : null,
             videoFile: data.videoFile ? data.videoFile : null,
             coverFile: data.coverFile ? data.coverFile : null
-        });
-        return res;
+        })
+        return res
     },
 
-    putbyUrl: async function ({
-        commit
-    }, data) {
+    putbyUrl: async ({ commit }, data) => {
         let res = await ApiService.request({
-            lixi_review: true,
             method: 'put',
             url: data.url,
             data: data.params
-        });
-        return res;
+        })
+        return res
     },
 
-    deletebyUrl: async function ({
-        commit
-    }, data) {
+    deletebyUrl: async ({ commit }, data) => {
         let res = await ApiService.request({
-            lixi_review: true,
             method: 'delete',
             url: data.url
-        });
-        return res;
+        })
+        return res
     }
 
 }

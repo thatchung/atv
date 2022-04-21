@@ -9,8 +9,8 @@
         All <b-icon-arrow-right />
       </div>
     </nuxt-link>
-    <VueSlickCarousel v-if="listData" v-bind="settings" class="list-inno">
-      <div v-for="(item,index) in listData" :key="index" class="inno-slider-item">
+    <VueSlickCarousel v-if="listInnovation" v-bind="settings" class="list-inno">
+      <div v-for="(item,index) in listInnovation" :key="index" class="inno-slider-item">
         <Item v-if="!isMobile" :item="item" />
         <Item2 v-if="isMobile" :item="item" />
       </div>
