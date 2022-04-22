@@ -1,9 +1,12 @@
 const path = require('path');
-
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
-import messages from './lang/index.js';
+// import messages from './lang/index.js';
+const messages = __importDefault(require("./lang/index.js"));
 console.log(messages)
 module.exports = {
   debug: true,
@@ -67,7 +70,7 @@ module.exports = {
     defaultLocale: 'en',
     vueI18n: {
       fallbackLocale: 'en',
-      messages: messages
+      messages: messages.default
       // detectBrowserLanguage: {
       //   useCookie: true,
       //   cookieKey: 'i18n_redirected',
