@@ -1,4 +1,4 @@
-export default {
+module.exports =  {
   Home: 'Home',
   Back: 'Back',
   Work: 'Work',

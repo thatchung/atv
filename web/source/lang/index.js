@@ -7,4 +7,4 @@ const messages = {
   en: en.default,
   vn: en.default
 }
-export default messages
+module.exports = messages
