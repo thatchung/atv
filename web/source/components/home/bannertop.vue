@@ -86,7 +86,7 @@ export default {
 .slide-sub{
   position: absolute;
   bottom: 90px;
-  left: 50%;
+  left: calc(50% - 90px);
   transform: translate(-50%);
   -webkit-perspective: 600px;
 }
