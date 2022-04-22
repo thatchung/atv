@@ -4,23 +4,23 @@
       <template #name>
         <li class="breadcrumb-item">
           <nuxt-link to="/">
-            Home
+            {{ $t('Home') }}
           </nuxt-link>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           <h1 class="breadcrumb-h1">
-            Innovation
+            {{ $t('Innovation') }}
           </h1>
         </li>
       </template>
     </Breadcrumb>
     <h2 class="inno-section-title">
-      Innovation
+      {{ $t('Innovation') }}
     </h2>
     <div class="line-all" />
     <div class="inno-filter-list">
       <div class="inno-filter-item">
-        Latest by 2021
+        {{ $t('Latestby2021') }}
         <b-icon-arrow-down v-if="sort" @click="loadSort" />
         <b-icon-arrow-up v-if="!sort" @click="loadSort" />
       </div>
@@ -126,11 +126,9 @@ export default {
 }
 </script>
 <style lang="scss">
-.container{
-  padding-bottom: 4rem;
-}
 .inno-section-title{
   font-size: 4rem;
+  margin-top: 1rem;
 }
 .inno-filter-list{
   width: 100%;
@@ -143,7 +141,8 @@ export default {
   display: inline-block;
   float: left;
   cursor: pointer;
-  sgv{
+  svg{
+    font-size: 1.4rem;
     margin-left: 1rem;
   }
 }
@@ -151,7 +150,9 @@ export default {
   border: 1px solid #7E8083;
 }
 .inno-list-data{
-  margin: 3rem -15px;
+  margin-top: 3rem;
+  margin-left: -15px;
+  margin-right: -15px;
   width: calc(100% + 30px);
 }
 .inno-list-empty{
@@ -182,8 +183,8 @@ export default {
 }
 .pagination .active{
   border: 1px solid;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 .page-item{
   padding: 0rem 0.5rem;
@@ -191,5 +192,21 @@ export default {
 .btn-left img{
   width: 45px;
   height: 30px;
+}
+@media (min-width: 1700px) {
+  .paging-content{
+    margin-right: 135px;
+  }
+  .btn-left img{
+    width: 60px;
+    height: 40px;
+  }
+  .pagination li:first-child {
+    right: 73px;
+  }
+  .pagination {
+    height: 40px;
+    line-height: 40px;
+  }
 }
 </style>

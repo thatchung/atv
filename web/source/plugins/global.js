@@ -10,6 +10,7 @@ import TeamList from '~/components/teamlist.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import '~/static/css/responsive.css'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

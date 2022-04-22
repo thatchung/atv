@@ -4,18 +4,18 @@
       <template #name>
         <li class="breadcrumb-item">
           <nuxt-link to="/">
-            Home
+            {{ $t('Home') }}
           </nuxt-link>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           <h1 class="breadcrumb-h1">
-            Work
+            {{ $t('Work') }}
           </h1>
         </li>
       </template>
     </Breadcrumb>
     <h2 class="work-section-title">
-      Work
+      {{ $t('Work') }}
     </h2>
     <div class="line-all" />
     <div class="work-filter-list">
@@ -234,18 +234,19 @@ export default {
 }
 </script>
 <style lang="scss">
-.container{
-  padding-bottom: 4rem;
-}
 .work-section-title{
   font-size: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
 }
 .work-filter-list{
   width: 100%;
   height: 2rem;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  margin-bottom: 0rem;
   position: relative;
+}
+.work-filter-list svg{
+  font-size: 1.4rem;
 }
 .work-filter-item{
   display: inline-block;
@@ -274,9 +275,9 @@ export default {
   max-height: 100px;
   height: 50px;
   overflow-y: scroll;
-  width: 150px;
+  width: 180px;
   display: inline-block;
-  right: 30px;
+  right: 2rem;
   top: 0px;
   position: absolute;
   &::-webkit-scrollbar{
@@ -294,14 +295,16 @@ export default {
 }
 .filter-item{
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   &:hover{
     background-color: #7E8083;
     color: #fff;
   }
 }
 .work-list-data{
-  margin: 2rem -15px;
+  margin-top: 2rem;
+  margin-left: -15px;
+  margin-right: -15px;
   width: calc(100% + 30px);
 }
 .work-list-empty{
@@ -332,8 +335,8 @@ export default {
 }
 .pagination .active{
   border: 1px solid;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 .page-item{
   padding: 0rem 0.5rem;
@@ -341,6 +344,26 @@ export default {
 .btn-left img{
   width: 45px;
   height: 30px;
+}
+@media (min-width: 1700px) {
+  .filter-list{
+    height: 70px;
+    width: 250px;
+  }
+  .paging-content{
+    margin-right: 135px;
+  }
+  .btn-left img{
+    width: 60px;
+    height: 40px;
+  }
+  .pagination li:first-child {
+    right: 73px;
+  }
+  .pagination .active{
+    height: 40px;
+    line-height: 40px;
+  }
 }
 @media (max-width: 575px) {
   .filter-item-active{

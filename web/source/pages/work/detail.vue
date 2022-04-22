@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <h2 class="section-title">
-      Work
+      {{ $t('Work') }}
     </h2>
     <div class="line-all" />
     <div class="work-back-content" @click="$router.back()">
-      <b-icon-arrow-left />
-      Back
+      <!-- <b-icon-arrow-left /> -->
+      <img class="img-arrow-left" src="/images/a_left.png"></img>
+      {{ $t('Back') }}
     </div>
     <div class="work-date-content">
       {{ s_work ? s_work.create_date : work.create_date }}
@@ -17,33 +18,34 @@
     <div v-if="!isMobile" class="work-info">
       <div class="work-info">
         <div class="detail-text">
-          Year: {{ work.year }}
+          {{ $t('Year') }}: {{ work.year }}
         </div>
         /
         <div class="detail-text">
-          Year: {{ work.area }}m2
+          {{ $t('Area') }}: {{ work.area }}m2
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Type of project: {{ work.category | categoryFilter }}
+          {{ $t('Typeofproject') }}: {{ work.category | categoryFilter }}
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Location: {{ work.address ? work.address : work.location }}
+          {{ $t('Location') }}: {{ work.address ? work.address : work.location }}
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Scope of work : {{ work.scope }}
+          {{ $t('Scopeofwork') }}: {{ work.scope }}
         </div>
       </div>
     </div>
     <div class="work-content">
       <div class="work-content-text white-space-word" v-html="html_content" />
-      <div class="back-top" @click="toTopAction">
-        <b-icon-arrow-up />
+      <div class="work-back-top" @click="toTopAction">
+        <!-- <b-icon-arrow-up /> -->
+        <img class="img-arrow-up" src="/images/a_up.png"></img>
       </div>
     </div>
   </div>
@@ -244,6 +246,9 @@ export default {
   margin-top: 0rem;
   cursor: pointer;
 }
+.work-back-content svg{
+  font-size: 1.4rem;
+}
 .work-content-text{
   font-family: 'pp-reg';
   font-size: 1.2rem;
@@ -259,15 +264,15 @@ export default {
 }
 .work-content{
   position: relative;
-  padding-bottom: 4rem;
   margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 .work-content img{
   width: 100% !important;
 }
-.back-top{
+.work-back-top{
   position: absolute;
-  bottom: 1rem;
+  bottom: -3rem;
   right: 0rem;
   cursor: pointer;
 }

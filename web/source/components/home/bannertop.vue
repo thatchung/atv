@@ -32,9 +32,7 @@ export default {
         '/images/banner2.jpg',
         '/images/banner3.jpg',
         '/images/banner4.jpg',
-        '/images/banner5.jpg',
-        '/images/banner6.jpg',
-        '/images/banner7.jpg'],
+        '/images/banner5.jpg'],
       style: ['', '', '', '', '', ''],
       slide1: undefined,
       focusOnSelect: true,
@@ -52,14 +50,14 @@ export default {
     },
     render(idx) {
       let t_slider = []
-      let deg = 40
+      let deg = 50
       let len = this.images.length
       for (let i = 0;i < len; i++) {
         if (i < idx) {
           t_slider[i] = `transform: translateX(-${70 * (idx - i)}%) rotateY(${deg + (len * 5 - i)}deg); z-index: ${5 + i};`
         }
         if (i === idx) {
-          t_slider[i] = 'transform: rotateY( 0deg ) translateZ( 100px ); z-index: 10;opacity: 1;'
+          t_slider[i] = 'transform: rotateY( 0deg ) translateZ( 30px ); z-index: 10;opacity: 1;'
         }
         if (i > idx) {
           t_slider[i] = `transform: translateX(${70 * (i - idx)}% ) rotateY(-${deg + (len * 2 - i)}deg); z-index: ${5 - i};`
@@ -180,5 +178,10 @@ export default {
 
 #controls a:hover  {
     color: 66FFFF;
+}
+@media (max-width: 575px) {
+  .slide-sub{
+    bottom: 30px;
+  }
 }
 </style>

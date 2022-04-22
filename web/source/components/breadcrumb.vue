@@ -15,12 +15,12 @@ ol {
 }
 .breadcrumb {
   background-color: transparent;
-  padding: 1rem 0rem 1rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
   white-space: nowrap;
   margin-top: 1rem;
 }
 .breadcrumb-item {
-  line-height: 20px;
+  line-height: 1;
   a {
     font-weight: 600;
     font-size: 1rem;
@@ -30,5 +30,10 @@ ol {
     font-size: 1rem;
     color: #231F20;
   }
+}
+.breadcrumb-h1 {
+  font-size: 1rem;
+  margin-bottom: 0rem;
+  line-height: 1;
 }
 </style>

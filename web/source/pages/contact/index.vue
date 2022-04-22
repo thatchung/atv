@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <h2 class="section-title">
-        Contact
+        {{ $t('Contact') }}
       </h2>
       <div class="line-all" />
       <div v-if="!isMobile" class="row contact-info">
@@ -12,10 +12,10 @@
               Ho Chi Minh
             </div>
             <div class="address">
-              Level 9, Doxaco Building, 307B Nguyen Van Troi st., W1, Tan Binh Dict., HCMC
+              Level 9, Doxaco Building,</br> 307B Nguyen Van Troi st., W1,</br> Tan Binh Dict., HCMC
             </div>
             <div class="type">
-              Head Office
+              {{ $t('HeadOffice') }}
             </div>
           </div>
         </div>
@@ -25,10 +25,10 @@
               Ha Noi
             </div>
             <div class="address">
-              Level 5, Sentinel Place, 41A Ly Thai To st., Hoan Kiem dist., Ha Noi
+              Level 5, Sentinel Place,</br> 41A Ly Thai To st.,</br> Hoan Kiem dist., Ha Noi
             </div>
             <div class="type">
-              Branch
+              {{ $t('Branch') }}
             </div>
           </div>
         </div>
@@ -38,10 +38,10 @@
               Da Nang
             </div>
             <div class="address">
-              267 Tran Phu, Q. Hai Chau,Da Nang City
+              267 Tran Phu, Q. Hai Chau,</br>Da Nang City
             </div>
             <div class="type">
-              Branch
+              {{ $t('Branch') }}
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
               Level 9, Doxaco Building, 307B Nguyen Van Troi st., W1, Tan Binh Dict., HCMC
             </div>
             <div class="type">
-              Head Office
+              {{ $t('HeadOffice') }}
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@
               Level 5, Sentinel Place, 41A Ly Thai To st., Hoan Kiem dist., Ha Noi
             </div>
             <div class="type">
-              Branch
+              {{ $t('Branch') }}
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@
               267 Tran Phu, Q. Hai Chau,Da Nang City
             </div>
             <div class="type">
-              Branch
+              {{ $t('Branch') }}
             </div>
           </div>
         </div>
@@ -100,11 +100,11 @@
         <h2 class="mail-title">
           Mail Us
         </h2>
-        <div v-if="!isMobile" class="row">
+        <div v-if="!isMobile" class="row" style="padding-bottom: 3rem;">
           <div class="col-6 col-md-6">
             <div class="line-all-d" />
             <div>
-              Please select type of enquiry
+              {{ $t('Pleaseselecttypeofenquiry') }}
             </div>
             <div class="line-all-d" />
             <input class="c-input" type="text" name="" placeholder="Subject*"></input>
@@ -131,19 +131,19 @@
           </div>
           <div class="col-12 col-md-12">
             <div>
-              Your Message
+              {{ $t('YourMessage') }}
             </div>
             <textarea id="txtid" name="txtname" rows="5" cols="50" maxlength="200" />
           </div>
           <div class="btn-send">
-            Send
+            {{ $t('Send') }}
           </div>
         </div>
-        <div v-if="isMobile" class="row">
+        <div v-if="isMobile" class="row" style="padding-bottom: 3rem;">
           <div class="col-12">
             <div class="line-all-d" />
             <div>
-              Please select type of enquiry
+              {{ $t('Pleaseselecttypeofenquiry') }}
             </div>
             <div class="line-all-d" />
             <input class="c-input" type="text" name="" placeholder="Subject*"></input>
@@ -175,12 +175,12 @@
           </div>
           <div class="col-12 col-md-12">
             <div>
-              Your Message
+              {{ $t('YourMessage') }}
             </div>
             <textarea id="txtid" name="txtname" rows="5" cols="50" maxlength="200" />
           </div>
           <div class="btn-send">
-            Send
+            {{ $t('Send') }}
           </div>
         </div>
       </div>
@@ -216,9 +216,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.container{
-  padding-bottom: 4rem;
-}
 .section-title{
   font-size: 5rem;
   margin-top: 2rem;
@@ -242,6 +239,7 @@ export default {
 .phone{
   font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 3rem;
 }
 .phone a{
   color: #9D9FA2;

@@ -14,7 +14,8 @@
     <div class="item-content">
       {{ get_excerpt(item.description, 150) }}
       <nuxt-link :to="'/innovation/' + item.url">
-        <b-icon-arrow-right />
+        <!-- <b-icon-arrow-right /> -->
+        <img class="img-arrow-right" src="/images/a_right.png"></img>
       </nuxt-link>
     </div>
   </div>

@@ -28,7 +28,7 @@ a:hover {
     font-family: 'pp-reg';
 }
 .line-all{
-    border-top: 2px solid #7E8083;
+    border-top: 1.5px solid #7E8083;
     margin: 1rem 0px;
 }
 .breadcrumb-h1{
@@ -113,6 +113,22 @@ a:hover {
 .lds-roller div:nth-child(8):after {
   top: 56px;
   left: 12px;
+}
+.img-arrow-left{
+  width: 25px;
+  margin-top: -5px;
+  margin-right: 0.5rem;
+}
+.img-arrow-right{
+  width: 25px;
+  margin-top: -5px;
+  margin-left: 0.5rem;
+}
+.img-arrow-up{
+  height: 25px;
+}
+.img-arrow-down{
+  height: 25px;
 }
 @keyframes lds-roller {
   0% {

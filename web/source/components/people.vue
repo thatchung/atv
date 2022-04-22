@@ -5,11 +5,15 @@
       {{ item.name }} - {{ item.role }}
     </h3>
     <div class="item-content">
-      <!-- {{ description }} -->
-      <div class="content" v-html="description" />
+      <div v-if="!show" >
+        {{ description }}
+        <!-- <b-icon-arrow-down @click="showMore" /> -->
+        <img class="img-arrow-down down-people" src="/images/a_down.png" @click="showMore"></img>
+      </div>
+      <div v-if="show" class="content" v-html="description" />
+      <!-- <b-icon-arrow-up v-if="show" @click="showLess" /> -->
+      <img v-if="show" class="img-arrow-up up-people" src="/images/a_up.png" @click="showLess"></img>
     </div>
-    <b-icon-arrow-down v-if="!show" @click="showMore" />
-    <b-icon-arrow-up v-if="show" @click="showLess" />
   </div>
 </template>
 
@@ -69,6 +73,15 @@ export default {
 }
 .item-content svg{
   margin-left: 0.5rem;
+}
+.down-people{
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+.up-people{
+  margin-top: 0.5rem;
+  float: right;
+  cursor: pointer;
 }
 @media (max-width: 575px) {
   .item svg{

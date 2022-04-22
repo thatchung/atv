@@ -2,7 +2,7 @@
   <div>
     <div id="scrollTop"></div>
     <Header />
-    <div id="main" style="min-height: calc(100vh - 366px);padding-top: 70px;">
+    <div id="main" style="min-height: calc(100vh - 155px);padding-top: 70px;">
       <nuxt />
     </div>
     <Footer ref="footer"/>

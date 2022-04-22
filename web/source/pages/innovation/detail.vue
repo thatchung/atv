@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <h2 class="section-title">
-      Innovation
+      {{ $t('Innovation') }}
     </h2>
     <div class="line-all" />
     <div class="back-content" @click="$router.back()">
-      <b-icon-arrow-left />
-      Back
+      <!-- <b-icon-arrow-left /> -->
+      <img class="img-arrow-left" src="/images/a_left.png"></img>
+      {{ $t('Back') }}
     </div>
     <div class="date-content">
       {{ item.date }}
@@ -16,8 +17,9 @@
     </h1>
     <div class="inno-content">
       <div class="inno-content-text white-space-word" v-html="html_content" />
-      <div class="back-top" @click="toTopAction">
-        <b-icon-arrow-up />
+      <div class="inno-back-top" @click="toTopAction">
+        <!-- <b-icon-arrow-up /> -->
+        <img class="img-arrow-up" src="/images/a_up.png"></img>
       </div>
     </div>
   </div>
@@ -75,6 +77,9 @@ export default {
   margin-top: 0rem;
   cursor: pointer;
 }
+.back-content svg{
+  font-size: 1.4rem;
+}
 .date-content{
   display: inline-block;
   float: right;
@@ -86,13 +91,13 @@ export default {
 }
 .inno-content{
   position: relative;
-  padding-bottom: 4rem;
   margin-top: 2rem;
+  padding-bottom: 4rem;
 }
 .inno-content img{
   width: 100% !important;
 }
-.back-top{
+.inno-back-top{
   position: absolute;
   bottom: 1rem;
   right: 0rem;

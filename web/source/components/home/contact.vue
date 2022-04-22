@@ -11,7 +11,7 @@
             Ho Chi Minh
           </div>
           <div class="address">
-            Level 9, Doxaco Building, 307B Nguyen Van Troi st., W1, Tan Binh Dict., HCMC
+            Level 9, Doxaco Building,</br> 307B Nguyen Van Troi st., W1,</br> Tan Binh Dict., HCMC
           </div>
           <div class="type">
             Head Office
@@ -24,7 +24,7 @@
             Ha Noi
           </div>
           <div class="address">
-            Level 5, Sentinel Place, 41A Ly Thai To st., Hoan Kiem dist., Ha Noi
+            Level 5, Sentinel Place,</br> 41A Ly Thai To st., </br>Hoan Kiem dist., Ha Noi
           </div>
           <div class="type">
             Branch
@@ -37,7 +37,7 @@
             Da Nang
           </div>
           <div class="address">
-            267 Tran Phu, Q. Hai Chau,Da Nang City
+            267 Tran Phu, Q. Hai Chau,</br>Da Nang City
           </div>
           <div class="type">
             Branch
@@ -80,7 +80,7 @@
             Da Nang
           </div>
           <div class="address">
-            267 Tran Phu, Q. Hai Chau,Da Nang City
+            267 Tran Phu, Q. Hai Chau, Da Nang City
           </div>
           <div class="type">
             Branch
@@ -94,7 +94,8 @@
       <div><a href="tel:0123456789">+84 908 734 134</a></div>
     </div>
     <div class="back-top" @click="toTopAction">
-      <b-icon-arrow-up />
+      <!-- <b-icon-arrow-up /> -->
+      <img class="img-arrow-up" src="/images/a_up.png"></img>
     </div>
   </div>
 </template>
@@ -129,7 +130,6 @@ export default {
 <style lang="scss">
 .section-contact{
   margin-top: 4rem;
-  padding-bottom: 4rem;
 }
 .line-all-contact{
   margin-bottom: 3rem;
@@ -151,6 +151,7 @@ export default {
 }
 .type{
   font-weight: 600;
+  margin-top: 3rem;
 }
 .phone{
   font-size: 1.5rem;
@@ -174,6 +175,9 @@ export default {
     margin-top: 0rem;
     padding-bottom: 4rem;
   }
+  .section-contact .type{
+    margin-top: 0rem;
+  }
   .line-all-contact{
     margin-bottom: 1rem;
   }
@@ -184,6 +188,10 @@ export default {
   .phone div{
     display: block;
     font-size: 2rem;
+    margin-left: 0rem;
+  }
+  .back-top{
+    right: 1rem;
   }
 }
 </style>

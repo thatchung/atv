@@ -4,50 +4,50 @@
       <div class="row">
         <div class="col-12 col-md-6">
           <h2 class="convention-title font-pp-bold">
-            CONVENTIONAL METHOD
+            {{ $t('CONVENTIONALMETHOD') }}
           </h2>
           <div class="about-con-line-all" />
           <div class="convention-name">
-            OWNER (PROJECT BURDEN)
+            {{ $t('OWNERPROJECTBURDEN') }}
           </div>
           <div v-if="!isMobile" class="row">
             <div class="col-2 col-md-2" />
             <div class="col-10 col-md-10">
               <div class="about-con-line-all" />
               <div class="convention-text">
-                ARCHITECT
+                {{ $t('ARCHITECT') }}
               </div>
               <div class="about-con-line-all" />
               <div class="convention-text">
-                MAIN CONTRACTOR
+                {{ $t('MAINCONTRACTOR') }}
               </div>
               <div class="about-con-line-all" style="margin: 1rem 0rem 1rem 0rem;" />
               <div class="row sub">
                 <div class="col-5 col-md-5">
-                  Subs & Suppliers 1
+                  {{ $t('SubsSuppliers') }} 1
                 </div>
                 <div class="col-2 col-md-2">
                   /
                 </div>
                 <div class="col-5 col-md-5">
-                  Subs & Suppliers 2
+                  {{ $t('SubsSuppliers') }} 2
                 </div>
               </div>
               <div class="about-con-line-all-d" />
               <div class="row sub">
                 <div class="col-5 col-md-5">
-                  Subs & Suppliers 3
+                  {{ $t('SubsSuppliers') }} 3
                 </div>
                 <div class="col-2 col-md-2">
                   /
                 </div>
                 <div class="col-5 col-md-5">
-                  Subs & Suppliers 4
+                  {{ $t('SubsSuppliers') }} 4
                 </div>
               </div>
               <div class="about-con-line-all" style="margin: 1rem 0rem 1rem 0rem;" />
               <div class="convention-text">
-                PROJECT MANAGER
+                {{ $t('PROJECTMANAGER') }}
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@
               <div class="col-2 col-md-2" />
               <div class="col-10 col-md-10">
                 <div class="convention-text">
-                  ARCHITECT
+                  {{ $t('ARCHITECT') }}
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
               <div class="col-2 col-md-2" />
               <div class="col-10 col-md-10">
                 <div class="convention-text">
-                  MAIN CONTRACTOR
+                  {{ $t('MAINCONTRACTOR') }}
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@
               <div class="col-4 col-md-2" />
               <div class="col-6 col-md-10">
                 <div class="convention-text">
-                  Subs & Suppliers 1
+                  {{ $t('SubsSuppliers') }} 1
                 </div>
               </div>
             </div>
@@ -84,7 +84,7 @@
               <div class="col-4 col-md-2" />
               <div class="col-6 col-md-10">
                 <div class="convention-text">
-                  Subs & Suppliers 2
+                  {{ $t('SubsSuppliers') }} 2
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@
               <div class="col-4 col-md-2" />
               <div class="col-6 col-md-10">
                 <div class="convention-text">
-                  Subs & Suppliers 3
+                  {{ $t('SubsSuppliers') }} 3
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
               <div class="col-4 col-md-2" />
               <div class="col-6 col-md-10">
                 <div class="convention-text">
-                  Subs & Suppliers 4
+                  {{ $t('SubsSuppliers') }} 4
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@
               <div class="col-2 col-md-2" />
               <div class="col-10 col-md-10">
                 <div class="convention-text">
-                  PROJECT MANAGER
+                  {{ $t('PROJECTMANAGER') }}
                 </div>
               </div>
             </div>
@@ -120,26 +120,26 @@
         </div>
         <div class="col-12 col-md-6">
           <h2 class="convention-title font-pp-bold">
-            DESIGN - BUILD METHOD
+            {{ $t('DESIGNBUILDMETHOD') }}
           </h2>
           <div class="about-con-line-all" />
           <div class="convention-name">
-            OWNER (PROJECT BURDEN)
+            {{ $t('OWNERPROJECTBURDEN') }}
           </div>
           <div v-if="!isMobile" class="row">
             <div class="col-2 col-md-2" />
             <div class="col-10 col-md-10">
               <div class="about-con-line-all" />
               <div class="convention-text">
-                AVT PROJECT MANAGER
+                {{ $t('AVTPROJECTMANAGER') }}
               </div>
               <div class="about-con-line-all" />
               <div class="convention-text">
-                AVT DESIGNER
+                {{ $t('AVTDESIGNER') }}
               </div>
               <div class="about-con-line-all" />
               <div class="convention-text">
-                SUBS & SUPPLIERS
+                {{ $t('SUBSSUPPLIERS') }}
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@
               <div class="col-2 col-md-2" />
               <div class="col-10 col-md-10">
                 <div class="convention-text">
-                  AVT PROJECT MANAGER
+                  {{ $t('AVTPROJECTMANAGER') }}
                 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@
               <div class="col-2 col-md-2" />
               <div class="col-10 col-md-10">
                 <div class="convention-text">
-                  AVT DESIGNER
+                  {{ $t('AVTDESIGNER') }}
                 </div>
               </div>
             </div>
@@ -167,7 +167,7 @@
               <div class="col-2 col-md-2" />
               <div class="col-10 col-md-10">
                 <div class="convention-text">
-                  SUBS & SUPPLIERS
+                  {{ $t('SUBSSUPPLIERS') }}
                 </div>
               </div>
             </div>
@@ -214,18 +214,15 @@ export default {
 }
 </script>
 <style lang="scss">
-.container{
-  padding-bottom: 4rem;
-}
 .about-con-line-all{
   width: 100%;
   margin: 1rem 0rem;
-  border-top: 2px solid #000;
+  border-top: 1.5px solid #000;
 }
 .about-con-line-all-d{
   width: 100%;
   margin: 0.5rem 0rem;
-  border-top: 2px solid #000;
+  border-top: 1.5px solid #000;
 }
 .convention{
   width: 100%;

@@ -11,24 +11,25 @@
     <div class="work-panel">
       <div class="work-info">
         <div class="detail-text">
-          Year : {{ work.year }}
+          {{ $t('Year') }} : {{ work.year }}
         </div>
         /
         <div class="detail-text">
-          Area : {{ work.area }}m2
+          {{ $t('Area') }} : {{ work.area }}m2
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Type of project : {{ work.category | categoryFilter }}
+          {{ $t('Typeofproject') }} : {{ work.category | categoryFilter }}
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          Location : {{ work.location }}
+          {{ $t('Location') }} : {{ work.location }}
         </div>
         <nuxt-link :to="'/work/' + work.url">
-          <b-icon-arrow-right style="margin-left: 1rem;" />
+          <!-- <b-icon-arrow-right style="margin-left: 1rem;" /> -->
+          <img class="img-arrow-right" src="/images/a_right.png"></img>
         </nuxt-link>
       </div>
     </div>
@@ -69,7 +70,7 @@ export default {
 }
 .detail-text{
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .work-panel{
   margin-top: 1rem;

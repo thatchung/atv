@@ -1,3 +1,29 @@
+@media (min-width: 1700px) {
+  html{
+    font-size: 22px;
+  }
+  .container{
+    max-width: 1600px;
+  }
+  .menu-title{
+    font-size: 3rem;
+  }
+  .menu-sub{
+    font-size: 1.5rem;
+  }
+  .img-arrow-left{
+    width: 35px;
+  }
+  .img-arrow-right{
+    width: 35px;
+  }
+  .img-arrow-up{
+    height: 30px;
+  }
+  .img-arrow-down{
+    height: 30px;
+  }
+}
 @media (min-width: 1200px) {
   .list-work .slick-arrow{
       margin-top: -80px !important;
@@ -6,10 +32,10 @@
       margin-top: -65px !important;
   }
   .menu-title{
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .menu-sub{
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 992px) {
@@ -20,7 +46,7 @@
       margin-top: -65px !important;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
   html {
     font-size: 14px;
   }
@@ -45,11 +71,21 @@
 }
 @media (max-width: 575px) {
   html {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .container{
+    padding-left: 20px;
+    padding-right: 20px;
   }
   #main{
     padding-bottom: 0rem !important;
     min-height: calc(100vh - 70px) !important;
+  }
+  .img-arrow-left{
+    margin-top: 0px;
+  }
+  .img-arrow-right{
+    margin-top: 0px;
   }
   .menu-title{
     font-size: 2rem;
@@ -181,7 +217,7 @@
   }
   .back-top{
     bottom: -2rem;
-    right: 2rem;
+    right: 0px;
   }
   .footer-content{
     text-align: left;

@@ -6,10 +6,11 @@
     <div class="line-all" />
     <nuxt-link to="/innovation">
       <div class="link-page">
-        All <b-icon-arrow-right />
+        All <!-- <b-icon-arrow-right /> -->
+        <img class="img-arrow-right" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>
-    <VueSlickCarousel v-if="listInnovation" v-bind="settings" class="list-inno">
+    <VueSlickCarousel v-if="listInnovation && listInnovation.length > 0" v-bind="settings" class="list-inno">
       <div v-for="(item,index) in listInnovation" :key="index" class="inno-slider-item">
         <Item v-if="!isMobile" :item="item" />
         <Item2 v-if="isMobile" :item="item" />
@@ -90,7 +91,7 @@ export default {
 </script>
 <style lang="scss">
 .section-inno{
-  margin-top: 4rem;
+  margin-top: 8rem;
 }
 .list-inno{
   width: calc(100% + 1rem);

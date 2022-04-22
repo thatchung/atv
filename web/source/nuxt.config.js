@@ -3,6 +3,8 @@ const path = require('path');
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
+import messages from './lang/index.js';
+console.log(messages)
 module.exports = {
   debug: true,
   telemetry: false,
@@ -53,13 +55,27 @@ module.exports = {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
+    '@nuxtjs/i18n',
     '@nuxtjs/axios',
     ['nuxt-modernizr', {
       'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
       options: ['setClasses'],
     }],
   ],
-
+  i18n: {
+    locales: ['en', 'vn'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: messages
+      // detectBrowserLanguage: {
+      //   useCookie: true,
+      //   cookieKey: 'i18n_redirected',
+      //   alwaysRedirect: false,
+      //   fallbackLocale: 'en'
+      // }
+    }
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308

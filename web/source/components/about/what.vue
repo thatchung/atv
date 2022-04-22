@@ -1,29 +1,30 @@
 <template>
   <div class="container">
     <h2 ref="whatwedo" class="about-what-section-title">
-      What we do ?
+      {{ $t('Whatwedo') }}
     </h2>
     <div class="line-all" />
     <div class="about-what-description">
-      ONE ENTITY, ONE CONTRACT, ONE UNIFIED FLOW OF WORK FROM INITIAL CONCEPT THROUGH COMPLETION. ONE INTEGRATED TEAM.
+      {{ $t('WhatDesPart1') }} </br> {{ $t('WhatDesPart2') }} </br> {{ $t('WhatDesPart3') }}
     </div>
     <div class="line-all" />
     <div class="about-what-description">
-      DESIGN - BUILD IS A METHOD OF PROJECT DELIVERY IN WHICH ONE ENTITY - THE DESIGN-BUILD TEAM - WORKS UNDER A SINGLE CONTRACT WITH THE PROJECT OWNER.
+      {{ $t('WhatDesPart4') }} </br> {{ $t('WhatDesPart5') }} </br> 
+      {{ $t('WhatDesPart6') }} </br> {{ $t('WhatDesPart7') }}
     </div>
 
     <div class="about-what-design-title font-pp-bold">
-      THE DESIGN-BUILD ADVANTAGES
+      {{ $t('THEDESIGNBUILDADVANTAGES') }}
     </div>
     <div class="line-all" style="margin: 2rem 0rem 1rem 0rem;" />
-    <div v-if="!isMobile" class="row">
+    <div v-if="!isMobile" class="row" style="margin-bottom: 3rem;">
       <div class="col-4 col-md-4">
         <div class="row">
           <div class="col-3 col-md-3">
             01
           </div>
           <div class="col-9 col-md-9">
-            Faster Delivery
+            {{ $t('FasterDelivery') }}
           </div>
         </div>
         <div class="line-all-what" />
@@ -34,7 +35,7 @@
             03
           </div>
           <div class="col-9 col-md-9">
-            Better Quality
+            {{ $t('BetterQuality') }}
           </div>
         </div>
         <div class="line-all-what" />
@@ -45,7 +46,7 @@
             05
           </div>
           <div class="col-9 col-md-9">
-            Decreased Administrative Burden
+            {{ $t('DecreasedAdministrativeBurden') }}
           </div>
         </div>
         <div class="line-all-what" />
@@ -56,7 +57,7 @@
             02
           </div>
           <div class="col-9 col-md-9">
-            Singular Responsibility
+            {{ $t('SingularResponsibility') }}
           </div>
         </div>
         <div class="line-all-what" />
@@ -67,7 +68,7 @@
             04
           </div>
           <div class="col-9 col-md-9">
-            Cost Control
+            {{ $t('CostControl') }}
           </div>
         </div>
         <div class="line-all-what" />
@@ -78,20 +79,20 @@
             06
           </div>
           <div class="col-9 col-md-9">
-            Reduced Risk
+            {{ $t('ReducedRisk') }}
           </div>
         </div>
         <div class="line-all-what" />
       </div>
     </div>
-    <div v-if="isMobile" class="row">
+    <div v-if="isMobile" class="row" style="margin-bottom: 3rem;">
       <div class="col-12">
         <div class="row">
           <div class="col-3 col-md-3">
             01
           </div>
           <div class="col-9 col-md-9">
-            Faster Delivery
+            {{ $t('FasterDelivery') }}
           </div>
           <div class="line-all-what" />
         </div>
@@ -102,7 +103,7 @@
             02
           </div>
           <div class="col-9 col-md-9">
-            Singular Responsibility
+            {{ $t('SingularResponsibility') }}
           </div>
           <div class="line-all-what" />
         </div>
@@ -113,7 +114,7 @@
             03
           </div>
           <div class="col-9 col-md-9">
-            Better Quality
+            {{ $t('BetterQuality') }}
           </div>
           <div class="line-all-what" />
         </div>
@@ -124,7 +125,7 @@
             04
           </div>
           <div class="col-9 col-md-9">
-            Cost Control
+            {{ $t('CostControl') }}
           </div>
           <div class="line-all-what" />
         </div>
@@ -135,7 +136,7 @@
             05
           </div>
           <div class="col-9 col-md-9">
-            Reduced Risk
+            {{ $t('ReducedRisk') }}
           </div>
           <div class="line-all-what" />
         </div>
@@ -146,7 +147,7 @@
             06
           </div>
           <div class="col-9 col-md-9">
-            Decreased Administrative Burden
+            {{ $t('DecreasedAdministrativeBurden') }}
           </div>
           <div class="line-all-what" />
         </div>
@@ -200,12 +201,9 @@ export default {
 }
 </script>
 <style lang="scss">
-.container{
-  padding-bottom: 4rem;
-}
 .about-what-section-title{
   font-size: 5rem;
-  margin-top: 2rem;
+  margin-top: 8rem;
 }
 .about-what-description{
   font-size: 2rem;
@@ -220,7 +218,7 @@ export default {
 .line-all-what{
   width: 100%;
   margin: 0.5rem 0rem;
-  border-top: 2px solid #7E8083;
+  border-top: 1.5px solid #7E8083;
 }
 @media (max-width: 575px) {
   .about-what-design-title{

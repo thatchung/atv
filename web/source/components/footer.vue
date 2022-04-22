@@ -32,6 +32,7 @@ export default {
   line-height: 70px;
   z-index: 9;
   position: relative;
+  margin-top: 4rem;
 }
 .container{
   position: relative;

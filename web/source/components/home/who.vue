@@ -1,37 +1,38 @@
 <template>
   <div class="container section-who">
-    <h2 class="section-title">
-      Who we are ?
+    <h2 class="home-who-section-title">
+      {{ $t('Whoweare') }}
     </h2>
     <div class="line-all" />
     <div v-if="!isMobile" class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
       <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
-            MISSION
+            {{ $t('MISSION') }}
           </div>
           <div class="description">
-            We grow with each client on the path to success.
+           {{ $t('WhoDes1') }} </br> {{ $t('WhoDes2') }}
           </div>
         </div>
       </div>
       <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
-            VISION
+            {{ $t('VISION') }}
           </div>
           <div class="description">
-            Apply the latest Technology in Project Management and Construction Supervision to Design & Build with high creativity and proven professionalism
+            {{ $t('WhoDes3') }} </br> {{ $t('WhoDes4') }} </br>
+            {{ $t('WhoDes5') }}</br> {{ $t('WhoDes6') }}
           </div>
         </div>
       </div>
       <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
-            CORE VALUES
+            {{ $t('COREVALUES') }}
           </div>
           <div class="description">
-            Trust, Honesty, Boldness, Innovation,Commitment.
+            {{ $t('WhoDes7') }}</br>{{ $t('WhoDes8') }}
           </div>
         </div>
       </div>
@@ -40,39 +41,39 @@
       <div class="col-12">
         <div class="row">
           <div class="col-4 name font-pp-bold">
-            VISION
+            {{ $t('VISION') }}
           </div>
           <div class="col-8 description">
-            We grow with each client on the path to success.
+            {{ $t('WhoDesMoblie1') }}
           </div>
         </div>
       </div>
       <div class="col-12">
         <div class="row">
           <div class="col-4 name font-pp-bold">
-            MISSION
+            {{ $t('MISSION') }}
           </div>
           <div class="col-8 description">
-            Apply the latest Technology in Project Management and Construction Supervision to Design & Build with high creativity and proven professionalism
+           {{ $t('WhoDesMoblie2') }}
           </div>
         </div>
       </div>
       <div class="col-12">
         <div class="row">
           <div class="col-4 name font-pp-bold">
-            CORE VALUES
+            {{ $t('COREVALUES') }}
           </div>
           <div class="col-8 description">
-            Trust, Honesty, Boldness, Innovation,Commitment.
+            {{ $t('WhoDesMoblie3') }}
           </div>
         </div>
       </div>
     </div>
     <div class="line-all" />
-    <div class="row" style="margin-top: 3rem;margin-bottom: 3rem;">
-      <div class="col-12 col-sm-6 col-md-6 col-lg-8">
+    <div class="row" style="margin-top: 2rem;">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-8" style="padding-right: 2rem;">
         <div v-if="isMobile" class="who-name font-pp-bold">
-          EXPERIENCED LEADERS
+          {{ $t('EXPERIENCEDLEADERS') }}
         </div>
         <nuxt-link to="/about">
           <ThumbImage :src="'/images/lead.jpg'" ratio="16-9" />
@@ -80,34 +81,44 @@
       </div>
       <div class="col-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
         <div v-if="!isMobile" class="who-name font-pp-bold">
-          EXPERIENCED LEADERS
+          {{ $t('EXPERIENCEDLEADERS') }}
         </div>
         <div class="who-description">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-          llamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure.
+          {{ $t('LeadDes1') }}
+        </br>
+          {{ $t('LeadDes2') }}
         </div>
         <nuxt-link to="/about">
           <div class="who-more">
-            SEE MORE <b-icon-arrow-right />
+            {{ $t('SEEMORE') }}
+            <img class="img-arrow-right" src="/images/a_right.png"></img>
           </div>
         </nuxt-link>
       </div>
     </div>
     <h2 class="what-title">
-      What we do ?
+      {{ $t('Whatwedo') }}
     </h2>
     <div class="line-all" />
-    <div class="what-text font-pp-bold">
-      ONE ENTITY, ONE CONTRACT, ONE UNIFIED FLOW OF WORK FROM INITIAL CONCEPT THROUGH COMPLETION. ONE INTEGRATED TEAM.
+    <div v-if="!isMobile" class="what-text font-pp-bold">
+      {{ $t('HomeWhatDes1') }} </br> {{ $t('HomeWhatDes2') }} </br>
+      {{ $t('HomeWhatDes3') }}
+    </div>
+    <div v-if="isMobile" class="what-text font-pp-bold">
+     {{ $t('HomeWhatDesMobile1') }}
     </div>
     <div class="line-all" />
-    <div class="what-text font-pp-bold">
-      DESIGN - BUILD IS A METHOD OF PROJECT DELIVERY IN WHICH ONE ENTITY - THE DESIGN-BUILD TEAM - WORKS UNDER A SINGLE CONTRACT WITH THE PROJECT OWNER.
+    <div v-if="!isMobile" class="what-text font-pp-bold">
+      {{ $t('HomeWhatDes4') }}</br> {{ $t('HomeWhatDes5') }} </br>
+      {{ $t('HomeWhatDes6') }}</br> {{ $t('HomeWhatDes7') }}
+    </div>
+    <div v-if="isMobile" class="what-text font-pp-bold">
+      {{ $t('HomeWhatDesMobile2') }}
     </div>
     <nuxt-link to="/about">
       <div class="what-more">
-        SEE MORE <b-icon-arrow-right />
+        {{ $t('SEEMORE') }}
+        <img class="img-arrow-right" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>
   </div>
@@ -139,14 +150,15 @@ export default {
 </script>
 <style lang="scss">
 .section-who{
-  margin-top: 4rem;
+  margin-top: 8rem;
+  padding-bottom: 4rem;
 }
-.section-title{
+.home-who-section-title{
   font-size: 4rem;
 }
 .what-title{
   font-size: 4rem;
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
 .name{
   font-size: 1.5rem;
@@ -161,7 +173,7 @@ export default {
 .who-description{
   margin-top: 1rem;
   font-size: 1rem;
-  text-align: justify;
+  text-align: left;
 }
 .who-more{
   cursor: pointer;
@@ -171,6 +183,7 @@ export default {
   bottom: 1rem;
   svg{
     margin-left: 1rem;
+    font-size: 1.4rem;
   }
 }
 .what-text{
@@ -184,9 +197,10 @@ export default {
   font-weight: 600;
   position: absolute;
   bottom: 2rem;
-  right: 0px;
+  right: 15px;
   svg{
     margin-left: 1rem;
+    font-size: 1.4rem;
   }
 }
 @media (max-width: 575px) {

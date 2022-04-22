@@ -1,12 +1,13 @@
 <template>
   <div class="container section-work">
-    <h2 class="section-title">
-      Work
+    <h2 class="home-work-section-title">
+      {{ $t('Work') }}
     </h2>
     <div class="line-all" />
     <nuxt-link to="/work">
       <div class="link-page">
-        All <b-icon-arrow-right />
+        All <!-- <b-icon-arrow-right /> -->
+        <img class="img-arrow-right" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>
     <VueSlickCarousel v-if="listWork && listWork.length > 0" v-bind="settings" class="list-work">
@@ -89,10 +90,15 @@ export default {
   width: calc(100% + 1rem);
   margin-left: -0.5rem;
 }
+.work-info{
+  svg{
+    font-size: 1.4rem;
+  }
+}
 .work-slider-item{
   padding: 0.5rem;
 }
-.section-title{
+.home-work-section-title{
   font-size: 4rem;
 }
 .link-page{
