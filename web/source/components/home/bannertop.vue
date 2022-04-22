@@ -50,17 +50,17 @@ export default {
     },
     render(idx) {
       let t_slider = []
-      let deg = 50
+      let deg = 45
       let len = this.images.length
       for (let i = 0;i < len; i++) {
         if (i < idx) {
-          t_slider[i] = `transform: translateX(-${70 * (idx - i)}%) rotateY(${deg + (len * 5 - i)}deg); z-index: ${5 + i};`
+          t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len * 5 - i)}deg); z-index: ${5 + i};`
         }
         if (i === idx) {
-          t_slider[i] = 'transform: rotateY( 0deg ) translateZ( 30px ); z-index: 10;opacity: 1;'
+          t_slider[i] = `transform: translateX(${90 * i}%) rotateY( 0deg ) translateZ( 30px ); z-index: 10;opacity: 1;`
         }
         if (i > idx) {
-          t_slider[i] = `transform: translateX(${70 * (i - idx)}% ) rotateY(-${deg + (len * 2 - i)}deg); z-index: ${5 - i};`
+          t_slider[i] = `transform: translateX(${90 * i}% ) rotateY(-${deg + (len * 2 - i)}deg); z-index: ${5 - i};`
         }
       }
       this.style = t_slider
