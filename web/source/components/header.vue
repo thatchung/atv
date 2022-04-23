@@ -2,12 +2,14 @@
   <div class="header">
     <header class="container-header">
       <div class="container d-flex">
-        <div @click="openMenu()">
+        <div>
           <!-- <nuxt-link to="/"> -->
             <img class="logo" src="/images/logo.png" alt="Riviu logo"></img>
           <!-- </nuxt-link> -->
         </div>
-        <div class="div-right" @click="changeLang()">
+        <div v-if="$i18n.locale === 'vn'" class="lang-btn" @click="changeLang()">ENG</div>
+        <div v-if="$i18n.locale === 'en'" class="lang-btn" @click="changeLang()">VIE</div>
+        <div class="div-right" @click="openMenu()">
           <img class="lang" src="/images/top_right.png"></img>
         </div>
       </div>
@@ -76,6 +78,8 @@
               </div>
             </nuxt-link>
           </div>
+          <div v-if="$i18n.locale === 'vn'" class="lang-menu-btn" @click="changeLang()">ENG</div>
+          <div v-if="$i18n.locale === 'en'" class="lang-menu-btn" @click="changeLang()">VIE</div>
         </div>
       </div>
       <div class="menu-backgroud" />
@@ -165,6 +169,7 @@ export default {
 }
 .menu-panel{
   width: 90%;
+  position: relative;
 }
 .menu-backgroud{
   position:absolute;
@@ -183,6 +188,22 @@ export default {
   color: #fff;
   margin-bottom: 0.5rem;
 }
+.lang-btn{
+  color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 80px;
+  top: 30px;
+  cursor: pointer;
+}
+.lang-menu-btn{
+  color: white;
+  position: absolute;
+  right: 30px;
+  bottom: -1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
 @media (min-width: 1700px) {
   .menu-panel{
     width: 87%;
@@ -191,6 +212,22 @@ export default {
 @media (max-width: 575px) {
   .div-right{
     right: 20px;
+  }
+  .lang-btn{
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    right: 80px;
+    top: 30px;
+    cursor: pointer;
+  }
+  .lang-menu-btn{
+    color: white;
+    position: absolute;
+    right: 30px;
+    bottom: -1rem;
+    font-size: 1rem;
+    cursor: pointer;
   }
 }
 </style>
