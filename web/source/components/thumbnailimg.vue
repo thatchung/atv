@@ -169,7 +169,7 @@ img:not([src]) {
       padding-top: 70%; /* Aspect Ratio custom for banner */
     }
     &.ratio_banner {
-      padding-top: 40%; /* Aspect Ratio custom for banner */
+      padding-top: 33%; /* Aspect Ratio custom for banner */
     }
   }
 }

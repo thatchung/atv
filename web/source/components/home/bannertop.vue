@@ -2,16 +2,16 @@
   <div class="banner-slide">
     <VueSlickCarousel
       ref="slide1"
-      :autoplay='true'
+      :autoplay='false'
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
     >
       <div v-for="(img, idx) in images" :key="idx" class="banner-img">
         <ThumbImage
           :src="img"
-          :noratio="true"
           :nameClass="nameClass"
           :contain="false"
+          ratio="banner"
         />
       </div>
     </VueSlickCarousel>
@@ -76,16 +76,14 @@ export default {
 }
 .banner-img{
   width: 100%;
-  height: calc(100vh - 100px);
 }
 .image-banner{
   width: 100%;
-  height: calc(100vh - 100px);
   object-fit: cover;
 }
 .slide-sub{
   position: absolute;
-  bottom: 90px;
+  bottom: 60px;
   left: calc(50% - 90px);
   transform: translate(-50%);
   -webkit-perspective: 600px;
@@ -181,7 +179,7 @@ export default {
 }
 @media (max-width: 575px) {
   .slide-sub{
-    bottom: 30px;
+    bottom: 10px;
   }
 }
 </style>
