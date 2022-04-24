@@ -9,7 +9,7 @@
     </div>
     <div class="line-all" />
     <div class="about-what-description">
-      {{ $t('WhatDesPart4') }} </br> {{ $t('WhatDesPart5') }} </br> 
+      {{ $t('WhatDesPart4') }} </br> {{ $t('WhatDesPart5') }} </br>
       {{ $t('WhatDesPart6') }} </br> {{ $t('WhatDesPart7') }}
     </div>
 
@@ -195,6 +195,10 @@ export default {
       const el = this.$refs[('' + hash)]
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => {
+          let yy = window.pageYOffset
+          window.scrollTo({ top: yy - 90, behavior: 'smooth' })
+        }, 900)
       }
     }
   }

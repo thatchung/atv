@@ -35,7 +35,7 @@
                 {{ $t('AboutUs') }}
               </div>
             </nuxt-link>
-            <nuxt-link to="/about#whoweare">
+            <nuxt-link to="/about">
               <div class="menu-sub">
                 {{ $t('WHOWEARE') }}
               </div>
