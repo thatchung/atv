@@ -1,11 +1,13 @@
 <template>
   <div class="item">
-    <ThumbImage :src="item.thub" ratio="16-9" />
+    <div class="img-content">
+      <ThumbImage :src="item.thub" ratio="1-1" />
+    </div>
     <h3 class="item-title">
       {{ item.name }} - {{ item.role }}
     </h3>
     <div class="item-content">
-      <div v-if="!show" >
+      <div v-if="!show">
         {{ description }}
         <!-- <b-icon-arrow-down @click="showMore" /> -->
         <img class="img-arrow-down down-people" src="/images/a_down.png" @click="showMore"></img>
@@ -70,6 +72,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
+}
+.img-content{
+  width: 70%;
 }
 .item-content svg{
   margin-left: 0.5rem;

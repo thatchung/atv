@@ -110,25 +110,21 @@ export default {
   name: 'WhoPage',
   data() {
     return {
-      team1:[
-        {
-          thub: '/images/proteam.jpg',
-          content: 'Integrity is AVT’s most important recruitment criterion. As a result, the team at AVT has not only excellent expertise and on-theeld experience but also professional and trustworthy manner.'
-        }
-      ],
-      team2:[
-        {
-          thub: '/images/proteam2.jpg',
-          content: 'At AVT, our goal is to harmonize between discipline and creativity. Hence, the working environment at AVT is built around openness and transparency in order to foster innovation and cooperation.'
-        }
-      ],
+      team1: {
+        thub: '/images/proteam.png',
+        content: 'Integrity is AVT’s most important recruitment criterion. As a result, the team at AVT has not only excellent expertise and on-theeld experience but also professional and trustworthy manner.'
+      },
+      team2: {
+        thub: '/images/proteam2.png',
+        content: 'At AVT, our goal is to harmonize between discipline and creativity. Hence, the working environment at AVT is built around openness and transparency in order to foster innovation and cooperation.'
+      },
       leader1: {
         name: 'Vinh Doan',
         role: 'Co-founder & Director',
         description: `${this.$t('PeopleDes1')}</br>
           ${this.$t('PeopleDes2')}</br>
           ${this.$t('PeopleDes3')}</br>`,
-        thub: '/images/leader1.jpg'
+        thub: '/images/leader1.png'
       },
       leader2: {
         name: 'Lang Nguyen',
@@ -136,7 +132,7 @@ export default {
         description: `${this.$t('PeopleDes4')}</br>
           ${this.$t('PeopleDes5')}</br>
           ${this.$t('PeopleDes6')}</br>`,
-        thub: '/images/leader2.jpg'
+        thub: '/images/leader2.png'
       },
       key1: {
         name: 'Harada Shinji',
@@ -144,14 +140,14 @@ export default {
         description: `${this.$t('PeopleDes7')}</br>
           ${this.$t('PeopleDes8')}</br>
           ${this.$t('PeopleDes9')}</br>`,
-        thub: '/images/key1.jpg'
+        thub: '/images/key1.png'
       },
       key2: {
         name: 'Tuan Nguyen',
         role: 'Project Director',
         description: `${this.$t('PeopleDes10')}</br>
           ${this.$t('PeopleDes11')}</br>`,
-        thub: '/images/key4.jpg'
+        thub: '/images/key4.png'
       },
       key3: {
         name: 'Mau Nguyen',
@@ -159,14 +155,14 @@ export default {
         description: `${this.$t('PeopleDes12')}</br>
           ${this.$t('PeopleDes13')}</br>
           ${this.$t('PeopleDes14')}</br>`,
-        thub: '/images/key3.jpg'
+        thub: '/images/key3.png'
       },
       key4: {
         name: 'Hue Do',
         role: 'QS Manager',
         description: `${this.$t('PeopleDes15')}</br>
           ${this.$t('PeopleDes16')}</br>`,
-        thub: '/images/key2.jpg'
+        thub: '/images/key2.png'
       },
       isMobile: false
     }

@@ -3,11 +3,12 @@
     <div class="ex-title font-pp-bold">
       {{ name }}
     </div>
-    <VueSlickCarousel v-bind="settings" class="list-item">
-      <div v-for="(item, index) in datas" :key="index" class="item">
-        <ThumbImage :src="item.thub" ratio="16-9" />
-      </div>
-      <template slot="prevArrow">
+    <!-- <VueSlickCarousel v-bind="settings" class="list-item"> -->
+    <!-- <div v-for="(item, index) in datas" :key="index" class="team-item"> -->
+    <div class="team-item">
+      <ThumbImage :src="datas.thub" ratio="3-2" />
+    </div>
+    <!-- <template slot="prevArrow">
         <div class="pre-arrow">
           <img src="/images/left.jpg"></img>
         </div>
@@ -16,8 +17,8 @@
         <div class="next-arrow">
           <img src="/images/right.jpg"></img>
         </div>
-      </template>
-    </VueSlickCarousel>
+      </template> -->
+    <!-- </VueSlickCarousel> -->
     <div class="ex-description">
       {{ description }}
     </div>
@@ -28,12 +29,12 @@
 export default {
   props: {
     datas: {
-      type: Array,
+      type: Object,
       default: () => {
-        return [{
+        return {
           thub: '/images/slide4.jpg',
           content: 'Integrity is AVT’s most important recruitment criterion. As a result, the team at AVT has not only excellent expertise and on-theeld experience but also professional and trustworthy manner.'
-        }]
+        }
       }
     },
     name: {
@@ -56,7 +57,7 @@ export default {
     }
   },
   mounted() {
-    this.description = this.datas[0].content
+    this.description = this.datas.content
   }
   // methods: {
   //   ...mapActions({
@@ -77,6 +78,9 @@ export default {
 }
 .ex-description{
   margin-top: 1rem;
+}
+.team-item{
+  width: 90% !important;
 }
 .pre-arrow{
   z-index: 2;

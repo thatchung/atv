@@ -3,9 +3,9 @@
     <header class="container-header">
       <div class="container d-flex">
         <div>
-          <!-- <nuxt-link to="/"> -->
+          <nuxt-link to="/">
             <img class="logo" src="/images/logo.png" alt="Riviu logo"></img>
-          <!-- </nuxt-link> -->
+          </nuxt-link>
         </div>
         <div v-if="$i18n.locale === 'vn'" class="lang-btn" @click="changeLang()">ENG</div>
         <div v-if="$i18n.locale === 'en'" class="lang-btn" @click="changeLang()">VIE</div>
