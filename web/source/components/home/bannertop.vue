@@ -2,7 +2,7 @@
   <div class="banner-slide">
     <VueSlickCarousel
       ref="slide1"
-      :autoplay='false'
+      :autoplay='true'
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
     >
