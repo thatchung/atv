@@ -98,7 +98,7 @@
     <div class="mailus">
       <div class="container">
         <h2 class="mail-title">
-          Mail Us
+          {{ $t('MailUs') }}
         </h2>
         <div v-if="!isMobile" class="row" style="padding-bottom: 3rem;">
           <div class="col-6 col-md-6">
@@ -107,26 +107,26 @@
               {{ $t('Pleaseselecttypeofenquiry') }}
             </div>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Subject*"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Subject')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Title"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Title')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Fist name"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Fistname')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Last name"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Lastname')"></input>
             <div class="line-all-d" />
           </div>
           <div class="col-6 col-md-6">
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Company Name"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('CompanyName')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Contact No*"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('ContactNo')"></input>
             <div class="line-all-d" />
             <input class="c-input" type="text" name="" placeholder="Email"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="City"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('City')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Postal"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Postal')"></input>
             <div class="line-all-d" />
           </div>
           <div class="col-12 col-md-12">
@@ -146,31 +146,31 @@
               {{ $t('Pleaseselecttypeofenquiry') }}
             </div>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Subject*"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Subject')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Title"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Title')"></input>
             <div class="line-all-d" />
             <div class="row">
               <div class="col-6">
-                <input class="c-input" type="text" name="" placeholder="Fist name"></input>
+                <input class="c-input" type="text" name="" :placeholder="$t('Fistname')"></input>
                 <div class="line-all-d" />
               </div>
               <div class="col-6">
-                <input class="c-input" type="text" name="" placeholder="Last name"></input>
+                <input class="c-input" type="text" name="" :placeholder="$t('Lastname')"></input>
                 <div class="line-all-d" />
               </div>
             </div>
           </div>
           <div class="col-12">
-            <input class="c-input" type="text" name="" placeholder="Company Name"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('CompanyName')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Contact No*"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('ContactNo')"></input>
             <div class="line-all-d" />
             <input class="c-input" type="text" name="" placeholder="Email"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="City"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('City')"></input>
             <div class="line-all-d" />
-            <input class="c-input" type="text" name="" placeholder="Postal"></input>
+            <input class="c-input" type="text" name="" :placeholder="$t('Postal')"></input>
             <div class="line-all-d" />
           </div>
           <div class="col-12 col-md-12">

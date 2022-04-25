@@ -643,6 +643,9 @@
           },
           "scope": {
             "type": "string"
+          },
+          "content_vn": {
+            "type": "string"
           }
         }
       },
@@ -701,6 +704,9 @@
             "type": "string"
           },
           "scope": {
+            "type": "string"
+          },
+          "content_vn": {
             "type": "string"
           },
           "created_by": {

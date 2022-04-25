@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
-// import messages from './lang/index.js';
+
 const messages = __importDefault(require("./lang/index.js"));
 console.log(messages)
 module.exports = {

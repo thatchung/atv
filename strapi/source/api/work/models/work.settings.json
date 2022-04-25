@@ -78,6 +78,9 @@
     },
     "scope": {
       "type": "string"
+    },
+    "content_vn": {
+      "type": "richtext"
     }
   }
 }

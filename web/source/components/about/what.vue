@@ -5,12 +5,11 @@
     </h2>
     <div class="line-all" />
     <div class="about-what-description">
-      {{ $t('WhatDesPart1') }} </br> {{ $t('WhatDesPart2') }} </br> {{ $t('WhatDesPart3') }}
+      {{ $t('HomeWhatDesMobile1') }}
     </div>
     <div class="line-all" />
     <div class="about-what-description">
-      {{ $t('WhatDesPart4') }} </br> {{ $t('WhatDesPart5') }} </br>
-      {{ $t('WhatDesPart6') }} </br> {{ $t('WhatDesPart7') }}
+      {{ $t('HomeWhatDesMobile2') }}
     </div>
 
     <div class="about-what-design-title font-pp-bold">
@@ -213,6 +212,7 @@ export default {
   font-size: 2rem;
   font-weight: 600;
   margin: 2.5rem 0rem;
+  width: 80%;
 }
 .about-what-design-title{
   font-size: 1.5rem;
@@ -227,6 +227,9 @@ export default {
 @media (max-width: 575px) {
   .about-what-design-title{
     font-size: 2rem;
+  }
+  .about-what-description{
+    width: 100%;
   }
 }
 </style>

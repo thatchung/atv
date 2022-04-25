@@ -1,12 +1,12 @@
 <template>
   <div class="container section-inno">
     <h2 class="section-title">
-      Innovation
+      {{ $t('Innovation') }}
     </h2>
     <div class="line-all" />
     <nuxt-link to="/innovation">
       <div class="link-page">
-        All <!-- <b-icon-arrow-right /> -->
+        {{ $t('All') }} <!-- <b-icon-arrow-right /> -->
         <img class="img-arrow-right" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>

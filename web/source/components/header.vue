@@ -101,9 +101,14 @@ export default {
       land: 'en'
     }
   },
-  // mounted () {
-  //   window.addEventListener('scroll', this.handleScroll)
-  // },
+  mounted () {
+    let lland = window.localStorage.getItem('land')
+    if (lland) {
+      this.land = lland
+      this.$i18n.locale = lland
+    }
+    console.log(this.$i18n.locale)
+  },
   methods: {
     openMenu() {
       this.showMenu = true
@@ -115,9 +120,13 @@ export default {
       if (this.land === 'en') {
         this.land = 'vn'
         this.$i18n.locale = 'vn'
+        window.localStorage.setItem('land', 'vn')
+        // this.$router.go()
       } else {
         this.land = 'en'
         this.$i18n.locale = 'en'
+        window.localStorage.setItem('land', 'en')
+        // this.$router.go()
       }
     }
   }

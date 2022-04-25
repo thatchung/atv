@@ -35,6 +35,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "description_vn": {
+      "type": "text"
+    },
+    "content_vn": {
+      "type": "richtext"
     }
   }
 }

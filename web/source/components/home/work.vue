@@ -6,7 +6,7 @@
     <div class="line-all" />
     <nuxt-link to="/work">
       <div class="link-page">
-        All <!-- <b-icon-arrow-right /> -->
+        {{ $t('All') }} <!-- <b-icon-arrow-right /> -->
         <img class="img-arrow-right" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>

@@ -1,19 +1,17 @@
 <template>
   <div class="item">
     <div class="img-content">
-      <ThumbImage :src="item.thub" ratio="1-1" />
+      <ThumbImage :src="thub" ratio="1-1" />
     </div>
     <h3 class="item-title">
-      {{ item.name }} - {{ item.role }}
+      {{ name }} - {{ role }}
     </h3>
     <div class="item-content">
       <div v-if="!show">
-        {{ description }}
-        <!-- <b-icon-arrow-down @click="showMore" /> -->
+        {{ cut }}
         <img class="img-arrow-down down-people" src="/images/a_down.png" @click="showMore"></img>
       </div>
-      <div v-if="show" class="content" v-html="description" />
-      <!-- <b-icon-arrow-up v-if="show" @click="showLess" /> -->
+      <div v-if="show" class="content" v-html="des" />
       <img v-if="show" class="img-arrow-up up-people" src="/images/a_up.png" @click="showLess"></img>
     </div>
   </div>
@@ -24,16 +22,25 @@ import general from "~/mixins/general"
 export default {
   mixins: [general],
   props: {
-    item: {
-      type: Object,
-      default: () => {
-        return {
-          name: 'Harada Shinji',
-          role: 'Business Development Manager',
-          description: 'Mau considers AVT as his second home. After becoming a part of AVT in 2019, his skill set expanded into full is skill set expanded into full is skill set expanded into full',
-          thub: '/images/slide4.jpg'
-        }
-      }
+    name:  {
+      type: String,
+      default: 'Harada Shinji'
+    },
+    role:  {
+      type: String,
+      default: 'Business Development Manager'
+    },
+    des: {
+      type: String,
+      default: 'Mau considers AVT as his second home. After becoming a part of AVT in 2019, his skill set expanded into full is skill set expanded into full is skill set expanded into full'
+    },
+    thub: {
+      type: String,
+      default: '/images/slide4.jpg'
+    },
+    cut: {
+      type: String,
+      default: 'Mau considers AVT as his second home. After becoming a part of AVT in 201...'
     },
     position: {
       type: String,
@@ -42,21 +49,15 @@ export default {
   },
   data() {
     return {
-      show: false,
-      description: ''
+      show: false
     }
-  },
-  mounted () {
-    this.description = this.get_excerpt(this.item.description, 100)
   },
   methods: {
     showMore() {
       this.show = true
-      this.description = this.item.description
     },
     showLess() {
       this.show = false
-      this.description = this.get_excerpt(this.item.description, 100)
     }
   }
 }

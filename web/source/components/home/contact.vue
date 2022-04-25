@@ -1,7 +1,7 @@
 <template>
   <div class="container section-contact">
     <h2 class="section-title">
-      Contact
+      {{ $t('Contact') }}
     </h2>
     <div class="line-all line-all-contact" />
     <div v-if="!isMobile" class="row">
@@ -14,7 +14,7 @@
             Level 9, Doxaco Building,</br> 307B Nguyen Van Troi st., W1,</br> Tan Binh Dict., HCMC
           </div>
           <div class="type">
-            Head Office
+            {{ $t('HeadOffice') }}
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
             Level 5, Sentinel Place,</br> 41A Ly Thai To st., </br>Hoan Kiem dist., Ha Noi
           </div>
           <div class="type">
-            Branch
+            {{ $t('Branch') }}
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
             267 Tran Phu, Q. Hai Chau,</br>Da Nang City
           </div>
           <div class="type">
-            Branch
+            {{ $t('Branch') }}
           </div>
         </div>
       </div>

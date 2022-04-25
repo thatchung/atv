@@ -8,21 +8,20 @@
       <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
-            {{ $t('MISSION') }}
+            {{ $t('VISION') }}
           </div>
           <div class="description">
-           {{ $t('WhoDes1') }} </br> {{ $t('WhoDes2') }}
+           {{ $t('WhoDesMoblie1') }}
           </div>
         </div>
       </div>
       <div class="col-4 col-sm-4 col-md-4 col-lg-4">
         <div>
           <div class="name font-pp-bold">
-            {{ $t('VISION') }}
+            {{ $t('MISSION') }}
           </div>
           <div class="description">
-            {{ $t('WhoDes3') }} </br> {{ $t('WhoDes4') }} </br>
-            {{ $t('WhoDes5') }}</br> {{ $t('WhoDes6') }}
+            {{ $t('WhoDesMoblie2') }}
           </div>
         </div>
       </div>
@@ -32,7 +31,7 @@
             {{ $t('COREVALUES') }}
           </div>
           <div class="description">
-            {{ $t('WhoDes7') }}</br>{{ $t('WhoDes8') }}
+            {{ $t('WhoDesMoblie3') }}
           </div>
         </div>
       </div>
@@ -101,16 +100,14 @@
     </h2>
     <div class="line-all" />
     <div v-if="!isMobile" class="what-text font-pp-bold">
-      {{ $t('HomeWhatDes1') }} </br> {{ $t('HomeWhatDes2') }} </br>
-      {{ $t('HomeWhatDes3') }}
+      {{ $t('HomeWhatDesMobile1') }}
     </div>
     <div v-if="isMobile" class="what-text font-pp-bold">
-     {{ $t('HomeWhatDesMobile1') }}
+      {{ $t('HomeWhatDesMobile1') }}
     </div>
     <div class="line-all" />
     <div v-if="!isMobile" class="what-text font-pp-bold">
-      {{ $t('HomeWhatDes4') }}</br> {{ $t('HomeWhatDes5') }} </br>
-      {{ $t('HomeWhatDes6') }}</br> {{ $t('HomeWhatDes7') }}
+      {{ $t('HomeWhatDesMobile2') }}
     </div>
     <div v-if="isMobile" class="what-text font-pp-bold">
       {{ $t('HomeWhatDesMobile2') }}
@@ -165,10 +162,12 @@ export default {
 }
 .description{
   font-size: 1rem;
+  width: 80%;
 }
 .who-name{
   margin-top: 1rem;
   font-size: 1.5rem;
+  font-weight: 600;
 }
 .who-description{
   margin-top: 1rem;
@@ -190,6 +189,7 @@ export default {
   font-size: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  width: 80%;
 }
 .what-more{
   cursor: pointer;
@@ -207,6 +207,9 @@ export default {
   .who-name{
     margin-top: 0rem;
     margin-bottom: 2rem;
+  }
+  .what-text{
+    width: 100%;
   }
 }
 </style>

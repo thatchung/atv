@@ -5,6 +5,6 @@ const en = __importDefault(require("./en.js"));
 const vn = __importDefault(require("./vn.js"));
 const messages = {
   en: en.default,
-  vn: en.default
+  vn: vn.default
 }
 module.exports = messages

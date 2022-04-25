@@ -6,7 +6,7 @@
     <!-- <VueSlickCarousel v-bind="settings" class="list-item"> -->
     <!-- <div v-for="(item, index) in datas" :key="index" class="team-item"> -->
     <div class="team-item">
-      <ThumbImage :src="datas.thub" ratio="3-2" />
+      <ThumbImage :src="thub" ratio="3-2" />
     </div>
     <!-- <template slot="prevArrow">
         <div class="pre-arrow">
@@ -20,7 +20,7 @@
       </template> -->
     <!-- </VueSlickCarousel> -->
     <div class="ex-description">
-      {{ description }}
+      {{ content }}
     </div>
   </div>
 </template>
@@ -28,14 +28,13 @@
 <script>
 export default {
   props: {
-    datas: {
-      type: Object,
-      default: () => {
-        return {
-          thub: '/images/slide4.jpg',
-          content: 'Integrity is AVT’s most important recruitment criterion. As a result, the team at AVT has not only excellent expertise and on-theeld experience but also professional and trustworthy manner.'
-        }
-      }
+    content: {
+      type: String,
+      default: 'Integrity is AVT’s most important recruitment criterion. As a result, the team at AVT has not only excellent expertise and on-theeld experience but also professional and trustworthy manner.'
+    },
+    thub: {
+      type: String,
+      default: '/images/slide4.jpg'
     },
     name: {
       type: String,
@@ -55,9 +54,6 @@ export default {
         "slidesToScroll": 1
       }
     }
-  },
-  mounted() {
-    this.description = this.datas.content
   }
   // methods: {
   //   ...mapActions({

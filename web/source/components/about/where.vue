@@ -30,7 +30,7 @@
       {{ $t('HCMElectroluxOffice') }}
     </div>
     <div>
-      A Scandinavian-inspired office where everyone can feel the comfort of home
+      {{ $t('WhereAScandinavian') }}
     </div>
     <h2 ref="ournetwork" class="about-where-title">
       {{ $t('OurNetwork') }}
@@ -42,8 +42,7 @@
           9PMP - </br>{{ $t('SystematicPartner') }}
         </div>
         <div class="a_description">
-          {{ $t('WhereNetworkDes1') }} </br> {{ $t('WhereNetworkDes2') }} </br>
-          {{ $t('WhereNetworkDes3') }} </br> {{ $t('WhereNetworkDes4') }}
+          {{ $t('WhereNetworkDes1') }} </br> {{ $t('WhereNetworkDes2') }}
         </div>
         <div v-if="isMobile" class="line-all-w" />
       </div>
@@ -52,7 +51,7 @@
           The Sentry – </br>{{ $t('TechnicalPartner') }}
         </div>
         <div class="a_description">
-          {{ $t('WhereNetworkDes5') }} </br> {{ $t('WhereNetworkDes6') }} </br> {{ $t('WhereNetworkDes7') }}
+          {{ $t('WhereNetworkDes3') }}
         </div>
         <div v-if="isMobile" class="line-all-w" />
       </div>
@@ -61,8 +60,7 @@
           K-net Japan – </br>{{ $t('DesignPartner') }}
         </div>
         <div class="a_description">
-          {{ $t('WhereNetworkDes8') }}</br>{{ $t('WhereNetworkDes9') }}</br>
-          {{ $t('WhereNetworkDes10') }}</br>{{ $t('WhereNetworkDes11') }}
+          {{ $t('WhereNetworkDes4') }}</br>{{ $t('WhereNetworkDes5') }}
         </div>
       </div>
     </div>
