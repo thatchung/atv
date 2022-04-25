@@ -25,7 +25,8 @@
         :class="'work-filter-item ' + ( typeActive === type ? 'filter-active': '' ) "
         @click="loadFilter(type)"
       >
-        {{ type | workTypeFilter }}
+        <div v-if="$i18n.locale === 'vn'">{{ type | workTypeVNFilter }}</div>
+        <div v-else >{{ type | workTypeFilter }}</div>
       </div>
       <div v-if="typeActive === 'location'" class="filter-item-active">
         <span v-if="!filterChoice">
@@ -41,11 +42,15 @@
       </div>
       <div v-if="typeActive === 'category'" class="filter-item-active">
         <span v-if="!filterChoice">
-          {{ categoryActive | categoryFilter }}
+          <!-- {{ categoryActive | categoryFilter }} -->
+          <div style="display: inline-block;" v-if="$i18n.locale === 'vn'">{{ categoryActive | categoryVNFilter }}</div>
+          <div style="display: inline-block;" v-else >{{ categoryActive | categoryFilter }}</div>
         </span>
         <div v-if="filterChoice" class="filter-list">
           <div v-for="(i, idx) in categories" :key="idx" class="filter-item" @click="choiceCategoryFilter(i)">
-            {{ i | categoryFilter }}
+            <!-- {{ i | categoryFilter }} -->
+            <div v-if="$i18n.locale === 'vn'">{{ i | categoryVNFilter }}</div>
+            <div v-else >{{ i | categoryFilter }}</div>
           </div>
         </div>
         <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />

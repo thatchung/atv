@@ -49,6 +49,29 @@ export default {
             }
             return stringState
         },
+        workTypeVNFilter(state) {
+            let stringState = state
+            switch (state) {
+                case 'featured':
+                    stringState = 'Tính Năng'
+                    break
+                case 'category':
+                    stringState = 'Theo Chuyên Mục'
+                    break
+                case 'year':
+                    stringState = 'Theo Năm'
+                    break
+                case 'location':
+                    stringState = 'Theo Vị Trí'
+                    break
+                case 'all':
+                    stringState = 'Tất Cả'
+                    break
+                default:
+                    break
+            }
+            return stringState
+        },
         locationFilter(state) {
             let stringState = state
             switch (state) {
@@ -131,6 +154,56 @@ export default {
                     break
                 case 'store':
                     stringState = 'Flagship Store'
+                    break
+                default:
+                    break
+            }
+            return stringState
+        },
+        categoryVNFilter(state) {
+            let stringState = state
+            switch (state) {
+                case 'office':
+                    stringState = 'Văn phòng'
+                    break
+                case 'office_showroom':
+                    stringState = 'Văn phòng / Showroom'
+                    break
+                case 'mall':
+                    stringState = 'Trung tâm thương mại'
+                    break
+                case 'hospital':
+                    stringState = 'Hospitality'
+                    break
+                case 'hotel':
+                    stringState = 'Khách sạn'
+                    break
+                case 'cinema':
+                    stringState = 'Rạp chiếu phim'
+                    break
+                case 'epg':
+                    stringState = 'Khu vui chơi giải trí'
+                    break
+                case 'lounge':
+                    stringState = 'Lounge'
+                    break
+                case 'complex':
+                    stringState = 'Khu phức hợp'
+                    break
+                case 'retail':
+                    stringState = 'Bán lẻ'
+                    break
+                case 'retail_showroom':
+                    stringState = 'Bán lẻ / Showroom'
+                    break
+                case 'apartment':
+                    stringState = 'Chung cư'
+                    break
+                case 'residential':
+                    stringState = 'Nhà ở'
+                    break
+                case 'store':
+                    stringState = 'Cửa hàng flagship'
                     break
                 default:
                     break
