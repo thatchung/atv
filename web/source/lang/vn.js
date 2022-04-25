@@ -16,7 +16,7 @@ module.exports =  {
   Area: 'Diện tích',
   Typeofproject: 'Loại công trình',
   Location: 'Vị trí',
-  Scopeofwork: 'Scope of work',
+  Scopeofwork: 'Phạm vi công việc',
   Whatwedo: 'Giới thiệu',
   HomeWhatDes1: 'ONE ENTITY, ONE CONTRACT, ONE UNIFIED FLOW',
   HomeWhatDes2: 'OF WORK FROM INITIAL CONCEPT THROUGH',

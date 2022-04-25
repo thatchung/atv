@@ -57,7 +57,16 @@ export default {
     async loadData() {
       if (this.$route.params.id) {
         await this.getInnovationBySlug({ url: this.$route.params.id })
-        this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+        let lang = 'en'
+        let lland = window.localStorage.getItem('lang')
+        if (lland) {
+          lang = lland
+        }
+        if (lang === 'vn') {
+          this.html_content = marked.parse(this.innovation.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+        } else {
+          this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+        }
       }
     },
     toTopAction () {

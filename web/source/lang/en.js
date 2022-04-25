@@ -16,7 +16,7 @@ module.exports =  {
   Area: 'Area',
   Typeofproject: 'Type of project',
   Location: 'Location',
-  Scopeofwork: 'Phạm vi công việc',
+  Scopeofwork: 'Scope of work',
   Whatwedo: 'What we do ?',
   HomeWhatDes1: 'One entity, one contract, one unified flow',
   HomeWhatDes2: 'of work from initial concept through',

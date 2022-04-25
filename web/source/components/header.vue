@@ -8,7 +8,7 @@
           </nuxt-link>
         </div>
         <div v-if="$i18n.locale === 'vn'" class="lang-btn" @click="changeLang()">ENG</div>
-        <div v-if="$i18n.locale === 'en'" class="lang-btn" @click="changeLang()">VIE</div>
+        <div v-else class="lang-btn" @click="changeLang()">VIE</div>
         <div class="div-right" @click="openMenu()">
           <img class="lang" src="/images/top_right.png"></img>
         </div>
@@ -98,14 +98,14 @@ export default {
     return {
       className: 'default',
       showMenu: false,
-      land: 'en'
+      lang: 'en'
     }
   },
   mounted () {
-    let lland = window.localStorage.getItem('land')
-    if (lland) {
-      this.land = lland
-      this.$i18n.locale = lland
+    let llang = window.localStorage.getItem('lang')
+    if (llang) {
+      this.lang = llang
+      this.$i18n.locale = llang
     }
     console.log(this.$i18n.locale)
   },
@@ -117,15 +117,15 @@ export default {
       this.showMenu = false
     },
     changeLang() {
-      if (this.land === 'en') {
-        this.land = 'vn'
+      if (this.lang === 'en') {
+        this.lang = 'vn'
         this.$i18n.locale = 'vn'
-        window.localStorage.setItem('land', 'vn')
+        window.localStorage.setItem('lang', 'vn')
         // this.$router.go()
       } else {
-        this.land = 'en'
+        this.lang = 'en'
         this.$i18n.locale = 'en'
-        window.localStorage.setItem('land', 'en')
+        window.localStorage.setItem('lang', 'en')
         // this.$router.go()
       }
     }

@@ -12,7 +12,7 @@
       </h2>
     </nuxt-link>
     <div class="item-content">
-      {{ get_excerpt(item.description, 150) }}
+      {{ description }}
       <nuxt-link :to="'/innovation/' + item.url">
         <!-- <b-icon-arrow-right /> -->
         <img class="img-arrow-right" src="/images/a_right.png"></img>
@@ -42,15 +42,24 @@ export default {
       type: String,
       default: 'left-p'
     }
+  },
+  data() {
+    return {
+      description: ''
+    }
+  },
+  mounted() {
+    let lang = 'en'
+    let lland = window.localStorage.getItem('lang')
+    if (lland) {
+      lang = lland
+    }
+    if (lang === 'vn') {
+      this.description = this.get_excerpt(this.item.description_vn, 150)
+    } else {
+      this.description = this.get_excerpt(this.item.description, 150)
+    }
   }
-  // data() {
-  //   return {
-  //     isMobile: false
-  //   }
-  // },
-  // mounted() {
-  //   this.checkMobile()
-  // },
   // methods: {
   //   checkMobile() {
   //     if (!process.server) {
