@@ -4,11 +4,15 @@
 }
 @font-face {
   font-family: 'pp-reg';
-  src: url('../font/PPTelegraf-Regular.otf');
+  /*src: url('../font/PPTelegraf-Regular.otf');*/
+  src: url("../font/FSPPTelegraf-Regular.otf");
+  /*src: url("../font/FSPPTelegraf-Regular.ttf") format("ttf"), url("../font/FSPPTelegraf-Regular.otf") format("otf");*/
 }
 @font-face {
   font-family: 'pp-semi';
-  src: url('../font/PPTelegraf-SemiBold.otf');
+  /*src: url('../font/PPTelegraf-SemiBold.otf');*/
+  src: url("../font/FSPPTelegraf-SemiBold.otf");
+  /*src: url("../font/FSPPTelegraf-SemiBold.ttf") format("ttf"), url("../font/FSPPTelegraf-SemiBold.otf") format("otf");*/
 }
 html{
 	overflow-y: scroll;
