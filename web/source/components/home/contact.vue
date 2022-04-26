@@ -49,13 +49,13 @@
       <div class="col-12">
         <div>
           <div class="place font-pp-bold">
-            Ho Chi Minh
+            {{ $t('HoChiMinh') }}
           </div>
           <div class="address">
-            Level 9, Doxaco Building, 307B Nguyen Van Troi st., W1, Tan Binh Dict., HCMC
+            {{ $t('Address1') }}
           </div>
           <div class="type">
-            Head Office
+            {{ $t('HeadOffice') }}
           </div>
         </div>
       </div>
@@ -63,13 +63,13 @@
       <div class="col-12">
         <div>
           <div class="place font-pp-bold">
-            Ha Noi
+            {{ $t('HaNoi') }}
           </div>
           <div class="address">
-            Level 5, Sentinel Place, 41A Ly Thai To st., Hoan Kiem dist., Ha Noi
+            {{ $t('Address2') }}
           </div>
           <div class="type">
-            Branch
+            {{ $t('Branch') }}
           </div>
         </div>
       </div>
@@ -77,13 +77,13 @@
       <div class="col-12">
         <div>
           <div class="place font-pp-bold">
-            Da Nang
+            {{ $t('DaNang') }}
           </div>
           <div class="address">
-            267 Tran Phu, Q. Hai Chau, Da Nang City
+            {{ $t('Address3') }}
           </div>
           <div class="type">
-            Branch
+            {{ $t('Branch') }}
           </div>
         </div>
       </div>
