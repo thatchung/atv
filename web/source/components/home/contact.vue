@@ -8,10 +8,10 @@
       <div class="col-4 col-md-4">
         <div>
           <div class="place font-pp-bold">
-            Ho Chi Minh
+            {{ $t('HoChiMinh') }}
           </div>
           <div class="address">
-            Level 9, Doxaco Building,</br> 307B Nguyen Van Troi st., W1,</br> Tan Binh Dict., HCMC
+            {{ $t('Address1') }}
           </div>
           <div class="type">
             {{ $t('HeadOffice') }}
@@ -21,10 +21,10 @@
       <div class="col-4 col-md-4">
         <div>
           <div class="place font-pp-bold">
-            Ha Noi
+            {{ $t('HaNoi') }}
           </div>
           <div class="address">
-            Level 5, Sentinel Place,</br> 41A Ly Thai To st., </br>Hoan Kiem dist., Ha Noi
+            {{ $t('Address2') }}
           </div>
           <div class="type">
             {{ $t('Branch') }}
@@ -34,10 +34,10 @@
       <div class="col-4 col-md-4">
         <div>
           <div class="place font-pp-bold">
-            Da Nang
+            {{ $t('DaNang') }}
           </div>
           <div class="address">
-            267 Tran Phu, Q. Hai Chau,</br>Da Nang City
+            {{ $t('Address3') }}
           </div>
           <div class="type">
             {{ $t('Branch') }}
@@ -148,6 +148,7 @@ export default {
   font-size: 1rem;
   margin: 0.5rem 0rem;
   height: 70px;
+  width: 60%;
 }
 .type{
   font-weight: 600;
@@ -184,6 +185,9 @@ export default {
   .line-all-last{
     margin-top: 1rem;
     margin-bottom: 3rem;
+  }
+  .address{
+    width: 100%;
   }
   .phone div{
     display: block;

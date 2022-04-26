@@ -22,12 +22,14 @@
         </div>
         /
         <div class="detail-text">
-          {{ $t('Area') }}: {{ work.area }}m2
+          {{ $t('Area') }}: {{ work.area }} m<sup>2</sup>
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Typeofproject') }}: {{ work.category | categoryFilter }}
+          {{ $t('Typeofproject') }} :
+            <span v-if="$i18n.locale === 'vn'">{{ work.category | categoryVNFilter }}</span>
+            <span v-else >{{ work.category | categoryFilter }}</span>
         </div>
       </div>
       <div class="work-info">

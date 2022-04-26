@@ -5,14 +5,14 @@
     </h2>
     <!-- <ThumbImage src="images/map.jpg" ratio="16-9" /> -->
     <div ref="map" class="map-container">
-      <div ref="map1" class="map-item map-item-1" @click="clickMapItem('HA NOI')" />
-      <div ref="map2" class="map-item map-item-2" @click="clickMapItem('HAI PHONG')" />
-      <div ref="map3" class="map-item map-item-3" @click="clickMapItem('DA NANG')" />
-      <div ref="map4" class="map-item map-item-4" @click="clickMapItem('NHA TRANG')" />
-      <div ref="map5" class="map-item map-item-5" @click="clickMapItem('BINH DUONG')" />
-      <div ref="map6" class="map-item map-item-6" @click="clickMapItem('HO CHI MINH')" />
-      <div ref="map7" class="map-item map-item-7" @click="clickMapItem('PHNOMPENH (CAMBODIA)')" />
-      <div ref="map8" class="map-item map-item-8" @click="clickMapItem('MY THO')" />
+      <div ref="map1" class="map-item map-item-1" @click="clickMapItem('HANOI')" />
+      <div ref="map2" class="map-item map-item-2" @click="clickMapItem('HAIPHONG')" />
+      <div ref="map3" class="map-item map-item-3" @click="clickMapItem('DANANG')" />
+      <div ref="map4" class="map-item map-item-4" @click="clickMapItem('NHATRANG')" />
+      <div ref="map5" class="map-item map-item-5" @click="clickMapItem('BINHDUONG')" />
+      <div ref="map6" class="map-item map-item-6" @click="clickMapItem('HOCHIMINH')" />
+      <div ref="map7" class="map-item map-item-7" @click="clickMapItem('PHNOMPENH_CAMBODIA')" />
+      <div ref="map8" class="map-item map-item-8" @click="clickMapItem('MYTHO')" />
       <img class="map-img" src="images/AVT_MAP.jpg"></img>
     </div>
     <div class="location-list">
@@ -22,7 +22,9 @@
         :class="'location-item ' + ( item_active === item ? 'location-active' : '' )"
         @click="clickMapItem(item)"
       >
-        {{ item }}
+        <!-- {{ item | locationVNFilter }} -->
+        <span v-if="$i18n.locale === 'vn'">{{ item | locationVNFilter }}</span>
+        <span v-else >{{ item | locationFilter }}</span>
       </div>
     </div>
     <div class="line-all" />
@@ -328,13 +330,15 @@
 </template>
 
 <script>
+import general from "~/mixins/general"
 export default {
   name: 'WherePage',
+  mixins: [general],
   data() {
     return {
-      locations: ['HO CHI MINH', 'HA NOI', 'HAI PHONG', 'HA LONG', 'DA NANG', 'BINH DUONG',
-        'NHA TRANG', 'BEN TRE', 'MY THO', 'PHNOMPENH (CAMBODIA)'],
-      item_active: 'HO CHI MINH',
+      locations: ['HOCHIMINH', 'HANOI', 'HAIPHONG', 'HALONG', 'DANANG', 'BINHDUONG',
+        'NHATRANG', 'BENTRE', 'MYTHO', 'PHNOMPENH_CAMBODIA'],
+      item_active: 'HOCHIMINH',
       isMobile: false
     }
   },
@@ -379,34 +383,34 @@ export default {
       const el = this.$refs.map
       if (el && this.isMobile) {
         switch (item) {
-          case 'HA NOI':
+          case 'HANOI':
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
-          case 'HAI PHONG':
+          case 'HAIPHONG':
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
-          case 'HA LONG':
+          case 'HALONG':
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
-          case 'DA NANG':
+          case 'DANANG':
             el.scrollTo({ top: 140, behavior: 'smooth' })
             break
-          case 'BINH DUONG':
+          case 'BINHDUONG':
             el.scrollTo({ top: 250, behavior: 'smooth' })
             break
-          case 'NHA TRANG':
+          case 'NHATRANG':
             el.scrollTo({ top: 220, behavior: 'smooth' })
             break
-          case 'HO CHI MINH':
+          case 'HOCHIMINH':
             el.scrollTo({ top: 300, behavior: 'smooth' })
             break
-          case 'BEN TRE':
+          case 'BENTRE':
             el.scrollTo({ top: 300, behavior: 'smooth' })
             break
-          case 'MY THO':
+          case 'MYTHO':
             el.scrollTo({ top: 300, behavior: 'smooth' })
             break
-          case 'PHNOMPENH (CAMBODIA)':
+          case 'PHNOMPENH_CAMBODIA':
             el.scrollTo({ top: 240, behavior: 'smooth' })
             break
           default:
@@ -414,34 +418,34 @@ export default {
         }
       } else if (el && !this.isMobile) {
         switch (item) {
-          case 'HA NOI':
+          case 'HANOI':
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
-          case 'HAI PHONG':
+          case 'HAIPHONG':
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
-          case 'HA LONG':
+          case 'HALONG':
             el.scrollTo({ top: 0, behavior: 'smooth' })
             break
-          case 'DA NANG':
+          case 'DANANG':
             el.scrollTo({ top: 600, behavior: 'smooth' })
             break
-          case 'BINH DUONG':
+          case 'BINHDUONG':
             el.scrollTo({ top: 970, behavior: 'smooth' })
             break
-          case 'NHA TRANG':
+          case 'NHATRANG':
             el.scrollTo({ top: 890, behavior: 'smooth' })
             break
-          case 'HO CHI MINH':
+          case 'HOCHIMINH':
             el.scrollTo({ top: 1000, behavior: 'smooth' })
             break
-          case 'BEN TRE':
+          case 'BENTRE':
             el.scrollTo({ top: 1100, behavior: 'smooth' })
             break
-          case 'MY THO':
+          case 'MYTHO':
             el.scrollTo({ top: 1100, behavior: 'smooth' })
             break
-          case 'PHNOMPENH (CAMBODIA)':
+          case 'PHNOMPENH_CAMBODIA':
             el.scrollTo({ top: 1000, behavior: 'smooth' })
             break
           default:

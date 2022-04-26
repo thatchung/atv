@@ -110,6 +110,44 @@ export default {
             }
             return stringState
         },
+        locationVNFilter(state) {
+            let stringState = state
+            switch (state) {
+                case 'HOCHIMINH':
+                    stringState = 'HỒ CHÍ MINH'
+                    break
+                case 'HANOI':
+                    stringState = 'HÀ NỘI'
+                    break
+                case 'HAIPHONG':
+                    stringState = 'HẢI PHÒNG'
+                    break
+                case 'HALONG':
+                    stringState = 'HẠ LONG'
+                    break
+                case 'DANANG':
+                    stringState = 'ĐÀ NẴNG'
+                    break
+                case 'BINHDUONG':
+                    stringState = 'BÌNH DƯƠNG'
+                    break
+                case 'NHATRANG':
+                    stringState = 'NHA TRANG'
+                    break
+                case 'BENTRE':
+                    stringState = 'BẾN TRE'
+                    break
+                case 'MYTHO':
+                    stringState = 'MỸ THO'
+                    break
+                case 'PHNOMPENH_CAMBODIA':
+                    stringState = 'PHNOMPENH (CAMBODIA)'
+                    break
+                default:
+                    break
+            }
+            return stringState
+        },
         categoryFilter(state) {
             let stringState = state
             switch (state) {

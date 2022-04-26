@@ -15,7 +15,7 @@
         </div>
         /
         <div class="detail-text">
-          {{ $t('Area') }} : {{ work.area }}m2
+          {{ $t('Area') }} : {{ work.area }} m<sup>2</sup>
         </div>
       </div>
       <div class="work-info">
@@ -28,7 +28,10 @@
       </div>
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Location') }} : {{ work.location }}
+          {{ $t('Location') }} :
+          <!-- {{ work.location | locationFilter }} -->
+          <span v-if="$i18n.locale === 'vn'">{{ work.location | locationVNFilter }}</span>
+          <span v-else >{{ work.location | locationFilter }}</span>
         </div>
         <nuxt-link :to="'/work/' + work.url">
           <!-- <b-icon-arrow-right style="margin-left: 1rem;" /> -->

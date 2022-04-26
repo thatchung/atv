@@ -19,10 +19,10 @@
     <div v-if="!isMobile" class="row" style="margin-bottom: 3rem;">
       <div class="col-4 col-md-4">
         <div class="row">
-          <div class="col-3 col-md-3">
+          <div class="col-2 col-md-2">
             01
           </div>
-          <div class="col-9 col-md-9">
+          <div class="col-10 col-md-10">
             {{ $t('FasterDelivery') }}
           </div>
         </div>
@@ -30,10 +30,10 @@
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
-          <div class="col-3 col-md-3">
+          <div class="col-2 col-md-2">
             03
           </div>
-          <div class="col-9 col-md-9">
+          <div class="col-10 col-md-10">
             {{ $t('BetterQuality') }}
           </div>
         </div>
@@ -41,10 +41,10 @@
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
-          <div class="col-3 col-md-3">
+          <div class="col-2 col-md-2">
             05
           </div>
-          <div class="col-9 col-md-9">
+          <div class="col-10 col-md-10">
             {{ $t('DecreasedAdministrativeBurden') }}
           </div>
         </div>
@@ -52,10 +52,10 @@
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
-          <div class="col-3 col-md-3">
+          <div class="col-2 col-md-2">
             02
           </div>
-          <div class="col-9 col-md-9">
+          <div class="col-10 col-md-10">
             {{ $t('SingularResponsibility') }}
           </div>
         </div>
@@ -63,10 +63,10 @@
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
-          <div class="col-3 col-md-3">
+          <div class="col-2 col-md-2">
             04
           </div>
-          <div class="col-9 col-md-9">
+          <div class="col-10 col-md-10">
             {{ $t('CostControl') }}
           </div>
         </div>
@@ -74,10 +74,10 @@
       </div>
       <div class="col-4 col-md-4">
         <div class="row">
-          <div class="col-3 col-md-3">
+          <div class="col-2 col-md-2">
             06
           </div>
-          <div class="col-9 col-md-9">
+          <div class="col-10 col-md-10">
             {{ $t('ReducedRisk') }}
           </div>
         </div>
