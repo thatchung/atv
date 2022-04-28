@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <nuxt-link :to="'/work/' + work.url">
-      <ThumbImage :src="'http://103.39.93.99:1333' + work.thub.url" ratio="8-5" />
+      <ThumbImage :src="'http://103.39.93.99:1333' + work.thub.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
       <h2 class="item-title font-pp-bold">
@@ -21,9 +21,9 @@
       <div class="work-info">
         <div class="detail-text">
           {{ $t('Typeofproject') }} :
-            <span v-if="$i18n.locale === 'vn'">{{ work.category | categoryVNFilter }}</span>
-            <span v-else >{{ work.category | categoryFilter }}</span>
-            <!-- {{ work.category | categoryFilter }} -->
+          <span v-if="$i18n.locale === 'vn'">{{ work.category | categoryVNFilter }}</span>
+          <span v-else>{{ work.category | categoryFilter }}</span>
+          <!-- {{ work.category | categoryFilter }} -->
         </div>
       </div>
       <div class="work-info">
@@ -31,7 +31,7 @@
           {{ $t('Location') }} :
           <!-- {{ work.location | locationFilter }} -->
           <span v-if="$i18n.locale === 'vn'">{{ work.location | locationVNFilter }}</span>
-          <span v-else >{{ work.location | locationFilter }}</span>
+          <span v-else>{{ work.location | locationFilter }}</span>
         </div>
         <nuxt-link :to="'/work/' + work.url">
           <!-- <b-icon-arrow-right style="margin-left: 1rem;" /> -->

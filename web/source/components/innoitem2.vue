@@ -1,15 +1,16 @@
 <template>
   <div class="inno-item">
-    <div :class="'item-date ' + position">
-      {{ item.date }}
+    <div :class="'item-date-m ' + position">
+      <!-- {{ item.date }} -->
+      <!-- December 27, 2021 -->
     </div>
     <nuxt-link :to="'/innovation/' + item.url">
-      <h2 class="item-title-2 font-pp-bold">
+      <h2 class="item-title-m-2 font-pp-bold">
         {{ item.title }}
       </h2>
     </nuxt-link>
     <nuxt-link :to="'/innovation/' + item.url">
-      <ThumbImage :src="'http://103.39.93.99:1333' + item.thub.url" ratio="8-5" />
+      <ThumbImage :src="'http://103.39.93.99:1333' + item.thub.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <div class="item-content">
       {{ description }}
@@ -69,14 +70,11 @@ export default {
 .item-date{
   margin-bottom: 0.5rem;
 }
-.item-title{
+.item-title-m-2{
   font-size: 1.5rem;
   margin-top: 0.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 .item-content svg{
   margin-left: 0.5rem;
@@ -86,5 +84,8 @@ export default {
 }
 .right-p{
   float: right;
+}
+.item-date-m{
+  width: 100%;
 }
 </style>

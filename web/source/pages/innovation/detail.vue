@@ -97,6 +97,7 @@ export default {
 .inno-title{
   font-size: 2rem;
   margin-top: 4rem;
+  text-transform: uppercase;
 }
 .inno-content{
   position: relative;

@@ -1,6 +1,6 @@
 @media (min-width: 1700px) {
   html{
-    font-size: 22px;
+    font-size: 24px;
   }
   .container{
     max-width: 1600px;
@@ -48,7 +48,7 @@
 }
 @media (min-width: 768px) and (max-width: 991px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
   .list-work .slick-arrow{
       margin-top: -85px !important;
@@ -71,7 +71,7 @@
 }
 @media (max-width: 575px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
   .container{
     padding-left: 20px;
@@ -134,6 +134,7 @@
   }
   .section-who .description{
     margin-bottom: 1.5rem;
+    padding-top: 0.35rem;
   }
   .section-who .who-more{
     bottom: -3rem;
@@ -146,7 +147,7 @@
     width:  90%;
   }
   .section-who .what-text{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .a_description{
     margin-bottom: 2rem;
@@ -199,12 +200,14 @@
   }
   .location-list{
     height: 15rem !important;
+    width: calc(100% + 20px);
+    margin-left: -10px;
   }
   .location-item{
     font-size: 1rem;
     padding: 0rem 0.5rem !important;
     height: 30px !important;
-    line-height:30px !important;
+    line-height:25px !important;
     margin-bottom: 0.5rem;
   }
   .last-img{

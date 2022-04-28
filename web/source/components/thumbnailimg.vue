@@ -15,7 +15,7 @@
   >
     <img
       :style="contain ? `object-fit: contain;` : `object-fit: ${coverimg};`"
-      :class="`${nameClass} thumbnail-inner`"
+      :class="`${nameClass} thumbnail-inner ${isgray ? 'gray-hover' : ''}`"
       :alt="alt"
       :title="title"
       :src="src"
@@ -58,6 +58,10 @@ export default {
     coverimg: {
       type: String,
       default: "cover",
+    },
+    isgray: {
+      type: Boolean,
+      default: false,
     }
   },
   data() {
@@ -162,6 +166,18 @@ img:not([src]) {
 }
 .border-img {
   border-radius: 0px 0px 14px 14px;
+}
+
+.gray-hover {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  &:hover{
+    filter: grayscale(0%) !important;
+    -webkit-filter: grayscale(0%) !important;
+  }
 }
 @media (max-width: 768px) {
   .thumbnail-wrapper {

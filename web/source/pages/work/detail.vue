@@ -272,6 +272,7 @@ export default {
 .work-title{
   font-size: 2rem;
   margin-top: 4rem;
+  text-transform: uppercase;
 }
 .work-content{
   position: relative;

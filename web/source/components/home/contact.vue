@@ -91,7 +91,14 @@
     <div class="line-all line-all-last" />
     <div class="phone">
       Hotline
-      <div><a href="tel:0123456789">+84 908 734 134</a></div>
+      <div>
+        <a href="tel:0123456789">
+          <div class="tel-div">+84</div>
+          <div class="tel-div"> 908</div>
+          <div class="tel-div"> 734</div>
+          <div class="tel-div"> 134</div>
+        </a>
+      </div>
     </div>
     <div class="back-top" @click="toTopAction">
       <!-- <b-icon-arrow-up /> -->
@@ -110,6 +117,7 @@ export default {
   },
   mounted() {
     this.checkMobile()
+    this.animateOnScroll()
   },
   methods: {
     toTopAction () {
@@ -123,6 +131,17 @@ export default {
           this.isMobile = false
         }
       }
+    },
+    animateOnScroll() {
+      this.$gsap.to('.tel-div', {
+        scrollTrigger:{
+            trigger: '.tel-div',
+            toggleActions: 'restart none none reset'
+        },
+        scale:1,
+        ease: "elastic.out",
+        duration: 1.5
+      })
     }
   }
 }
@@ -151,14 +170,19 @@ export default {
   width: 60%;
 }
 .type{
-  font-weight: 600;
-  margin-top: 3rem;
+  font-weight: 500;
+  margin-top: 4rem;
 }
 .phone{
   font-size: 1.5rem;
   font-weight: 600;
 }
 .phone a{
+  color: #9D9FA2;
+}
+.tel-div{
+  transform: scale(0.5, 0.5);
+  margin-left: 0rem !important;
   color: #9D9FA2;
 }
 .phone div{
@@ -193,6 +217,9 @@ export default {
     display: block;
     font-size: 2rem;
     margin-left: 0rem;
+  }
+  .tel-div{
+    display: inline-block !important;
   }
   .back-top{
     right: 1rem;

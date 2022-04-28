@@ -403,6 +403,12 @@ export default {
   }
   .work-filter-list{
     height: 4rem;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+  }
+  .work-filter-item{
+    height: 30px;
+    line-height: 25px;
   }
 }
 </style>

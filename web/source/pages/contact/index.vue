@@ -259,7 +259,7 @@ export default {
 .line-all-d{
   width: 100%;
   margin: 0.5rem 0rem;
-  border-top: 2px solid #464748;
+  border-top: 1px solid #7E8083;
 }
 .c-input{
   border: none;
@@ -279,7 +279,7 @@ textarea{
   width: 100%;
   background-color: #AFB0B3;
   margin-top: 1rem;
-  border:2px solid #464748;
+  border:1px solid #7E8083;
   &:focus-visible {
     outline: none;
   }

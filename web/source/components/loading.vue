@@ -6,7 +6,9 @@
       <div class="rect-3" />
       <div class="rect-4" />
       <div class="logo-loading">
-        <img src="/images/logo.png"></img>
+        <img class="logo-loading-1" src="/images/logo.png"></img>
+        <img class="logo-loading-2" src="/images/logo_b.png"></img>
+        <div class="rect-loading"></div>
       </div>
     </div>
   </div>
@@ -50,17 +52,52 @@ export default {
     height: 100%;
     position: relative;
     z-index: 5;
-    animation: imgbg 6s ease-out;
-    animation-fill-mode: forwards;
     top: 42px;
     left: 15px;
     img{
-      animation: image 6s ease-out;
-      animation-fill-mode: forwards;
       width: 50%;
       margin-left: 45px;
       margin-top: 42px;
+      position: absolute;
     }
+    .logo-loading-1{
+      opacity: 1;
+      z-index: 3;
+      animation: hide1 6s ease-out;
+      animation-fill-mode: forwards;
+    }
+    .logo-loading-2{
+      opacity: 0;
+      z-index: 2;
+      animation: show1 6s ease-out;
+      animation-fill-mode: forwards;
+    }
+    .rect-loading{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      animation: imgbg 6s ease-out;
+      animation-fill-mode: forwards;
+    }
+}
+@keyframes show1 {
+    0%{opacity:0}
+    75%{opacity:0}
+    94%{opacity:1}
+    100%{opacity:1}
+}
+@keyframes hide1 {
+    0%{opacity:1}
+    75%{opacity:1}
+    94%{opacity:0}
+    100%{opacity:0}
+}
+@keyframes hide2 {
+    0%{opacity:0.5}
+    75%{opacity:0.5}
+    94%{opacity:0}
+    100%{opacity:0}
 }
 @keyframes image {
     0%{content:url(/images/logo.png)}
@@ -107,7 +144,7 @@ export default {
     clip-path: polygon(0% 100%, 40% 0%, 100% 100%);
     transform: rotate(5.5deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
-    background-size: 600% 600%;
+    background-size: 800% 800%;
     animation: color1 6s ease-out;
     animation-fill-mode: forwards;
     background-position: 100% 10%;
@@ -122,7 +159,7 @@ export default {
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     transform: rotate(90deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
-    background-size: 600% 600%;
+    background-size: 800% 800%;
     background-position: 0% 0%;
     animation: color2 6s ease-out;
     animation-fill-mode: forwards;
@@ -137,7 +174,7 @@ export default {
     clip-path: polygon(0% 100%, 60% 0%, 100% 100%);
     transform: rotate(174.5deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
-    background-size: 600% 600%;
+    background-size: 800% 800%;
     background-position: 0% 0%;
     animation: color3 6s ease-out;
     animation-fill-mode: forwards;
@@ -152,7 +189,7 @@ export default {
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     transform: rotate(270deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
-    background-size: 600% 600%;
+    background-size: 800% 800%;
     background-position: 100% 0%;
     animation: color4 6s ease-out;
     animation-fill-mode: forwards;

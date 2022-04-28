@@ -142,7 +142,14 @@ a:hover {
     transform: rotate(360deg);
   }
 }
-
+@keyframes phone-scale {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 /*@media (min-width: 1400px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1200px !important;
