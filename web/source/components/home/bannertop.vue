@@ -2,7 +2,7 @@
   <div class="banner-slide">
     <VueSlickCarousel
       ref="slide1"
-      :autoplay='true'
+      :autoplay='false'
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
     >
@@ -274,6 +274,7 @@ export default {
   z-index: 1;
 }
 .banner-content{
+  width: 100%;
   position: absolute;
   z-index: 2;
   left: 50%;
@@ -415,7 +416,7 @@ export default {
 #controls a:hover  {
     color: 66FFFF;
 }
-@media (max-width: 575px) {
+@media (min-width: 1700px) {
   .banner-content{
     top: calc(50% - 240px);
   }
