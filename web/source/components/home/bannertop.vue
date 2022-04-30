@@ -7,6 +7,25 @@
       @beforeChange="syncSliders"
     >
       <div class="banner-img">
+        <ThumbImage
+          v-if="!isMobile"
+          :sourceVideo="'/images/video_atv.mp4'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          :video="true"
+          ratio="21-9"
+        />
+        <!-- <Video /> -->
+        <ThumbImage
+          v-if="isMobile"
+          :sourceVideo="'/images/video_atv.mp4'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          :video="true"
+          ratio="1-1"
+        />
+      </div>
+      <div class="banner-img">
         <div class="banner-content banner-content-1">
           <div class="banner-title">
             <!-- <div class="char">E</div>
@@ -125,22 +144,6 @@
           ratio="1-1"
         />
       </div>
-      <div class="banner-img">
-        <ThumbImage
-          v-if="!isMobile"
-          :src="'/images/banner5.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="21-9"
-        />
-        <ThumbImage
-          v-if="isMobile"
-          :src="'/images/banner5.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="1-1"
-        />
-      </div>
     </VueSlickCarousel>
     <div class="slide-sub">
       <div v-for="(img, idx) in images" :key="idx" class="sub-img-item" :style="style[idx]" @click="render(idx)">
@@ -151,6 +154,7 @@
   </div>
 </template>
 <script>
+// import Video from '~/components/video.vue'
 
 export default {
   data() {
@@ -167,6 +171,9 @@ export default {
       nameClass: 'image-banner'
     }
   },
+  // components: {
+  //   Video
+  // },
   mounted() {
     this.isMobile = this.checkMobile()
     this.slide1 = this.$refs.slide1
@@ -206,7 +213,8 @@ export default {
       this.animateBanner(parseInt(idx) + 1)
     },
     animateBanner(idx) {
-      if (idx === 1 || idx === 3) {
+      if (idx === 2 || idx === 4) {
+        idx = idx - 1
         this.$gsap.fromTo(`.banner-content-${idx} .banner-title`, {
           opacity:0,
           letterSpacing: '100px'
@@ -225,7 +233,7 @@ export default {
           y: 0,
           duration: 2
         })
-      } else if (idx === 2) {
+      } else if (idx === 3) {
         this.$gsap.fromTo(`.banner-content-2 .title-left-1`, {
           opacity:0,
           x: -300

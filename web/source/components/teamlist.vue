@@ -76,7 +76,7 @@ export default {
   margin-top: 1rem;
 }
 .team-item{
-  width: 90% !important;
+  width: 100% !important;
 }
 .pre-arrow{
   z-index: 2;

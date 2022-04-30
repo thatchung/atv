@@ -13,7 +13,19 @@
     v-else
     :class="`thumbnail-wrapper d-flex align-items-center justify-content-center ratio_${ratio}`"
   >
+    <video
+      ref="videoRef"
+      v-if="video"
+      autoplay
+      muted
+      class="thumbnail-video-inner"
+      :style="contain ? `object-fit: contain;` : `object-fit: cover;`"
+      :class="`${nameClass}`"
+    >
+      <source :src="sourceVideo" type="video/mp4" />
+    </video>
     <img
+      v-else
       :style="contain ? `object-fit: contain;` : `object-fit: ${coverimg};`"
       :class="`${nameClass} thumbnail-inner ${isgray ? 'gray-hover' : ''}`"
       :alt="alt"
@@ -59,7 +71,15 @@ export default {
       type: String,
       default: "cover",
     },
+    sourceVideo: {
+      type: String,
+      default: "cover",
+    },
     isgray: {
+      type: Boolean,
+      default: false,
+    },
+    video: {
       type: Boolean,
       default: false,
     }
@@ -68,15 +88,20 @@ export default {
     return {
       isOrigin: false
     }
-  }
+  },
   // watch: {
   //   src: async function (val) {
   //     if (val && val.resize_link !== "") {
   //     }
   //   },
   // },
-  // mounted() {
-  // },
+  mounted() {
+    if (this.video) {
+      setTimeout(() => {
+        this.$ref.videoRef.play()
+      }, 300)
+    }
+  },
   // methods: {
   // },
   // created() {
@@ -90,6 +115,7 @@ img:not([src]) {
 }
 .thumbnail-wrapper {
   width: 100%;
+  background-color: black;
   position: relative; /* If you want text inside of it */
   &.ratio_banner-half {
     padding-top: 18%; /* Aspect Ratio custom for banner half */
@@ -150,7 +176,17 @@ img:not([src]) {
 .class-border {
   border-radius: 8px;
 }
-
+.thumbnail-video-inner{
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .class-border-16 {
   border-radius: 16px !important;
 }
@@ -187,6 +223,12 @@ img:not([src]) {
     &.ratio_banner {
       padding-top: 33%; /* Aspect Ratio custom for banner */
     }
+  }
+}
+@media (max-width: 575px) {
+  .thumbnail-video-inner{
+    height: auto;
+    top: calc(50% - 115px);
   }
 }
 </style>
