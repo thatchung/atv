@@ -153,6 +153,7 @@
 export default {
   data() {
     return {
+      isMobile: false,
       images : ['/images/banner1.jpg',
         '/images/banner2.jpg',
         '/images/banner3.jpg',
@@ -165,10 +166,20 @@ export default {
     }
   },
   mounted() {
+    this.isMobile = this.checkMobile()
     this.slide1 = this.$refs.slide1
     this.render(0)
   },
   methods: {
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          return true
+        } else {
+          return false
+        }
+      }
+    },
     syncSliders(currentPosition, nextPosition) {
       this.$refs.slide1.goTo(nextPosition)
       this.render(nextPosition)
@@ -201,7 +212,7 @@ export default {
           opacity:1,
           letterSpacing: '1px',
           ease: "expo.out",
-          duration: 2
+          duration: 1.5
         })
         this.$gsap.fromTo(`.banner-content-${idx} .banner-text`, {
           opacity:0,

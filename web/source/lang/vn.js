@@ -6,7 +6,7 @@ module.exports =  {
   All: 'Tất cả',
   AboutUs: 'Về chúng tôi',
   WHOWEARE: 'GIỚI THIỆU',
-  WHATWEDO: 'CHUYÊN MÔM',
+  WHATWEDO: 'CHUYÊN MÔN',
   WHEREWEWORK: 'NƠI LÀM VIỆC',
   OURUNIQUENESS: 'NÉT ĐỘC ĐÁO',
   OURNETWORK: 'ĐỐI TÁC',

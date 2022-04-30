@@ -174,6 +174,7 @@ export default {
   },
   mounted() {
     this.isMobile = this.checkMobile()
+    this.animateOnScroll()
     if (this.$route.hash) {
       this.goto(this.$route.hash.replace('#', ''))
     } else {
@@ -199,6 +200,18 @@ export default {
           window.scrollTo({ top: yy - 90, behavior: 'smooth' })
         }, 900)
       }
+    },
+    animateOnScroll() {
+      this.$gsap.to('.about-what-description', {
+        scrollTrigger:{
+            trigger: '.about-what-description',
+            toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        ease: "expo.out",
+        y:0,
+        duration: 1.5
+      })
     }
   }
 }
@@ -213,6 +226,8 @@ export default {
   font-weight: 600;
   margin: 2.5rem 0rem;
   width: 80%;
+  transform: translate(0px,200px);
+  opacity: 0;
 }
 .about-what-design-title{
   font-size: 1.5rem;
