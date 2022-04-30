@@ -69,7 +69,7 @@
     <div class="row">
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
-          thub="/images/leader1.png"
+          thub="/images/leader1.jpg"
           :name="$t('PeopleName1')"
           :des="$t('PeopleDes1')"
           :cut="$t('PeopleDesCut1')"
@@ -78,7 +78,7 @@
       </div>
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
-          thub="/images/leader2.png"
+          thub="/images/leader2.jpg"
           :name="$t('PeopleName2')"
           :des="$t('PeopleDes2')"
           :cut="$t('PeopleDesCut2')"
@@ -93,7 +93,7 @@
     <div class="row">
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
-          thub="/images/key1.png"
+          thub="/images/key1.jpg"
           :name="$t('PeopleName3')"
           :des="$t('PeopleDes3')"
           :cut="$t('PeopleDesCut3')"
@@ -102,7 +102,7 @@
       </div>
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
-          thub="/images/key4.png"
+          thub="/images/key4.jpg"
           :name="$t('PeopleName4')"
           :des="$t('PeopleDes4')"
           :cut="$t('PeopleDesCut4')"
@@ -111,7 +111,7 @@
       </div>
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
-          thub="/images/key3.png"
+          thub="/images/key3.jpg"
           :name="$t('PeopleName5')"
           :des="$t('PeopleDes5')"
           :cut="$t('PeopleDesCut5')"
@@ -120,7 +120,7 @@
       </div>
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
-          thub="/images/key2.png"
+          thub="/images/key2.jpg"
           :name="$t('PeopleName6')"
           :des="$t('PeopleDes6')"
           :cut="$t('PeopleDesCut6')"
@@ -131,10 +131,10 @@
     <div class="line-all" />
     <div class="row" style="margin-top: 3rem;">
       <div class="col-12 col-md-6 ex-item">
-        <TeamList :name="$t('TEAM1')" thub="/images/proteam.png" :content="$t('TEAMDES1')" />
+        <TeamList :name="$t('TEAM1')" thub="/images/proteam.jpg" :content="$t('TEAMDES1')" />
       </div>
       <div class="col-12 col-md-6 ex-item">
-        <TeamList :name="$t('TEAM2')" thub="/images/proteam2.png" :content="$t('TEAMDES2')" />
+        <TeamList :name="$t('TEAM2')" thub="/images/proteam2.jpg" :content="$t('TEAMDES2')" />
       </div>
     </div>
   </div>

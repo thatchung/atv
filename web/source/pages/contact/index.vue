@@ -92,7 +92,14 @@
       <div class="line-all" />
       <div class="phone">
         Hotline
-        <div><a href="tel:0123456789">+84 908 734 134</a></div>
+        <div>
+          <a href="tel:0123456789">
+            <div class="tel-div-c">+84</div>
+            <div class="tel-div-c"> 908</div>
+            <div class="tel-div-c"> 734</div>
+            <div class="tel-div-c"> 134</div>
+          </a>
+        </div>
       </div>
     </div>
     <div class="mailus">
@@ -198,6 +205,7 @@ export default {
   },
   mounted() {
     this.checkMobile()
+    this.animateOnScroll()
   },
   methods: {
     toTopAction () {
@@ -211,6 +219,17 @@ export default {
           this.isMobile = false
         }
       }
+    },
+    animateOnScroll() {
+      this.$gsap.to('.tel-div-c', {
+        scrollTrigger:{
+            trigger: '.tel-div-c',
+            toggleActions: 'restart none none reset'
+        },
+        scale:1,
+        ease: "elastic.out",
+        duration: 1.5
+      })
     }
   }
 }

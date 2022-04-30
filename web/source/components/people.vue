@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <div class="img-content">
-      <ThumbImage :src="thub" ratio="1-1" />
+      <ThumbImage :src="thub" ratio="8-5" />
     </div>
     <h3 class="item-title">
       {{ name }} - {{ role }}
@@ -75,7 +75,7 @@ export default {
   cursor: pointer;
 }
 .img-content{
-  width: 70%;
+  width: 100%;
 }
 .item-content svg{
   margin-left: 0.5rem;

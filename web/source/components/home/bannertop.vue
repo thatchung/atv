@@ -6,12 +6,137 @@
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
     >
-      <div v-for="(img, idx) in images" :key="idx" class="banner-img">
+      <div class="banner-img">
+        <div class="banner-content banner-content-1">
+          <div class="banner-title">
+            <!-- <div class="char">E</div>
+            <div class="char">f</div>
+            <div class="char">f</div>
+            <div class="char">i</div>
+            <div class="char">c</div>
+            <div class="char">i</div>
+            <div class="char">e</div>
+            <div class="char">n</div>
+            <div class="char">c</div>
+            <div class="char">y</div> -->
+            Efficiency
+          </div>
+          <div class="banner-title">
+            <!-- <div class="char">W</div>
+            <div class="char">i</div>
+            <div class="char">t</div>
+            <div class="char">h</div>
+            <div class="char"> </div>
+            <div class="char">A</div>
+            <div class="char">e</div>
+            <div class="char">s</div>
+            <div class="char">t</div>
+            <div class="char">h</div>
+            <div class="char">e</div>
+            <div class="char">t</div>
+            <div class="char">i</div>
+            <div class="char">c</div> -->
+            With Aesthetic
+          </div>
+          <div class="banner-text">Forming Who We Are</div>
+        </div>
         <ThumbImage
-          :src="img"
-          :nameClass="nameClass"
+          v-if="!isMobile"
+          :src="'/images/imgbanner1.jpg'"
+          :nameClass="'image-banner'"
           :contain="false"
-          ratio="banner"
+          ratio="21-9"
+        />
+        <ThumbImage
+          v-if="isMobile"
+          :src="'/images/imgbanner1.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="1-1"
+        />
+      </div>
+      <div class="banner-img">
+        <div class="banner-content banner-content-2 container">
+          <div class="row">
+            <div class="col-4 col-md-4">
+              <div class="banner-title-left title-left-1">Design</div>
+            </div>
+            <div class="col-4 col-md-4">
+              <img class="banner-line" src="/images/bannerline.png" alt="Design - Build"></img>
+            </div>
+            <div class="col-4 col-md-4">
+              <div class="banner-title-left title-left-2">Build</div>
+              <div class="banner-text-left">Telling</div>
+              <div class="banner-text-left">What</div>
+              <div class="banner-text-left">We</div>
+            </div>
+          </div>
+        </div>
+        <ThumbImage
+          v-if="!isMobile"
+          :src="'/images/imgbanner2.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="21-9"
+        />
+        <ThumbImage
+          v-if="isMobile"
+          :src="'/images/imgbanner2.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="1-1"
+        />
+      </div>
+      <div class="banner-img">
+        <div class="banner-content banner-content-3">
+          <div class="banner-title">Innovation</div>
+          <div class="banner-text">Pushing Us Forward</div>
+        </div>
+        <ThumbImage
+          v-if="!isMobile"
+          :src="'/images/imgbanner3.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="21-9"
+        />
+        <ThumbImage
+          v-if="isMobile"
+          :src="'/images/imgbanner3.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="1-1"
+        />
+      </div>
+      <div class="banner-img">
+        <ThumbImage
+          v-if="!isMobile"
+          :src="'/images/banner4.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="21-9"
+        />
+        <ThumbImage
+          v-if="isMobile"
+          :src="'/images/banner4.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="1-1"
+        />
+      </div>
+      <div class="banner-img">
+        <ThumbImage
+          v-if="!isMobile"
+          :src="'/images/banner5.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="21-9"
+        />
+        <ThumbImage
+          v-if="isMobile"
+          :src="'/images/banner5.jpg'"
+          :nameClass="'image-banner'"
+          :contain="false"
+          ratio="1-1"
         />
       </div>
     </VueSlickCarousel>
@@ -50,21 +175,72 @@ export default {
     },
     render(idx) {
       let t_slider = []
-      let deg = 45
+      let deg = 50
       let len = this.images.length
       for (let i = 0;i < len; i++) {
         if (i < idx) {
-          t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len * 5 - i)}deg); z-index: ${5 + i};`
+          t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len - i)}deg); z-index: ${5 + i};`
         }
         if (i === idx) {
           t_slider[i] = `transform: translateX(${90 * i}%) rotateY( 0deg ) translateZ( 30px ); z-index: 10;opacity: 1;`
         }
         if (i > idx) {
-          t_slider[i] = `transform: translateX(${90 * i}% ) rotateY(-${deg + (len * 2 - i)}deg); z-index: ${5 - i};`
+          t_slider[i] = `transform: translateX(${90 * i}% ) rotateY(-${deg + (len - i)}deg); z-index: ${5 - i};`
         }
       }
       this.style = t_slider
       this.$refs.slide1.goTo(idx)
+      this.animateBanner(parseInt(idx) + 1)
+    },
+    animateBanner(idx) {
+      if (idx === 1 || idx === 3) {
+        this.$gsap.fromTo(`.banner-content-${idx} .banner-title`, {
+          opacity:0,
+          letterSpacing: '100px'
+        }, {
+          opacity:1,
+          letterSpacing: '1px',
+          ease: "expo.out",
+          duration: 2
+        })
+        this.$gsap.fromTo(`.banner-content-${idx} .banner-text`, {
+          opacity:0,
+          y: 200
+        }, {
+          opacity:1,
+          ease: "expo.out",
+          y: 0,
+          duration: 2
+        })
+      } else if (idx === 2) {
+        this.$gsap.fromTo(`.banner-content-2 .title-left-1`, {
+          opacity:0,
+          x: -300
+        }, {
+          opacity:1,
+          ease: "expo.out",
+          x: 0,
+          duration: 2
+        })
+        this.$gsap.fromTo(`.banner-content-2 .title-left-2`, {
+          opacity:0,
+          x: 300
+        }, {
+          opacity:1,
+          ease: "expo.out",
+          x: 0,
+          duration: 2
+        })
+        this.$gsap.fromTo(`.banner-content-2 .banner-text-left`, {
+          opacity:0,
+          y: 200
+        }, {
+          opacity:1,
+          ease: "expo.out",
+          y: 0,
+          duration: 2
+        })
+      }
     }
   }
 }
@@ -75,11 +251,60 @@ export default {
   overflow: hidden;
 }
 .banner-img{
+  position: relative;
   width: 100%;
 }
 .image-banner{
   width: 100%;
   object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.banner-content{
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%);
+  top: calc(50% - 190px);
+}
+.char{
+  color: #fff;
+  font-family: 'pp-light';
+  display: inline-block;
+}
+.banner-title{
+  text-align: center;
+  color: #fff;
+  font-family: 'pp-light';
+  font-size: 120px;
+  line-height: 120px;
+  white-space: nowrap;
+}
+.banner-text{
+  text-align: center;
+  color: #fff;
+  font-family: 'pp-light';
+  font-size: 30px;
+  white-space: nowrap;
+  line-height: 110px;
+}
+.banner-line{
+  width: 100%;
+  margin-top: 50px;
+}
+.banner-title-left{
+  color: #fff;
+  font-family: 'pp-light';
+  font-size: 120px;
+  line-height: 120px;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+.banner-text-left{
+  color: #fff;
+  font-family: 'pp-light';
+  font-size: 30px;
+  white-space: nowrap;
 }
 .slide-sub{
   position: absolute;
@@ -178,8 +403,53 @@ export default {
     color: 66FFFF;
 }
 @media (max-width: 575px) {
+  .banner-content{
+    top: calc(50% - 240px);
+  }
+  .banner-title{
+    font-size: 160px;
+    line-height: 170px;
+  }
+  .banner-text{
+    font-size: 40px;
+    line-height: 140px;
+  }
+  .banner-line{
+    margin-top: 75px;
+  }
+  .banner-title-left{
+    font-size: 160px;
+    line-height: 170px;
+  }
+  .banner-text-left{
+    font-size: 40px;
+  }
+}
+@media (max-width: 575px) {
   .slide-sub{
-    bottom: 10px;
+    bottom: 25px;
+  }
+  .banner-content{
+    top: calc(50% - 100px);
+  }
+  .banner-title{
+    font-size: 40px;
+    line-height: normal;
+  }
+  .banner-text{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .banner-line{
+    margin-top: 25px;
+    padding-left: 10px;
+  }
+  .banner-title-left{
+    font-size: 40px;
+    line-height: normal;
+  }
+  .banner-text-left{
+    font-size: 14px;
   }
 }
 </style>

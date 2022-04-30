@@ -3,6 +3,10 @@
   src: url('../font/MyriadPro-Regular.otf');
 }
 @font-face {
+  font-family: 'pp-light';
+  src: url("../font/FSPPTelegraf-UltraLight.ttf");
+}
+@font-face {
   font-family: 'pp-reg';
   /*src: url('../font/PPTelegraf-Regular.otf');*/
   src: url("../font/FSPPTelegraf-Regular.otf");
