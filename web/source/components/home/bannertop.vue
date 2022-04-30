@@ -56,19 +56,21 @@
         />
       </div>
       <div class="banner-img">
-        <div class="banner-content banner-content-2 container">
-          <div class="row">
-            <div class="col-4 col-md-4">
-              <div class="banner-title-left title-left-1">Design</div>
-            </div>
-            <div class="col-4 col-md-4">
-              <img class="banner-line" src="/images/bannerline.png" alt="Design - Build"></img>
-            </div>
-            <div class="col-4 col-md-4">
-              <div class="banner-title-left title-left-2">Build</div>
-              <div class="banner-text-left">Telling</div>
-              <div class="banner-text-left">What</div>
-              <div class="banner-text-left">We</div>
+        <div class="banner-content banner-content-2">
+          <div class="container">
+            <div class="row">
+              <div class="col-4 col-md-4">
+                <div class="banner-title-left title-left-1">Design</div>
+              </div>
+              <div class="col-4 col-md-4">
+                <img class="banner-line" src="/images/bannerline.png" alt="Design - Build"></img>
+              </div>
+              <div class="col-4 col-md-4">
+                <div class="banner-title-left title-left-2">Build</div>
+                <div class="banner-text-left">Telling</div>
+                <div class="banner-text-left">What</div>
+                <div class="banner-text-left">We</div>
+              </div>
             </div>
           </div>
         </div>
