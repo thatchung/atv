@@ -31,9 +31,10 @@ export default {
     return {
         playerOptions: {
             muted: true,
+            responsive: true,
             language: 'en',
             sources: [{
-                type: "video/mp4",
+                type: "video/web",
                 src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
             }],
             poster: "/images/banner4.jpg"

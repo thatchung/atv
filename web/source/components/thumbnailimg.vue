@@ -18,11 +18,12 @@
       v-if="video"
       autoplay
       muted
+      loop
       class="thumbnail-video-inner"
       :style="contain ? `object-fit: contain;` : `object-fit: cover;`"
       :class="`${nameClass}`"
     >
-      <source :src="sourceVideo" type="video/mp4" />
+      <source :src="sourceVideo" type="video/webm" />
     </video>
     <img
       v-else
