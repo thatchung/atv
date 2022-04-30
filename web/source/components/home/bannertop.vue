@@ -9,7 +9,7 @@
       <div class="banner-img">
         <ThumbImage
           v-if="!isMobile"
-          :sourceVideo="'/images/video_atv.webm'"
+          :sourceVideo="'/images/video_atv_mute.webm'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
