@@ -7,8 +7,14 @@ export default {
             url: `innovations`,
             data: data.params ? data.params : {}
         })
+        let arr = []
+        if (res[0]) {
+            arr.push(res[0])
+            arr.push(res[0])
+            arr.push(res[0])
+        }
         commit('set_list_innovation', {
-            list_innovation: res
+            list_innovation: arr
         })
     },
 

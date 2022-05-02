@@ -101,7 +101,7 @@ export default {
   padding: 0.5rem;
 }
 .section-title{
-  font-size: 4rem;
+  font-size: 5rem;
 }
 .link-page{
   font-size: 1.4rem;

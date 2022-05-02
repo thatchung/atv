@@ -206,6 +206,11 @@ export default {
   mounted() {
     this.checkMobile()
     this.animateOnScroll()
+    this.$gsap.to('.tel-div-c', {
+        scale:1,
+        ease: "elastic.out",
+        duration: 1.5
+      })
   },
   methods: {
     toTopAction () {
@@ -263,6 +268,11 @@ export default {
 .phone a{
   color: #9D9FA2;
 }
+.tel-div-c{
+  transform: scale(0.5, 0.5);
+  margin-left: 0rem !important;
+  color: #9D9FA2;
+}
 .phone div{
   display: inline-block;
 }
@@ -286,6 +296,18 @@ export default {
   background-color: #AFB0B3;
   &:focus-visible {
     outline: none;
+  }
+  &::-webkit-input-placeholder {
+    color: #5d5d5d;
+  }
+  &::-moz-placeholder {
+    color: #5d5d5d;
+  }
+  &:-ms-input-placeholder {
+    color: #5d5d5d;
+  }
+  &:-moz-placeholder {
+    color: #5d5d5d;
   }
 }
 .c-input:-webkit-autofill,

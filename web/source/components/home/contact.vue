@@ -158,7 +158,7 @@ export default {
   margin-bottom: 3rem;
 }
 .section-title{
-  font-size: 4rem;
+  font-size: 5rem;
 }
 .place{
   font-size: 1.5rem;

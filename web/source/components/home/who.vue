@@ -286,10 +286,10 @@ export default {
   padding-bottom: 4rem;
 }
 .home-who-section-title{
-  font-size: 4rem;
+  font-size: 5rem;
 }
 .what-title{
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: 8rem;
 }
 .name{
@@ -321,7 +321,7 @@ export default {
   }
 }
 .what-text{
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 80%;
@@ -332,42 +332,42 @@ export default {
   .what-text-1{
     transform: translate(0px,250px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
   .what-text-2{
     transform: translate(0px,280px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
   .what-text-3{
     transform: translate(0px,300px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
   .what-text-1-m{
     transform: translate(0px,150px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
   .what-text-2-m{
     transform: translate(0px,180px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
   .what-text-3-m{
     transform: translate(0px,200px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
   .what-text-4-m{
     transform: translate(0px,180px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
   .what-text-5-m{
     transform: translate(0px,200px);
     opacity: 0;
-    font-family: "pp-semi";
+    font-family: "pp-reg";
   }
 }
 .what-more{

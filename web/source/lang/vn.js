@@ -17,7 +17,7 @@ module.exports =  {
   Typeofproject: 'Loại công trình',
   Location: 'Vị trí',
   Scopeofwork: 'Phạm vi công việc',
-  Whatwedo: 'Giới thiệu',
+  Whatwedo: 'Chuyên Môn',
   HomeWhatDes1: 'Một dự án, một hợp đồng, một quy trình công việc ',
   HomeWhatDes2: 'đồng nhất, xuyên suốt từ giai đoạn phác thảo ',
   HomeWhatDes3: 'đến lúc hoàn thành.',

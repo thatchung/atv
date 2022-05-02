@@ -78,8 +78,8 @@
               </div>
             </nuxt-link>
           </div>
-          <div v-if="$i18n.locale === 'vn'" class="lang-menu-btn" @click="changeLang()">ENG</div>
-          <div v-if="$i18n.locale === 'en'" class="lang-menu-btn" @click="changeLang()">VIE</div>
+          <!-- <div v-if="$i18n.locale === 'vn'" class="lang-menu-btn" @click="changeLang()">ENG</div>
+          <div v-if="$i18n.locale === 'en'" class="lang-menu-btn" @click="changeLang()">VIE</div> -->
         </div>
       </div>
       <div class="menu-backgroud" />

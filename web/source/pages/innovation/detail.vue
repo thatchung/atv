@@ -77,7 +77,7 @@ export default {
 </script>
 <style lang="scss">
 .section-title{
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: 2rem;
 }
 .back-content{

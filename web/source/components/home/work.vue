@@ -84,7 +84,7 @@ export default {
 </script>
 <style lang="scss">
 .section-work{
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 .list-work{
   width: calc(100% + 1rem);
