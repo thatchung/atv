@@ -24,7 +24,13 @@ module.exports = {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preload',
+        as: 'video',
+        type: 'video/webm',
+        href: '/images/new_atv.webm'
+      }
       // { rel: 'stylesheet', href: '/css/style.css' }
     ]
   },
