@@ -13,11 +13,11 @@
     v-else
     :class="`thumbnail-wrapper d-flex align-items-center justify-content-center ratio_${ratio}`"
   >
+    <!-- muted -->
     <video
       ref="videoRef"
       v-if="video"
       autoplay
-      muted
       loop
       class="thumbnail-video-inner"
       :style="contain ? `object-fit: contain;` : `object-fit: cover;`"
@@ -91,16 +91,23 @@ export default {
     }
   },
   // watch: {
-  //   src: async function (val) {
-  //     if (val && val.resize_link !== "") {
+  //   video: (val) => {
+  //     if (this.video) {
+  //       setTimeout(() => {
+  //         this.$ref.videoRef.play()
+  //       }, 900)
   //     }
-  //   },
+  //   }
   // },
   mounted() {
     if (this.video) {
       setTimeout(() => {
-        this.$ref.videoRef.play()
-      }, 300)
+        console.log(this.video)
+        if (this.$ref && this.$ref.videoRef) {
+          console.log(this.sourceVideo)
+          this.$ref.videoRef.play()
+        }
+      }, 1500)
     }
   },
   // methods: {
