@@ -9,7 +9,7 @@
       <div class="banner-img">
         <ThumbImage
           v-if="!isMobile"
-          :sourceVideo="'/images/video_atv_mute.webm'"
+          :sourceVideo="'/images/new_atv.webm'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
@@ -18,7 +18,7 @@
         <!-- <Video /> -->
         <ThumbImage
           v-if="isMobile"
-          :sourceVideo="'/images/video_atv_mobile.webm'"
+          :sourceVideo="'/images/new_atv.webm'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
