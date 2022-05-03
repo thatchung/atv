@@ -345,5 +345,8 @@ textarea{
     display: block;
     font-size: 2rem;
   }
+  .tel-div-c{
+    display: inline-block !important;
+  }
 }
 </style>

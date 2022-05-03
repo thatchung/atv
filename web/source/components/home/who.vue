@@ -70,7 +70,7 @@
     </div>
     <div class="line-all" />
     <div class="row" style="margin-top: 2rem;">
-      <div class="col-12 col-sm-6 col-md-6 col-lg-8" style="padding-right: 2rem;">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-8">
         <div v-if="isMobile" class="who-name font-pp-bold">
           {{ $t('EXPERIENCEDLEADERS') }}
         </div>

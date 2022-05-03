@@ -577,7 +577,7 @@ export default {
 }
 @media (max-width: 575px) {
   .map-container{
-    width: 360px;
+    width: 100%;
     margin: auto;
     height: 200px;
     overflow-y: scroll;
