@@ -198,14 +198,18 @@ export default {
       let deg = 30
       let len = this.images.length
       for (let i = 0;i < len; i++) {
-        if (i < idx) {
-          t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len - i - 2) * 14}deg); z-index: ${5 + i};`
+        if (i < 3) {
+          t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len - i - 2) * 10}deg); z-index: ${5 + i};`
+        }
+        if (i === 3) {
+          t_slider[i] = `transform: translateX(${90 * i - 10 * i}%) rotateY( 0deg ) translateZ( 110px );`
+        }
+        if (i > 3) {
+          // t_slider[i] = `transform: translateX(${90 * i}% ) rotateY(-${deg + (len - i - 2) * 14}deg); z-index: ${5 - i};`
+          t_slider[i] = `transform: translateX(400% ) rotateY(-${deg + (len - i - 2) * 10}deg); z-index: ${5 - i};`
         }
         if (i === idx) {
-          t_slider[i] = `transform: translateX(${90 * i - 10 * i}%) rotateY( 0deg ) translateZ( 110px ); z-index: 10;opacity: 1;`
-        }
-        if (i > idx) {
-          t_slider[i] = `transform: translateX(${90 * i}% ) rotateY(-${deg + (len - i - 2) * 14}deg); z-index: ${5 - i};`
+          t_slider[i] += `opacity: 1;`
         }
       }
       this.style = t_slider
