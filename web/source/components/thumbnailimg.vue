@@ -24,7 +24,7 @@
       :style="contain ? `object-fit: contain;` : `object-fit: cover;`"
       :class="`${nameClass}`"
     >
-      <source :src="sourceVideo" type="video/webm" />
+      <source :src="sourceVideo" type="video/mp4" />
     </video>
     <img
       v-else

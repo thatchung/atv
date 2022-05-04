@@ -28,8 +28,14 @@ module.exports = {
       {
         rel: 'preload',
         as: 'video',
-        type: 'video/webm',
-        href: '/images/new_atv.webm'
+        type: 'video/mp4',
+        href: '/images/atv.mp4'
+      },
+      {
+        rel: 'preload',
+        as: 'video',
+        type: 'video/mp4',
+        href: '/images/video_atv_cut.mp4'
       }
       // { rel: 'stylesheet', href: '/css/style.css' }
     ]

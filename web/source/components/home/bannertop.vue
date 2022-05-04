@@ -9,7 +9,7 @@
       <div class="banner-img" @click="showVideo">
         <ThumbImage
           v-if="!isMobile"
-          :sourceVideo="'/images/atv_cut.webm'"
+          :sourceVideo="'/images/video_atv_cut.mp4'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
@@ -17,7 +17,7 @@
         />
         <ThumbImage
           v-if="isMobile"
-          :sourceVideo="'/images/atv_cut.webm'"
+          :sourceVideo="'/images/video_atv_cut.mp4'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
@@ -124,7 +124,8 @@
     <div class="slide-sub">
       <div v-for="(img, idx) in images" :key="idx" class="sub-img-item" :style="style[idx]" @click="render(idx)">
         <!-- <img class="sub-imgage" :src="img"></img> -->
-        <img class="sub-imgage" src="/images/b_img.png"></img>
+        <!-- <img class="sub-imgage" src="/images/b_img.png"></img> -->
+        <div class="sub-div-imgage"></div>
       </div>
     </div>
     <div v-if="isVideo" class="video-full">
@@ -137,7 +138,7 @@
           :style="`object-fit: contain;`"
           class="thumbnail-video"
         >
-          <source :src="'/images/new_atv.webm'" type="video/webm" />
+          <source :src="'/images/atv.mp4'" type="video/mp4" />
         </video>
       </div>
       <div v-if="isMobile" class="video-wrapper d-flex align-items-center justify-content-center ratio_1-1">
@@ -148,7 +149,7 @@
           :style="`object-fit: contain;`"
           class="thumbnail-video"
         >
-          <source :src="'/images/new_atv.webm'" type="video/webm" />
+          <source :src="'/images/atv.mp4'" type="video/mp4" />
         </video>
       </div>
     </div>
@@ -196,21 +197,31 @@ export default {
     },
     render(idx) {
       let t_slider = []
-      let deg = 30
+      let deg = 65
       let len = this.images.length
       for (let i = 0;i < len; i++) {
-        if (i < 3) {
-          t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len - i - 2) * 10}deg); z-index: ${5 + i};`
-        }
-        if (i === 3) {
-          t_slider[i] = `transform: translateX(${90 * i - 10 * i}%) rotateY( 0deg ) translateZ( 110px );`
-        }
-        if (i > 3) {
-          // t_slider[i] = `transform: translateX(${90 * i}% ) rotateY(-${deg + (len - i - 2) * 14}deg); z-index: ${5 - i};`
-          t_slider[i] = `transform: translateX(400% ) rotateY(-${deg + (len - i - 2) * 10}deg); z-index: ${5 - i};`
+        // if (i < 3) {
+        //   t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len - i - 2) * 10}deg); z-index: ${5 + i};`
+        // }
+        // if (i === 3) {
+        //   t_slider[i] = `transform: translateX(${90 * i - 10 * i}%) rotateY( 0deg ) translateZ( 110px );`
+        // }
+        // if (i > 3) {
+        //   // t_slider[i] = `transform: translateX(${90 * i}% ) rotateY(-${deg + (len - i - 2) * 14}deg); z-index: ${5 - i};`
+        //   t_slider[i] = `transform: translateX(400% ) rotateY(-${deg + (len - i - 2) * 10}deg); z-index: ${5 - i};`
+        // }
+        if (i < idx) {
+          // t_slider[i] = `transform: translateX(${90 * (i - 2)}%) rotateY(${deg}deg); z-index: ${5 + i};`
         }
         if (i === idx) {
-          t_slider[i] += `opacity: 1;`
+          if (this.isMobile) {
+            t_slider[i] = `transform:perspective(70px) rotatey(-50deg) translateX(5px) translateZ(10px);opacity: 1;`
+          } else {
+            t_slider[i] = `transform:perspective(70px) rotatey(-50deg) translateX(5px) translateZ(15px);opacity: 1;`
+          }
+        }
+        if (i > idx) {
+          // t_slider[i] = `transform: translateX(${90 * (i - 2)}% ) rotateY(${deg}deg); z-index: ${5 - i};`
         }
       }
       this.style = t_slider
@@ -388,6 +399,12 @@ export default {
 .slide-sub{
   position: absolute;
   bottom: 60px;
+  left: calc(50%);
+  transform: translate(-50%);
+}
+.slide-sub-old{
+  position: absolute;
+  bottom: 60px;
   left: calc(50% - 90px);
   transform: translate(-50%);
   -webkit-perspective: 600px;
@@ -400,13 +417,12 @@ export default {
   -webkit-perspective: 370px;
 }
 .sub-img-item{
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 50px;
-  height: 40px;
-  margin-left: -25px;
-  margin-top: -30px;
+  height: 35px;
+  opacity: 0.7;
+  display: inline-block;
+  transform: perspective(70px) rotateY(-70deg);
+  margin: 0rem -5px;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -416,14 +432,30 @@ export default {
   -ms-transition: all 300ms ease-in;
   -o-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
-  opacity: 0.7;
+  &:hover{
+    opacity: 1;
+    transform: perspective(70px) rotateY(-50deg) translateX(5px) translateZ(15px);
+  }
 }
 .sub-img-item-old{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -30px;
+  width: 50px;
+  height: 40px;
+  opacity: 0.7;
   -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));
 }
 .sub-imgage{
   height: 100%;
   width: 100%;
+}
+.sub-div-imgage{
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
 }
 #coverflow {
     height: 100%;
@@ -507,6 +539,14 @@ export default {
 @media (max-width: 575px) {
   .slide-sub{
     bottom: 25px;
+  }
+  .sub-img-item{
+    width: 30px !important;
+    height: 20px !important;
+    margin: 0rem -3px;
+    &:hover{
+      transform: perspective(70px) rotateY(-50deg) translateX(5px) translateZ(10px);
+    }
   }
   .banner-content{
     top: calc(50% - 100px);

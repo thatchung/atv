@@ -27,7 +27,7 @@ module.exports = {
             await clearCacheData(result);
         },
         async afterCreate(result, params, data) {
-            await clearCacheData(data);
+            await clearCacheData(result);
         },
     }
 };
