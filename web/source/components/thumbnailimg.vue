@@ -103,9 +103,7 @@ export default {
   mounted() {
     if (this.video) {
       setTimeout(() => {
-        console.log(this.video)
         if (this.$ref && this.$ref.videoRef) {
-          console.log(this.sourceVideo)
           this.$ref.videoRef.play()
         }
       }, 1500)

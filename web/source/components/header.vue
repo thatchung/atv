@@ -50,21 +50,21 @@
                 {{ $t('WHEREWEWORK') }}
               </div>
             </nuxt-link>
-            <nuxt-link to="/about#ouruniqueness">
-              <div class="menu-sub">
-                {{ $t('OURUNIQUENESS') }}
-              </div>
-            </nuxt-link>
             <nuxt-link to="/about#ournetwork">
               <div class="menu-sub">
                 {{ $t('OURNETWORK') }}
               </div>
             </nuxt-link>
-            <nuxt-link to="/about#process">
+            <nuxt-link to="/about#ouruniqueness">
+              <div class="menu-sub">
+                {{ $t('OURUNIQUENESS') }}
+              </div>
+            </nuxt-link>
+            <!-- <nuxt-link to="/about#process">
               <div class="menu-sub">
                 {{ $t('PROCESS') }}
               </div>
-            </nuxt-link>
+            </nuxt-link> -->
           </div>
           <div class="col-12 col-md-4">
             <nuxt-link to="/innovation">

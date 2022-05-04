@@ -92,6 +92,9 @@ export default {
 <style lang="scss">
 .section-inno{
   margin-top: 8rem;
+  .section-title{
+    font-size: 5rem;
+  }
 }
 .list-inno{
   width: calc(100% + 1rem);
@@ -99,9 +102,6 @@ export default {
 }
 .inno-slider-item{
   padding: 0.5rem;
-}
-.section-title{
-  font-size: 5rem;
 }
 .link-page{
   font-size: 1.4rem;
@@ -130,6 +130,13 @@ export default {
   }
   img{
     width: 50px;
+  }
+}
+@media (max-width: 575px) {
+  .section-inno{
+    .section-title{
+      font-size: 4rem;
+    }
   }
 }
 </style>

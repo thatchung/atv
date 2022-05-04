@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="line-all" />
-    <div class="about-who-ex-title font-pp-bold">
+    <div ref="exper" class="about-who-ex-title font-pp-bold">
       {{ $t('EXPERIENCEDLEADERS') }}
     </div>
     <div class="row">
@@ -150,6 +150,9 @@ export default {
   },
   mounted() {
     this.isMobile = this.checkMobile()
+    if (this.$route.hash) {
+      this.goto(this.$route.hash.replace('#', ''))
+    }
   },
   methods: {
     checkMobile() {
@@ -165,6 +168,10 @@ export default {
       const el = this.$refs[('' + hash)]
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => {
+          let yy = window.pageYOffset
+          window.scrollTo({ top: yy - 90, behavior: 'smooth' })
+        }, 900)
       }
     }
   }

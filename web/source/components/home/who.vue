@@ -74,7 +74,7 @@
         <div v-if="isMobile" class="who-name font-pp-bold">
           {{ $t('EXPERIENCEDLEADERS') }}
         </div>
-        <nuxt-link to="/about">
+        <nuxt-link to="/about#exper">
           <ThumbImage :src="'/images/lead.jpg'" ratio="16-9" :isgray="true" />
         </nuxt-link>
       </div>
@@ -87,7 +87,7 @@
           </br>
           {{ $t('LeadDes2') }}
         </div>
-        <nuxt-link to="/about">
+        <nuxt-link to="/about#exper">
           <div class="who-more">
             {{ $t('SEEMORE') }}
             <img class="img-arrow-right" src="/images/a_right.png"></img>
@@ -156,7 +156,7 @@
         {{ $t('HomeWhatDesM9') }}
       </div>
     </div>
-    <nuxt-link to="/about">
+    <nuxt-link to="/about#whatwedo">
       <div class="what-more">
         {{ $t('SEEMORE') }}
         <img class="img-arrow-right" src="/images/a_right.png"></img>

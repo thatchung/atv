@@ -6,19 +6,18 @@
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
     >
-      <div class="banner-img">
+      <div class="banner-img" @click="showVideo">
         <ThumbImage
           v-if="!isMobile"
-          :sourceVideo="'/images/new_atv.webm'"
+          :sourceVideo="'/images/atv_cut.webm'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
           ratio="21-9"
         />
-        <!-- <Video /> -->
         <ThumbImage
           v-if="isMobile"
-          :sourceVideo="'/images/new_atv.webm'"
+          :sourceVideo="'/images/atv_cut.webm'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
@@ -28,33 +27,9 @@
       <div class="banner-img">
         <div class="banner-content banner-content-1">
           <div class="banner-title">
-            <!-- <div class="char">E</div>
-            <div class="char">f</div>
-            <div class="char">f</div>
-            <div class="char">i</div>
-            <div class="char">c</div>
-            <div class="char">i</div>
-            <div class="char">e</div>
-            <div class="char">n</div>
-            <div class="char">c</div>
-            <div class="char">y</div> -->
             Efficiency
           </div>
           <div class="banner-title">
-            <!-- <div class="char">W</div>
-            <div class="char">i</div>
-            <div class="char">t</div>
-            <div class="char">h</div>
-            <div class="char"> </div>
-            <div class="char">A</div>
-            <div class="char">e</div>
-            <div class="char">s</div>
-            <div class="char">t</div>
-            <div class="char">h</div>
-            <div class="char">e</div>
-            <div class="char">t</div>
-            <div class="char">i</div>
-            <div class="char">c</div> -->
             With Aesthetic
           </div>
           <div class="banner-text">Forming Who We Are</div>
@@ -89,6 +64,7 @@
                 <div class="banner-text-left">Telling</div>
                 <div class="banner-text-left">What</div>
                 <div class="banner-text-left">We</div>
+                <div class="banner-text-left">Do</div>
               </div>
             </div>
           </div>
@@ -128,7 +104,7 @@
           ratio="1-1"
         />
       </div>
-      <div class="banner-img">
+      <!-- <div class="banner-img">
         <ThumbImage
           v-if="!isMobile"
           :src="'/images/banner4.jpg'"
@@ -143,12 +119,37 @@
           :contain="false"
           ratio="1-1"
         />
-      </div>
+      </div> -->
     </VueSlickCarousel>
     <div class="slide-sub">
       <div v-for="(img, idx) in images" :key="idx" class="sub-img-item" :style="style[idx]" @click="render(idx)">
         <!-- <img class="sub-imgage" :src="img"></img> -->
         <img class="sub-imgage" src="/images/b_img.png"></img>
+      </div>
+    </div>
+    <div v-if="isVideo" class="video-full">
+      <div class="video-close" @click="hideVideo">Close</div>
+      <div v-if="!isMobile" class="video-wrapper d-flex align-items-center justify-content-center ratio_21-9">
+        <video
+          ref="videoFull"
+          autoplay
+          controls
+          :style="`object-fit: contain;`"
+          class="thumbnail-video"
+        >
+          <source :src="'/images/new_atv.webm'" type="video/webm" />
+        </video>
+      </div>
+      <div v-if="isMobile" class="video-wrapper d-flex align-items-center justify-content-center ratio_1-1">
+        <video
+          ref="videoFull"
+          autoplay
+          controls
+          :style="`object-fit: contain;`"
+          class="thumbnail-video"
+        >
+          <source :src="'/images/new_atv.webm'" type="video/webm" />
+        </video>
       </div>
     </div>
   </div>
@@ -159,12 +160,12 @@
 export default {
   data() {
     return {
+      isVideo: false,
       isMobile: false,
       images : ['/images/banner1.jpg',
         '/images/banner2.jpg',
         '/images/banner3.jpg',
-        '/images/banner4.jpg',
-        '/images/banner5.jpg'],
+        '/images/banner4.jpg'],
       style: ['', '', '', '', '', ''],
       slide1: undefined,
       focusOnSelect: true,
@@ -266,6 +267,17 @@ export default {
           duration: 2
         })
       }
+    },
+    showVideo () {
+      this.isVideo = true
+      setTimeout(() => {
+        if (this.$ref && this.$ref.videoFull) {
+          this.$ref.videoRef.play()
+        }
+      }, 500)
+    },
+    hideVideo () {
+      this.isVideo = false
     }
   }
 }
@@ -292,6 +304,47 @@ export default {
   left: 50%;
   transform: translate(-50%);
   top: calc(50% - 190px);
+}
+.video-full{
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+.video-close{
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1;
+  color: white;
+  font-size: 20px;
+  opacity: 0.7;
+  &:hover{
+    opacity: 1;
+  }
+}
+.video-wrapper{
+  width: 100%;
+  background-color: black;
+  position: relative;
+}
+.ratio_21-9 {
+  padding-top: 42.85%; /* 21:9 Aspect Ratio */
+}
+.ratio_1-1 {
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+.thumbnail-video{
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .char{
   color: #fff;

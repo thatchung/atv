@@ -5,15 +5,65 @@
     </h2>
     <!-- <ThumbImage src="images/map.jpg" ratio="16-9" /> -->
     <div ref="map" class="map-container">
-      <div ref="map1" class="map-item map-item-1" @click="clickMapItem('HANOI')" />
-      <div ref="map2" class="map-item map-item-2" @click="clickMapItem('HAIPHONG')" />
-      <div ref="map3" class="map-item map-item-3" @click="clickMapItem('DANANG')" />
-      <div ref="map4" class="map-item map-item-4" @click="clickMapItem('NHATRANG')" />
-      <div ref="map5" class="map-item map-item-5" @click="clickMapItem('BINHDUONG')" />
-      <div ref="map6" class="map-item map-item-6" @click="clickMapItem('HOCHIMINH')" />
-      <div ref="map7" class="map-item map-item-7" @click="clickMapItem('PHNOMPENH_CAMBODIA')" />
-      <div ref="map8" class="map-item map-item-8" @click="clickMapItem('MYTHO')" />
-      <img class="map-img" src="images/AVT_MAP.jpg"></img>
+      <div ref="mapdata" class="map-container-data">
+        <div
+          ref="map1"
+          :class="`map-item map-item-1 ${item_active === 'HANOI' ? 'scale' : ''}`"
+          @mouseover="viewItem('HANOI')"
+          @click="clickMapItem('HANOI')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <div
+          ref="map2"
+          :class="`map-item map-item-2 ${item_active === 'HAIPHONG' ? 'scale' : ''}`"
+          @mouseover="viewItem('HAIPHONG')"
+          @click="clickMapItem('HAIPHONG')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <div
+          ref="map3"
+          :class="`map-item map-item-3 ${item_active === 'DANANG' ? 'scale' : ''}`"
+          @mouseover="viewItem('DANANG')"
+          @click="clickMapItem('DANANG')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <div
+          ref="map4"
+          :class="`map-item map-item-4 ${item_active === 'NHATRANG' ? 'scale' : ''}`"
+          @mouseover="viewItem('NHATRANG')"
+          @click="clickMapItem('NHATRANG')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <div
+          ref="map5"
+          :class="`map-item map-item-5 ${item_active === 'BINHDUONG' ? 'scale' : ''}`"
+          @mouseover="viewItem('BINHDUONG')"
+          @click="clickMapItem('BINHDUONG')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <div
+          ref="map6"
+          :class="`map-item map-item-6 ${item_active === 'HOCHIMINH' ? 'scale' : ''}`"
+          @mouseover="viewItem('HOCHIMINH')"
+          @click="clickMapItem('HOCHIMINH')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <div
+          ref="map7"
+          :class="`map-item map-item-7 ${item_active === 'PHNOMPENH_CAMBODIA' ? 'scale' : ''}`"
+          @mouseover="viewItem('PHNOMPENH_CAMBODIA')"
+          @click="clickMapItem('PHNOMPENH_CAMBODIA')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <div
+          ref="map8"
+          :class="`map-item map-item-8 ${item_active === 'MYTHO' ? 'scale' : ''}`"
+          @mouseover="viewItem('MYTHO')"
+          @click="clickMapItem('MYTHO')">
+          <img class="map-img-item" src="/images/map.png"></img>
+        </div>
+        <img class="map-img" src="images/AVT_MAP.jpg"></img>
+      </div>
     </div>
     <div class="location-list">
       <div
@@ -39,31 +89,49 @@
     </h2>
     <div class="line-all" />
     <div class="row" style="margin-top: 2rem;">
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4 about-where-network">
         <div class="about-where-a_name font-pp-bold">
           9PMP - </br>{{ $t('SystematicPartner') }}
         </div>
         <div class="a_description">
           {{ $t('WhereNetworkDes1') }} </br> {{ $t('WhereNetworkDes2') }}
         </div>
+        <a href="https://9pmp.com/" target="_blank">
+          <div class="about-see-more">
+            {{ $t('SEEMORE') }}
+            <img class="img-arrow-right" src="/images/a_right.png"></img>
+          </div>
+        </a>
         <div v-if="isMobile" class="line-all-w" />
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4 about-where-network">
         <div class="about-where-a_name font-pp-bold">
           The Sentry – </br>{{ $t('TechnicalPartner') }}
         </div>
         <div class="a_description">
           {{ $t('WhereNetworkDes3') }}
         </div>
+        <a href="https://thesentry.com.vn/" target="_blank">
+          <div class="about-see-more">
+            {{ $t('SEEMORE') }}
+            <img class="img-arrow-right" src="/images/a_right.png"></img>
+          </div>
+        </a>
         <div v-if="isMobile" class="line-all-w" />
       </div>
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-4 about-where-network">
         <div class="about-where-a_name font-pp-bold">
           K-net Japan – </br>{{ $t('DesignPartner') }}
         </div>
         <div class="a_description">
           {{ $t('WhereNetworkDes4') }}</br>{{ $t('WhereNetworkDes5') }}
         </div>
+        <a href="https://www.k-netdesign.co.jp/" target="_blank">
+          <div class="about-see-more">
+            {{ $t('SEEMORE') }}
+            <img class="img-arrow-right" src="/images/a_right.png"></img>
+          </div>
+        </a>
       </div>
     </div>
     <h2 ref="ouruniqueness" class="about-where-title">
@@ -379,18 +447,19 @@ export default {
       }
     },
     clickMapItem(item) {
+      let mapheight = this.$refs.mapdata.getBoundingClientRect().height
       this.item_active = item
       const el = this.$refs.map
       if (el && this.isMobile) {
         switch (item) {
           case 'HANOI':
-            el.scrollTo({ top: 0, behavior: 'smooth' })
+            el.scrollTo({ top: 200, behavior: 'smooth' })
             break
           case 'HAIPHONG':
-            el.scrollTo({ top: 0, behavior: 'smooth' })
+            el.scrollTo({ top: 200, behavior: 'smooth' })
             break
           case 'HALONG':
-            el.scrollTo({ top: 0, behavior: 'smooth' })
+            el.scrollTo({ top: 200, behavior: 'smooth' })
             break
           case 'DANANG':
             el.scrollTo({ top: 140, behavior: 'smooth' })
@@ -419,39 +488,42 @@ export default {
       } else if (el && !this.isMobile) {
         switch (item) {
           case 'HANOI':
-            el.scrollTo({ top: 0, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.126811, behavior: 'smooth' })
             break
           case 'HAIPHONG':
-            el.scrollTo({ top: 0, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.126811, behavior: 'smooth' })
             break
           case 'HALONG':
-            el.scrollTo({ top: 0, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.126811, behavior: 'smooth' })
             break
           case 'DANANG':
-            el.scrollTo({ top: 600, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.43931, behavior: 'smooth' })
             break
           case 'BINHDUONG':
-            el.scrollTo({ top: 970, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.70199, behavior: 'smooth' })
             break
           case 'NHATRANG':
-            el.scrollTo({ top: 890, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.611413, behavior: 'smooth' })
             break
           case 'HOCHIMINH':
-            el.scrollTo({ top: 1000, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.724637, behavior: 'smooth' })
             break
           case 'BENTRE':
-            el.scrollTo({ top: 1100, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.815217, behavior: 'smooth' })
             break
           case 'MYTHO':
-            el.scrollTo({ top: 1100, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.815217, behavior: 'smooth' })
             break
           case 'PHNOMPENH_CAMBODIA':
-            el.scrollTo({ top: 1000, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.70199, behavior: 'smooth' })
             break
           default:
-            el.scrollTo({ top: 1000, behavior: 'smooth' })
+            el.scrollTo({ top: mapheight * 0.724637, behavior: 'smooth' })
         }
       }
+    },
+    viewItem (item) {
+      this.item_active = item
     }
   }
 }
@@ -473,6 +545,21 @@ export default {
   font-size: 1.3rem;
   margin-top: 2rem;
 }
+.about-where-network{
+  padding-bottom: 4rem;
+}
+.about-see-more{
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  position: absolute;
+  bottom: 1rem;
+  right: 15px;
+  svg{
+    margin-left: 1rem;
+    font-size: 1.4rem;
+  }
+}
 .location-list{
   margin-top: 2rem;
   height: 6rem;
@@ -489,7 +576,7 @@ export default {
   float: left;
   font-size: 1.5rem;
   margin-right: 1rem;
-  height: 40px;
+  height: 45px;
   line-height: 40px;
   cursor: pointer;
   margin-bottom: 1rem;
@@ -534,6 +621,9 @@ export default {
     border: 2px solid #555555;
   }
 }
+.map-container-data{
+  position: relative;
+}
 .map-img{
   width: 100%;
 }
@@ -543,37 +633,46 @@ export default {
   height: 30px;
   cursor: pointer;
 }
+.map-img-item{
+  width: 35px;
+  &:hover{
+    transform: scale(1.5);
+  }
+}
+.scale{
+  transform: scale(1.5);
+}
 .map-item-1{
-  left: 505px;
-  top: 370px;
+  left: 48%;
+  top: 25%;
 }
 .map-item-2{
-  left: 569px;
-  top: 400px;
+  left: 53%;
+  top: 27%;
 }
 .map-item-3{
-  left: 727px;
-  top: 840px;
+  left: 68%;
+  top: 55%;
 }
 .map-item-4{
-  left: 792px;
-  top: 1110px;
+  left: 74%;
+  bottom: 27%;
 }
 .map-item-5{
-  left: 626px;
-  top: 1188px;
+  left: 59%;
+  bottom: 21%;
 }
 .map-item-6{
-  left: 619px;
-  top: 1226px;
+  left: 60%;
+  bottom: 19%;
 }
 .map-item-7{
-  left: 468px;
-  top: 1138px;
+  left: 42%;
+  bottom: 24%;
 }
 .map-item-8{
-  left: 542px;
-  top: 1283px;
+  left: 51%;
+  bottom: 14%;
 }
 @media (max-width: 575px) {
   .map-container{
@@ -590,37 +689,43 @@ export default {
     height: 10px;
     cursor: pointer;
   }
+  .map-img-item{
+    width: 10px;
+    &:hover{
+      transform: scale(1.5);
+    }
+  }
   .map-item-1{
-    left: 167px;
-    top: 122px;
+    left: 48%;
+    top: 25%;
   }
   .map-item-2{
-    left: 187px;
-    top: 129px;
+    left: 51%;
+    top: 28%;
   }
   .map-item-3{
-    left: 240px;
-    top: 277px;
+    left: 68%;
+    top: 55%;
   }
   .map-item-4{
-    left: 261px;
-    top: 367px;
+    left: 74%;
+    bottom: 27%;
   }
   .map-item-5{
-    left: 207px;
-    top: 391px;
+    left: 59%;
+    bottom: 22%;
   }
   .map-item-6{
-    left: 204px;
-    top: 405px;
+    left: 60%;
+    bottom: 19%;
   }
   .map-item-7{
-    left: 155px;
-    top: 375px;
+    left: 42%;
+    bottom: 24%;
   }
   .map-item-8{
-    left: 179px;
-    top: 424px;
+    left: 51%;
+    bottom: 14%;
   }
 }
 </style>
