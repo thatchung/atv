@@ -19,6 +19,7 @@
       v-if="video"
       autoplay
       loop
+      muted
       class="thumbnail-video-inner"
       :style="contain ? `object-fit: contain;` : `object-fit: cover;`"
       :class="`${nameClass}`"
