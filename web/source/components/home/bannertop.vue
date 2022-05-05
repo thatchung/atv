@@ -37,6 +37,18 @@
           :video="true"
           ratio="1-1"
         />
+        <div v-show="isPlay" class="play-done">
+          <div class="play-done-data d-flex align-items-center justify-content-center">
+            <div
+              class="text-play-video"
+              @mouseover="hoverPlay = true"
+              @mouseout="hoverPlay = false"
+              @click="showVideo">
+              <span v-if="hoverPlay">Click to explore our transformation<b-icon-arrow-right /></span>
+              <img v-if="!hoverPlay" src="/images/btn.png"></img>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="banner-img">
         <div class="banner-content banner-content-1">
