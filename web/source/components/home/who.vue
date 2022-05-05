@@ -325,6 +325,7 @@ export default {
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 80%;
+  overflow: hidden;
   div{
     display: inline-block;
     white-space: nowrap;

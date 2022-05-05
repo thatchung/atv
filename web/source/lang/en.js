@@ -39,7 +39,7 @@ module.exports =  {
   HomeWhatDesMobile2: 'Design - build is a method of project deli- very in which one entity - the design-build team - works under a single contract with the project owner.',
   SEEMORE: 'SEE MORE',
   Latestby2021: 'Latest by 2021',
-  HeadOffice: 'Head Office,',
+  HeadOffice: 'Head Office',
   Branch: 'Branch',
   Pleaseselecttypeofenquiry: 'Please select type of enquiry',
   MailUs: 'Mail Us',
@@ -171,7 +171,8 @@ module.exports =  {
     </br>Our Business Development Manager - Harada-san is the perfect embodiment of that famous quote. He had a fresh start with interior design at AVT after 20+ years of success in international construction. Upon joining us, his experience and vast knowledge of engineering and project management immediately became a valuable asset to the company. His first project at AVT was Aeon Phnom Penh Mall in Cambodia, which was also his first encounter with Design-Build method. After 8 months of hard work, the project concluded successfully under the management of Harada-san.
     </br>Harada-san is a very good listener. He always finds a way to understand exactly what clients truly need before talking about the solutions. Everyone who worked with Harada-san describes him as a warm, professional and understanding “uncle”, who can make you feel comfortable and reassured. He is a shy person, but he does not shy away from learning new things from younger teammates. That’s what we always love and admire about our Harada-san`,
   PeopleDesCut4: 'Tuan’s journey at AVT began in 2014 with a very challenging assignment: Aeon Long Bien Mall...',
-  PeopleDes4: `Tuan’s journey at AVT began in 2014 with a very challenging assignment: Aeon Long Bien Mall. That was his longest and most memorable project at the company. His achievement was even more noteworthy considering his background was not in interior design but architecture. After almost a decade at AVT, Tuan is proud to have made the switch to pursue a profession that he has been interested in since high school. He now takes pride in developing and perfecting the company’s project management aspect.
+  PeopleDes4: `Tuan’s journey at AVT began in 2014 with a very challenging assignment: Aeon Long Bien Mall. That was his longest and most memorable project at the company. His achievement was even more noteworthy considering his background was not in interior design but architecture. After almost a decade at AVT, Tuan is proud to have made the switch to pursue a profession that he has been interested in since high school.
+    </br>He now takes pride in developing and perfecting the company’s project management aspect.
     </br>His secret to success? Meticulousness, dedication, and professionalism. He impresses everyone with his experience and excellence in project management. He might not talk much but is actually a very friendly and caring person. That is why he is much loved and respected by the partners and clients who have worked with him.`,
   PeopleDesCut5: 'Mau considers AVT as his second home. After becoming a part of AVT in 2019, his skill set expanded',
   PeopleDes5: `Mau considers AVT as his second home. After becoming a part of AVT in 2019, his skill set expanded into full-range interior project management, from design to execution. He has an organized yet flexible way of working to meet the clients’ diverse demands.

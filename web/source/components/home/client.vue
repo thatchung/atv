@@ -4,32 +4,32 @@
       {{ $t('Client') }}
     </h2>
     <div class="line-all" />
-    <div class="row">
-      <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+    <div class="row" style="margin-top: 3rem;">
+      <div class="client-div col-6 col-md-2 justify-content-center">
         <img class="client-img client-img1" src="/images/1.png" ></img>
       </div>
-      <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+      <div class="client-div col-6 col-md-2 justify-content-center">
         <img class="client-img client-img2" src="/images/13.png" ></img>
       </div>
-      <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+      <div class="client-div col-6 col-md-2 justify-content-center">
         <img class="client-img client-img3" src="/images/11.jpeg" ></img>
       </div>
-      <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+      <div class="client-div col-6 col-md-2 justify-content-center">
         <img class="client-img client-img4" src="/images/5.jpeg" ></img>
       </div>
-      <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+      <div class="client-div col-6 col-md-2 justify-content-center">
         <img class="client-img client-img5" src="/images/3.png" ></img>
       </div>
-      <div v-if="!isMobile" class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+      <div v-if="!isMobile" class="client-div col-6 col-md-2 justify-content-center">
       </div>
-      <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+      <div class="client-div col-6 col-md-2 justify-content-center">
         <img class="client-img  client-img1" src="/images/15.png" ></img>
       </div>
-      <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
+      <div class="client-div col-6 col-md-2 justify-content-center">
         <img class="client-img  client-img2" src="/images/7.png" ></img>
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img  client-img3" src="/images/9.jpeg" ></img>
+        <img class="client-img client-img-last client-img3" src="/images/9.jpeg" ></img>
       </div>
     </div>
   </div>
@@ -139,8 +139,7 @@ export default {
   margin-bottom: 1rem;
 }
 .client-img{
-  width: 80%;
-  margin: auto;
+  width: 60%;
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -150,6 +149,9 @@ export default {
     filter: grayscale(0%) !important;
     -webkit-filter: grayscale(0%) !important;
   }
+}
+.client-img-last{
+  width: 100%;
 }
 @media (max-width: 575px) {
 

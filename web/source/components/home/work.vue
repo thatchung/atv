@@ -7,7 +7,7 @@
     <nuxt-link to="/work">
       <div class="link-page">
         {{ $t('All') }} <!-- <b-icon-arrow-right /> -->
-        <img class="img-arrow-right" src="/images/a_right.png"></img>
+        <img class="img-arrow-right effect background-left" src="/images/a_right.png" data-effect="News"></img>
       </div>
     </nuxt-link>
     <VueSlickCarousel v-if="listWork && listWork.length > 0" v-bind="settings" class="list-work">
@@ -99,7 +99,7 @@ export default {
   padding: 0.5rem;
 }
 .home-work-section-title{
-  font-size: 4rem;
+  font-size: 5rem;
 }
 .link-page{
   font-size: 1.4rem;

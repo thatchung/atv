@@ -39,38 +39,14 @@
     "year": {
       "type": "integer"
     },
-    "location": {
-      "type": "enumeration",
-      "enum": [
-        "HOCHIMINH",
-        "HANOI",
-        "HAIPHONG",
-        "HALONG",
-        "DANANG",
-        "BINHDUONG",
-        "NHATRANG",
-        "BENTRE",
-        "MYTHO",
-        "PHNOMPENH_CAMBODIA"
-      ]
-    },
     "category": {
       "type": "enumeration",
       "enum": [
         "office",
-        "office_showroom",
         "retail",
-        "retail_showroom",
         "mall",
         "hospital",
-        "hotel",
-        "apartment",
-        "residential",
-        "lounge",
-        "complex",
-        "epg",
-        "cinema",
-        "store"
+        "residential"
       ]
     },
     "address": {
@@ -81,6 +57,22 @@
     },
     "content_vn": {
       "type": "richtext"
+    },
+    "scope_vn": {
+      "type": "string"
+    },
+    "locations": {
+      "collection": "location",
+      "via": "work"
+    },
+    "category_name": {
+      "type": "string"
+    },
+    "category_name_vn": {
+      "type": "string"
+    },
+    "address_vn": {
+      "type": "string"
     }
   }
 }

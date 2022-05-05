@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/works": {
+    "/locations": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Work"
+                    "$ref": "#/components/schemas/Location"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Location"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "$ref": "#/components/schemas/Location"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Location"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewWork"
+                "$ref": "#/components/schemas/NewLocation"
               }
             }
           }
         }
       }
     },
-    "/works/count": {
+    "/locations/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Location"
         ],
         "parameters": []
       }
     },
-    "/works/{id}": {
+    "/locations/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "$ref": "#/components/schemas/Location"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Location"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "$ref": "#/components/schemas/Location"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Location"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewWork"
+                "$ref": "#/components/schemas/NewLocation"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Location"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Work": {
+      "Location": {
         "required": [
           "id"
         ],
@@ -522,72 +522,70 @@
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "thub": {
+          "work": {
             "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "title": {
                 "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
               },
               "url": {
                 "type": "string"
               },
-              "previewUrl": {
+              "content": {
                 "type": "string"
               },
-              "provider": {
+              "thub": {
                 "type": "string"
               },
-              "provider_metadata": {
-                "type": "object"
+              "area": {
+                "type": "number"
               },
-              "related": {
+              "year": {
+                "type": "integer"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "office",
+                  "retail",
+                  "mall",
+                  "hospital",
+                  "residential"
+                ]
+              },
+              "address": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "content_vn": {
+                "type": "string"
+              },
+              "scope_vn": {
+                "type": "string"
+              },
+              "locations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "category_name": {
+                "type": "string"
+              },
+              "category_name_vn": {
+                "type": "string"
+              },
+              "address_vn": {
                 "type": "string"
               },
               "created_by": {
@@ -597,123 +595,15 @@
                 "type": "string"
               }
             }
-          },
-          "area": {
-            "type": "number"
-          },
-          "year": {
-            "type": "integer"
-          },
-          "category": {
-            "type": "string",
-            "enum": [
-              "office",
-              "retail",
-              "mall",
-              "hospital",
-              "residential"
-            ]
-          },
-          "address": {
-            "type": "string"
-          },
-          "scope": {
-            "type": "string"
-          },
-          "content_vn": {
-            "type": "string"
-          },
-          "scope_vn": {
-            "type": "string"
-          },
-          "locations": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "work": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "category_name": {
-            "type": "string"
-          },
-          "category_name_vn": {
-            "type": "string"
-          },
-          "address_vn": {
-            "type": "string"
           }
         }
       },
-      "NewWork": {
+      "NewLocation": {
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "area": {
-            "type": "number"
-          },
-          "year": {
-            "type": "integer"
-          },
-          "category": {
-            "type": "string",
-            "enum": [
-              "office",
-              "retail",
-              "mall",
-              "hospital",
-              "residential"
-            ]
-          },
-          "address": {
-            "type": "string"
-          },
-          "scope": {
-            "type": "string"
-          },
-          "content_vn": {
-            "type": "string"
-          },
-          "scope_vn": {
-            "type": "string"
-          },
-          "locations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "category_name": {
-            "type": "string"
-          },
-          "category_name_vn": {
-            "type": "string"
-          },
-          "address_vn": {
+          "work": {
             "type": "string"
           },
           "created_by": {
@@ -728,7 +618,7 @@
   },
   "tags": [
     {
-      "name": "Work"
+      "name": "Location"
     }
   ]
 }
