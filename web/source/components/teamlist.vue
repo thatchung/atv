@@ -80,8 +80,7 @@ export default {
 .item-team{
   position: absolute;
   width: 100%;
-  height: 100%;
-  top: 0px;
+  bottom: 0px;
   opacity: 0.7;
   transform: translateY(150px) scale(0.85);
 }
