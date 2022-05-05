@@ -1,7 +1,8 @@
 <template>
   <div class="item">
     <div class="img-content">
-      <ThumbImage :src="thub" ratio="8-5" />
+      <ThumbImage :src="'/images/peppleb.png'" ratio="8-5" />
+      <img :class="`item-people cnum-${num}`" :src="thub"></img>
     </div>
     <h3 class="item-title">
       {{ name }} - {{ role }}
@@ -45,6 +46,10 @@ export default {
     position: {
       type: String,
       default: 'left-p'
+    },
+    num: {
+      type: String,
+      default: '1'
     }
   },
   data() {
@@ -52,12 +57,50 @@ export default {
       show: false
     }
   },
+  mounted() {
+    this.animateOnScroll()
+  },
   methods: {
     showMore() {
       this.show = true
     },
     showLess() {
       this.show = false
+    },
+    animateOnScroll() {
+      this.$gsap.to('.cnum-1', {
+        scrollTrigger:{
+            trigger: '.cnum-1',
+            toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        scale:1,
+        ease: "expo.out",
+        y:0,
+        duration: 2.5
+      })
+      this.$gsap.to('.cnum-2', {
+        scrollTrigger:{
+            trigger: '.cnum-2',
+            toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        scale:1,
+        ease: "expo.out",
+        y:0,
+        duration: 2.5
+      })
+      this.$gsap.to('.cnum-3', {
+        scrollTrigger:{
+            trigger: '.cnum-3',
+            toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        scale:1,
+        ease: "expo.out",
+        y:0,
+        duration: 2.5
+      })
     }
   }
 }
@@ -74,8 +117,18 @@ export default {
   text-overflow: ellipsis;
   cursor: pointer;
 }
-.img-content{
+.item-people{
+  position: absolute;
   width: 100%;
+  height: 100%;
+  top: 0px;
+  opacity: 0.7;
+  transform: translateY(150px) scale(0.85);
+}
+.img-content{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 .item-content svg{
   margin-left: 0.5rem;

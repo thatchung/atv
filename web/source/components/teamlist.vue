@@ -3,22 +3,10 @@
     <div class="ex-title font-pp-bold">
       {{ name }}
     </div>
-    <!-- <VueSlickCarousel v-bind="settings" class="list-item"> -->
-    <!-- <div v-for="(item, index) in datas" :key="index" class="team-item"> -->
     <div class="team-item">
-      <ThumbImage :src="thub" ratio="3-2" />
+      <ThumbImage :src="'/images/peppleb.png'" ratio="3-2" />
+      <img class="item-team" :src="thub"></img>
     </div>
-    <!-- <template slot="prevArrow">
-        <div class="pre-arrow">
-          <img src="/images/left.jpg"></img>
-        </div>
-      </template>
-      <template slot="nextArrow">
-        <div class="next-arrow">
-          <img src="/images/right.jpg"></img>
-        </div>
-      </template> -->
-    <!-- </VueSlickCarousel> -->
     <div class="ex-description">
       {{ content }}
     </div>
@@ -54,16 +42,25 @@ export default {
         "slidesToScroll": 1
       }
     }
+  },
+  mounted() {
+    this.animateOnScroll()
+  },
+  methods: {
+    animateOnScroll() {
+      this.$gsap.to('.item-team', {
+        scrollTrigger:{
+            trigger: '.item-team',
+            toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        scale:1,
+        ease: "expo.out",
+        y:0,
+        duration: 2.5
+      })
+    }
   }
-  // methods: {
-  //   ...mapActions({
-  //     getListitem: "item/getListitem"
-  //   }),
-  //   async loadData() {
-  //     await this.getListitem()
-  //     console.log(this.listitem)
-  //   }
-  // }
 }
 </script>
 <style lang="scss">
@@ -77,6 +74,16 @@ export default {
 }
 .team-item{
   width: 100% !important;
+  position: relative;
+  overflow: hidden;
+}
+.item-team{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  opacity: 0.7;
+  transform: translateY(150px) scale(0.85);
 }
 .pre-arrow{
   z-index: 2;
