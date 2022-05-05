@@ -4,7 +4,7 @@
       {{ name }}
     </div>
     <div class="team-item">
-      <ThumbImage :src="'/images/peppleb.png'" ratio="3-2" />
+      <ThumbImage :src="'/images/bg.png'" ratio="3-2" />
       <img class="item-team" :src="thub"></img>
     </div>
     <div class="ex-description">
