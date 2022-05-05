@@ -4,7 +4,7 @@
       <ThumbImage :src="'/images/peppleb.png'" ratio="8-5" />
       <img :class="`item-people cnum-${num}`" :src="thub"></img>
     </div>
-    <h3 class="item-title">
+    <h3 class="item-title-people">
       {{ name }} - {{ role }}
     </h3>
     <div class="item-content">
@@ -106,14 +106,13 @@ export default {
 }
 </script>
 <style lang="scss">
-.item-title{
+.item-title-people{
   font-size: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
 }

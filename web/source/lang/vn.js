@@ -149,7 +149,7 @@ module.exports =  {
   PeopleName1: 'Vinh Đoàn',
   PeopleRole1: 'Đồng sáng lập & Giám đốc điều hành',
   PeopleName2: 'Lăng Nguyễn',
-  PeopleRole2: 'Đồng sáng lập & Cố vấn',
+  PeopleRole2: 'Đồng sáng lập & Chủ tịch',
   PeopleName3: 'Harada Shinji',
   PeopleRole3: 'Phó Giám đốc',
   PeopleName4: 'Tuấn Nguyễn',
