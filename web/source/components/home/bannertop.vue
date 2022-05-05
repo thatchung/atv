@@ -6,7 +6,7 @@
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
     >
-      <div class="banner-img" @click="showVideo">
+      <div v-if="!isMobile" class="banner-img" @click="showVideo">
         <ThumbImage
           v-if="!isMobile"
           :sourceVideo="'/images/video_atv_cut.mp4'"
@@ -15,6 +15,8 @@
           :video="true"
           ratio="21-9"
         />
+      </div>
+      <div v-if="isMobile" class="banner-img">
         <ThumbImage
           v-if="isMobile"
           :sourceVideo="'/images/video_atv_cut.mp4'"

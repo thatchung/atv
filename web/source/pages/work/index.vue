@@ -124,10 +124,9 @@ export default {
       locations: ['HOCHIMINH', 'HANOI', 'HAIPHONG', 'HALONG', 'DANANG', 'BINHDUONG',
         'NHATRANG', 'BENTRE', 'MYTHO', 'PHNOMPENH_CAMBODIA'],
       locationActive: 'HOCHIMINH',
-      categories: ['office', 'office_showroom', 'retail', 'retail_showroom', 'mall',
-        'hospital', 'hotel', 'apartment', 'residential', 'lounge', 'complex', 'epg', 'cinema', 'store'],
+      categories: ['office', 'retail', 'mall', 'hospital', 'residential'],
       categoryActive: 'office',
-      years: ['2022', '2021', '2020', '2019', '2018'],
+      years: ['2022', '2021', '2020', '2019', '2018', '2017', '2016'],
       yearActive: '2021',
       leftBtn: `<div class="btn-left"><img src="/images/p_left.jpg"></div>`,
       rightBtn: `<div class="btn-left"><img src="/images/p_right.jpg"></div>`,
@@ -175,12 +174,17 @@ export default {
       }
       const query = {
         ...this.filters,
-        _start : page,
+        _start : page * 15,
         _limit: 15,
         _sort: 'id:DESC'
       }
       this.meta.page = page + 1
       await this.getListWork({ params :query })
+      let res = await this.getCountWork({ params :query })
+      if (res) {
+        this.meta.totalItem = res
+        this.meta.pageCount = this.meta.totalItem / this.meta.pageSize
+      }
       this.loading = false
     },
     loadFilter (type) {
@@ -259,7 +263,7 @@ export default {
   margin-right: 0.5rem;
   padding: 0rem 0.5rem;
   cursor: pointer;
-  height: 40px;
+  height: 45px;
   line-height: 40px;
 }
 .filter-active{
@@ -345,6 +349,8 @@ export default {
 }
 .page-item{
   padding: 0rem 0.5rem;
+  height: 40px;
+  line-height: 40px;
 }
 .btn-left img{
   width: 45px;

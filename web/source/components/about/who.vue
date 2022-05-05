@@ -69,20 +69,20 @@
     <div class="row">
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
-          thub="/images/leader1.jpg"
-          :name="$t('PeopleName1')"
-          :des="$t('PeopleDes1')"
-          :cut="$t('PeopleDesCut1')"
-          :role="$t('PeopleRole1')"
-        />
-      </div>
-      <div class="col-12 col-md-6 about-who-ex-item">
-        <People
           thub="/images/leader2.jpg"
           :name="$t('PeopleName2')"
           :des="$t('PeopleDes2')"
           :cut="$t('PeopleDesCut2')"
           :role="$t('PeopleRole2')"
+        />
+      </div>
+      <div class="col-12 col-md-6 about-who-ex-item">
+        <People
+          thub="/images/leader1.jpg"
+          :name="$t('PeopleName1')"
+          :des="$t('PeopleDes1')"
+          :cut="$t('PeopleDesCut1')"
+          :role="$t('PeopleRole1')"
         />
       </div>
     </div>

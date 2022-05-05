@@ -3,6 +3,7 @@
     <Banner />
     <Work />
     <Who />
+    <Client />
     <Innovation />
     <Contact />
   </div>
@@ -14,6 +15,7 @@ import Work from "~/components/home/work.vue"
 import Who from "~/components/home/who.vue"
 import Innovation from "~/components/home/innovation.vue"
 import Contact from "~/components/home/contact.vue"
+import Client from "~/components/home/client.vue"
 
 export default {
   name: 'IndexPage',
@@ -22,7 +24,8 @@ export default {
     Work,
     Who,
     Innovation,
-    Contact
+    Contact,
+    Client
   }
   // computed: {
   //   ...mapGetters({

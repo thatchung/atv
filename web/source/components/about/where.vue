@@ -78,11 +78,11 @@
       </div>
     </div>
     <div class="line-all" />
-    <div v-if="!isMobile" class="where-des font-pp-bold">
-      {{ $t('HCMElectroluxOffice') }}
+    <div class="where-des font-pp-bold">
+      {{ WherePlaceName }}
     </div>
     <div>
-      {{ $t('WhereAScandinavian') }}
+      {{ WherePlaceDes }}
     </div>
     <h2 ref="ournetwork" class="about-where-title">
       {{ $t('OurNetwork') }}
@@ -404,10 +404,12 @@ export default {
   mixins: [general],
   data() {
     return {
-      locations: ['HOCHIMINH', 'HANOI', 'HAIPHONG', 'HALONG', 'DANANG', 'BINHDUONG',
-        'NHATRANG', 'BENTRE', 'MYTHO', 'PHNOMPENH_CAMBODIA'],
+      locations: ['HOCHIMINH', 'HANOI', 'HAIPHONG', 'DANANG', 'BINHDUONG',
+        'NHATRANG', 'BENTRE', 'PHNOMPENH_CAMBODIA'],
       item_active: 'HOCHIMINH',
-      isMobile: false
+      isMobile: false,
+      WherePlaceName: 'Ho Chi Minh City (Electrolux Office)',
+      WherePlaceDes: 'A Scandinavian-inspired office where everyone can feel the comfort of home',
     }
   },
   watch: {
@@ -520,6 +522,43 @@ export default {
           default:
             el.scrollTo({ top: mapheight * 0.724637, behavior: 'smooth' })
         }
+      }
+      switch (item) {
+        case 'HANOI':
+          this.WherePlaceName = this.$t('WherePlaceName2')
+          this.WherePlaceDes = this.$t('WherePlaceDes2')
+          break
+        case 'HAIPHONG':
+          this.WherePlaceName = this.$t('WherePlaceName5')
+          this.WherePlaceDes = this.$t('WherePlaceDes5')
+          break
+        case 'DANANG':
+          this.WherePlaceName = this.$t('WherePlaceName6')
+          this.WherePlaceDes = this.$t('WherePlaceDes6')
+          break
+        case 'BINHDUONG':
+          this.WherePlaceName = this.$t('WherePlaceName8')
+          this.WherePlaceDes = this.$t('WherePlaceDes8')
+          break
+        case 'NHATRANG':
+          this.WherePlaceName = this.$t('WherePlaceName7')
+          this.WherePlaceDes = this.$t('WherePlaceDes7')
+          break
+        case 'HOCHIMINH':
+          this.WherePlaceName = this.$t('WherePlaceName1')
+          this.WherePlaceDes = this.$t('WherePlaceDes1')
+          break
+        case 'BENTRE':
+          this.WherePlaceName = this.$t('WherePlaceName4')
+          this.WherePlaceDes = this.$t('WherePlaceDes4')
+          break
+        case 'PHNOMPENH_CAMBODIA':
+          this.WherePlaceName = this.$t('WherePlaceName2')
+          this.WherePlaceDes = this.$t('WherePlaceDes2')
+          break
+        default:
+          this.WherePlaceName = this.$t('WherePlaceName3')
+          this.WherePlaceDes = this.$t('WherePlaceDes3')
       }
     },
     viewItem (item) {
@@ -675,6 +714,9 @@ export default {
   bottom: 14%;
 }
 @media (max-width: 575px) {
+  .where-des{
+    font-size: 1.1rem;
+  }
   .map-container{
     width: 100%;
     margin: auto;
