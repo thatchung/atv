@@ -15,7 +15,7 @@
       {{ description }}
       <nuxt-link :to="'/innovation/' + item.url">
         <!-- <b-icon-arrow-right /> -->
-        <img class="img-arrow-right" src="/images/a_right.png"></img>
+        <img class="img-arrow-right item-arrow" src="/images/a_right.png"></img>
       </nuxt-link>
     </div>
   </div>

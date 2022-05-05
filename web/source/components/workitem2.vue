@@ -21,17 +21,16 @@
       <div class="work-info">
         <div class="detail-text">
           {{ $t('Typeofproject') }} :
-          <span v-if="$i18n.locale === 'vn'">{{ work.category | categoryVNFilter }}</span>
-          <span v-else>{{ work.category | categoryFilter }}</span>
-          <!-- {{ work.category | categoryFilter }} -->
+          <span v-if="$i18n.locale === 'vn'">{{ work.category_name_vn }}</span>
+          <span v-else>{{ work.category_name }}</span>
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
           {{ $t('Location') }} :
-          <!-- {{ work.location | locationFilter }} -->
-          <span v-if="$i18n.locale === 'vn'">{{ work.location | locationVNFilter }}</span>
-          <span v-else>{{ work.location | locationFilter }}</span>
+          <!-- <span v-if="$i18n.locale === 'vn'">{{ work.address_vn }}</span>
+          <span v-else>{{ work.address }}</span> -->
+          {{ work.locations && work.locations.length > 0 ? work.locations[0].name : 'HO CHI MINH' }}
         </div>
         <nuxt-link :to="'/work/' + work.url">
           <!-- <b-icon-arrow-right style="margin-left: 1rem;" /> -->

@@ -8,12 +8,26 @@
     >
       <div v-if="!isMobile" class="banner-img" @click="showVideo">
         <ThumbImage
+          ref="videoCut"
           :sourceVideo="'/images/video_atv_cut.mp4'"
           :nameClass="'image-banner'"
           :contain="false"
           :video="true"
+          @
           ratio="21-9"
         />
+        <div v-show="isPlay" class="play-done">
+          <div class="play-done-data d-flex align-items-center justify-content-center">
+            <div
+              class="text-play-video"
+              @mouseover="hoverPlay = true"
+              @mouseout="hoverPlay = false"
+              @click="showVideo">
+              <span v-if="hoverPlay">Click to explore our transformation<b-icon-arrow-right /></span>
+              <img v-if="!hoverPlay" src="/images/btn.png"></img>
+            </div>
+          </div>
+        </div>
       </div>
       <div v-if="isMobile" class="banner-img" @click="showVideo">
         <ThumbImage
@@ -162,6 +176,8 @@ export default {
   data() {
     return {
       isVideo: false,
+      isPlay: false,
+      hoverPlay: false,
       isMobile: false,
       images : ['/images/banner1.jpg',
         '/images/banner2.jpg',
@@ -177,9 +193,11 @@ export default {
   //   Video
   // },
   mounted() {
+    this.isPlay = false
     this.isMobile = this.checkMobile()
     this.slide1 = this.$refs.slide1
     this.render(0)
+    this.autoShowPlay()
   },
   methods: {
     checkMobile() {
@@ -279,6 +297,17 @@ export default {
         })
       }
     },
+    autoShowPlay() {
+      setTimeout(() => {
+        this.isPlay = true
+        this.autoPlay()
+      }, 14000)
+    },
+    autoPlay() {
+      setTimeout(() => {
+        this.$refs.slide1.goTo(1)
+      }, 7000)
+    },
     showVideo () {
       this.isVideo = true
       setTimeout(() => {
@@ -301,6 +330,35 @@ export default {
 .banner-img{
   position: relative;
   width: 100%;
+}
+.play-done{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background-color: black;
+  top: 0px;
+  right: 0px;
+  z-index: 33;
+}
+.play-done-data{
+  width: 100%;
+  height: 100%;
+}
+.text-play-video{
+  cursor: pointer;
+  span{
+    color: white;
+    font-size: 1.5rem;
+    svg{
+      color: white;
+      margin-left: 1rem;
+      font-size: 1.4rem;
+    }
+  }
+  img{
+    width: 40px;
+  }
 }
 .image-banner{
   width: 100%;

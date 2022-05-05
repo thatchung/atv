@@ -28,18 +28,22 @@
       <div class="work-info">
         <div class="detail-text">
           {{ $t('Typeofproject') }} :
-            <span v-if="$i18n.locale === 'vn'">{{ work.category | categoryVNFilter }}</span>
-            <span v-else >{{ work.category | categoryFilter }}</span>
+            <span v-if="$i18n.locale === 'vn'">{{ work.category_name_vn }}</span>
+            <span v-else >{{ work.category_name }}</span>
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Location') }}: {{ work.address ? work.address : work.location }}
+          {{ $t('Location') }}:
+          <span v-if="$i18n.locale === 'vn'">{{ work.address_vn }}</span>
+          <span v-else>{{ work.address }}</span>
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Scopeofwork') }}: {{ work.scope }}
+          {{ $t('Scopeofwork') }}:
+          <span v-if="$i18n.locale === 'vn'">{{ work.scope_vn }}</span>
+          <span v-else>{{ work.scope }}</span>
         </div>
       </div>
     </div>

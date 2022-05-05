@@ -90,7 +90,7 @@
         <nuxt-link to="/about#exper">
           <div class="who-more">
             {{ $t('SEEMORE') }}
-            <img class="img-arrow-right" src="/images/a_right.png"></img>
+            <img class="img-arrow-right more-arrow" src="/images/a_right.png"></img>
           </div>
         </nuxt-link>
       </div>
@@ -159,7 +159,7 @@
     <nuxt-link to="/about#whatwedo">
       <div class="what-more">
         {{ $t('SEEMORE') }}
-        <img class="img-arrow-right" src="/images/a_right.png"></img>
+        <img class="img-arrow-right more-arrow" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>
   </div>
@@ -377,7 +377,7 @@ export default {
   font-weight: 600;
   position: absolute;
   bottom: 2rem;
-  right: 15px;
+  right: 3rem;
   svg{
     margin-left: 1rem;
     font-size: 1.4rem;

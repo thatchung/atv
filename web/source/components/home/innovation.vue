@@ -7,7 +7,7 @@
     <nuxt-link to="/innovation">
       <div class="link-page">
         {{ $t('All') }} <!-- <b-icon-arrow-right /> -->
-        <img class="img-arrow-right" src="/images/a_right.png"></img>
+        <img class="img-arrow-right page-arrow" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>
     <VueSlickCarousel v-if="listInnovation && listInnovation.length > 0" v-bind="settings" class="list-inno">

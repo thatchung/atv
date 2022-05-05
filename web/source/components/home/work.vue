@@ -7,7 +7,7 @@
     <nuxt-link to="/work">
       <div class="link-page">
         {{ $t('All') }} <!-- <b-icon-arrow-right /> -->
-        <img class="img-arrow-right effect background-left" src="/images/a_right.png" data-effect="News"></img>
+        <img class="img-arrow-right page-arrow" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>
     <VueSlickCarousel v-if="listWork && listWork.length > 0" v-bind="settings" class="list-work">
@@ -107,8 +107,24 @@ export default {
   margin-top: 1rem;
   cursor: pointer;
   margin-bottom: 1rem;
-  svg{
-    margin-left: 5px;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-right: 2rem;
+}
+.page-arrow{
+  position: absolute;
+  top: 1rem;
+  right: 0rem;
+  &:hover{
+    animation: arrow-left 2s linear infinite;
+  }
+}
+.more-arrow{
+  position: absolute;
+  top: 0.7rem;
+  right: -2rem;
+  &:hover{
+    animation: more-left 2s linear infinite;
   }
 }
 .pre-arrow{
@@ -133,7 +149,6 @@ export default {
     width: 50px;
   }
 }
-
 @media (max-width: 575px) {
   .section-work{
     margin-top: 3rem;

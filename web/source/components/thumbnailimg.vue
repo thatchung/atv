@@ -13,12 +13,11 @@
     v-else
     :class="`thumbnail-wrapper d-flex align-items-center justify-content-center ratio_${ratio}`"
   >
-    <!-- muted -->
+    <!-- muted loop-->
     <video
       ref="videoRef"
       v-if="video"
       autoplay
-      loop
       muted
       class="thumbnail-video-inner"
       :style="contain ? `object-fit: contain;` : `object-fit: cover;`"
@@ -109,8 +108,11 @@ export default {
       }, 1500)
     }
   },
-  // methods: {
-  // },
+  methods: {
+    playVideo() {
+      this.$ref.videoRef.play()
+    }
+  },
   // created() {
   // },
 }
