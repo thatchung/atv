@@ -80,7 +80,7 @@ module.exports =  {
   Wherewework: 'Where we work ?',
   WherePlaceName1: 'Ho Chi Minh City (Electrolux Office)',
   WherePlaceDes1: 'A Scandinavian-inspired office where everyone can feel the comfort of home',
-  WherePlaceName2: 'Ha Noi (Foodcourt Aeon Long Biên)',
+  WherePlaceName2: 'Ha Noi (Foodcourt Aeon Long Bien)',
   WherePlaceDes2: 'Aeon Long Bien Food Court is where Vietnamese local culture harmoniously blends with Japanese inspirations through the decoration details.',
   WherePlaceName3: 'Phnom Penh (DreamGame)',
   WherePlaceDes3: 'DreamGame’s grand entrance into Cambodia was facilitated with the help of the highly-skilled workforce from AVT.',

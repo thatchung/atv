@@ -553,12 +553,12 @@ export default {
           this.WherePlaceDes = this.$t('WherePlaceDes4')
           break
         case 'PHNOMPENH_CAMBODIA':
-          this.WherePlaceName = this.$t('WherePlaceName2')
-          this.WherePlaceDes = this.$t('WherePlaceDes2')
-          break
-        default:
           this.WherePlaceName = this.$t('WherePlaceName3')
           this.WherePlaceDes = this.$t('WherePlaceDes3')
+          break
+        default:
+          this.WherePlaceName = this.$t('WherePlaceName1')
+          this.WherePlaceDes = this.$t('WherePlaceDes1')
       }
     },
     viewItem (item) {
