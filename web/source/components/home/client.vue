@@ -6,30 +6,30 @@
     <div class="line-all" />
     <div class="row">
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/1.png" ></img>
+        <img class="client-img client-img1" src="/images/1.png" ></img>
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/13.png" ></img>
+        <img class="client-img client-img2" src="/images/13.png" ></img>
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/11.jpeg" ></img>
+        <img class="client-img client-img3" src="/images/11.jpeg" ></img>
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/5.jpeg" ></img>
+        <img class="client-img client-img4" src="/images/5.jpeg" ></img>
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/3.png" ></img>
+        <img class="client-img client-img5" src="/images/3.png" ></img>
       </div>
       <div v-if="!isMobile" class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/15.png" ></img>
+        <img class="client-img  client-img1" src="/images/15.png" ></img>
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/7.png" ></img>
+        <img class="client-img  client-img2" src="/images/7.png" ></img>
       </div>
       <div class="client-div col-6 col-md-2 d-flex align-items-center justify-content-center">
-        <img class="client-img" src="/images/9.jpeg" ></img>
+        <img class="client-img  client-img3" src="/images/9.jpeg" ></img>
       </div>
     </div>
   </div>
@@ -45,6 +45,7 @@ export default {
   },
   mounted() {
     this.checkMobile()
+    this.animateOnScroll()
   },
   methods: {
     checkMobile() {
@@ -55,6 +56,73 @@ export default {
           this.isMobile = false
         }
       }
+    },
+    animateOnScroll() {
+      this.$gsap.fromTo(`.client-img1`, {
+        opacity:0,
+        x: -100
+      }, {
+        scrollTrigger:{
+          trigger: '.client-img1',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        ease: "expo.out",
+        x:0,
+        duration: 2
+      })
+      this.$gsap.fromTo(`.client-img2`, {
+        opacity:0,
+        x: -150
+      }, {
+        scrollTrigger:{
+          trigger: '.client-img2',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        ease: "expo.out",
+        x:0,
+        duration: 2
+      })
+      this.$gsap.fromTo(`.client-img3`, {
+        opacity:0,
+        x: -200
+      }, {
+        scrollTrigger:{
+          trigger: '.client-img3',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        ease: "expo.out",
+        x:0,
+        duration: 1.8
+      })
+      this.$gsap.fromTo(`.client-img4`, {
+        opacity:0,
+        x: -250
+      }, {
+        scrollTrigger:{
+          trigger: '.client-img4',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        ease: "expo.out",
+        x:0,
+        duration: 1.8
+      })
+      this.$gsap.fromTo(`.client-img5`, {
+        opacity:0,
+        x: -300
+      }, {
+        scrollTrigger:{
+          trigger: '.client-img4',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        ease: "expo.out",
+        x:0,
+        duration: 1.8
+      })
     }
   }
 }
