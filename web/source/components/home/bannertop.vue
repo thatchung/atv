@@ -8,7 +8,6 @@
     >
       <div v-if="!isMobile" class="banner-img" @click="showVideo">
         <ThumbImage
-          v-if="!isMobile"
           :sourceVideo="'/images/video_atv_cut.mp4'"
           :nameClass="'image-banner'"
           :contain="false"
@@ -16,9 +15,8 @@
           ratio="21-9"
         />
       </div>
-      <div v-if="isMobile" class="banner-img">
+      <div v-if="isMobile" class="banner-img" @click="showVideo">
         <ThumbImage
-          v-if="isMobile"
           :sourceVideo="'/images/video_atv_cut.mp4'"
           :nameClass="'image-banner'"
           :contain="false"
