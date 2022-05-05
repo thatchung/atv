@@ -14,9 +14,9 @@
     "name": {
       "type": "string"
     },
-    "work": {
+    "works": {
       "via": "locations",
-      "model": "work"
+      "collection": "work"
     }
   }
 }

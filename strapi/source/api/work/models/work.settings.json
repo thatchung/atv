@@ -63,7 +63,8 @@
     },
     "locations": {
       "collection": "location",
-      "via": "work"
+      "via": "works",
+      "dominant": true
     },
     "category_name": {
       "type": "string"

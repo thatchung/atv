@@ -525,74 +525,77 @@
           "name": {
             "type": "string"
           },
-          "work": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
-              },
-              "thub": {
-                "type": "string"
-              },
-              "area": {
-                "type": "number"
-              },
-              "year": {
-                "type": "integer"
-              },
-              "category": {
-                "type": "string",
-                "enum": [
-                  "office",
-                  "retail",
-                  "mall",
-                  "hospital",
-                  "residential"
-                ]
-              },
-              "address": {
-                "type": "string"
-              },
-              "scope": {
-                "type": "string"
-              },
-              "content_vn": {
-                "type": "string"
-              },
-              "scope_vn": {
-                "type": "string"
-              },
-              "locations": {
-                "type": "array",
-                "items": {
+          "works": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "thub": {
+                  "type": "string"
+                },
+                "area": {
+                  "type": "number"
+                },
+                "year": {
+                  "type": "integer"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "office",
+                    "retail",
+                    "mall",
+                    "hospital",
+                    "residential"
+                  ]
+                },
+                "address": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "string"
+                },
+                "content_vn": {
+                  "type": "string"
+                },
+                "scope_vn": {
+                  "type": "string"
+                },
+                "locations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "category_name": {
+                  "type": "string"
+                },
+                "category_name_vn": {
+                  "type": "string"
+                },
+                "address_vn": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
                   "type": "string"
                 }
-              },
-              "category_name": {
-                "type": "string"
-              },
-              "category_name_vn": {
-                "type": "string"
-              },
-              "address_vn": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
               }
             }
           }
@@ -603,8 +606,11 @@
           "name": {
             "type": "string"
           },
-          "work": {
-            "type": "string"
+          "works": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"
