@@ -161,6 +161,7 @@
           ref="videoFull"
           autoplay
           controls
+          playsinline
           :style="`object-fit: contain;`"
           class="thumbnail-video"
         >
