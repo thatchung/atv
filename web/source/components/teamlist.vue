@@ -82,7 +82,7 @@ export default {
   width: 100%;
   bottom: 0px;
   opacity: 0.7;
-  transform: translateY(150px) scale(0.85);
+  transform: translateY(100px) scale(0.85);
 }
 .pre-arrow{
   z-index: 2;
