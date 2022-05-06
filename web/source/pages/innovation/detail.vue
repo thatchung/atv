@@ -17,15 +17,6 @@
     </h1>
     <div class="inno-content">
       <div class="inno-content-text white-space-word" v-html="html_content" />
-      <!-- <div
-        v-if="$i18n.locale === 'vn'"
-        class="inno-content-text white-space-word"
-        v-html="markP.parse(innovation.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))" />
-      <div
-        v-else
-        class="inno-content-text white-space-word"
-        v-html="markP.parse(innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))" />
-      <div class="inno-back-top" @click="toTopAction"> -->
         <!-- <b-icon-arrow-up /> -->
         <img class="img-arrow-up" src="/images/a_up.png"></img>
       </div>
@@ -88,9 +79,9 @@ export default {
           lang = lland
         }
         if (lang === 'vn') {
-          this.html_content = marked.parse(this.innovation.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+          this.html_content = marked.parse(this.innovation.content_vn.replace(/\/uploads\//g, `${this.$store.state.common.api_host}/uploads/`))
         } else {
-          this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+          this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, `${this.$store.state.common.api_host}/uploads/`))
         }
       }
     },

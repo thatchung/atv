@@ -1,9 +1,9 @@
 import ApiService from '@/service/api.service'
 export default {
-    getListWork: async ({ commit }, data = {}) => {
+    getListWork: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: `works`,
+            url: rootState.common.api_host + `/works`,
             data: data.params ? data.params : {}
         })
         commit('set_list_work', {
@@ -11,19 +11,19 @@ export default {
         })
     },
 
-    getCountWork: async ({ commit }, data = {}) => {
+    getCountWork: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: `works/count`,
+            url: rootState.common.api_host + `/works/count`,
             data: data.params ? data.params : {}
         })
         return res
     },
 
-    getWorkId: async ({ commit }, data = {}) => {
+    getWorkId: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: `works/${data.id}`,
+            url: rootState.common.api_host + `/works/${data.id}`,
             data: data.params ? data.params : {}
         })
         commit('set_work', {
@@ -31,10 +31,10 @@ export default {
         })
     },
 
-    getWorkBySlug: async ({ commit }, data = {}) => {
+    getWorkBySlug: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: `works?url=${data.url}`
+            url: rootState.common.api_host + `/works?url=${data.url}`
         })
         if (res && res.length > 0) {
             commit('set_work', {

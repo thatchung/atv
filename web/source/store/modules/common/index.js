@@ -1,12 +1,13 @@
-import actions from './actions';
-import getters from './getters';
-import mutations from './mutations';
+import actions from './actions'
+import getters from './getters'
+import mutations from './mutations'
 
 export const state = () => ({
     province: {},
     otp_method: [],
-    list_ads : []
-});
+    list_ads : [],
+    api_host : 'http://191.191.1.121:1337'
+})
 
 export default {
     namespaced: true,

@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <nuxt-link :to="'/work/' + work.url">
-      <ThumbImage :src="'http://103.39.93.99:1333' + work.thub.url" ratio="8-5" :isgray="true" />
+      <ThumbImage :src="$store.state.common.api_host + work.thub.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
       <h2 class="item-title font-pp-bold">
@@ -68,7 +68,7 @@ export default {
   //   }
   // },
   // mounted() {
-  //   this.checkMobile()
+  //   console.log(this.$store.state.common.api_host)
   // },
   // methods: {
   //   checkMobile() {

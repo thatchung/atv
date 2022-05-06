@@ -1,7 +1,7 @@
 import ApiService from '@/service/api.service'
 export default {
 
-    getbyUrlOrigin: async ({ commit }, data) => {
+    getbyUrlOrigin: async ({ commit, state }, data) => {
         let res = await ApiService.request({
             method: 'get',
             service: 'origin',
@@ -11,7 +11,7 @@ export default {
         return res
     },
 
-    getbyUrl: async ({ commit }, data) =>  {
+    getbyUrl: async ({ commit, state }, data) =>  {
         let res = await ApiService.request({
             method: 'get',
             service: data.service ? data.service : 'review',
@@ -22,7 +22,7 @@ export default {
         return res
     },
 
-    postbyUrl: async ({ commit }, data) => {
+    postbyUrl: async ({ commit, state }, data) => {
         let res = await ApiService.request({
             method: 'post',
             timeout: 300000,
@@ -37,7 +37,7 @@ export default {
         return res
     },
 
-    putbyUrl: async ({ commit }, data) => {
+    putbyUrl: async ({ commit, state }, data) => {
         let res = await ApiService.request({
             method: 'put',
             url: data.url,
@@ -46,7 +46,7 @@ export default {
         return res
     },
 
-    deletebyUrl: async ({ commit }, data) => {
+    deletebyUrl: async ({ commit, state }, data) => {
         let res = await ApiService.request({
             method: 'delete',
             url: data.url

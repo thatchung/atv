@@ -221,9 +221,9 @@ export default {
           lang = lland
         }
         if (lang === 'vn') {
-          this.html_content = marked.parse(this.work.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+          this.html_content = marked.parse(this.work.content_vn.replace(/\/uploads\//g, `${this.$store.state.common.api_host}/uploads/`))
         } else {
-          this.html_content = marked.parse(this.work.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+          this.html_content = marked.parse(this.work.content.replace(/\/uploads\//g, `${this.$store.state.common.api_host}/uploads/`))
         }
       }
     }

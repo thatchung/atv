@@ -1,10 +1,10 @@
 import ApiService from '@/service/api.service'
 export default {
 
-    getListInnovation: async ({ commit }, data = {}) => {
+    getListInnovation: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: `innovations`,
+            url: rootState.common.api_host + `/innovations`,
             data: data.params ? data.params : {}
         })
         commit('set_list_innovation', {
@@ -12,10 +12,10 @@ export default {
         })
     },
 
-    getListInnovationId: async ({ commit }, data = {}) => {
+    getListInnovationId: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: `innovations/${data.id}`,
+            url: rootState.common.api_host + `/innovations/${data.id}`,
             data: data.params ? data.params : {}
         })
         commit('set_innovation', {
@@ -23,10 +23,10 @@ export default {
         })
     },
 
-    getInnovationBySlug: async ({ commit }, data = {}) => {
+    getInnovationBySlug: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: `innovations?url=${data.url}`
+            url: rootState.common.api_host + `/innovations?url=${data.url}`
         })
         if (res && res.length > 0) {
             commit('set_innovation', {
