@@ -74,6 +74,9 @@
     },
     "address_vn": {
       "type": "string"
+    },
+    "title_vn": {
+      "type": "string"
     }
   }
 }

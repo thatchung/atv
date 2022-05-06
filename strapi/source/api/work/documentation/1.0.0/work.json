@@ -662,6 +662,9 @@
           },
           "address_vn": {
             "type": "string"
+          },
+          "title_vn": {
+            "type": "string"
           }
         }
       },
@@ -717,6 +720,9 @@
             "type": "string"
           },
           "address_vn": {
+            "type": "string"
+          },
+          "title_vn": {
             "type": "string"
           },
           "created_by": {
