@@ -66,10 +66,10 @@ import general from "~/mixins/general"
 export default {
   name: 'IndexPage',
   mixins: [general],
-  async asyncData({ route, req, app, redirect }) {
+  async asyncData({ route, req, app, redirect, store }) {
     let res = await ApiService.request({
       method: 'get',
-      url: `works?url=${route.params.id}`
+      url: store.common.api_host + `/works?url=${route.params.id}`
     })
     let item = {}
     if (res && res.length > 0) {
