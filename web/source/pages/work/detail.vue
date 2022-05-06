@@ -67,9 +67,10 @@ export default {
   name: 'IndexPage',
   mixins: [general],
   async asyncData({ route, req, app, redirect, store }) {
+    console.log(store.state)
     let res = await ApiService.request({
       method: 'get',
-      url: store.common.api_host + `/works?url=${route.params.id}`
+      url: store.state.common.api_host + `/works?url=${route.params.id}`
     })
     let item = {}
     if (res && res.length > 0) {
