@@ -25,7 +25,7 @@ export default {
     this.show = true
     setTimeout(() => {
       this.show = false
-    }, 6000)
+    }, 5000)
   }
 }
 </script>
@@ -63,13 +63,13 @@ export default {
     .logo-loading-1{
       opacity: 1;
       z-index: 3;
-      animation: hide1 6s ease-out;
+      animation: hide1 5s ease-out;
       animation-fill-mode: forwards;
     }
     .logo-loading-2{
       opacity: 0;
       z-index: 2;
-      animation: show1 6s ease-out;
+      animation: show1 5s ease-out;
       animation-fill-mode: forwards;
     }
     .rect-loading{
@@ -77,7 +77,7 @@ export default {
       width: 100%;
       height: 100%;
       z-index: 1;
-      animation: imgbg 6s ease-out;
+      animation: imgbg 5s ease-out;
       animation-fill-mode: forwards;
     }
 }
@@ -145,23 +145,29 @@ export default {
     transform: rotate(5.5deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 800% 800%;
-    animation: color1 6s ease-out;
+    animation: color1 5s ease-out;
     animation-fill-mode: forwards;
     background-position: 100% 10%;
 }
-.rect-2{
-    position: absolute;
-    z-index: 2;
+.rect-22{
     left: 13px;
     top: 72px;
     width: 89px;
     height: 66px;
+}
+.rect-2{
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    top: 71px;
+    width: 88px;
+    height: 68px;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
     transform: rotate(90deg);
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 800% 800%;
     background-position: 0% 0%;
-    animation: color2 6s ease-out;
+    animation: color2 5s ease-out;
     animation-fill-mode: forwards;
 }
 .rect-3{
@@ -176,7 +182,7 @@ export default {
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 800% 800%;
     background-position: 0% 0%;
-    animation: color3 6s ease-out;
+    animation: color3 5s ease-out;
     animation-fill-mode: forwards;
 }
 .rect-4{
@@ -191,7 +197,7 @@ export default {
     background:radial-gradient(#ffffff, #ffffff 10%, #000000 60%,#000000);
     background-size: 800% 800%;
     background-position: 100% 0%;
-    animation: color4 6s ease-out;
+    animation: color4 5s ease-out;
     animation-fill-mode: forwards;
 }
 </style>

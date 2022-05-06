@@ -12,7 +12,7 @@
     <nuxt-link :to="'/innovation/' + item.url">
       <ThumbImage :src="'http://103.39.93.99:1333' + item.thub.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
-    <div class="item-content">
+    <div v-if="description" class="item-content">
       {{ description }}
       <nuxt-link :to="'/innovation/' + item.url">
         <!-- <b-icon-arrow-right /> -->

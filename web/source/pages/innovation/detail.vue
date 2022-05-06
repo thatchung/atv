@@ -17,7 +17,15 @@
     </h1>
     <div class="inno-content">
       <div class="inno-content-text white-space-word" v-html="html_content" />
-      <div class="inno-back-top" @click="toTopAction">
+      <!-- <div
+        v-if="$i18n.locale === 'vn'"
+        class="inno-content-text white-space-word"
+        v-html="markP.parse(innovation.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))" />
+      <div
+        v-else
+        class="inno-content-text white-space-word"
+        v-html="markP.parse(innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))" />
+      <div class="inno-back-top" @click="toTopAction"> -->
         <!-- <b-icon-arrow-up /> -->
         <img class="img-arrow-up" src="/images/a_up.png"></img>
       </div>
@@ -47,8 +55,25 @@ export default {
       innovation: "innovation/getInnovation"
     }),
   },
+  watch: {
+    '$i18n.locale': function(newVal, oldVal) {
+      if (this.innovation && this.innovation.content) {
+        let lang = 'en'
+        let lland = window.localStorage.getItem('lang')
+        if (lland) {
+          lang = lland
+        }
+        if (lang === 'vn') {
+          this.html_content = marked.parse(this.innovation.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+        } else {
+          this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+        }
+      }
+    }
+  },
   mounted() {
     this.loadData()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   },
   methods: {
     ...mapActions({

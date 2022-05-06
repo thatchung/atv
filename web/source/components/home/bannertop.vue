@@ -314,7 +314,7 @@ export default {
       setTimeout(() => {
         this.isPlay = true
         this.autoPlay()
-      }, 14000)
+      }, 16000)
     },
     autoPlay() {
       setTimeout(() => {
@@ -488,8 +488,8 @@ export default {
   -webkit-perspective: 370px;
 }
 .sub-img-item{
-  width: 50px;
-  height: 35px;
+  width: 45px;
+  height: 25px;
   opacity: 0.7;
   display: inline-block;
   transform: perspective(70px) rotateY(-70deg);

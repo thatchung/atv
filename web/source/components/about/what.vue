@@ -7,7 +7,7 @@
     <div class="about-what-description">
       {{ $t('HomeWhatDesMobile1') }}
     </div>
-    <div class="line-all" />
+    <div class="line-all line-animation" />
     <div class="about-what-description">
       {{ $t('HomeWhatDesMobile2') }}
     </div>
@@ -210,6 +210,19 @@ export default {
         opacity:1,
         ease: "expo.out",
         y:0,
+        duration: 1.5
+      })
+      this.$gsap.fromTo(`.line-animation`, {
+        opacity:0,
+        y: 200
+      }, {
+        scrollTrigger:{
+          trigger: '.line-animation',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        y: 0,
+        ease: "expo.out",
         duration: 1.5
       })
     }

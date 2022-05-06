@@ -2,8 +2,7 @@
 <template>
   <section>
     <div>
-      <div class="col-sm-12 text-center">
-        <div>
+      <div class="text-center d-flex align-items-center justify-content-center">
           <h3>
             {{
               this.error.statusCode === 404
@@ -11,50 +10,19 @@
                 : "Có lỗi xảy ra, vui lòng thử lại"
             }}
           </h3>
-        </div>
-        <div id="t" class="offline">
-          <div id="messageBox" class="sendmessage">
-            <div class="niokbutton" onclick="okbuttonsend()"></div>
-          </div>
-          <div class="game-content">
-            <div id="main-frame-error" class="interstitial-wrapper">
-              <div id="main-content">
-                <div class="icon icon-offline" alt=""></div>
-              </div>
-              <div id="offline-resources">
-                <img
-                  id="offline-resources-1x"
-                  src="/images/default_100_percent/100-offline-sprite.png"
-                />
-                <img
-                  id="offline-resources-2x"
-                  src="/images/default_200_percent/200-offline-sprite.png"
-                />
-              </div>
-            </div>
-          </div>
-          <script type="text/javascript" src="js/game.js"></script>
-        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import { mapActions } from "vuex";
 export default {
-  props: ["error"],
-  mounted() {
-    this.postTracking();
-  },
-  methods: {
-    ...mapActions({
-      postbyUrl: "common/postbyUrl",
-    })
-  },
-};
+  props: ["error"]
+}
 </script>
-<!-- <style lang="scss" scoped>
-@import "~/static/css/style.scss";
-</style> -->
-
+<style lang="scss" scoped>
+.text-center{
+  width: 100%;
+  height: 100vh;
+}
+</style>

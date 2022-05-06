@@ -53,7 +53,7 @@ export default {
             let stringState = state
             switch (state) {
                 case 'featured':
-                    stringState = 'Tính Năng'
+                    stringState = 'Nổi bật'
                     break
                 case 'category':
                     stringState = 'Theo Chuyên Mục'

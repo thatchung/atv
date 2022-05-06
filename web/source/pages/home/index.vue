@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <Loading /> -->
     <Banner />
     <Work />
     <Who />
@@ -16,6 +17,7 @@ import Who from "~/components/home/who.vue"
 import Innovation from "~/components/home/innovation.vue"
 import Contact from "~/components/home/contact.vue"
 import Client from "~/components/home/client.vue"
+// import Loading from "~/components/loading.vue"
 
 export default {
   name: 'IndexPage',
@@ -26,6 +28,7 @@ export default {
     Innovation,
     Contact,
     Client
+    // Loading
   }
   // computed: {
   //   ...mapGetters({

@@ -212,9 +212,26 @@ export default {
   //     }
   //   };
   // },
+  watch: {
+    '$i18n.locale': function(newVal, oldVal) {
+      if (this.work && this.work.content) {
+        let lang = 'en'
+        let lland = window.localStorage.getItem('lang')
+        if (lland) {
+          lang = lland
+        }
+        if (lang === 'vn') {
+          this.html_content = marked.parse(this.work.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+        } else {
+          this.html_content = marked.parse(this.work.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+        }
+      }
+    }
+  },
   mounted() {
     this.checkMobile()
     this.loadData()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   },
   methods: {
     ...mapActions({

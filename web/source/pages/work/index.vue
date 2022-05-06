@@ -30,11 +30,11 @@
       </div>
       <div v-if="typeActive === 'location'" class="filter-item-active">
         <span v-if="!filterChoice">
-          {{ locationActive | locationFilter }}
+          {{ locationActive.name | locationFilter }}
         </span>
         <div v-if="filterChoice" class="filter-list">
           <div v-for="(i, idx) in locations" :key="idx" class="filter-item" @click="choiceLocationFilter(i)">
-            {{ i | locationFilter }}
+            {{ i.name | locationFilter }}
           </div>
         </div>
         <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
@@ -74,7 +74,7 @@
         <Item :work="item" />
       </div>
     </div>
-    <!-- <div v-if="!loading && listWork.length === 0" class="work-list-empty" >No Data</div> -->
+    <div v-if="!loading && listWork.length === 0" class="work-list-empty" >No Data</div>
     <div v-if="loading" class="work-loading">
       <div class="lds-roller">
         <div />
@@ -121,9 +121,41 @@ export default {
       filterChoice: false,
       types: ['featured', 'category', 'year', 'location', 'all'],
       typeActive: 'featured',
-      locations: ['HOCHIMINH', 'HANOI', 'HAIPHONG', 'HALONG', 'DANANG', 'BINHDUONG',
-        'NHATRANG', 'BENTRE', 'MYTHO', 'PHNOMPENH_CAMBODIA'],
-      locationActive: 'HOCHIMINH',
+      locations: [{
+        id : 2,
+        name : 'HOCHIMINH'
+      }, {
+        id : 1,
+        name : 'HANOI'
+      }, {
+        id : 3,
+        name : 'HAIPHONG'
+      }, {
+        id : 4,
+        name : 'HALONG'
+      }, {
+        id : 5,
+        name : 'DANANG'
+      }, {
+        id : 6,
+        name : 'BINHDUONG'
+      }, {
+        id : 7,
+        name : 'NHATRANG'
+      }, {
+        id : 8,
+        name : 'BENTRE'
+      }, {
+        id : 9,
+        name : 'MYTHO'
+      }, {
+        id : 10,
+        name : 'PHNOMPENH_CAMBODIA'
+      }],
+      locationActive: {
+        id : 2,
+        name : 'HOCHIMINH'
+      },
       categories: ['office', 'retail', 'mall', 'hospital', 'residential'],
       categoryActive: 'office',
       years: ['2022', '2021', '2020', '2019', '2018', '2017', '2016'],
@@ -199,7 +231,7 @@ export default {
         this.loadData()
       } else if (type === 'location') {
         this.filters = {
-          location : this.locationActive
+          locations : this.locationActive.id
         }
         this.loadData()
       } else if (type === 'year') {
@@ -219,7 +251,7 @@ export default {
       this.locationActive = type
       this.filterChoice = false
       this.filters = {
-        location : this.locationActive
+        locations : type.id
       }
       this.loadData()
     },

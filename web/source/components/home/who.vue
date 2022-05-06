@@ -124,7 +124,7 @@
         {{ $t('HomeWhatDesM4') }}
       </div>
     </div>
-    <div class="line-all" />
+    <div class="line-all line-animation" />
     <div v-if="!isMobile" class="what-text font-pp-bold">
       <div class="what-text-1">
         {{ $t('HomeWhatDes4') }}
@@ -224,6 +224,19 @@ export default {
         y:0,
         duration: 1.5
       })
+      this.$gsap.fromTo(`.line-animation`, {
+        opacity:0,
+        y: 200
+      }, {
+        scrollTrigger:{
+          trigger: '.line-animation',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        y: 0,
+        ease: "expo.out",
+        duration: 1.5
+      })
     },
     animateOnScrollM() {
       this.$gsap.to('.what-text-1-m', {
@@ -276,6 +289,19 @@ export default {
         y:0,
         duration: 1.5
       })
+      this.$gsap.fromTo(`.line-animation`, {
+        opacity:0,
+        y: 200
+      }, {
+        scrollTrigger:{
+          trigger: '.line-animation',
+          toggleActions: 'restart none none reset'
+        },
+        opacity:1,
+        y: 0,
+        ease: "expo.out",
+        duration: 1.5
+      })
     }
   }
 }
@@ -325,7 +351,6 @@ export default {
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 80%;
-  overflow: hidden;
   div{
     display: inline-block;
     white-space: nowrap;

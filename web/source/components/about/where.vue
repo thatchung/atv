@@ -11,56 +11,56 @@
           :class="`map-item map-item-1 ${item_active === 'HANOI' ? 'scale' : ''}`"
           @mouseover="viewItem('HANOI')"
           @click="clickMapItem('HANOI')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <div
           ref="map2"
           :class="`map-item map-item-2 ${item_active === 'HAIPHONG' ? 'scale' : ''}`"
           @mouseover="viewItem('HAIPHONG')"
           @click="clickMapItem('HAIPHONG')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <div
           ref="map3"
           :class="`map-item map-item-3 ${item_active === 'DANANG' ? 'scale' : ''}`"
           @mouseover="viewItem('DANANG')"
           @click="clickMapItem('DANANG')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <div
           ref="map4"
           :class="`map-item map-item-4 ${item_active === 'NHATRANG' ? 'scale' : ''}`"
           @mouseover="viewItem('NHATRANG')"
           @click="clickMapItem('NHATRANG')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <div
           ref="map5"
           :class="`map-item map-item-5 ${item_active === 'BINHDUONG' ? 'scale' : ''}`"
           @mouseover="viewItem('BINHDUONG')"
           @click="clickMapItem('BINHDUONG')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <div
           ref="map6"
           :class="`map-item map-item-6 ${item_active === 'HOCHIMINH' ? 'scale' : ''}`"
           @mouseover="viewItem('HOCHIMINH')"
           @click="clickMapItem('HOCHIMINH')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <div
           ref="map7"
           :class="`map-item map-item-7 ${item_active === 'PHNOMPENH_CAMBODIA' ? 'scale' : ''}`"
           @mouseover="viewItem('PHNOMPENH_CAMBODIA')"
           @click="clickMapItem('PHNOMPENH_CAMBODIA')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <div
           ref="map8"
-          :class="`map-item map-item-8 ${item_active === 'MYTHO' ? 'scale' : ''}`"
-          @mouseover="viewItem('MYTHO')"
-          @click="clickMapItem('MYTHO')">
-          <img class="map-img-item" src="/images/map.png"></img>
+          :class="`map-item map-item-8 ${item_active === 'BENTRE' ? 'scale' : ''}`"
+          @mouseover="viewItem('BENTRE')"
+          @click="clickMapItem('BENTRE')">
+          <img class="map-img-item" src="/images/b_img.png"></img>
         </div>
         <img class="map-img" src="images/AVT_MAP.jpg"></img>
       </div>
@@ -99,7 +99,7 @@
         <a href="https://9pmp.com/" target="_blank">
           <div class="about-see-more">
             {{ $t('SEEMORE') }}
-            <img class="img-arrow-right" src="/images/a_right.png"></img>
+            <img class="img-arrow-right more-arrow" src="/images/a_right.png"></img>
           </div>
         </a>
         <div v-if="isMobile" class="line-all-w" />
@@ -114,14 +114,14 @@
         <a href="https://thesentry.com.vn/" target="_blank">
           <div class="about-see-more">
             {{ $t('SEEMORE') }}
-            <img class="img-arrow-right" src="/images/a_right.png"></img>
+            <img class="img-arrow-right more-arrow" src="/images/a_right.png"></img>
           </div>
         </a>
         <div v-if="isMobile" class="line-all-w" />
       </div>
       <div class="col-12 col-md-4 about-where-network">
         <div class="about-where-a_name font-pp-bold">
-          K-net Japan – </br>{{ $t('DesignPartner') }}
+          K-net Design – </br>{{ $t('DesignPartner') }}
         </div>
         <div class="a_description">
           {{ $t('WhereNetworkDes4') }}</br>{{ $t('WhereNetworkDes5') }}
@@ -129,7 +129,7 @@
         <a href="https://www.k-netdesign.co.jp/" target="_blank">
           <div class="about-see-more">
             {{ $t('SEEMORE') }}
-            <img class="img-arrow-right" src="/images/a_right.png"></img>
+            <img class="img-arrow-right more-arrow" src="/images/a_right.png"></img>
           </div>
         </a>
       </div>
@@ -417,6 +417,9 @@ export default {
       if (this.$route.hash) {
         this.goto(this.$route.hash.replace('#', ''))
       }
+    },
+    '$i18n.locale': function(newVal, oldVal) {
+      this.clickMapItem(this.item_active)
     }
   },
   mounted() {
@@ -593,7 +596,7 @@ export default {
   font-weight: 600;
   position: absolute;
   bottom: 1rem;
-  right: 15px;
+  right: 4rem;
   svg{
     margin-left: 1rem;
     font-size: 1.4rem;
@@ -675,11 +678,11 @@ export default {
 .map-img-item{
   width: 35px;
   &:hover{
-    transform: scale(1.5);
+    transform: scale(1.25);
   }
 }
 .scale{
-  transform: scale(1.5);
+  transform: scale(1.25);
 }
 .map-item-1{
   left: 48%;

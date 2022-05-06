@@ -11,7 +11,7 @@
         {{ item.title }}
       </h2>
     </nuxt-link>
-    <div class="item-content">
+    <div v-if="description" class="item-content">
       {{ description }}
       <nuxt-link :to="'/innovation/' + item.url">
         <!-- <b-icon-arrow-right /> -->
