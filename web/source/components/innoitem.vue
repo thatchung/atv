@@ -4,7 +4,7 @@
       {{ item.date }}
     </div>
     <nuxt-link :to="'/innovation/' + item.url">
-      <ThumbImage :src="$store.state.common.api_host + work.thub.formats.medium.url" ratio="8-5" :isgray="true" />
+      <ThumbImage :src="$store.state.common.api_host + item.thub.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <nuxt-link :to="'/innovation/' + item.url">
       <h2 class="item-title font-pp-bold">

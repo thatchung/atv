@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <nuxt-link :to="'/work/' + work.url">
-      <ThumbImage :src="$store.state.common.api_host + work.thub.formats.medium.url" ratio="8-5" :isgray="true" />
+      <ThumbImage :src="image" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
       <h2 class="item-title font-pp-bold">
@@ -53,7 +53,10 @@ export default {
         return {
           title: 'Harley Davidson Da Nang',
           url: 'aefawfwa',
-          thub: '/images/slide4.jpg',
+          thub: {
+            url: '/images/slide4.jpg',
+            formats: {}
+          },
           type_category: 'Office',
           location: 'Da Nang',
           area: 600,
@@ -61,15 +64,16 @@ export default {
         }
       }
     }
-  }
-  // data() {
-  //   return {
-  //     isMobile: false
-  //   }
-  // },
-  // mounted() {
-  //   console.log(this.$store.state.common.api_host)
-  // },
+  },
+  data() {
+    return {
+      image: ''
+    }
+  },
+  mounted() {
+    const link = this.work.thub.formats.medium ? this.work.thub.formats.medium.url : this.work.thub.url
+    this.image = this.$store.state.common.api_host + link
+  },
   // methods: {
   //   checkMobile() {
   //     if (!process.server) {

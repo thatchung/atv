@@ -6,7 +6,7 @@
       </h2>
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
-      <ThumbImage :src="$store.state.common.api_host + work.thub.formats.medium.url" ratio="8-5" :isgray="true" />
+      <ThumbImage :src="image" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <div class="work-panel">
       <div class="work-info">
@@ -61,6 +61,15 @@ export default {
         }
       }
     }
+  },
+  data() {
+    return {
+      image: ''
+    }
+  },
+  mounted() {
+    const link = this.work.thub.formats.medium ? this.work.thub.formats.medium.url : this.work.thub.url
+    this.image = this.$store.state.common.api_host + link
   }
 }
 </script>
