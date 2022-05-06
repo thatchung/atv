@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <nuxt-link :to="'/work/' + work.url">
-      <ThumbImage :src="$store.state.common.api_host + work.thub.url" ratio="8-5" :isgray="true" />
+      <ThumbImage :src="$store.state.common.api_host + work.thub.formats.medium.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
       <h2 class="item-title font-pp-bold">

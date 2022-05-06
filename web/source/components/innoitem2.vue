@@ -10,7 +10,7 @@
       </h2>
     </nuxt-link>
     <nuxt-link :to="'/innovation/' + item.url">
-      <ThumbImage :src="$store.state.common.api_host + item.thub.url" ratio="8-5" :isgray="true" />
+      <ThumbImage :src="$store.state.common.api_host + work.thub.formats.medium.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <div v-if="description" class="item-content">
       {{ description }}
