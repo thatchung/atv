@@ -5,7 +5,9 @@
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
       <h2 class="item-title font-pp-bold">
-        {{ work.title }}
+        <!-- {{ work.title }} -->
+        <span v-if="$i18n.locale === 'vn'">{{ work.title_vn ? work.title_vn : work.title }}</span>
+        <span v-else>{{ work.title }}</span>
       </h2>
     </nuxt-link>
     <div class="work-info">

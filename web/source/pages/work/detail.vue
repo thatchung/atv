@@ -13,7 +13,11 @@
       {{ s_work ? s_work.create_date : work.create_date }}
     </div>
     <h1 class="work-title font-pp-bold">
-      {{ s_work ? s_work.title : work.title }}
+      <!-- {{ s_work ? s_work.title : work.title }} -->
+      <span v-if="$i18n.locale === 'vn'">{{ s_work ? 
+        ( s_work.title_vn ? s_work.title_vn : s_work.title )
+        : ( work.title_vn ? work.title_vn : work.title ) }}</span>
+      <span v-else>{{ s_work ? s_work.title : work.title }}</span>
     </h1>
     <div v-if="!isMobile" class="work-info">
       <div class="work-info">
