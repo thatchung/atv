@@ -110,9 +110,10 @@
         <div v-if="!isMobile" class="row" style="padding-bottom: 3rem;">
           <div class="col-6 col-md-6">
             <div class="line-all-d" />
-            <div>
+            <!-- <div>
               {{ $t('Pleaseselecttypeofenquiry') }}
-            </div>
+            </div> -->
+            <input class="c-input" type="text" name="" :placeholder="$t('Pleaseselecttypeofenquiry')"></input>
             <div class="line-all-d" />
             <input class="c-input" type="text" name="" :placeholder="$t('Subject')"></input>
             <div class="line-all-d" />
@@ -149,9 +150,10 @@
         <div v-if="isMobile" class="row" style="padding-bottom: 3rem;">
           <div class="col-12">
             <div class="line-all-d" />
-            <div>
+            <!-- <div>
               {{ $t('Pleaseselecttypeofenquiry') }}
-            </div>
+            </div> -->
+            <input class="c-input" type="text" name="" :placeholder="$t('Pleaseselecttypeofenquiry')"></input>
             <div class="line-all-d" />
             <input class="c-input" type="text" name="" :placeholder="$t('Subject')"></input>
             <div class="line-all-d" />

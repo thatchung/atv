@@ -80,7 +80,6 @@ export default {
   margin-top: 0rem;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }

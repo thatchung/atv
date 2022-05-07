@@ -18,9 +18,9 @@
     <div class="inno-content">
       <div class="inno-content-text white-space-word" v-html="html_content" />
         <!-- <b-icon-arrow-up /> -->
-        <img class="img-arrow-up" src="/images/a_up.png"></img>
       </div>
     </div>
+<!--     <img class="img-arrow-up" src="/images/a_up.png"></img> -->
   </div>
 </template>
 
