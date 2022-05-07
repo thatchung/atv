@@ -185,7 +185,8 @@ export default {
     }),
   },
   async mounted() {
-    await this.loadData()
+    this.typeActive = 'featured'
+    await this.loadFilter('featured')
     let res = await this.getCountWork()
     if (res) {
       this.meta.totalItem = res
@@ -221,8 +222,13 @@ export default {
     },
     loadFilter (type) {
       this.typeActive = type
-      if (type === 'featured' || type === 'all') {
+      if (type === 'all') {
         this.filters = { }
+        this.loadData()
+      } else if (type === 'featured') {
+        this.filters = {
+          id_in: [17, 19, 21, 27, 32, 14, 24, 23, 31]
+        }
         this.loadData()
       } else if (type === 'category') {
         this.filters = {
