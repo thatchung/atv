@@ -6,7 +6,7 @@ export const state = () => ({
     province: {},
     otp_method: [],
     list_ads : [],
-    api_host : 'http://103.39.93.99:1333'
+    api_host : 'http://191.191.3.119:1337'
 })
 
 export default {
