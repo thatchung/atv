@@ -7,8 +7,10 @@
       <div class="footer-icon">
         <a id="A1" href="https://www.facebook.com/profile.php?id=100063695044849" target="_blank">
           <img class="img-icon" src="/images/i_face.png"></a>
-        <!-- <a id="A4" href="javascript:void(0)">
-          <img class="img-icon" src="/images/i_intagram.png"></a> -->
+        <a id="A4" href="javascript:void(0)">
+          <img class="img-icon" src="/images/4_Icon_Insta.png"></a>
+        <a id="A5" href="javascript:void(0)">
+          <img class="img-icon" src="/images/5_Linkedin.png"></a>
       </div>
     </div>
   </div>

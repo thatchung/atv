@@ -192,18 +192,6 @@
   .about-where-title{
     font-size: 3.5rem !important;
   }
-  .location-list{
-    height: 15rem !important;
-    width: calc(100% + 20px);
-    margin-left: -10px;
-  }
-  .location-item{
-    font-size: 1rem;
-    padding: 0rem 0.5rem !important;
-    height: 30px !important;
-    line-height:25px !important;
-    margin-bottom: 0.5rem;
-  }
   .last-img{
     margin-bottom: 2rem;
   }

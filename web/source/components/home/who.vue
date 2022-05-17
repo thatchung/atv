@@ -31,7 +31,18 @@
             {{ $t('COREVALUES') }}
           </div>
           <div class="description">
-            {{ $t('WhoDesMoblie3') }}
+            <div>
+              <div class="who-sub-title">{{ $t('WhoSubTitle1') }}</div>
+              <div class="who-sub-des">{{ $t('WhoSubDes1') }}</div>
+            </div>
+            <div>
+              <div class="who-sub-title">{{ $t('WhoSubTitle2') }}</div>
+              <div class="who-sub-des">{{ $t('WhoSubDes2') }}</div>
+            </div>
+            <div>
+              <div class="who-sub-title">{{ $t('WhoSubTitle3') }}</div>
+              <div class="who-sub-des">{{ $t('WhoSubDes3') }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -63,7 +74,18 @@
             {{ $t('COREVALUES') }}
           </div>
           <div class="col-8 description">
-            {{ $t('WhoDesMoblie3') }}
+            <div>
+              <div class="who-sub-title">{{ $t('WhoSubTitle1') }}</div>
+              <div class="who-sub-des">{{ $t('WhoSubDes1') }}</div>
+            </div>
+            <div>
+              <div class="who-sub-title">{{ $t('WhoSubTitle2') }}</div>
+              <div class="who-sub-des">{{ $t('WhoSubDes2') }}</div>
+            </div>
+            <div>
+              <div class="who-sub-title">{{ $t('WhoSubTitle3') }}</div>
+              <div class="who-sub-des">{{ $t('WhoSubDes3') }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -324,6 +346,7 @@ export default {
 .description{
   font-size: 1rem;
   width: 80%;
+  margin-top: 1rem;
 }
 .who-name{
   margin-top: 1rem;
@@ -415,6 +438,9 @@ export default {
   }
   .what-text{
     width: 100%;
+  }
+  .description{
+    margin-top: 0rem;
   }
 }
 </style>
