@@ -336,11 +336,11 @@ export default {
   margin: 1rem 0px;
 }
 .map-line{
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .des-item{
-  margin-bottom: 8.5rem;
-  margin-top: 9rem;
+  margin-bottom: 4.5rem;
+  margin-top: 5rem;
   height: 6rem;
   div{
     color: #fff;
@@ -392,8 +392,9 @@ export default {
   cursor: pointer;
 }
 .map-container{
-  width: 100%;
+  width: 70%;
   position: relative;
+  margin: auto;
   &::-webkit-scrollbar{
     width: 10px;
     background-color: #F5F5F5;
@@ -474,6 +475,17 @@ export default {
   bottom: 17%;
 }
 @media (min-width: 1700px) {
+  .map-container{
+    width: 100%;
+  }
+  .map-line{
+    margin-top: 4rem;
+  }
+  .des-item {
+    margin-bottom: 8.5rem;
+    margin-top: 9rem;
+    height: 6rem;
+  }
   .map-item{
     width: 30px;
   }
