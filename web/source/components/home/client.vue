@@ -149,23 +149,6 @@
             <img class="client-img client-img1" src="/images/client24.jpg"></img>
           </div>
         </div>
-        <div v-if="!isMobile" class="slide-client-data">
-          <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client25.jpg"></img>
-          </div>
-          <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client26.jpg"></img>
-          </div>
-          <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client27.jpg"></img>
-          </div>
-          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client28.jpg"></img>
-          </div>
-          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client29.jpg"></img>
-          </div>
-        </div>
         <div v-if="isMobile" class="slide-client-data">
           <div class="client-div-1 d-flex align-items-center justify-content-center">
             <img class="client-img client-img1" src="/images/client17.jpg"></img>
@@ -199,8 +182,25 @@
           </div>
         </div>
       </div>
-      <div v-if="isMobile" class="slide-client" style="margin-top: 3rem;">
-        <div class="slide-client-data">
+      <div class="slide-client" style="margin-top: 3rem;">
+        <div v-if="!isMobile" class="slide-client-data">
+          <div class="client-div-2 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client25.jpg"></img>
+          </div>
+          <div class="client-div-2 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client26.jpg"></img>
+          </div>
+          <div class="client-div-2 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client27.jpg"></img>
+          </div>
+          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client28.jpg"></img>
+          </div>
+          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client29.jpg"></img>
+          </div>
+        </div>
+        <div v-if="isMobile" class="slide-client-data">
           <div class="client-div-2 d-flex align-items-center justify-content-center">
             <img class="client-img client-img1" src="/images/client25.jpg"></img>
           </div>
@@ -208,7 +208,7 @@
             <img class="client-img client-img1" src="/images/client26.jpg"></img>
           </div>
         </div>
-        <div class="slide-client-data">
+        <div v-if="isMobile" class="slide-client-data">
           <div class="client-div-2 d-flex align-items-center justify-content-center">
             <img class="client-img client-img1" src="/images/client27.jpg"></img>
           </div>
@@ -216,7 +216,7 @@
             <img class="client-img client-img1" src="/images/client28.jpg"></img>
           </div>
         </div>
-        <div class="slide-client-data">
+        <div v-if="isMobile" class="slide-client-data">
           <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
             <img class="client-img client-img1" src="/images/client29.jpg"></img>
           </div>
@@ -380,7 +380,7 @@ export default {
   }
 }
 .client-div-1{
-  width: 17.5%;
+  width: 14%;
   .client-img{
     height: auto;
     width: 100%;
