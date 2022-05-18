@@ -13,214 +13,212 @@
       <div class="slide-client" style="margin-top: 3rem;">
         <div v-if="!isMobile" class="slide-client-data">
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client1.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client1.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client2.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client2.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client3.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client3.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client4.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client4.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client5.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client5.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client6.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client6.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client7.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client7.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client8.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client8.jpg"></img>
           </div>
         </div>
         <div v-if="!isMobile" class="slide-client-data">
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client9.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client9.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client10.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client10.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client11.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client11.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client12.png" ></img>
+            <img class="client-img client-img1" src="/images/client12.png"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client13.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client13.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client14.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client14.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client15.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client15.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client16.png" ></img>
-          </div>
-        </div>
-        <div v-if="isMobile" class="slide-client-data">
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client1.jpg" ></img>
-          </div>
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client2.jpg" ></img>
-          </div>
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client3.jpg" ></img>
-          </div>
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client4.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client16.png"></img>
           </div>
         </div>
         <div v-if="isMobile" class="slide-client-data">
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client5.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client1.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client6.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client2.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client7.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client3.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client8.jpg" ></img>
-          </div>
-        </div>
-        <div v-if="isMobile" class="slide-client-data">
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client9.jpg" ></img>
-          </div>
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client10.jpg" ></img>
-          </div>
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client11.jpg" ></img>
-          </div>
-          <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client12.png" ></img>
+            <img class="client-img client-img1" src="/images/client4.jpg"></img>
           </div>
         </div>
         <div v-if="isMobile" class="slide-client-data">
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client13.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client5.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client14.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client6.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client15.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client7.jpg"></img>
           </div>
           <div class="client-div d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client16.png" ></img>
+            <img class="client-img client-img1" src="/images/client8.jpg"></img>
+          </div>
+        </div>
+        <div v-if="isMobile" class="slide-client-data">
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client9.jpg"></img>
+          </div>
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client10.jpg"></img>
+          </div>
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client11.jpg"></img>
+          </div>
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client12.png"></img>
+          </div>
+        </div>
+        <div v-if="isMobile" class="slide-client-data">
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client13.jpg"></img>
+          </div>
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client14.jpg"></img>
+          </div>
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client15.jpg"></img>
+          </div>
+          <div class="client-div d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client16.png"></img>
           </div>
         </div>
       </div>
       <div class="slide-client" style="margin-top: 3rem;">
         <div v-if="!isMobile" class="slide-client-data">
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client17.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client17.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client18.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client18.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client19.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client19.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client20.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client20.jpg"></img>
           </div>
         </div>
         <div v-if="!isMobile" class="slide-client-data">
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client21.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client21.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client22.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client22.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client23.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client23.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client24.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client24.jpg"></img>
+          </div>
+        </div>
+        <div v-if="!isMobile" class="slide-client-data">
+          <div class="client-div-2 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client25.jpg"></img>
+          </div>
+          <div class="client-div-2 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client26.jpg"></img>
+          </div>
+          <div class="client-div-2 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client27.jpg"></img>
+          </div>
+          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client28.jpg"></img>
+          </div>
+          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client29.jpg"></img>
           </div>
         </div>
         <div v-if="isMobile" class="slide-client-data">
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client17.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client17.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client18.jpg" ></img>
-          </div>
-        </div>
-        <div v-if="isMobile" class="slide-client-data">
-          <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client19.jpg" ></img>
-          </div>
-          <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client20.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client18.jpg"></img>
           </div>
         </div>
         <div v-if="isMobile" class="slide-client-data">
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client21.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client19.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client22.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client20.jpg"></img>
           </div>
         </div>
         <div v-if="isMobile" class="slide-client-data">
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client23.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client21.jpg"></img>
           </div>
           <div class="client-div-1 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client24.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client22.jpg"></img>
+          </div>
+        </div>
+        <div v-if="isMobile" class="slide-client-data">
+          <div class="client-div-1 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client23.jpg"></img>
+          </div>
+          <div class="client-div-1 d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client24.jpg"></img>
           </div>
         </div>
       </div>
-      <div class="slide-client" style="margin-top: 3rem;">
-        <div v-if="!isMobile" class="slide-client-data">
+      <div v-if="isMobile" class="slide-client" style="margin-top: 3rem;">
+        <div class="slide-client-data">
           <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client25.jpg" ></img>
-          </div>
-          <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client26.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client25.jpg"></img>
           </div>
           <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client27.jpg" ></img>
-          </div>
-          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client28.jpg" ></img>
-          </div>
-          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client29.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client26.jpg"></img>
           </div>
         </div>
-        <div v-if="isMobile" class="slide-client-data">
+        <div class="slide-client-data">
           <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client25.jpg" ></img>
-          </div>
-        </div>
-        <div v-if="isMobile" class="slide-client-data">
-          <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client26.jpg" ></img>
-          </div>
-        </div>
-        <div v-if="isMobile" class="slide-client-data">
-          <div class="client-div-2 d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client27.jpg" ></img>
-          </div>
-        </div>
-        <div v-if="isMobile" class="slide-client-data">
-          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client28.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client27.jpg"></img>
           </div>
           <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
-            <img class="client-img client-img1" src="/images/client29.jpg" ></img>
+            <img class="client-img client-img1" src="/images/client28.jpg"></img>
+          </div>
+        </div>
+        <div class="slide-client-data">
+          <div class="client-div-2 client-div-2-sub d-flex align-items-center justify-content-center">
+            <img class="client-img client-img1" src="/images/client29.jpg"></img>
           </div>
         </div>
       </div>
@@ -241,7 +239,7 @@ export default {
         arrows: true,
         dots: false,
         autoplay: true,
-        autoplaySpeed: 5000
+        autoplaySpeed: 3000
       },
     }
   },
@@ -354,17 +352,19 @@ export default {
   width: 10%;
   float: left;
   cursor: pointer;
+  margin-top: 3rem;
 }
 .slider-right{
   width: 10%;
   float: right;
   cursor: pointer;
+  margin-top: 3rem;
 }
 .client-title{
   font-size: 5rem;
 }
 .client-div{
-  min-height: 130px;
+  min-height: 100px;
   margin-bottom: 1rem;
 }
 .client-div{
@@ -380,7 +380,7 @@ export default {
   }
 }
 .client-div-1{
-  width: calc(100% / 8);
+  width: 17.5%;
   .client-img{
     height: auto;
     width: 100%;
@@ -400,10 +400,13 @@ export default {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  min-height: 100px;
 }
 @media (max-width: 575px) {
+  .slide-client-data{
+    min-height: 70px;
+  }
   .slider-left {
     width: 20%;
     margin-top: 1rem;
@@ -422,12 +425,12 @@ export default {
     margin-bottom: 1rem;
   }
   .client-div-2{
-    width: 100%;
-    margin-bottom: 1rem;
+    width: 45%;
+    margin-bottom: 3rem;
   }
   .client-div-2-sub{
     width: 45%;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
 }
 </style>

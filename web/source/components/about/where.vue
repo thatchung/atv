@@ -119,8 +119,8 @@ export default {
   mixins: [general],
   data() {
     return {
-      locations: ['HOCHIMINH', 'HANOI', 'HAIPHONG', 'DANANG', 'BINHDUONG',
-        'NHATRANG', 'BENTRE', 'PHNOMPENH_CAMBODIA'],
+      locations: ['HOCHIMINH', 'HANOI', 'HAIPHONG', 'DANANG', 'NHATRANG', 'BINHDUONG',
+         'BENTRE', 'PHNOMPENH_CAMBODIA'],
       item_active: 'HOCHIMINH',
       isMobile: false,
       WherePlaceName: 'Ho Chi Minh City (Electrolux Office)',
