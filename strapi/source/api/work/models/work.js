@@ -15,8 +15,8 @@ async function clearCacheData(data) {
 
     if (cache && typeof cache.clearCache === "function") {
         const articleCache = cache.getCacheConfig("works");
-        if (articleCache && typeof data.slug === "string") {
-            await cache.clearCache(articleCache, { id: data.slug });
+        if (articleCache && typeof data.url === "string") {
+            await cache.clearCache(articleCache, { id: data.url });
             return;
         }
     }
@@ -27,6 +27,8 @@ module.exports = {
             await clearCacheData(result);
         },
         async afterCreate(result, params, data) {
+            result.url = tvkd.cFriendlyURI(result.title.trim())
+            await strapi.services.work.update({ id : result.id }, result);
             await clearCacheData(result);
         },
     }

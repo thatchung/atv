@@ -4,6 +4,7 @@
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#lifecycle-hooks)
  * to customize this model
  */
+var tvkd = require('tieng-viet-khong-dau');
 
 async function clearCacheData(data) {
     let cache = {};
@@ -15,8 +16,8 @@ async function clearCacheData(data) {
 
     if (cache && typeof cache.clearCache === "function") {
         const articleCache = cache.getCacheConfig("innovations");
-        if (articleCache && typeof data.slug === "string") {
-            await cache.clearCache(articleCache, { id: data.slug });
+        if (articleCache && typeof data.url === "string") {
+            await cache.clearCache(articleCache, { id: data.url });
             return;
         }
     }
@@ -27,6 +28,8 @@ module.exports = {
             await clearCacheData(result);
         },
         async afterCreate(result, params, data) {
+            result.url = tvkd.cFriendlyURI(result.title.trim())
+            await strapi.services.innovation.update({ id : result.id }, result);
             await clearCacheData(result);
         },
     }
