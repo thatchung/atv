@@ -90,6 +90,58 @@ export default {
       }
     }
   },
+  head() {
+    let headJson = {
+      title: "Innovation - Sáng tạo Của AVT",
+      meta: [
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: 'Innovation - Sáng tạo Của AVT'
+        },
+        {
+          hid: "description",
+          property: "description",
+          content: 'Innovation - Sáng tạo Của AVT'
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: 'Innovation - Sáng tạo Của AVT'
+        },
+        {
+          hid: "robots",
+          property: "robots",
+          content:
+            this.s_work !== undefined && this.s_work.meta_robots
+              ? this.s_work.meta_robots
+              : "INDEX,FOLLOW"
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: '/uploads/DSC_05795_ad8e9b7584.jpg'
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: '/innovation'
+        },
+        {
+          hid: "keywords",
+          property: "keywords",
+          content: 'innovation, avt'
+        }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: '/innovation'
+        }
+      ]
+    }
+    return headJson
+  },
   computed: {
     ...mapGetters({
       listInnovation: "innovation/getListInnovation"

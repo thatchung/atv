@@ -205,6 +205,58 @@ export default {
       isMobile: false
     }
   },
+  head() {
+    let headJson = {
+      title: "Contact - AVT International cung cấp các dịch vụ thiết kế và thi công",
+      meta: [
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: 'Contact - AVT International cung cấp các dịch vụ thiết kế và thi công'
+        },
+        {
+          hid: "description",
+          property: "description",
+          content: 'Contact - AVT International cung cấp các dịch vụ thiết kế và thi công'
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: 'Contact - AVT International cung cấp các dịch vụ thiết kế và thi công'
+        },
+        {
+          hid: "robots",
+          property: "robots",
+          content:
+            this.s_work !== undefined && this.s_work.meta_robots
+              ? this.s_work.meta_robots
+              : "INDEX,FOLLOW"
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: '/uploads/DSC_05795_ad8e9b7584.jpg'
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: '/contact'
+        },
+        {
+          hid: "keywords",
+          property: "keywords",
+          content: 'contact, avt'
+        }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: '/contact'
+        }
+      ]
+    }
+    return headJson
+  },
   mounted() {
     this.checkMobile()
     this.animateOnScroll()

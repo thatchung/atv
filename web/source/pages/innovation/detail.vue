@@ -27,6 +27,9 @@
 <script>
 import { mapGetters, mapActions } from "vuex"
 import { marked } from 'marked'
+import ApiService from '@/service/api.service'
+import general from "~/mixins/general"
+
 export default {
   name: 'IndexPage',
   data() {
@@ -40,6 +43,79 @@ export default {
       },
       html_content: ''
     }
+  },
+  async asyncData({ route, req, app, redirect, store }) {
+    let res = await ApiService.request({
+      method: 'get',
+      url: store.state.common.api_host + `/innovations?url=${route.params.id}`
+    })
+    let item = {}
+    if (res && res.length > 0) {
+      item = res[0]
+      item.titleShare = res[0].title
+      item.description = res[0].description
+      item.image = res[0].thub ? store.state.common.api_host + res[0].thub.url : ''
+      item.current_url = store.state.common.api_host + '/' + res[0].url
+    }
+    return { s_innovation: item }
+  },
+  head() {
+    let headJson = {
+      title:
+        this.s_innovation !== undefined
+          ? this.s_innovation.titleShare
+          : "AVT - Công ty Cổ Phần Quản Lý Xây Dựng AVT",
+      meta: [
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.s_innovation !== undefined ? this.s_innovation.titleShare : ""
+        },
+        {
+          hid: "description",
+          property: "description",
+          content: this.s_innovation !== undefined ? this.s_innovation.description : ""
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.s_innovation !== undefined ? this.s_innovation.description : ""
+        },
+        {
+          hid: "robots",
+          property: "robots",
+          content:
+            this.s_innovation !== undefined && this.s_innovation.meta_robots
+              ? this.s_innovation.meta_robots
+              : "INDEX,FOLLOW"
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content:
+            this.s_innovation !== undefined && this.s_innovation.image !== ""
+              ? this.s_innovation.image
+              : ""
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: this.s_innovation !== undefined ? this.s_innovation.current_url : ""
+        },
+        {
+          hid: "keywords",
+          property: "keywords",
+          content: this.s_innovation !== undefined ? this.s_innovation.keywords : ""
+        }
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: this.s_innovation.current_url
+        }
+      ]
+    }
+    return headJson
   },
   computed: {
     ...mapGetters({

@@ -5,22 +5,109 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
-
+const axios = require('axios');
 const messages = __importDefault(require("./lang/index.js"));
 console.log(messages)
+
+const getSitemapsConfigurations = () => {
+    let list = [{
+            path: '/sitemap-work.xml',
+            routes: async () => {
+                let list = [];
+                let res = await axios.get(`http://103.39.93.99:1333/works`)
+                if (res && res.data) {
+                    res.data.map(row => {
+                        if (row.url && row.url !== '') {
+                            list.push({
+                                url: `/${row.url}`,
+                                changefreq: 'daily',
+                                lastmod: new Date(),
+                                lastmodrealtime: true,
+                                priority: 0.8
+                            });
+                        }
+                        return true;
+                    });
+                }
+                return list;
+            }
+        },
+        {
+            path: '/sitemap-innovation.xml',
+            routes: async () => {
+                let list = [];
+                let res = await axios.get(`http://103.39.93.99:1333/innovations`)
+                if (res && res.data) {
+                    res.data.map(row => {
+                        if (row.url && row.url !== '') {
+                            list.push({
+                                url: `/${row.url}`,
+                                changefreq: 'daily',
+                                lastmod: new Date(),
+                                lastmodrealtime: true,
+                                priority: 0.8
+                            });
+                        }
+                        return true;
+                    });
+                }
+                return list;
+            }
+        },
+        {
+            path: '/sitemap-static.xml',
+            routes: [{
+                    url: '/',
+                    changefreq: 'daily',
+                    lastmod: new Date(),
+                    lastmodrealtime: true,
+                    priority: 1
+                },
+                {
+                    url: '/work',
+                    changefreq: 'daily',
+                    lastmod: new Date(),
+                    lastmodrealtime: true,
+                    priority: 0.9
+                },
+                {
+                    url: '/innovation',
+                    changefreq: 'daily',
+                    lastmod: new Date(),
+                    lastmodrealtime: true,
+                    priority: 0.9
+                },
+                {
+                    url: '/about',
+                    changefreq: 'monthly',
+                    priority: 0.5
+                },
+                {
+                    url: '/contact',
+                    changefreq: 'monthly',
+                    priority: 0.5
+                }
+            ]
+        }
+    ];
+
+    return list;
+}
+
 module.exports = {
   debug: true,
   telemetry: false,
   mode: 'universal',
   head: {
-    title: 'web',
+    title: 'AVT International - Studio thiết kế nội thất',
     htmlAttrs: {
       lang: 'vi'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'AVT International cung cấp các dịch vụ thiết kế và thi công trên nhiều lĩnh vực đa dạng: trung tâm mua sắm, chuỗi F&B, văn phòng cao cấp, trung tâm hội nghị, nhà hàng, khách sạn, trung tâm giải trí, trường học, căn hộ,… ' },
+      { hid: 'og:image', name: 'og:image', content: '/uploads/Screenshot_2022_04_18_225013_9fed9e013b.jpg?5314681.600000024' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -65,8 +152,22 @@ module.exports = {
     ['@nuxtjs/router', { }],
     'nuxt-gsap-module',
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
   ],
+  sitemap: {
+    defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date(),
+        lastmodrealtime: true
+    },
+    path: '/sitemapindex.xml',
+    hostname: 'https://avt.com.vn',
+    gzip: true,
+    sitemaps: [
+        ...getSitemapsConfigurations()
+    ]
+  },
   gsap: {
     extraPlugins: {
       scrollTo: true,
@@ -78,6 +179,7 @@ module.exports = {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/i18n',
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
     ['nuxt-modernizr', {
       'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
       options: ['setClasses'],
@@ -114,7 +216,6 @@ module.exports = {
         // config.optimization.splitChunks.maxSize = 1000000;
         if (isDev && isClient) {
             // config.optimization.splitChunks.maxSize = 151200;
-            
             config.module.rules.push(
             // {
             //     enforce: 'pre',

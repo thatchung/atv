@@ -14,7 +14,7 @@
     </div>
     <h1 class="work-title font-pp-bold">
       <!-- {{ s_work ? s_work.title : work.title }} -->
-      <span v-if="$i18n.locale === 'vn'">{{ s_work ? 
+      <span v-if="$i18n.locale === 'vn'">{{ s_work ?
         ( s_work.title_vn ? s_work.title_vn : s_work.title )
         : ( work.title_vn ? work.title_vn : work.title ) }}</span>
       <span v-else>{{ s_work ? s_work.title : work.title }}</span>
@@ -65,13 +65,13 @@
 import { mapGetters, mapActions } from "vuex"
 import { marked } from 'marked'
 import ApiService from '@/service/api.service'
+import { stripHtml } from 'string-strip-html'
 import general from "~/mixins/general"
 
 export default {
   name: 'IndexPage',
   mixins: [general],
   async asyncData({ route, req, app, redirect, store }) {
-    console.log(store.state)
     let res = await ApiService.request({
       method: 'get',
       url: store.state.common.api_host + `/works?url=${route.params.id}`
@@ -80,9 +80,9 @@ export default {
     if (res && res.length > 0) {
       item = res[0]
       item.titleShare = res[0].title
-      item.description = res[0].content
-      item.image = res[0].thub ? res[0].thub.url : ''
-      item.current_url = res[0].url
+      item.description = stripHtml(marked.parse(res[0].content)).result
+      item.image = res[0].thub ? store.state.common.api_host + res[0].thub.url : ''
+      item.current_url = store.state.common.api_host + '/' + res[0].url
     }
     return { s_work: item }
   },
@@ -107,8 +107,8 @@ export default {
     let headJson = {
       title:
         this.s_work !== undefined
-          ? this.s_work.name
-          : "ATV - Công ty Cổ Phần Quản Lý Xây Dựng ATV",
+          ? this.s_work.titleShare
+          : "AVT - Công ty Cổ Phần Quản Lý Xây Dựng AVT",
       meta: [
         {
           hid: "og:title",
