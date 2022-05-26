@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <div class="img-content">
-      <ThumbImage :src="'/images/peppleb.png'" ratio="8-5" />
+      <ThumbImage :src="'/images/peppleb.jpg'" ratio="8-5" />
       <img :class="`item-people cnum-${num}`" :src="thub"></img>
     </div>
     <h3 class="item-title-people">

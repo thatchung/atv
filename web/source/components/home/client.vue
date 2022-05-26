@@ -238,14 +238,16 @@ export default {
       settings: {
         arrows: true,
         dots: false,
-        autoplay: true,
-        autoplaySpeed: 3000
+        autoplay: false
+        // autoplaySpeed: 5000
       },
+      interval: null
     }
   },
   mounted() {
     this.checkMobile()
     this.animateOnScroll()
+    this.goNext()
   },
   methods: {
     checkMobile() {
@@ -259,9 +261,13 @@ export default {
     },
     goLeft() {
       this.$refs.slide1.prev()
+      clearInterval(this.interval)
+      this.goNext()
     },
     goRight() {
       this.$refs.slide1.next()
+      clearInterval(this.interval)
+      this.goNext()
     },
     showAnimation() {
       this.$gsap.fromTo(`.client-img1`, {
@@ -340,6 +346,11 @@ export default {
       //   x:0,
       //   duration: 1.8
       // })
+    },
+    goNext() {
+      this.interval = setInterval(() => { 
+       this.$refs.slide1.next()
+      }, 3500)
     }
   }
 }
