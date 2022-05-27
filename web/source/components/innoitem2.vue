@@ -13,7 +13,9 @@
       <ThumbImage :src="$store.state.common.api_host + item.thub.url" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <div v-if="description" class="item-content">
-      {{ description }}
+      <!-- {{ description }} -->
+      <span v-if="$i18n.locale === 'vn'">{{ item.description_vn }}</span>
+      <span v-else>{{ item.description }}</span>
       <nuxt-link :to="'/innovation/' + item.url">
         <!-- <b-icon-arrow-right /> -->
         <img class="img-arrow-right" src="/images/a_right.png"></img>

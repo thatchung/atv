@@ -12,7 +12,9 @@
       </h2>
     </nuxt-link>
     <div v-if="description" class="item-content">
-      {{ description }}
+      <!-- {{ description }} -->
+      <span v-if="$i18n.locale === 'vn'">{{ item.description_vn }}</span>
+      <span v-else>{{ item.description }}</span>
       <nuxt-link :to="'/innovation/' + item.url">
         <!-- <b-icon-arrow-right /> -->
         <img class="img-arrow-right item-arrow" src="/images/a_right.png"></img>
