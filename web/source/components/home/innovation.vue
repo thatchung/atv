@@ -84,7 +84,10 @@ export default {
       }
     },
     async loadData() {
-      await this.getListInnovation()
+      const query = {
+        _sort: 'order:DESC'
+      }
+      await this.getListInnovation({ params :query })
     }
   }
 }

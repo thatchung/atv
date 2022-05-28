@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "name": "contact",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "location2": {
+      "type": "string"
+    },
+    "location1": {
+      "type": "string"
+    },
+    "location3": {
+      "type": "string"
+    },
+    "address1": {
+      "type": "string"
+    },
+    "address2": {
+      "type": "string"
+    },
+    "address3": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "location1_vn": {
+      "type": "string"
+    },
+    "location2_vn": {
+      "type": "string"
+    },
+    "location3_vn": {
+      "type": "string"
+    },
+    "address1_vn": {
+      "type": "string"
+    },
+    "address2_vn": {
+      "type": "string"
+    },
+    "address3_vn": {
+      "type": "string"
+    }
+  }
+}

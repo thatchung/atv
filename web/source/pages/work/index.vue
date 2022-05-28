@@ -33,7 +33,7 @@
           {{ locationActive.name | locationFilter }}
         </span>
         <div v-if="filterChoice" class="filter-list">
-          <div v-for="(i, idx) in locations" :key="idx" class="filter-item" @click="choiceLocationFilter(i)">
+          <div v-for="(i, idx) in listLocation" :key="idx" class="filter-item" @click="choiceLocationFilter(i)">
             {{ i.name | locationFilter }}
           </div>
         </div>
@@ -43,14 +43,14 @@
       <div v-if="typeActive === 'category'" class="filter-item-active">
         <span v-if="!filterChoice">
           <!-- {{ categoryActive | categoryFilter }} -->
-          <div style="display: inline-block;" v-if="$i18n.locale === 'vn'">{{ categoryActive | categoryVNFilter }}</div>
-          <div style="display: inline-block;" v-else >{{ categoryActive | categoryFilter }}</div>
+          <div style="display: inline-block;" v-if="$i18n.locale === 'vn'">{{ categoryActive.name_vn }}</div>
+          <div style="display: inline-block;" v-else >{{ categoryActive.name }}</div>
         </span>
         <div v-if="filterChoice" class="filter-list">
-          <div v-for="(i, idx) in categories" :key="idx" class="filter-item" @click="choiceCategoryFilter(i)">
+          <div v-for="(i, idx) in listCategory" :key="idx" class="filter-item" @click="choiceCategoryFilter(i)">
             <!-- {{ i | categoryFilter }} -->
-            <div v-if="$i18n.locale === 'vn'">{{ i | categoryVNFilter }}</div>
-            <div v-else >{{ i | categoryFilter }}</div>
+            <div v-if="$i18n.locale === 'vn'">{{ i.name_vn }}</div>
+            <div v-else >{{ i.name }}</div>
           </div>
         </div>
         <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
@@ -61,8 +61,8 @@
           {{ yearActive }}
         </span>
         <div v-if="filterChoice" class="filter-list">
-          <div v-for="(i, idx) in years" :key="idx" class="filter-item" @click="choiceYearFilter(i)">
-            {{ i }}
+          <div v-for="(i, idx) in listYear" :key="idx" class="filter-item" @click="choiceYearFilter(i.name)">
+            {{ i.name }}
           </div>
         </div>
         <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
@@ -156,9 +156,18 @@ export default {
         id : 2,
         name : 'HOCHIMINH'
       },
-      categories: ['office', 'retail', 'mall', 'hospital', 'residential'],
-      categoryActive: 'office',
-      years: ['2022', '2021', '2020', '2019', '2018', '2017', '2016'],
+      categoryActive: {
+        id : 2,
+        name : 'Workplace',
+        name_vn: 'Văn phòng'
+      },
+      years: [ { name: '2022'},
+        { name: '2021' },
+        { name: '2020' },
+        { name: '2019' },
+        { name: '2018' },
+        { name: '2017' },
+        { name: '2016' }],
       yearActive: '2021',
       leftBtn: `<div class="btn-left"><img src="/images/p_left.jpg"></div>`,
       rightBtn: `<div class="btn-left"><img src="/images/p_right.jpg"></div>`,
@@ -233,12 +242,24 @@ export default {
   },
   computed: {
     ...mapGetters({
-      listWork: "work/getListWork"
+      listWork: "work/getListWork",
+      listYear: "common/getListYear",
+      listLocation: "common/getListLocation",
+      listCategory: "common/getListCategory"
     }),
   },
   async mounted() {
     this.typeActive = 'featured'
     await this.loadFilter('featured')
+    await this.getListCategory()
+    await this.getListYear()
+    if(this.listYear.length === 0) {
+      this.listYear = this.years
+    }
+    await this.getListLocation()
+    if(this.listLocation.length === 0) {
+      this.listLocation = this.locations
+    }
     let res = await this.getCountWork()
     if (res) {
       this.meta.totalItem = res
@@ -248,7 +269,11 @@ export default {
   methods: {
     ...mapActions({
       getListWork: "work/getListWork",
-      getCountWork: "work/getCountWork"
+      getCountWork: "work/getCountWork",
+      getListYear: "common/getListYear",
+      getListLocation: "common/getListLocation",
+      getListCategory: "common/getListCategory",
+      getListFeatured: "work/getListFeatured"
     }),
     async loadData(page) {
       this.loading = true
@@ -278,13 +303,15 @@ export default {
         this.filters = { }
         this.loadData()
       } else if (type === 'featured') {
-        this.filters = {
-          id_in: [17, 19, 21, 27, 32, 14, 24, 23, 31]
-        }
-        this.loadData()
+        // this.filters = {
+        //   id_in: [17, 19, 21, 27, 32, 14, 24, 23, 31]
+        // }
+        // this.loadData()
+        // this.listWork = this.listFeatured.map(i => { return i.work })
+        this.getListFeatured()
       } else if (type === 'category') {
         this.filters = {
-          category : this.categoryActive
+          categories : this.categoryActive.id
         }
         this.loadData()
       } else if (type === 'location') {
@@ -317,7 +344,7 @@ export default {
       this.categoryActive = type
       this.filterChoice = false
       this.filters = {
-        category : this.categoryActive
+        categories : type.id
       }
       this.loadData()
     },

@@ -1,6 +1,49 @@
 import ApiService from '@/service/api.service'
 export default {
 
+    getContact: async ({ commit, rootState }) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: rootState.common.api_host + `/contact`
+        })
+        commit('set_contact', {
+            contact: res
+        })
+    },
+
+    getListCategory: async ({ commit, rootState }, data = {}) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: rootState.common.api_host + `/categories`,
+            data: data.params ? data.params : {}
+        })
+        commit('set_list_category', {
+            list_category: res
+        })
+    },
+
+    getListYear: async ({ commit, rootState }, data = {}) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: rootState.common.api_host + `/years?_sort=name:desc`,
+            data: data.params ? data.params : {}
+        })
+        commit('set_list_year', {
+            list_year: res
+        })
+    },
+
+    getListLocation: async ({ commit, rootState }, data = {}) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: rootState.common.api_host + `/locations?_sort=id:asc`,
+            data: data.params ? data.params : {}
+        })
+        commit('set_list_location', {
+            list_location: res
+        })
+    },
+
     getbyUrlOrigin: async ({ commit, state }, data) => {
         let res = await ApiService.request({
             method: 'get',

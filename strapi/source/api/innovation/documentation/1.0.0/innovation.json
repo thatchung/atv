@@ -606,6 +606,9 @@
           },
           "content_vn": {
             "type": "string"
+          },
+          "order": {
+            "type": "integer"
           }
         }
       },
@@ -628,6 +631,9 @@
           },
           "content_vn": {
             "type": "string"
+          },
+          "order": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"

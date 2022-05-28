@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/works": {
+    "/featured-works": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Work"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Featured-work"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Work"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewWork"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/works/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Featured-work"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewFeatured-work"
+              }
+            }
+          }
+        }
       }
     },
-    "/works/{id}": {
+    "/featured-works/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Featured-work"
+        ],
+        "parameters": []
+      }
+    },
+    "/featured-works/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Featured-work"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Featured-work"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewWork"
+                "$ref": "#/components/schemas/NewFeatured-work"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Featured-work"
         ],
         "parameters": [
           {
@@ -514,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Work": {
+      "Featured-work": {
         "required": [
           "id"
         ],
@@ -522,73 +535,67 @@
           "id": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "thub": {
+          "work": {
             "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "title": {
                 "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
               },
               "url": {
                 "type": "string"
               },
-              "previewUrl": {
+              "content": {
                 "type": "string"
               },
-              "provider": {
+              "thub": {
                 "type": "string"
               },
-              "provider_metadata": {
-                "type": "object"
+              "area": {
+                "type": "number"
               },
-              "related": {
+              "year": {
+                "type": "integer"
+              },
+              "address": {
                 "type": "string"
+              },
+              "scope": {
+                "type": "string"
+              },
+              "content_vn": {
+                "type": "string"
+              },
+              "scope_vn": {
+                "type": "string"
+              },
+              "locations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "category_name": {
+                "type": "string"
+              },
+              "category_name_vn": {
+                "type": "string"
+              },
+              "address_vn": {
+                "type": "string"
+              },
+              "title_vn": {
+                "type": "string"
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -598,149 +605,18 @@
               }
             }
           },
-          "area": {
-            "type": "number"
-          },
-          "year": {
+          "order": {
             "type": "integer"
-          },
-          "address": {
-            "type": "string"
-          },
-          "scope": {
-            "type": "string"
-          },
-          "content_vn": {
-            "type": "string"
-          },
-          "scope_vn": {
-            "type": "string"
-          },
-          "locations": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "works": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "category_name": {
-            "type": "string"
-          },
-          "category_name_vn": {
-            "type": "string"
-          },
-          "address_vn": {
-            "type": "string"
-          },
-          "title_vn": {
-            "type": "string"
-          },
-          "categories": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "name_vn": {
-                  "type": "string"
-                },
-                "works": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
-      "NewWork": {
+      "NewFeatured-work": {
         "properties": {
-          "title": {
+          "work": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "area": {
-            "type": "number"
-          },
-          "year": {
+          "order": {
             "type": "integer"
-          },
-          "address": {
-            "type": "string"
-          },
-          "scope": {
-            "type": "string"
-          },
-          "content_vn": {
-            "type": "string"
-          },
-          "scope_vn": {
-            "type": "string"
-          },
-          "locations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "category_name": {
-            "type": "string"
-          },
-          "category_name_vn": {
-            "type": "string"
-          },
-          "address_vn": {
-            "type": "string"
-          },
-          "title_vn": {
-            "type": "string"
-          },
-          "categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
@@ -752,9 +628,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Work"
-    }
-  ]
+  "tags": []
 }

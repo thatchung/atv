@@ -1,5 +1,16 @@
 import ApiService from '@/service/api.service'
 export default {
+    getListFeatured: async ({ commit, rootState }, data = {}) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: rootState.common.api_host + `/featured-works?_sort=order:desc`,
+            data: data.params ? data.params : {}
+        })
+        commit('set_list_work', {
+            list_work: res.map(i => { return i.work })
+        })
+    },
+
     getListWork: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',

@@ -8,10 +8,12 @@
       <div class="col-4 col-md-4">
         <div>
           <div class="place font-pp-bold">
-            {{ $t('HoChiMinh') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.location1_vn }}</span>
+            <span v-else >{{ contact.location1 }}</span>
           </div>
           <div class="address">
-            {{ $t('Address1') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.address1_vn }}</span>
+            <span v-else >{{ contact.address1 }}</span>
           </div>
           <div class="type">
             {{ $t('HeadOffice') }}
@@ -21,10 +23,12 @@
       <div class="col-4 col-md-4">
         <div>
           <div class="place font-pp-bold">
-            {{ $t('HaNoi') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.location2_vn }}</span>
+            <span v-else >{{ contact.location2 }}</span>
           </div>
           <div class="address">
-            {{ $t('Address2') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
+            <span v-else >{{ contact.address2 }}</span>
           </div>
           <div class="type">
             {{ $t('Branch') }}
@@ -34,10 +38,12 @@
       <div class="col-4 col-md-4">
         <div>
           <div class="place font-pp-bold">
-            {{ $t('DaNang') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.location3_vn }}</span>
+            <span v-else >{{ contact.location3 }}</span>
           </div>
           <div class="address">
-            {{ $t('Address3') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
+            <span v-else >{{ contact.address2 }}</span>
           </div>
           <div class="type">
             {{ $t('Branch') }}
@@ -49,10 +55,12 @@
       <div class="col-12">
         <div>
           <div class="place font-pp-bold">
-            {{ $t('HoChiMinh') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.location1_vn }}</span>
+            <span v-else >{{ contact.location1 }}</span>
           </div>
           <div class="address">
-            {{ $t('Address1') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.address1_vn }}</span>
+            <span v-else >{{ contact.address1 }}</span>
           </div>
           <div class="type">
             {{ $t('HeadOffice') }}
@@ -63,10 +71,12 @@
       <div class="col-12">
         <div>
           <div class="place font-pp-bold">
-            {{ $t('HaNoi') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.location2_vn }}</span>
+            <span v-else >{{ contact.location2 }}</span>
           </div>
           <div class="address">
-            {{ $t('Address2') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
+            <span v-else >{{ contact.address2 }}</span>
           </div>
           <div class="type">
             {{ $t('Branch') }}
@@ -77,10 +87,12 @@
       <div class="col-12">
         <div>
           <div class="place font-pp-bold">
-            {{ $t('DaNang') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.location3_vn }}</span>
+            <span v-else >{{ contact.location3 }}</span>
           </div>
           <div class="address">
-            {{ $t('Address3') }}
+            <span v-if="$i18n.locale === 'vn'">{{ contact.address3_vn }}</span>
+            <span v-else >{{ contact.address3 }}</span>
           </div>
           <div class="type">
             {{ $t('Branch') }}
@@ -92,11 +104,11 @@
     <div class="phone">
       Hotline
       <div>
-        <a href="tel:0838311355">
-          <div class="tel-div">+84</div>
-          <div class="tel-div"> 838</div>
+        <a :href="`tel:${ contact.phone }`">
+          <div class="tel-div">{{ contact.phone | formatPhoneNumber }}</div>
+          <!-- <div class="tel-div"> 838</div>
           <div class="tel-div"> 311</div>
-          <div class="tel-div"> 355</div>
+          <div class="tel-div"> 355</div> -->
         </a>
       </div>
     </div>
@@ -108,18 +120,30 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex"
+import general from "~/mixins/general"
 export default {
   name: 'ContactPage',
+  mixins: [general],
   data() {
     return {
       isMobile: false
     }
   },
+  computed: {
+    ...mapGetters({
+      contact: "common/getContact"
+    }),
+  },
   mounted() {
     this.checkMobile()
     this.animateOnScroll()
+    this.getContact()
   },
   methods: {
+    ...mapActions({
+      getContact: "common/getContact"
+    }),
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     },

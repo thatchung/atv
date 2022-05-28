@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_works",
+  "info": {
+    "name": "FeaturedWork",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "work": {
+      "model": "work"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

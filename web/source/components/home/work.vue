@@ -77,7 +77,10 @@ export default {
       }
     },
     async loadData() {
-      await this.getListWork()
+      const query = {
+        _sort: 'id:DESC'
+      }
+      await this.getListWork({ params :query })
     }
   }
 }

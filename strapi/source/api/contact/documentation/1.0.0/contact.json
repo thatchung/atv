@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/locations": {
+    "/contact": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the contact's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve contact document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Location"
+                    "$ref": "#/components/schemas/Contact"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Location"
+          "Contact"
         ],
         "parameters": [
           {
@@ -192,198 +192,16 @@
           }
         ]
       },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Location"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewLocation"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/locations/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Location"
-        ],
-        "parameters": []
-      }
-    },
-    "/locations/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Location"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single contact record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve contact document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/Contact"
                 }
               }
             }
@@ -421,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Location"
+          "Contact"
         ],
         "requestBody": {
           "description": "",
@@ -429,30 +247,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewLocation"
+                "$ref": "#/components/schemas/NewContact"
               }
             }
           }
         },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single contact record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single contact based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,26 +302,15 @@
         },
         "summary": "",
         "tags": [
-          "Location"
+          "Contact"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
+        "parameters": []
       }
     }
   },
   "components": {
     "schemas": {
-      "Location": {
+      "Contact": {
         "required": [
           "id"
         ],
@@ -522,94 +318,87 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "location2": {
             "type": "string"
           },
-          "works": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "thub": {
-                  "type": "string"
-                },
-                "area": {
-                  "type": "number"
-                },
-                "year": {
-                  "type": "integer"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "scope": {
-                  "type": "string"
-                },
-                "content_vn": {
-                  "type": "string"
-                },
-                "scope_vn": {
-                  "type": "string"
-                },
-                "locations": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "category_name": {
-                  "type": "string"
-                },
-                "category_name_vn": {
-                  "type": "string"
-                },
-                "address_vn": {
-                  "type": "string"
-                },
-                "title_vn": {
-                  "type": "string"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "location1": {
+            "type": "string"
+          },
+          "location3": {
+            "type": "string"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "location1_vn": {
+            "type": "string"
+          },
+          "location2_vn": {
+            "type": "string"
+          },
+          "location3_vn": {
+            "type": "string"
+          },
+          "address1_vn": {
+            "type": "string"
+          },
+          "address2_vn": {
+            "type": "string"
+          },
+          "address3_vn": {
+            "type": "string"
           }
         }
       },
-      "NewLocation": {
+      "NewContact": {
         "properties": {
-          "name": {
+          "location2": {
             "type": "string"
           },
-          "works": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "location1": {
+            "type": "string"
+          },
+          "location3": {
+            "type": "string"
+          },
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "address3": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "location1_vn": {
+            "type": "string"
+          },
+          "location2_vn": {
+            "type": "string"
+          },
+          "location3_vn": {
+            "type": "string"
+          },
+          "address1_vn": {
+            "type": "string"
+          },
+          "address2_vn": {
+            "type": "string"
+          },
+          "address3_vn": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -623,7 +412,7 @@
   },
   "tags": [
     {
-      "name": "Location"
+      "name": "Contact"
     }
   ]
 }

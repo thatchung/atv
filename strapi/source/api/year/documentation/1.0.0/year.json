@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/works": {
+    "/years": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Work"
+                    "$ref": "#/components/schemas/Year"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Year"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "$ref": "#/components/schemas/Year"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Year"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewWork"
+                "$ref": "#/components/schemas/NewYear"
               }
             }
           }
         }
       }
     },
-    "/works/count": {
+    "/years/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Year"
         ],
         "parameters": []
       }
     },
-    "/works/{id}": {
+    "/years/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "$ref": "#/components/schemas/Year"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Year"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Work"
+                  "$ref": "#/components/schemas/Year"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Year"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewWork"
+                "$ref": "#/components/schemas/NewYear"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Work"
+          "Year"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Work": {
+      "Year": {
         "required": [
           "id"
         ],
@@ -522,225 +522,21 @@
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "thub": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "area": {
-            "type": "number"
-          },
-          "year": {
+          "order": {
             "type": "integer"
-          },
-          "address": {
-            "type": "string"
-          },
-          "scope": {
-            "type": "string"
-          },
-          "content_vn": {
-            "type": "string"
-          },
-          "scope_vn": {
-            "type": "string"
-          },
-          "locations": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "works": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "category_name": {
-            "type": "string"
-          },
-          "category_name_vn": {
-            "type": "string"
-          },
-          "address_vn": {
-            "type": "string"
-          },
-          "title_vn": {
-            "type": "string"
-          },
-          "categories": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "name_vn": {
-                  "type": "string"
-                },
-                "works": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
-      "NewWork": {
+      "NewYear": {
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
-          "url": {
-            "type": "string"
-          },
-          "content": {
-            "type": "string"
-          },
-          "area": {
-            "type": "number"
-          },
-          "year": {
+          "order": {
             "type": "integer"
-          },
-          "address": {
-            "type": "string"
-          },
-          "scope": {
-            "type": "string"
-          },
-          "content_vn": {
-            "type": "string"
-          },
-          "scope_vn": {
-            "type": "string"
-          },
-          "locations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "category_name": {
-            "type": "string"
-          },
-          "category_name_vn": {
-            "type": "string"
-          },
-          "address_vn": {
-            "type": "string"
-          },
-          "title_vn": {
-            "type": "string"
-          },
-          "categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
@@ -754,7 +550,7 @@
   },
   "tags": [
     {
-      "name": "Work"
+      "name": "Year"
     }
   ]
 }

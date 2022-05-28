@@ -26,6 +26,14 @@ export default {
         numberFormat(x) {
             return x ? parseFloat(Math.round(x * 100) / 100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ".") : x
         },
+        formatPhoneNumber(phoneNumberString) {
+          var cleaned = ('' + phoneNumberString).replace(/\D/g, '').replace('0', '')
+          var match = cleaned.match(/^(\d{3})(\d{3})(\d{3})$/)
+          if (match) {
+            return '+84 ' + match[1] + ' ' + match[2] + ' ' + match[3]
+          }
+          return null
+        },
         workTypeFilter(state) {
             let stringState = state
             switch (state) {

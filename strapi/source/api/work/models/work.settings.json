@@ -39,16 +39,6 @@
     "year": {
       "type": "integer"
     },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "office",
-        "retail",
-        "mall",
-        "hospital",
-        "residential"
-      ]
-    },
     "address": {
       "type": "string"
     },
@@ -77,6 +67,11 @@
     },
     "title_vn": {
       "type": "string"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "works",
+      "dominant": true
     }
   }
 }

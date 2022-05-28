@@ -167,8 +167,8 @@ export default {
       }
       const query = {
         _start : page,
-        _limit: 15
-        // _sort: this.sort ? 'id:DESC' : 'id:ASC'
+        _limit: 15,
+        _sort: 'order:DESC'
       }
       this.meta.page = page + 1
       await this.getListInnovation({ params :query })
