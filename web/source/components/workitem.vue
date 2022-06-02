@@ -99,7 +99,7 @@ export default {
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
-  height: 45px;
+  height: 38px;
 }
 .detail-text{
   display: inline-block;
