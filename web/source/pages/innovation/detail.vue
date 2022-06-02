@@ -10,10 +10,10 @@
       {{ $t('Back') }}
     </div>
     <div class="date-content">
-      {{ item.date }}
+      {{ innovation.date }}
     </div>
     <h1 class="inno-title font-pp-bold">
-      {{ item.title }}
+      {{ innovation.title }}
     </h1>
     <div class="inno-content">
       <div class="inno-content-text white-space-word" v-html="html_content" />
@@ -29,6 +29,7 @@ import { mapGetters, mapActions } from "vuex"
 import { marked } from 'marked'
 import ApiService from '@/service/api.service'
 import general from "~/mixins/general"
+import moment from "moment"
 
 export default {
   name: 'IndexPage',
@@ -159,7 +160,11 @@ export default {
         } else {
           this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, `${this.$store.state.common.api_host}/uploads/`))
         }
+        this.innovation.date = this.dateTimeFilterText(this.innovation.created_at)
       }
+    },
+    dateTimeFilterText(date) {
+      return `${moment(date).format("MMM Do, YY")}`
     },
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
