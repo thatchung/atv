@@ -73,6 +73,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.work)
     const link = this.work.thub.formats.medium ? this.work.thub.formats.medium.url : this.work.thub.url
     this.image = this.$store.state.common.api_host + link
   },
@@ -94,9 +95,10 @@ export default {
   font-size: 1.5rem;
   margin-top: 1.5rem;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 .detail-text{
   display: inline-block;

@@ -23,10 +23,15 @@
   .img-arrow-down{
     height: 30px;
   }
+  .list-work .slick-arrow{
+    top: 190px !important;
+    position: absolute;
+  }
 }
 @media (min-width: 1200px) {
   .list-work .slick-arrow{
-      margin-top: -80px !important;
+    top: 190px;
+    position: absolute;
   }
   .list-inno .slick-arrow{
       margin-top: -65px !important;
@@ -40,7 +45,8 @@
 }
 @media (min-width: 992px) {
   .list-work .slick-arrow{
-      margin-top: -75px !important;
+    top: 140px;
+    position: absolute;
   }
   .list-inno .slick-arrow{
       margin-top: -65px !important;

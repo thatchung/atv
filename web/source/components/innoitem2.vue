@@ -77,6 +77,7 @@ export default {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
+  overflow: hidden;
 }
 .item-content svg{
   margin-left: 0.5rem;

@@ -89,6 +89,7 @@ export default {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 .item-content svg{
   margin-left: 0.5rem;
