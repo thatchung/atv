@@ -112,10 +112,10 @@
     height: 300px !important;
   }*/
   .section-title{
-    font-size: 4rem;
+    font-size: 4rem !important;
   }
   .list-inno .slick-arrow{
-    margin-top: -25px !important;
+    top: 235px;
   }
   .section-work{
     padding-bottom: 0rem !important;

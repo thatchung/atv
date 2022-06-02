@@ -82,6 +82,8 @@ export default {
   text-overflow: ellipsis;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  height: 35px;
 }
 .detail-text{
   display: inline-block;
