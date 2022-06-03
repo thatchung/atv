@@ -219,6 +219,7 @@ module.exports = {
     '/content-manager' : { target: hostapi },
     '/content-type-builder' : { target: hostapi },
     '/upload/files' : { target: hostapi },
+    '/uploads' : { target: hostapi },
     '/i18n' : { target: hostapi }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build

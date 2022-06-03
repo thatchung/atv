@@ -8,7 +8,9 @@
     </nuxt-link>
     <nuxt-link :to="'/innovation/' + item.url">
       <h2 class="item-title font-pp-bold">
-        {{ item.title }}
+        <!-- {{ item.title }} -->
+        <span v-if="$i18n.locale === 'vn'">{{ item.title_vn ? item.title_vn : item.title }}</span>
+        <span v-else>{{ item.title }}</span>
       </h2>
     </nuxt-link>
     <div v-if="description" class="item-content">
