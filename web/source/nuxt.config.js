@@ -217,6 +217,8 @@ module.exports = {
     '/admin/login' : { target: hostapi },
     '/admin' : { target: hostapi, pathRewrite: { '^/admin' : '/admin' } },
     '/content-manager' : { target: hostapi },
+    '/content-type-builder' : { target: hostapi },
+    '/upload/files' : { target: hostapi },
     '/i18n' : { target: hostapi }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
