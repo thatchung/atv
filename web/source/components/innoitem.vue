@@ -90,6 +90,7 @@ export default {
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-bottom: 5px;
 }
 .item-content svg{
   margin-left: 0.5rem;

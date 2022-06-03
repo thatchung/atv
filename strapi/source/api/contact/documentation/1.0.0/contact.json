@@ -356,6 +356,9 @@
           },
           "address3_vn": {
             "type": "string"
+          },
+          "email": {
+            "type": "string"
           }
         }
       },
@@ -398,6 +401,9 @@
             "type": "string"
           },
           "address3_vn": {
+            "type": "string"
+          },
+          "email": {
             "type": "string"
           },
           "created_by": {

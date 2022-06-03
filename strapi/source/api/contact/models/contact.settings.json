@@ -50,6 +50,9 @@
     },
     "address3_vn": {
       "type": "string"
+    },
+    "email": {
+      "type": "string"
     }
   }
 }

@@ -106,10 +106,15 @@
       <div>
         <a :href="`tel:${ contact.phone }`">
           <div class="tel-div">{{ contact.phone | formatPhoneNumber }}</div>
-          <!-- <div class="tel-div"> 838</div>
-          <div class="tel-div"> 311</div>
-          <div class="tel-div"> 355</div> -->
         </a>
+      </div>
+    </div>
+    <div class="phone">
+      Email
+      <div>
+        <nuxt-link to="/contact#mailus">
+          <div class="tel-div">{{ contact.email ? contact.email : 'hello@avt.com.vn' }}</div>
+        </nuxt-link>
       </div>
     </div>
     <div class="back-top" @click="toTopAction">
@@ -205,7 +210,6 @@ export default {
   color: #9D9FA2;
 }
 .tel-div{
-  transform: scale(0.5, 0.5);
   margin-left: 0rem !important;
   color: #9D9FA2;
 }

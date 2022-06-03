@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "innovations",
+  "collectionName": "clients",
   "info": {
-    "name": "Innovation",
-    "description": ""
+    "name": "client"
   },
   "options": {
     "increments": true,
@@ -12,16 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "url": {
-      "type": "string"
-    },
-    "content": {
-      "type": "richtext"
-    },
-    "thub": {
+    "client_image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -33,20 +23,8 @@
       "required": false,
       "pluginOptions": {}
     },
-    "description": {
-      "type": "text"
-    },
-    "description_vn": {
-      "type": "text"
-    },
-    "content_vn": {
-      "type": "richtext"
-    },
     "order": {
       "type": "integer"
-    },
-    "title_vn": {
-      "type": "string"
     }
   }
 }

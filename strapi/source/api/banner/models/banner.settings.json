@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "innovations",
+  "collectionName": "banners",
   "info": {
-    "name": "Innovation",
-    "description": ""
+    "name": "banner"
   },
   "options": {
     "increments": true,
@@ -12,16 +11,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Video",
+        "Image"
+      ]
     },
-    "url": {
-      "type": "string"
-    },
-    "content": {
-      "type": "richtext"
-    },
-    "thub": {
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -33,20 +30,17 @@
       "required": false,
       "pluginOptions": {}
     },
+    "title": {
+      "type": "string"
+    },
     "description": {
-      "type": "text"
+      "type": "string"
     },
-    "description_vn": {
-      "type": "text"
-    },
-    "content_vn": {
-      "type": "richtext"
+    "link": {
+      "type": "string"
     },
     "order": {
       "type": "integer"
-    },
-    "title_vn": {
-      "type": "string"
     }
   }
 }

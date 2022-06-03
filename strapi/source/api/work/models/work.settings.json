@@ -72,6 +72,9 @@
       "collection": "category",
       "via": "works",
       "dominant": true
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

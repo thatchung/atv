@@ -5,11 +5,11 @@
         2022 AVT all right reserved
       </div>
       <div class="footer-icon">
-        <a id="A1" href="https://www.facebook.com/profile.php?id=100063695044849" target="_blank">
+        <a id="A1" href="https://m.facebook.com/AVT-International-100984125977680" target="_blank">
           <img class="img-icon" src="/images/i_face.png"></a>
-        <a id="A4" href="javascript:void(0)">
+        <a id="A4" href="https://www.instagram.com/avt_international" target="_blank">
           <img class="img-icon" src="/images/4_Icon_Insta.png"></a>
-        <a id="A5" href="javascript:void(0)">
+        <a id="A5" href="https://www.linkedin.com/company/avt-international" target="_blank">
           <img class="img-icon" src="/images/5_Linkedin.png"></a>
       </div>
     </div>

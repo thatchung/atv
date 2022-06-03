@@ -4,7 +4,7 @@
       <ThumbImage :src="image" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
-      <h2 class="item-title font-pp-bold">
+      <h2 class="w-item-title font-pp-bold">
         <!-- {{ work.title }} -->
         <span v-if="$i18n.locale === 'vn'">{{ work.title_vn ? work.title_vn : work.title }}</span>
         <span v-else>{{ work.title }}</span>
@@ -73,7 +73,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.work)
     const link = this.work.thub.formats.medium ? this.work.thub.formats.medium.url : this.work.thub.url
     this.image = this.$store.state.common.api_host + link
   },
@@ -91,15 +90,14 @@ export default {
 }
 </script>
 <style lang="scss">
-.item-title{
+.w-item-title{
   font-size: 1.5rem;
   margin-top: 1.5rem;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  overflow: hidden;
-  height: 38px;
+  white-space: nowrap;
 }
 .detail-text{
   display: inline-block;

@@ -9,10 +9,12 @@
         <div class="col-4 col-md-4">
           <div>
             <div class="place">
-              {{ $t('HoChiMinh') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.location1_vn }}</span>
+              <span v-else >{{ contact.location1 }}</span>
             </div>
             <div class="address">
-              {{ $t('Address1') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address1_vn }}</span>
+              <span v-else >{{ contact.address1 }}</span>
             </div>
             <div class="type">
               {{ $t('HeadOffice') }}
@@ -22,10 +24,12 @@
         <div class="col-4 col-md-4">
           <div>
             <div class="place">
-              {{ $t('HaNoi') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.location2_vn }}</span>
+              <span v-else >{{ contact.location2 }}</span>
             </div>
             <div class="address">
-              {{ $t('Address2') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
+              <span v-else >{{ contact.address2 }}</span>
             </div>
             <div class="type">
               {{ $t('Branch') }}
@@ -35,10 +39,12 @@
         <div class="col-4 col-md-4">
           <div>
             <div class="place">
-              {{ $t('DaNang') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.location3_vn }}</span>
+              <span v-else >{{ contact.location3 }}</span>
             </div>
             <div class="address">
-              {{ $t('Address3') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
+              <span v-else >{{ contact.address2 }}</span>
             </div>
             <div class="type">
               {{ $t('Branch') }}
@@ -50,10 +56,12 @@
         <div class="row">
           <div class="col-12">
             <div class="place font-pp-bold">
-              {{ $t('HoChiMinh') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.location1_vn }}</span>
+              <span v-else >{{ contact.location1 }}</span>
             </div>
             <div class="address">
-              {{ $t('Address1') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address1_vn }}</span>
+              <span v-else >{{ contact.address1 }}</span>
             </div>
             <div class="type">
               {{ $t('HeadOffice') }}
@@ -64,10 +72,12 @@
         <div class="row">
           <div class="col-12">
             <div class="place font-pp-bold">
-              {{ $t('HaNoi') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.location2_vn }}</span>
+              <span v-else >{{ contact.location2 }}</span>
             </div>
             <div class="address">
-              {{ $t('Address2') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
+              <span v-else >{{ contact.address2 }}</span>
             </div>
             <div class="type">
               {{ $t('Branch') }}
@@ -78,10 +88,12 @@
         <div class="row">
           <div class="col-12">
             <div class="place font-pp-bold">
-              {{ $t('DaNang') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.location3_vn }}</span>
+              <span v-else >{{ contact.location3 }}</span>
             </div>
             <div class="address">
-              {{ $t('Address3') }}
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
+              <span v-else >{{ contact.address2 }}</span>
             </div>
             <div class="type">
               {{ $t('Branch') }}
@@ -90,19 +102,16 @@
         </div>
       </div>
       <div class="line-all" />
-      <div class="phone">
+      <div class="phone" style="margin-bottom: 3rem;">
         Hotline
         <div>
-          <a href="tel:0838311355">
-            <div class="tel-div-c">+84</div>
-            <div class="tel-div-c"> 838</div>
-            <div class="tel-div-c"> 311</div>
-            <div class="tel-div-c"> 355</div>
+          <a :href="`tel:${ contact.phone }`">
+            <div class="tel-div">{{ contact.phone | formatPhoneNumber }}</div>
           </a>
         </div>
       </div>
     </div>
-    <div class="mailus">
+    <div class="mailus" ref="mailus">
       <div class="container">
         <h2 class="mail-title">
           {{ $t('MailUs') }}
@@ -198,12 +207,21 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex"
+import general from "~/mixins/general"
+
 export default {
   name: 'ContactPage',
+  mixins: [general],
   data() {
     return {
       isMobile: false
     }
+  },
+  computed: {
+    ...mapGetters({
+      contact: "common/getContact"
+    }),
   },
   head() {
     let headJson = {
@@ -261,12 +279,21 @@ export default {
     this.checkMobile()
     this.animateOnScroll()
     this.$gsap.to('.tel-div-c', {
-        scale:1,
-        ease: "elastic.out",
-        duration: 1.5
-      })
+      scale:1,
+      ease: "elastic.out",
+      duration: 1.5
+    })
+    this.getContact()
+    if (this.$route.hash) {
+      this.goto(this.$route.hash.replace('#', ''))
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   },
   methods: {
+    ...mapActions({
+      getContact: "common/getContact"
+    }),
     toTopAction () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     },
@@ -277,6 +304,16 @@ export default {
         } else {
           this.isMobile = false
         }
+      }
+    },
+    goto(hash) {
+      const el = this.$refs[('' + hash)]
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+        setTimeout(() => {
+          let yy = window.pageYOffset
+          window.scrollTo({ top: yy - 70, behavior: 'smooth' })
+        }, 900)
       }
     },
     animateOnScroll() {
@@ -317,7 +354,7 @@ export default {
 .phone{
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .phone a{
   color: #9D9FA2;

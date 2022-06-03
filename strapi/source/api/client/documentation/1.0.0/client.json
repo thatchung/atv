@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/categories": {
+    "/clients": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/Client"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Client"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Client"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Client"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewClient"
               }
             }
           }
         }
       }
     },
-    "/categories/count": {
+    "/clients/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Client"
         ],
         "parameters": []
       }
     },
-    "/categories/{id}": {
+    "/clients/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Client"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Client"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Client"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Client"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewClient"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Client"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Category": {
+      "Client": {
         "required": [
           "id"
         ],
@@ -522,103 +522,82 @@
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
-          },
-          "name_vn": {
-            "type": "string"
-          },
-          "works": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "thub": {
-                  "type": "string"
-                },
-                "area": {
-                  "type": "number"
-                },
-                "year": {
-                  "type": "integer"
-                },
-                "address": {
-                  "type": "string"
-                },
-                "scope": {
-                  "type": "string"
-                },
-                "content_vn": {
-                  "type": "string"
-                },
-                "scope_vn": {
-                  "type": "string"
-                },
-                "locations": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "category_name": {
-                  "type": "string"
-                },
-                "category_name_vn": {
-                  "type": "string"
-                },
-                "address_vn": {
-                  "type": "string"
-                },
-                "title_vn": {
-                  "type": "string"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "order": {
-                  "type": "integer"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
+          "client_image": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
+          },
+          "order": {
+            "type": "integer"
           }
         }
       },
-      "NewCategory": {
+      "NewClient": {
         "properties": {
-          "name": {
-            "type": "string"
-          },
-          "name_vn": {
-            "type": "string"
-          },
-          "works": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "order": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"
@@ -632,7 +611,7 @@
   },
   "tags": [
     {
-      "name": "Category"
+      "name": "Client"
     }
   ]
 }

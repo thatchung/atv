@@ -10,25 +10,8 @@
         <img class="img-arrow-right page-arrow" src="/images/a_right.png"></img>
       </div>
     </nuxt-link>
-    <VueSlickCarousel v-if="!isMobile && listDataShow.length > 0" v-bind="settings" class="list-work">
-      <div v-for="(item, index) in listDataShow" :key="index" class="work-slider">
-        <div v-for="(ii, idx) in item" :key="idx" class="work-slider-item">
-          <Item :work="ii" />
-        </div>
-      </div>
-      <template slot="prevArrow">
-        <div class="pre-arrow">
-          <img src="/images/left.jpg"></img>
-        </div>
-      </template>
-      <template slot="nextArrow">
-        <div class="next-arrow">
-          <img src="/images/right.jpg"></img>
-        </div>
-      </template>
-    </VueSlickCarousel>
-    <VueSlickCarousel v-if="isMobile && listWork && listWork.length > 0" v-bind="settings" class="list-work">
-      <div v-for="(item, index) in listWork" :key="index" class="work-slider-item">
+    <VueSlickCarousel v-if="listWork && listWork.length > 0" v-bind="settings" class="list-work">
+      <div v-for="(item,index) in listWork" :key="index" class="inno-slider-item">
         <Item v-if="!isMobile" :work="item" />
         <Item2 v-if="isMobile" :work="item" />
       </div>
@@ -65,11 +48,11 @@ export default {
         "edgeFriction": 0.35,
         "infinite": true,
         "speed": 500,
-        "slidesToShow": 1,
+        "slidesToShow": this.checkMobile() ? 1 : 3,
         "slidesToScroll": 1
       },
-      isMobile: false,
-      listDataShow: []
+      isMobile: false
+      // listDataShow: []
     }
   },
   computed: {
@@ -80,20 +63,20 @@ export default {
   async mounted() {
     await this.loadData()
     this.isMobile = this.checkMobile()
-    let temp = []
-    for(let i = 0; i < this.listWork.length; i++) {
-      if( i === 0 || (i % 6) > 0) {
-        temp.push(this.listWork[i])
-        if (i === this.listWork.length - 1) {
-          this.listDataShow.push(temp)
-          break
-        }
-      } else if ( i > 0 && (i % 6) === 0 ) {
-        this.listDataShow.push(temp)
-        temp = []
-        temp.push(this.listWork[i])
-      }
-    }
+    // let temp = []
+    // for(let i = 0; i < this.listWork.length; i++) {
+    //   if( i === 0 || (i % 6) > 0) {
+    //     temp.push(this.listWork[i])
+    //     if (i === this.listWork.length - 1) {
+    //       this.listDataShow.push(temp)
+    //       break
+    //     }
+    //   } else if ( i > 0 && (i % 6) === 0 ) {
+    //     this.listDataShow.push(temp)
+    //     temp = []
+    //     temp.push(this.listWork[i])
+    //   }
+    // }
   },
   methods: {
     ...mapActions({
