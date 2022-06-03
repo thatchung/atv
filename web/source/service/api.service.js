@@ -1,4 +1,5 @@
 import axios from 'axios'
+import apiClient from '@/service/apiClient'
 class ApiService {
     async request(...options) {
         options = options[0]
@@ -19,8 +20,11 @@ class ApiService {
                 data.responseType = 'blob'
             if (options.timeout)
                 data.timeout = options.timeout
-
-            response = await axios(data)
+            if(apiClient) {
+                response = await apiClient.get(url)
+            } else {
+                response = await axios(data)
+            }
             response = response.data
         } catch (e) {
             error = e

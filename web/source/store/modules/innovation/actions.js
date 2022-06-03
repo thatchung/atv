@@ -4,7 +4,8 @@ export default {
     getListInnovation: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/innovations`,
+            // url: rootState.common.api_host + `/innovations`,
+            url: `api/innovations`,
             data: data.params ? data.params : {}
         })
         commit('set_list_innovation', {
@@ -15,7 +16,8 @@ export default {
     getListInnovationId: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/innovations/${data.id}`,
+            // url: rootState.common.api_host + `/innovations/${data.id}`,
+            url: `api/innovations/${data.id}`,
             data: data.params ? data.params : {}
         })
         if (res && res.content.includes('<figure class="media"><oembed ')) {
@@ -40,7 +42,8 @@ export default {
     getInnovationBySlug: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/innovations?url=${data.url}`
+            // url: rootState.common.api_host + `/innovations?url=${data.url}`
+            url: `api/innovations?url=${data.url}`,
         })
         if (res && res.length > 0) {
             if (res[0].content.includes('<figure class="media"><oembed ')) {

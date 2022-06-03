@@ -1,9 +1,11 @@
 import ApiService from '@/service/api.service'
 export default {
     getListFeatured: async ({ commit, rootState }, data = {}) => {
+        
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/featured-works?_sort=order:desc`,
+            // url: rootState.common.api_host + `/featured-works?_sort=order:desc`,
+            url: '/api/featured-works?_sort=order:desc',
             data: data.params ? data.params : {}
         })
         commit('set_list_work', {
@@ -14,7 +16,8 @@ export default {
     getListWork: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/works`,
+            // url: rootState.common.api_host + `/works`,
+            url: '/api/works',
             data: data.params ? data.params : {}
         })
         commit('set_list_work', {
@@ -25,7 +28,8 @@ export default {
     getCountWork: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/works/count`,
+            // url: rootState.common.api_host + `/works/count`,
+            url: '/api/works/count',
             data: data.params ? data.params : {}
         })
         return res
@@ -34,7 +38,8 @@ export default {
     getWorkId: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/works/${data.id}`,
+            // url: rootState.common.api_host + `/works/${data.id}`,
+            url: '/api/works/${data.id}',
             data: data.params ? data.params : {}
         })
         if (res && res.content.includes('<figure class="media"><oembed ')) {
@@ -59,7 +64,8 @@ export default {
     getWorkBySlug: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/works?url=${data.url}`
+            // url: rootState.common.api_host + `/works?url=${data.url}`
+            url: `/api/works?url=${data.url}`
         })
         if (res && res.length > 0) {
             if (res[0].content.includes('<figure class="media"><oembed ')) {

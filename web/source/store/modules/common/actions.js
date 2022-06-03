@@ -4,7 +4,8 @@ export default {
     getContact: async ({ commit, rootState }) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/contact`
+            // url: rootState.common.api_host + `/contact`
+            url: `api/contact`
         })
         commit('set_contact', {
             contact: res
@@ -14,7 +15,8 @@ export default {
     getListCategory: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/categories`,
+            // url: rootState.common.api_host + `/categories`,
+            url: `api/categories`,
             data: data.params ? data.params : {}
         })
         commit('set_list_category', {
@@ -25,7 +27,8 @@ export default {
     getListYear: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/years?_sort=name:desc`,
+            // url: rootState.common.api_host + `/years?_sort=name:desc`,
+            url: `api/years?_sort=name:desc`,
             data: data.params ? data.params : {}
         })
         commit('set_list_year', {
@@ -36,7 +39,8 @@ export default {
     getListLocation: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({
             method: 'get',
-            url: rootState.common.api_host + `/locations?_sort=id:asc`,
+            // url: rootState.common.api_host + `/locations?_sort=id:asc`,
+            url: `api/locations?_sort=id:asc`,
             data: data.params ? data.params : {}
         })
         commit('set_list_location', {

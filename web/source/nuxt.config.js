@@ -7,7 +7,12 @@ function resolve(dir) {
 }
 const axios = require('axios');
 const messages = __importDefault(require("./lang/index.js"));
-console.log(messages)
+
+// const host = 'http://localhost:3000'
+// const hostapi = 'http://10.39.93.112:1337'
+
+const host = 'http://avt.com.vn'
+const hostapi = 'http://191.191.1.121:1337'
 
 const getSitemapsConfigurations = () => {
     let list = [{
@@ -136,6 +141,7 @@ module.exports = {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
       "~/plugins/global.js",
+      "~/plugins/axios-port.js",
       {
           src: '~/plugins/global_nossr',
           ssr: false
@@ -180,6 +186,7 @@ module.exports = {
     '@nuxtjs/i18n',
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
+    '@nuxtjs/proxy',
     ['nuxt-modernizr', {
       'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
       options: ['setClasses'],
@@ -202,9 +209,16 @@ module.exports = {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: host,
+    proxy: true
   },
-
+  proxy: {
+    '/api' : { target: hostapi, pathRewrite: { '^/api' : '' } },
+    '/admin/login' : { target: hostapi },
+    '/admin' : { target: hostapi, pathRewrite: { '^/admin' : '/admin' } },
+    '/content-manager' : { target: hostapi },
+    '/i18n' : { target: hostapi }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     filenames: {
