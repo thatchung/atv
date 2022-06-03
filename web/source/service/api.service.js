@@ -21,7 +21,13 @@ class ApiService {
             if (options.timeout)
                 data.timeout = options.timeout
             if(apiClient) {
-                response = await apiClient.get(url)
+                if (data.params) {
+                    response = await apiClient.get(url,{
+                        params:  data.params
+                    })
+                } else {
+                    response = await apiClient.get(url)
+                }
             } else {
                 response = await axios(data)
             }

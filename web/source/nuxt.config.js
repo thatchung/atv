@@ -8,11 +8,11 @@ function resolve(dir) {
 const axios = require('axios');
 const messages = __importDefault(require("./lang/index.js"));
 
-// const host = 'http://localhost:3000'
-// const hostapi = 'http://10.39.93.112:1337'
+const host = 'http://localhost:3000'
+const hostapi = 'http://10.39.93.112:1337'
 
-const host = 'http://avt.com.vn'
-const hostapi = 'http://191.191.1.121:1337'
+// const host = 'http://avt.com.vn'
+// const hostapi = 'http://191.191.1.121:1337'
 
 const getSitemapsConfigurations = () => {
     let list = [{
@@ -220,6 +220,7 @@ module.exports = {
     '/content-type-builder' : { target: hostapi },
     '/upload/files' : { target: hostapi },
     '/uploads' : { target: hostapi },
+    '/upload' : { target: hostapi },
     '/i18n' : { target: hostapi }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
