@@ -80,7 +80,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      getListWork: "work/getListWork"
+      // getListWork: "work/getListWork",
+      getListFeatured: "work/getListFeatured"
     }),
     checkMobile() {
       if (!process.server) {
@@ -92,10 +93,11 @@ export default {
       }
     },
     async loadData() {
-      const query = {
-        _sort: 'id:DESC'
-      }
-      await this.getListWork({ params :query })
+      // const query = {
+      //   _sort: 'id:DESC'
+      // }
+      // await this.getListWork({ params :query })
+      this.getListFeatured()
     }
   }
 }

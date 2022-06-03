@@ -5,7 +5,7 @@ export default {
         let res = await ApiService.request({
             method: 'get',
             // url: rootState.common.api_host + `/featured-works?_sort=order:desc`,
-            url: '/api/featured-works?_sort=order:desc',
+            url: '/api/featured-works?_sort=order:desc,id:desc',
             data: data.params ? data.params : {}
         })
         commit('set_list_work', {

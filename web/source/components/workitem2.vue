@@ -83,7 +83,7 @@ export default {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   overflow: hidden;
-  height: 35px;
+  padding-bottom: 5px;
 }
 .detail-text{
   display: inline-block;

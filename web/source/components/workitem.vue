@@ -93,11 +93,10 @@ export default {
 .w-item-title{
   font-size: 1.5rem;
   margin-top: 1.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: 5px;
 }
 .detail-text{
   display: inline-block;
