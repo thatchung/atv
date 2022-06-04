@@ -43,8 +43,8 @@
               <span v-else >{{ contact.location3 }}</span>
             </div>
             <div class="address">
-              <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
-              <span v-else >{{ contact.address2 }}</span>
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address3_vn }}</span>
+              <span v-else >{{ contact.address3 }}</span>
             </div>
             <div class="type">
               {{ $t('Branch') }}
@@ -92,8 +92,8 @@
               <span v-else >{{ contact.location3 }}</span>
             </div>
             <div class="address">
-              <span v-if="$i18n.locale === 'vn'">{{ contact.address2_vn }}</span>
-              <span v-else >{{ contact.address2 }}</span>
+              <span v-if="$i18n.locale === 'vn'">{{ contact.address3_vn }}</span>
+              <span v-else >{{ contact.address3 }}</span>
             </div>
             <div class="type">
               {{ $t('Branch') }}
