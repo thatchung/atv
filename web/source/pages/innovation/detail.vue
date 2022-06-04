@@ -48,7 +48,8 @@ export default {
   async asyncData({ route, req, app, redirect, store }) {
     let res = await ApiService.request({
       method: 'get',
-      url: store.state.common.api_host + `/innovations?url=${route.params.id}`
+      // url: store.state.common.api_host + `/innovations?url=${route.params.id}`
+      url: `/api/innovations?url=${route.params.id}`
     })
     let item = {}
     if (res && res.length > 0) {

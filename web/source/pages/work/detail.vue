@@ -75,7 +75,7 @@ export default {
     let res = await ApiService.request({
       method: 'get',
       // url: store.state.common.api_host + `/works?url=${route.params.id}`
-      url: `/api/works?url=${data.url}`
+      url: `/api/works?url=${route.params.id}`
     })
     let item = {}
     if (res && res.length > 0) {
