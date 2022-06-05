@@ -1,4 +1,6 @@
 export default {
+    getBanner: state => state.banner,
+    getClient: state => state.client,
     getProvince: state => state.province,
     getContact: state => state.contact,
     getOtpMethod: state => state.otp_method,

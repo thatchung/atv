@@ -1,4 +1,10 @@
 export default {
+    set_banner(state, payload) {
+        state.banner = payload.banner;
+    },
+    set_client(state, payload) {
+        state.client = payload.client;
+    },
     set_province(state, payload) {
         state.province = payload.province;
     },

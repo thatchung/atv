@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "clients",
   "info": {
-    "name": "client"
+    "name": "client",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -25,6 +26,18 @@
     },
     "order": {
       "type": "integer"
+    },
+    "client_image_mobile": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

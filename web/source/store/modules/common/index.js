@@ -3,6 +3,8 @@ import getters from './getters'
 import mutations from './mutations'
 
 export const state = () => ({
+    banner : [],
+    client : [],
     province: {},
     contact: {},
     otp_method: [],

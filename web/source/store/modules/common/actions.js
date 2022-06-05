@@ -1,6 +1,26 @@
 import ApiService from '@/service/api.service'
 export default {
 
+    getBanner: async ({ commit, rootState }) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: `api/banners?_sort=order:desc`
+        })
+        commit('set_banner', {
+            banner: res
+        })
+    },
+
+    getClient: async ({ commit, rootState }) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: `api/clients?_sort=order:desc`
+        })
+        commit('set_client', {
+            client: res
+        })
+    },
+
     getContact: async ({ commit, rootState }) => {
         let res = await ApiService.request({
             method: 'get',

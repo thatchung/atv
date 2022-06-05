@@ -5,150 +5,80 @@
       :autoplay='false'
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
+      v-if="listBanned && listBanned.length > 0"
     >
-      <div v-if="!isMobile" class="banner-img" @click="showVideo">
-        <ThumbImage
-          ref="videoCut"
-          :sourceVideo="'/images/video_atv_cut.mp4'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          :video="true"
-          @
-          ratio="21-9"
-        />
-        <div v-show="isPlay" class="play-done">
-          <div class="play-done-data d-flex align-items-center justify-content-center">
-            <div
-              class="text-play-video"
-              @mouseover="hoverPlay = true"
-              @mouseout="hoverPlay = false"
-              @click="showVideo">
-              <span v-if="hoverPlay">Click to explore our transformation<b-icon-arrow-right /></span>
-              <img v-if="!hoverPlay" src="/images/btn.png"></img>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div v-if="isMobile" class="banner-img" @click="showVideo">
-        <ThumbImage
-          :sourceVideo="'/images/video_atv_cut.mp4'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          :video="true"
-          ratio="1-1"
-        />
-        <div v-show="isPlay" class="play-done">
-          <div class="play-done-data d-flex align-items-center justify-content-center">
-            <div
-              class="text-play-video"
-              @mouseover="hoverPlay = true"
-              @mouseout="hoverPlay = false"
-              @click="showVideo">
-              <span v-if="hoverPlay">Click to explore our transformation<b-icon-arrow-right /></span>
-              <img v-if="!hoverPlay" src="/images/btn.png"></img>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="banner-img">
-        <div class="banner-content banner-content-1">
-          <div class="banner-title">
-            Efficiency
-          </div>
-          <div class="banner-title">
-            With Aesthetic
-          </div>
-          <div class="banner-text">Forming Who We Are</div>
-        </div>
-        <ThumbImage
-          v-if="!isMobile"
-          :src="'/images/imgbanner1.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="21-9"
-        />
-        <ThumbImage
-          v-if="isMobile"
-          :src="'/images/imgbanner1.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="1-1"
-        />
-      </div>
-      <div class="banner-img">
-        <div class="banner-content banner-content-2">
-          <div class="container">
-            <div class="row">
-              <div class="col-4 col-md-4">
-                <div class="banner-title-left title-left-1">Design</div>
+      <div v-for="(item, idx) in listBanned" :key="idx">
+        <div v-if="item.type === 'Video'">
+          <div v-if="!isMobile" class="banner-img">
+            <ThumbImage
+              ref="videoCut"
+              :sourceVideo="item.image ? item.image.url : '/images/video_atv_cut.mp4'"
+              :nameClass="'image-banner'"
+              :contain="false"
+              :video="true"
+              ratio="21-9"
+            />
+            <!-- <div v-show="isPlay" class="play-done">
+              <div class="play-done-data d-flex align-items-center justify-content-center">
+                <div
+                  class="text-play-video"
+                  @mouseover="hoverPlay = true"
+                  @mouseout="hoverPlay = false"
+                  @click="showVideo">
+                  <span v-if="hoverPlay">Click to explore our transformation<b-icon-arrow-right /></span>
+                  <img v-if="!hoverPlay" src="/images/btn.png"></img>
+                </div>
               </div>
-              <div class="col-4 col-md-4">
-                <img class="banner-line" src="/images/bannerline.png" alt="Design - Build"></img>
-              </div>
-              <div class="col-4 col-md-4">
-                <div class="banner-title-left title-left-2">Build</div>
-                <div class="banner-text-left">Telling</div>
-                <div class="banner-text-left">What</div>
-                <div class="banner-text-left">We</div>
-                <div class="banner-text-left">Do</div>
+            </div> -->
+          </div>
+          <div v-if="isMobile" class="banner-img" @click="showVideo">
+            <ThumbImage
+              :sourceVideo="'/images/video_atv_cut.mp4'"
+              :nameClass="'image-banner'"
+              :contain="false"
+              :video="true"
+              ratio="1-1"
+            />
+            <div v-show="isPlay" class="play-done">
+              <div class="play-done-data d-flex align-items-center justify-content-center">
+                <div
+                  class="text-play-video"
+                  @mouseover="hoverPlay = true"
+                  @mouseout="hoverPlay = false"
+                  @click="showVideo">
+                  <span v-if="hoverPlay">Click to explore our transformation<b-icon-arrow-right /></span>
+                  <img v-if="!hoverPlay" src="/images/btn.png"></img>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <ThumbImage
-          v-if="!isMobile"
-          :src="'/images/imgbanner2.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="21-9"
-        />
-        <ThumbImage
-          v-if="isMobile"
-          :src="'/images/imgbanner2.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="1-1"
-        />
+        <a v-if="item.type === 'Image'" :href="item.link ? item.link : 'javascript:void(0)'">
+          <div class="banner-img">
+            <div class="banner-content banner-content-3">
+              <div class="banner-title">{{ item.title }}</div>
+              <div class="banner-text">{{ item.description }}</div>
+            </div>
+            <ThumbImage
+              v-if="!isMobile"
+              :src="item.image ? item.image.url : '/images/imgbanner3.jpg'"
+              :nameClass="'image-banner'"
+              :contain="false"
+              ratio="21-9"
+            />
+            <ThumbImage
+              v-if="isMobile"
+              :src="item.image ? item.image.url : '/images/imgbanner3.jpg'"
+              :nameClass="'image-banner'"
+              :contain="false"
+              ratio="1-1"
+            />
+          </div>
+        </a>
       </div>
-      <div class="banner-img">
-        <div class="banner-content banner-content-3">
-          <div class="banner-title">Innovation</div>
-          <div class="banner-text">Pushing Us Forward</div>
-        </div>
-        <ThumbImage
-          v-if="!isMobile"
-          :src="'/images/imgbanner3.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="21-9"
-        />
-        <ThumbImage
-          v-if="isMobile"
-          :src="'/images/imgbanner3.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="1-1"
-        />
-      </div>
-      <!-- <div class="banner-img">
-        <ThumbImage
-          v-if="!isMobile"
-          :src="'/images/banner4.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="21-9"
-        />
-        <ThumbImage
-          v-if="isMobile"
-          :src="'/images/banner4.jpg'"
-          :nameClass="'image-banner'"
-          :contain="false"
-          ratio="1-1"
-        />
-      </div> -->
     </VueSlickCarousel>
     <div class="slide-sub">
-      <div v-for="(img, idx) in images" :key="idx" class="sub-img-item" :style="style[idx]" @click="render(idx)">
+      <div v-for="(img, idx) in listBanned" :key="idx" class="sub-img-item" :style="style[idx]" @click="render(idx)">
         <!-- <img class="sub-imgage" :src="img"></img> -->
         <!-- <img class="sub-imgage" src="/images/b_img.png"></img> -->
         <div class="sub-div-imgage"></div>
@@ -183,7 +113,7 @@
   </div>
 </template>
 <script>
-// import Video from '~/components/video.vue'
+import { mapGetters, mapActions } from "vuex"
 
 export default {
   data() {
@@ -202,17 +132,26 @@ export default {
       nameClass: 'image-banner'
     }
   },
+  computed: {
+    ...mapGetters({
+      listBanned: "common/getBanner"
+    }),
+  },
   // components: {
   //   Video
   // },
-  mounted() {
+  async mounted() {
     this.isPlay = false
     this.isMobile = this.checkMobile()
+    await this.getBanner()
     this.slide1 = this.$refs.slide1
     this.render(0)
     this.autoShowPlay()
   },
   methods: {
+    ...mapActions({
+      getBanner: "common/getBanner"
+    }),
     checkMobile() {
       if (!process.server) {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -229,7 +168,7 @@ export default {
     render(idx) {
       let t_slider = []
       let deg = 65
-      let len = this.images.length
+      let len = this.listBanned.length
       for (let i = 0;i < len; i++) {
         // if (i < 3) {
         //   t_slider[i] = `transform: translateX(${90 * i}%) rotateY(${deg + (len - i - 2) * 10}deg); z-index: ${5 + i};`
@@ -257,12 +196,10 @@ export default {
       }
       this.style = t_slider
       this.$refs.slide1.goTo(idx)
-      this.animateBanner(parseInt(idx) + 1)
+      this.animateBanner()
     },
-    animateBanner(idx) {
-      if (idx === 2 || idx === 4) {
-        idx = idx - 1
-        this.$gsap.fromTo(`.banner-content-${idx} .banner-title`, {
+    animateBanner() {
+        this.$gsap.fromTo(`.banner-content .banner-title`, {
           opacity:0,
           letterSpacing: '100px'
         }, {
@@ -271,7 +208,7 @@ export default {
           ease: "expo.out",
           duration: 1.5
         })
-        this.$gsap.fromTo(`.banner-content-${idx} .banner-text`, {
+        this.$gsap.fromTo(`.banner-content .banner-text`, {
           opacity:0,
           y: 200
         }, {
@@ -280,41 +217,40 @@ export default {
           y: 0,
           duration: 2
         })
-      } else if (idx === 3) {
-        this.$gsap.fromTo(`.banner-content-2 .title-left-1`, {
-          opacity:0,
-          x: -300
-        }, {
-          opacity:1,
-          ease: "expo.out",
-          x: 0,
-          duration: 2
-        })
-        this.$gsap.fromTo(`.banner-content-2 .title-left-2`, {
-          opacity:0,
-          x: 300
-        }, {
-          opacity:1,
-          ease: "expo.out",
-          x: 0,
-          duration: 2
-        })
-        this.$gsap.fromTo(`.banner-content-2 .banner-text-left`, {
-          opacity:0,
-          y: 200
-        }, {
-          opacity:1,
-          ease: "expo.out",
-          y: 0,
-          duration: 2
-        })
-      }
+
+        // this.$gsap.fromTo(`.banner-content-2 .title-left-1`, {
+        //   opacity:0,
+        //   x: -300
+        // }, {
+        //   opacity:1,
+        //   ease: "expo.out",
+        //   x: 0,
+        //   duration: 2
+        // })
+        // this.$gsap.fromTo(`.banner-content-2 .title-left-2`, {
+        //   opacity:0,
+        //   x: 300
+        // }, {
+        //   opacity:1,
+        //   ease: "expo.out",
+        //   x: 0,
+        //   duration: 2
+        // })
+        // this.$gsap.fromTo(`.banner-content-2 .banner-text-left`, {
+        //   opacity:0,
+        //   y: 200
+        // }, {
+        //   opacity:1,
+        //   ease: "expo.out",
+        //   y: 0,
+        //   duration: 2
+        // })
     },
     autoShowPlay() {
       setTimeout(() => {
         this.isPlay = true
         this.autoPlay()
-      }, 16000)
+      }, 30000)
     },
     autoPlay() {
       setTimeout(() => {

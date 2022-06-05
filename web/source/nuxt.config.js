@@ -9,7 +9,7 @@ const axios = require('axios');
 const messages = __importDefault(require("./lang/index.js"));
 
 // const host = 'http://localhost:3000'
-// const hostapi = 'http://10.39.93.112:1337'
+// const hostapi = 'http://localhost:1337'
 
 const host = 'http://avt.com.vn'
 const hostapi = 'http://191.191.1.121:1337'

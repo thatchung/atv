@@ -9,8 +9,13 @@
       v-bind="settings"
       :focusOnSelect="focusOnSelect"
       @beforeChange="showAnimation"
+      v-if="listClient && listClient.length > 0"
     >
-      <div class="slide-client" style="margin-top: 3rem;">
+      <div v-for="(item, idx) in listClient" :key="idx" class="slide-client" style="margin-top: 3rem;">
+        <img v-if="!isMobile" class="client-img" :src="item.client_image ? item.client_image.link : '/images/client-1.png'"></img>
+        <img v-if="isMobile" class="client-img" :src="item.client_image_mobile ? item.client_image_mobile.link : '/images/client-m-1.png'"></img>
+      </div>
+      <!-- <div class="slide-client" style="margin-top: 3rem;">
         <div v-if="!isMobile" class="slide-client-data">
           <div class="client-div d-flex align-items-center justify-content-center">
             <img class="client-img client-img1" src="/images/client1.jpg"></img>
@@ -221,7 +226,7 @@
             <img class="client-img client-img1" src="/images/client29.jpg"></img>
           </div>
         </div>
-      </div>
+      </div> -->
     </VueSlickCarousel>
     <img class="slider-left" src="/images/slider-left.png" @click="goLeft()"></img>
     <img class="slider-right" src="/images/slider-right.png" @click="goRight()"></img>
@@ -229,6 +234,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex"
 export default {
   name: 'ContactPage',
   data() {
@@ -244,12 +250,21 @@ export default {
       interval: null
     }
   },
-  mounted() {
+  computed: {
+    ...mapGetters({
+      listClient: "common/getClient"
+    }),
+  },
+  async mounted() {
     this.checkMobile()
+    await this.getClient()
     this.animateOnScroll()
     this.goNext()
   },
   methods: {
+    ...mapActions({
+      getClient: "common/getClient"
+    }),
     checkMobile() {
       if (!process.server) {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -270,7 +285,7 @@ export default {
       this.goNext()
     },
     showAnimation() {
-      this.$gsap.fromTo(`.client-img1`, {
+      this.$gsap.fromTo(`.client-img`, {
         opacity:0,
         y: 100
       }, {
@@ -281,12 +296,12 @@ export default {
       })
     },
     animateOnScroll() {
-      this.$gsap.fromTo(`.client-img1`, {
+      this.$gsap.fromTo(`.client-img`, {
         opacity:0,
         x: -100
       }, {
         scrollTrigger:{
-          trigger: '.client-img1',
+          trigger: '.client-img',
           toggleActions: 'restart none none reset'
         },
         opacity:1,
@@ -348,9 +363,9 @@ export default {
       // })
     },
     goNext() {
-      this.interval = setInterval(() => { 
-       this.$refs.slide1.next()
-      }, 3500)
+      // this.interval = setInterval(() => { 
+      //  this.$refs.slide1.next()
+      // }, 3500)
     }
   }
 }
@@ -374,21 +389,21 @@ export default {
 .client-title{
   font-size: 5rem;
 }
+.client-img{
+  height: auto;
+  width: 100%;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+}
 .client-div{
   min-height: 100px;
   margin-bottom: 1rem;
 }
 .client-div{
   width: calc(100% / 15);
-  .client-img{
-    height: auto;
-    width: 100%;
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-  }
 }
 .client-div-1{
   width: 14%;
@@ -407,6 +422,9 @@ export default {
 .client-div-2-sub{
   width: 10%;
 }
+.slide-client{
+  margin-top: 20px;
+}
 .slide-client-data{
   width: 100%;
   display: inline-flex;
@@ -420,11 +438,11 @@ export default {
   }
   .slider-left {
     width: 20%;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .slider-right {
     width: 20%;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .client-div {
     width: 18%;
