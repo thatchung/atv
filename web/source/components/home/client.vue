@@ -12,8 +12,8 @@
       v-if="listClient && listClient.length > 0"
     >
       <div v-for="(item, idx) in listClient" :key="idx" class="slide-client" style="margin-top: 3rem;">
-        <img v-if="!isMobile" class="client-img" :src="item.client_image ? item.client_image.link : '/images/client-1.png'"></img>
-        <img v-if="isMobile" class="client-img" :src="item.client_image_mobile ? item.client_image_mobile.link : '/images/client-m-1.png'"></img>
+        <img v-if="!isMobile" class="client-img" :src="item.client_image ? item.client_image.url : '/images/client-1.png'"></img>
+        <img v-if="isMobile" class="client-img" :src="item.client_image_mobile ? item.client_image_mobile.url : '/images/client-m-1.png'"></img>
       </div>
       <!-- <div class="slide-client" style="margin-top: 3rem;">
         <div v-if="!isMobile" class="slide-client-data">
@@ -363,9 +363,9 @@ export default {
       // })
     },
     goNext() {
-      // this.interval = setInterval(() => { 
-      //  this.$refs.slide1.next()
-      // }, 3500)
+      this.interval = setInterval(() => { 
+       this.$refs.slide1.next()
+      }, 3500)
     }
   }
 }
