@@ -90,7 +90,7 @@ module.exports =  {
   WherePlaceDes5: 'AVT mang đặc trưng địa lý của thành phố vào trong thiết kế để tạo nét độc đáo cho CGV Hải Phòng.',
   WherePlaceName6: 'Đà Nẵng (Harley Davidson)',
   WherePlaceDes6: 'Sự nhạy bén trong sử dụng vật liệu giúp AVT thổi hồn vào showroom xe phân khối lớn cao cấp.',
-  WherePlaceName7: 'Nha Trang City (Intercontinental Spa)',
+  WherePlaceName7: 'Nha Trang (Intercontinental Spa)',
   WherePlaceDes7: 'Dự án spa cao cấp đánh dấu khả năng thi công những công trình sang trọng với chất lượng hoàn thiện tinh xảo của AVT.',
   WherePlaceName8: 'Bình Dương (Koi Thé)',
   WherePlaceDes8: 'Một trong những cửa hàng ấn tượng của Koi Thé tại Việt Nam, nơi bản vẽ 3D được truyền tải trọn vẹn trong đời thực.',

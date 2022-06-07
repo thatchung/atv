@@ -1,4 +1,6 @@
 import moment from "moment"
+var tvkd = require('tieng-viet-khong-dau');
+
 export default {
     data() {
         return {
@@ -81,41 +83,42 @@ export default {
             return stringState
         },
         locationFilter(state) {
-            let stringState = state
-            switch (state) {
-                case 'HOCHIMINH':
-                    stringState = 'HO CHI MINH'
-                    break
-                case 'HANOI':
-                    stringState = 'HA NOI'
-                    break
-                case 'HAIPHONG':
-                    stringState = 'HAI PHONG'
-                    break
-                case 'HALONG':
-                    stringState = 'HA LONG'
-                    break
-                case 'DANANG':
-                    stringState = 'DA NANG'
-                    break
-                case 'BINHDUONG':
-                    stringState = 'BINH DUONG'
-                    break
-                case 'NHATRANG':
-                    stringState = 'NHA TRANG'
-                    break
-                case 'BENTRE':
-                    stringState = 'BEN TRE'
-                    break
-                case 'MYTHO':
-                    stringState = 'MY THO'
-                    break
-                case 'PHNOMPENH_CAMBODIA':
-                    stringState = 'PHNOMPENH (CAMBODIA)'
-                    break
-                default:
-                    break
-            }
+            let stringState = tvkd.c(state)
+            // switch (state) {
+            //     case 'HOCHIMINH':
+            //         stringState = 'HO CHI MINH'
+            //         break
+            //     case 'HANOI':
+            //         stringState = 'HA NOI'
+            //         break
+            //     case 'HAIPHONG':
+            //         stringState = 'HAI PHONG'
+            //         break
+            //     case 'HALONG':
+            //         stringState = 'HA LONG'
+            //         break
+            //     case 'DANANG':
+            //         stringState = 'DA NANG'
+            //         break
+            //     case 'BINHDUONG':
+            //         stringState = 'BINH DUONG'
+            //         break
+            //     case 'NHATRANG':
+            //         stringState = 'NHA TRANG'
+            //         break
+            //     case 'BENTRE':
+            //         stringState = 'BEN TRE'
+            //         break
+            //     case 'MYTHO':
+            //         stringState = 'MY THO'
+            //         break
+            //     case 'PHNOMPENH_CAMBODIA':
+            //         stringState = 'PHNOMPENH (CAMBODIA)'
+            //         break
+            //     default:
+            //         break
+            // }
+
             return stringState
         },
         locationVNFilter(state) {

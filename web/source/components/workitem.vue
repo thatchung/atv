@@ -74,7 +74,7 @@ export default {
   },
   mounted() {
     const link = this.work.thub.formats.medium ? this.work.thub.formats.medium.url : this.work.thub.url
-    this.image = this.$store.state.common.api_host + link
+    this.image = link
   },
   // methods: {
   //   checkMobile() {

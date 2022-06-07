@@ -133,9 +133,9 @@ export default {
           lang = lland
         }
         if (lang === 'vn') {
-          this.html_content = marked.parse(this.innovation.content_vn.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+          this.html_content = marked.parse(this.innovation.content_vn)
         } else {
-          this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, 'http://103.39.93.99:1333/uploads/'))
+          this.html_content = marked.parse(this.innovation.content)
         }
       }
     }
@@ -157,9 +157,9 @@ export default {
           lang = lland
         }
         if (lang === 'vn') {
-          this.html_content = marked.parse(this.innovation.content_vn.replace(/\/uploads\//g, `${this.$store.state.common.api_host}/uploads/`))
+          this.html_content = marked.parse(this.innovation.content_vn)
         } else {
-          this.html_content = marked.parse(this.innovation.content.replace(/\/uploads\//g, `${this.$store.state.common.api_host}/uploads/`))
+          this.html_content = marked.parse(this.innovation.content)
         }
         this.innovation.date = this.dateTimeFilterText(this.innovation.created_at)
       }

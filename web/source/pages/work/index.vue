@@ -28,46 +28,89 @@
         <div v-if="$i18n.locale === 'vn'">{{ type | workTypeVNFilter }}</div>
         <div v-else >{{ type | workTypeFilter }}</div>
       </div>
-      <div v-if="typeActive === 'location'" class="filter-item-active">
-        <span v-if="!filterChoice">
-          {{ locationActive.name | locationFilter }}
+      <div v-if="!isMobile && typeActive === 'location'" class="filter-item-active">
+        <!-- <span v-if="!filterChoice">
+          <span v-if="$i18n.locale === 'vn'">{{ locationActive.name}}</span>
+          <span v-else>{{ locationActive.name | locationFilter }}</span>
         </span>
-        <div v-if="filterChoice" class="filter-list">
-          <div v-for="(i, idx) in listLocation" :key="idx" class="filter-item" @click="choiceLocationFilter(i)">
-            {{ i.name | locationFilter }}
-          </div>
+        <div v-if="filterChoice" class="filter-list"> -->
+        <div v-for="(i, idx) in listLocation" :key="idx"
+          :class="`filter-item ${ i.id === locationActive.id ? 'is-active' : ''}`"
+          @click="choiceLocationFilter(i)">
+          <span v-if="$i18n.locale === 'vn'">{{ i.name }}</span>
+          <span v-else>{{ i.name  | locationFilter}}</span>
         </div>
+        <!-- </div>
         <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
-        <b-icon-arrow-up v-if="filterChoice" @click="closeChoiceFilter" />
+        <b-icon-arrow-up v-if="filterChoice" @click="closeChoiceFilter" /> -->
       </div>
-      <div v-if="typeActive === 'category'" class="filter-item-active">
-        <span v-if="!filterChoice">
-          <!-- {{ categoryActive | categoryFilter }} -->
+      <div v-if="!isMobile && typeActive === 'category'" class="filter-item-active">
+        <!-- <span v-if="!filterChoice">
           <div style="display: inline-block;" v-if="$i18n.locale === 'vn'">{{ categoryActive.name_vn }}</div>
           <div style="display: inline-block;" v-else >{{ categoryActive.name }}</div>
         </span>
-        <div v-if="filterChoice" class="filter-list">
-          <div v-for="(i, idx) in listCategory" :key="idx" class="filter-item" @click="choiceCategoryFilter(i)">
-            <!-- {{ i | categoryFilter }} -->
-            <div v-if="$i18n.locale === 'vn'">{{ i.name_vn }}</div>
-            <div v-else >{{ i.name }}</div>
-          </div>
+        <div v-if="filterChoice" class="filter-list"> -->
+        <div v-for="(i, idx) in listCategory" :key="idx"
+          :class="`filter-item ${ i.id === categoryActive.id ? 'is-active' : ''}`"
+          @click="choiceCategoryFilter(i)">
+          <!-- {{ i | categoryFilter }} -->
+          <span v-if="$i18n.locale === 'vn'">{{ i.name_vn }}</span>
+          <span v-else >{{ i.name }}</span>
         </div>
+        <!-- </div>
         <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
-        <b-icon-arrow-up v-if="filterChoice" @click="closeChoiceFilter" />
+        <b-icon-arrow-up v-if="filterChoice" @click="closeChoiceFilter" /> -->
       </div>
-      <div v-if="typeActive === 'year'" class="filter-item-active">
-        <span v-if="!filterChoice">
+      <div v-if="!isMobile && typeActive === 'year'" class="filter-item-active">
+        <!-- <span v-if="!filterChoice">
           {{ yearActive }}
-        </span>
-        <div v-if="filterChoice" class="filter-list">
-          <div v-for="(i, idx) in listYear" :key="idx" class="filter-item" @click="choiceYearFilter(i.name)">
+        </span> -->
+          <div v-for="(i, idx) in listYear" :key="idx"
+            :class="`filter-item ${ i.name === yearActive ? 'is-active' : ''}`"
+            @click="choiceYearFilter(i.name)">
             {{ i.name }}
           </div>
-        </div>
-        <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
-        <b-icon-arrow-up v-if="filterChoice" @click="closeChoiceFilter" />
+        <!-- <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
+        <b-icon-arrow-up v-if="filterChoice" @click="closeChoiceFilter" /> -->
       </div>
+      <div v-if="isMobile" class="filter-mobile-panel">
+        <b-icon-chevron-left class="p-b-left" @click="leftFilter" 
+          v-if="typeActive === 'location' || typeActive === 'category' || typeActive === 'year'"/>
+        <b-icon-chevron-right class="p-b-right" @click="rightFilter" 
+          v-if="typeActive === 'location' || typeActive === 'category' || typeActive === 'year'"/>
+        <div ref="filterlist" v-if="typeActive === 'location'" class="filter-item-active">
+          <div ref="filterall" class="filter-all-items">
+            <div v-for="(i, idx) in listLocation" :key="idx"
+              :class="`filter-item ${ i.id === locationActive.id ? 'is-active' : ''}`"
+              @click="choiceLocationFilter(i)">
+              <span v-if="$i18n.locale === 'vn'">{{ i.name }}</span>
+              <span v-else>{{ i.name  | locationFilter}}</span>
+            </div>
+          </div>
+        </div>
+        <div ref="filterlist" v-if="typeActive === 'category'" class="filter-item-active">
+          <div ref="filterall" class="filter-all-items">
+            <div v-for="(i, idx) in listCategory" :key="idx"
+              :class="`filter-item ${ i.id === categoryActive.id ? 'is-active' : ''}`"
+              @click="choiceCategoryFilter(i)">
+              <!-- {{ i | categoryFilter }} -->
+              <span v-if="$i18n.locale === 'vn'">{{ i.name_vn }}</span>
+              <span v-else >{{ i.name }}</span>
+            </div>
+          </div>
+        </div>
+        <div ref="filterlist" v-if="typeActive === 'year'" class="filter-item-active">
+          <div ref="filterall" class="filter-all-items">
+            <div v-for="(i, idx) in listYear" :key="idx"
+              :class="`filter-item ${ i.name === yearActive ? 'is-active' : ''}`"
+              @click="choiceYearFilter(i.name)">
+              {{ i.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
     <div v-if="!loading && listWork.length >= 0" class="work-list-data row">
       <div v-for="(item, index) in listWork" :key="index" class="work-item col-12 col-md-4">
@@ -118,39 +161,40 @@ export default {
   data() {
     return {
       loading: false,
+      isMobile: false,
       filterChoice: false,
       types: ['featured', 'category', 'year', 'location', 'all'],
       typeActive: 'featured',
       locations: [{
-        id : 2,
-        name : 'HOCHIMINH'
-      }, {
-        id : 1,
-        name : 'HANOI'
-      }, {
-        id : 3,
-        name : 'HAIPHONG'
-      }, {
-        id : 4,
-        name : 'HALONG'
-      }, {
-        id : 5,
-        name : 'DANANG'
-      }, {
-        id : 6,
-        name : 'BINHDUONG'
-      }, {
-        id : 7,
-        name : 'NHATRANG'
-      }, {
-        id : 8,
-        name : 'BENTRE'
-      }, {
-        id : 9,
-        name : 'MYTHO'
-      }, {
-        id : 10,
-        name : 'PHNOMPENH_CAMBODIA'
+          id : 2,
+          name : 'HOCHIMINH'
+        }, {
+          id : 1,
+          name : 'HANOI'
+        }, {
+          id : 3,
+          name : 'HAIPHONG'
+        }, {
+          id : 4,
+          name : 'HALONG'
+        }, {
+          id : 5,
+          name : 'DANANG'
+        }, {
+          id : 6,
+          name : 'BINHDUONG'
+        }, {
+          id : 7,
+          name : 'NHATRANG'
+        }, {
+          id : 8,
+          name : 'BENTRE'
+        }, {
+          id : 9,
+          name : 'MYTHO'
+        }, {
+          id : 10,
+          name : 'PHNOMPENH_CAMBODIA'
       }],
       locationActive: {
         id : 2,
@@ -185,7 +229,8 @@ export default {
         "speed": 500,
         "slidesToShow": 3,
         "slidesToScroll": 1
-      }
+      },
+      scrollValue: 0
     }
   },
   head() {
@@ -250,6 +295,7 @@ export default {
   },
   async mounted() {
     this.typeActive = 'featured'
+    this.checkMobile()
     await this.loadFilter('featured')
     await this.getListCategory()
     await this.getListYear()
@@ -275,6 +321,28 @@ export default {
       getListCategory: "common/getListCategory",
       getListFeatured: "work/getListFeatured"
     }),
+    checkMobile() {
+      if (!process.server) {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          this.isMobile = true
+        } else {
+          this.isMobile = false
+        }
+      }
+    },
+    leftFilter() {
+      if (this.scrollValue >= 100) {
+        this.scrollValue = this.scrollValue - 100
+      }
+      this.$refs.filterlist.scrollTo({ left: this.scrollValue, behavior: 'smooth' })
+    },
+    rightFilter() {
+      let max = this.$refs.filterall.getBoundingClientRect().width
+      if(this.scrollValue < (max - 300)) {
+        this.scrollValue = this.scrollValue + 100
+      }
+      this.$refs.filterlist.scrollTo({ left: this.scrollValue, behavior: 'smooth' })
+    },
     async loadData(page) {
       this.loading = true
       if (page && page > 0) {
@@ -367,9 +435,9 @@ export default {
 }
 .work-filter-list{
   width: 100%;
-  height: 2rem;
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
   position: relative;
+  float: left;
 }
 .work-filter-list svg{
   font-size: 1.4rem;
@@ -388,10 +456,11 @@ export default {
 }
 .filter-item-active{
   text-transform: uppercase;
-  display: inline-block;
-  float: right;
-  font-family: 'pp-reg';
+  width: 100%;
+  font-family: "pp-reg";
   font-size: 2rem;
+  margin-left: 6rem;
+  float: left;
   svg{
     margin-left: 0.5rem;
     cursor: pointer;
@@ -399,9 +468,9 @@ export default {
 }
 .filter-list{
   max-height: 100px;
-  height: 50px;
+  height: 60px;
   overflow-y: scroll;
-  width: 180px;
+  width: 210px;
   display: inline-block;
   right: 2rem;
   top: 0px;
@@ -422,10 +491,16 @@ export default {
 .filter-item{
   cursor: pointer;
   font-size: 1rem;
+  display: inline-block;
+  float: left;
+  color: #B2B2B2;
+  margin-right: 1rem;
   &:hover{
-    background-color: #7E8083;
-    color: #fff;
+    color: #231F20;
   }
+}
+.is-active{
+  color: #231F20 !important;
 }
 .work-list-data{
   margin-top: 2rem;
@@ -498,12 +573,36 @@ export default {
     text-transform: uppercase;
     position: relative;
     float: left;
-    width: 100%;
-    height: 40px;
+    width: calc(100% - 60px);
     font-size: 1.8rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-family: 'pp-reg';
+    margin-bottom: 0rem;
+    margin-top: 10px;
+    font-family: "pp-reg";
+    margin-left: 30px;
+    overflow-x: scroll;
+  }
+  .filter-mobile-panel{
+    width: 100%;
+    float: left;
+    position: relative;
+    .p-b-left{
+      position: absolute;
+      top: 17px;
+      font-size: 14px;
+      left: 7px;
+    }
+    .p-b-right{
+      position: absolute;
+      top: 17px;
+      font-size: 14px;
+      right: 7px;
+    }
+  }
+  .filter-all-items{
+    width: max-content;
+    float: left;
+    display: inline;
+    height: 30px;
   }
   .filter-item-active span{
     float: left;
@@ -525,7 +624,6 @@ export default {
     font-size: 1rem;
   }
   .work-filter-list{
-    height: 4rem;
     width: calc(100% + 20px);
     margin-left: -10px;
   }
