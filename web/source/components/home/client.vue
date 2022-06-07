@@ -364,7 +364,9 @@ export default {
     },
     goNext() {
       this.interval = setInterval(() => { 
-       this.$refs.slide1.next()
+        if(this.$refs.slide1){
+          this.$refs.slide1.next()
+        }
       }, 3500)
     }
   }

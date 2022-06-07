@@ -123,7 +123,7 @@ export default {
          'BENTRE', 'PHNOMPENH_CAMBODIA'],
       item_active: 'HOCHIMINH',
       isMobile: false,
-      WherePlaceName: 'Ho Chi Minh City (Electrolux Office)',
+      WherePlaceName: 'Ho Chi Minh (Electrolux Office)',
       WherePlaceDes: 'A Scandinavian-inspired office where everyone can feel the comfort of home',
     }
   },
