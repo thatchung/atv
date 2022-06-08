@@ -446,20 +446,19 @@ export default {
   display: inline-block;
   float: left;
   margin-right: 0.5rem;
-  padding: 0rem 0.5rem;
+  padding: 0rem 0.2rem;
   cursor: pointer;
-  height: 45px;
-  line-height: 40px;
+  height: 30px;
+  line-height: 25px;
 }
 .filter-active{
   border: 1px solid #7E8083;
 }
 .filter-item-active{
-  text-transform: uppercase;
   width: 100%;
   font-family: "pp-reg";
   font-size: 2rem;
-  margin-left: 6rem;
+  margin-left: 0rem;
   float: left;
   svg{
     margin-left: 0.5rem;

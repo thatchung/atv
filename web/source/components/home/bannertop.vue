@@ -250,7 +250,7 @@ export default {
       setTimeout(() => {
         this.isPlay = true
         this.autoPlay()
-      }, 32000)
+      }, 60000)
     },
     autoPlay() {
       setTimeout(() => {
