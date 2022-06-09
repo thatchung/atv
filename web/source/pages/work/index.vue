@@ -569,7 +569,6 @@ export default {
 }
 @media (max-width: 575px) {
   .filter-item-active{
-    text-transform: uppercase;
     position: relative;
     float: left;
     width: calc(100% - 60px);

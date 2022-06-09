@@ -83,7 +83,12 @@ export default {
             return stringState
         },
         locationFilter(state) {
-            let stringState = tvkd.c(state)
+            if(state === 'Phnôm Pênh_Campuchia') {
+                return 'Phnompenh_Cambodia'
+            } else {
+                let stringState = tvkd.c(state)
+                return stringState
+            }
             // switch (state) {
             //     case 'HOCHIMINH':
             //         stringState = 'HO CHI MINH'
@@ -118,8 +123,6 @@ export default {
             //     default:
             //         break
             // }
-
-            return stringState
         },
         locationVNFilter(state) {
             let stringState = state

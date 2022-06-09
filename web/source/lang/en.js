@@ -154,7 +154,7 @@ module.exports =  {
   WhoSubDes3: 'Core values',
   EXPERIENCEDLEADERS: 'EXPERIENCED LEADERS',
   LeadDes1: 'All leaders at AVT have more than 10 years of experience in project management and interior design – build in various countries like Japan, the USA, and other Asia Pacific nations.',
-  LeadDes2: 'In Vietnam, AVT has provided creative solutions for big clients, namely Aeon, Tonshin Development, Phu My Hung, GJ Group.',
+  LeadDes2: 'In Vietnam, AVT has provided creative solutions for big clients, namely Aeon, Toshin Development, Phu My Hung, GJ Group.',
   KEYPEOPLE: 'KEY PEOPLE',
   PeopleName1: 'Vinh Doan',
   PeopleRole1: 'Co-founder & Director',
