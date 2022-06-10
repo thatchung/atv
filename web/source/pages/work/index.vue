@@ -112,17 +112,13 @@
 
 
     </div>
-    <div v-if="!loading && listWork.length >= 0 && typeActive !== 'featured'" class="work-list-data row">
+    <div v-if="!loading && listWork && listWork.length >= 0" class="work-list-data row">
       <div v-for="(item, index) in listWork" :key="index" class="work-item col-12 col-md-4">
         <Item :work="item" />
       </div>
     </div>
-    <div v-if="!loading && listWorkFeatured.length >= 0 && typeActive === 'featured'" class="work-list-data row">
-      <div v-for="(item, index) in listWorkFeatured" :key="index" class="work-item col-12 col-md-4">
-        <Item :work="item" />
-      </div>
-    </div>
-    <div v-if="!loading && listWork.length === 0" class="work-list-empty" >No Data</div>
+    <div v-if="!loading && listWork && listWork.length === 0" class="work-list-empty" >No Data</div>
+    <div v-if="!loading && !listWork" class="work-list-empty" >No Data</div>
     <div v-if="loading" class="work-loading">
       <div class="lds-roller">
         <div />
@@ -293,7 +289,6 @@ export default {
   computed: {
     ...mapGetters({
       listWork: "work/getListWork",
-      listWorkFeatured: "work/getListWorkFeatured",
       listYear: "common/getListYear",
       listLocation: "common/getListLocation",
       listCategory: "common/getListCategory"

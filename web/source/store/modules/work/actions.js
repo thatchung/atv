@@ -8,8 +8,8 @@ export default {
             url: '/api/featured-works?_sort=order:desc,id:desc',
             data: data.params ? data.params : {}
         })
-        commit('set_list_work_featured', {
-            list_work_featured: res.map(i => { return i.work })
+        commit('set_list_work', {
+            list_work: res.map(i => { return i.work })
         })
     },
 
