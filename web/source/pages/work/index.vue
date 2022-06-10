@@ -112,8 +112,13 @@
 
 
     </div>
-    <div v-if="!loading && listWork.length >= 0" class="work-list-data row">
+    <div v-if="!loading && listWork.length >= 0 && typeActive !== 'featured'" class="work-list-data row">
       <div v-for="(item, index) in listWork" :key="index" class="work-item col-12 col-md-4">
+        <Item :work="item" />
+      </div>
+    </div>
+    <div v-if="!loading && listWorkFeatured.length >= 0 && typeActive === 'featured'" class="work-list-data row">
+      <div v-for="(item, index) in listWorkFeatured" :key="index" class="work-item col-12 col-md-4">
         <Item :work="item" />
       </div>
     </div>
@@ -288,6 +293,7 @@ export default {
   computed: {
     ...mapGetters({
       listWork: "work/getListWork",
+      listWorkFeatured: "work/getListWorkFeatured",
       listYear: "common/getListYear",
       listLocation: "common/getListLocation",
       listCategory: "common/getListCategory"
@@ -365,33 +371,28 @@ export default {
       }
       this.loading = false
     },
-    loadFilter (type) {
+    async loadFilter (type) {
       this.typeActive = type
       if (type === 'all') {
         this.filters = { }
-        this.loadData()
+        await this.loadData()
       } else if (type === 'featured') {
-        // this.filters = {
-        //   id_in: [17, 19, 21, 27, 32, 14, 24, 23, 31]
-        // }
-        // this.loadData()
-        // this.listWork = this.listFeatured.map(i => { return i.work })
-        this.getListFeatured()
+        await this.getListFeatured()
       } else if (type === 'category') {
         this.filters = {
           categories : this.categoryActive.id
         }
-        this.loadData()
+        await this.loadData()
       } else if (type === 'location') {
         this.filters = {
           locations : this.locationActive.id
         }
-        this.loadData()
+        await this.loadData()
       } else if (type === 'year') {
         this.filters = {
           year : this.yearActive
         }
-        this.loadData()
+        await this.loadData()
       }
     },
     showChoiceFilter () {

@@ -4,7 +4,8 @@ import mutations from './mutations';
 
 export const state = () => ({
     work: {},
-    list_work : []
+    list_work : [],
+    list_work_featured : []
 });
 
 export default {

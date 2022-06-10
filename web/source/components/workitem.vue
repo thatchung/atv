@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <nuxt-link :to="'/work/' + work.url">
-      <ThumbImage :src="image" ratio="8-5" :isgray="true" />
+      <ThumbImage :src="work.image_link ? work.image_link : image" ratio="8-5" :isgray="true" />
     </nuxt-link>
     <nuxt-link :to="'/work/' + work.url">
       <h2 class="w-item-title font-pp-bold">
@@ -59,6 +59,7 @@ export default {
             url: '/images/slide4.jpg',
             formats: {}
           },
+          image_link: null,
           type_category: 'Office',
           location: 'Da Nang',
           area: 600,
@@ -70,6 +71,14 @@ export default {
   data() {
     return {
       image: ''
+    }
+  },
+  watch: {
+    work: (newVal, oldVal) => {
+      if (newVal) {
+        const link = newVal.thub.formats.medium ? newVal.thub.formats.medium.url : newVal.thub.url
+        newVal.image_link = link
+      }
     }
   },
   mounted() {
