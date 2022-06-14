@@ -29,15 +29,17 @@ export default {
     Contact,
     Client
     // Loading
-  }
+  },
   // computed: {
   //   ...mapGetters({
   //     listWork: "work/getListWork"
   //   }),
   // },
-  // mounted() {
-  //   this.loadData()
-  // },
+  mounted() {
+    if (!this.$route.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  },
   // methods: {
   //   ...mapActions({
   //     getListWork: "work/getListWork"

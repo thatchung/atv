@@ -1,5 +1,13 @@
 import ApiService from '@/service/api.service'
 export default {
+    getCountInnovation: async ({ commit, rootState }, data = {}) => {
+        let res = await ApiService.request({
+            method: 'get',
+            url: '/api/innovations/count',
+            data: data.params ? data.params : {}
+        })
+        return res
+    },
 
     getListInnovation: async ({ commit, rootState }, data = {}) => {
         let res = await ApiService.request({

@@ -41,7 +41,7 @@
             <span v-if="$i18n.locale === 'vn'">{{ contact.location3_vn }}</span>
             <span v-else >{{ contact.location3 }}</span>
           </div>
-          <div class="address">
+          <div class="address" :style="`width:${$i18n.locale === 'vn' ? '63' : '55'}%`">
             <span v-if="$i18n.locale === 'vn'">{{ contact.address3_vn }}</span>
             <span v-else >{{ contact.address3 }}</span>
           </div>
@@ -196,7 +196,7 @@ export default {
   font-size: 1rem;
   margin: 0.5rem 0rem;
   height: 70px;
-  width: 60%;
+  width: 55%;
 }
 .type{
   font-weight: 500;

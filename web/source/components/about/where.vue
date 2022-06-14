@@ -139,6 +139,7 @@ export default {
   },
   mounted() {
     this.isMobile = this.checkMobile()
+    this.clickMapItem('HOCHIMINH')
     if (this.$route.hash) {
       this.goto(this.$route.hash.replace('#', ''))
     }
@@ -162,8 +163,8 @@ export default {
         el.scrollIntoView({ behavior: 'smooth' })
         setTimeout(() => {
           let yy = window.pageYOffset
-          window.scrollTo({ top: yy - 90, behavior: 'smooth' })
-        }, 900)
+          window.scrollTo({ top: yy - 90 })
+        }, 720)
       }
     },
     clickMapItem(item) {

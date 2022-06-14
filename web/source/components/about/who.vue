@@ -198,8 +198,8 @@ export default {
         el.scrollIntoView({ behavior: 'smooth' })
         setTimeout(() => {
           let yy = window.pageYOffset
-          window.scrollTo({ top: yy - 90, behavior: 'smooth' })
-        }, 900)
+          window.scrollTo({ top: yy - 90 })
+        }, 720)
       }
     }
   }

@@ -295,6 +295,9 @@ export default {
     }),
   },
   async mounted() {
+    if (!this.$route.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
     this.typeActive = 'featured'
     this.checkMobile()
     await this.loadFilter('featured')

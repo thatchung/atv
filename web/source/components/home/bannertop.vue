@@ -3,8 +3,10 @@
     <VueSlickCarousel
       ref="slide1"
       :autoplay='false'
+      :infinite='false'
       :focusOnSelect="focusOnSelect"
       @beforeChange="syncSliders"
+      @afterChange="checkLoad"
       v-if="listBanned && listBanned.length > 0"
     >
       <div v-for="(item, idx) in listBanned" :key="idx">
@@ -129,7 +131,8 @@ export default {
       style: ['', '', '', '', '', ''],
       slide1: undefined,
       focusOnSelect: true,
-      nameClass: 'image-banner'
+      nameClass: 'image-banner',
+      interval: null
     }
   },
   computed: {
@@ -164,6 +167,16 @@ export default {
     syncSliders(currentPosition, nextPosition) {
       this.$refs.slide1.goTo(nextPosition)
       this.render(nextPosition)
+    },
+    checkLoad(currentPosition) {
+      if(currentPosition === this.listBanned.length - 1) {
+        clearInterval(this.interval)
+        setTimeout(() => {
+          this.$refs.slide1.goTo(0)
+          this.$refs.videoCut.playVideo()
+          this.autoShowPlay()
+        }, 4000)
+      }
     },
     render(idx) {
       let t_slider = []
@@ -217,45 +230,18 @@ export default {
           y: 0,
           duration: 2
         })
-
-        // this.$gsap.fromTo(`.banner-content-2 .title-left-1`, {
-        //   opacity:0,
-        //   x: -300
-        // }, {
-        //   opacity:1,
-        //   ease: "expo.out",
-        //   x: 0,
-        //   duration: 2
-        // })
-        // this.$gsap.fromTo(`.banner-content-2 .title-left-2`, {
-        //   opacity:0,
-        //   x: 300
-        // }, {
-        //   opacity:1,
-        //   ease: "expo.out",
-        //   x: 0,
-        //   duration: 2
-        // })
-        // this.$gsap.fromTo(`.banner-content-2 .banner-text-left`, {
-        //   opacity:0,
-        //   y: 200
-        // }, {
-        //   opacity:1,
-        //   ease: "expo.out",
-        //   y: 0,
-        //   duration: 2
-        // })
     },
     autoShowPlay() {
       setTimeout(() => {
-        this.isPlay = true
         this.autoPlay()
       }, 60000)
     },
     autoPlay() {
-      setTimeout(() => {
-        this.$refs.slide1.goTo(1)
-      }, 7000)
+      this.interval = setInterval(() => { 
+        if(this.$refs.slide1){
+          this.$refs.slide1.next()
+        }
+      }, 4000)
     },
     showVideo () {
       this.isVideo = true

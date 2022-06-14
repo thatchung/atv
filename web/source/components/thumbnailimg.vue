@@ -17,15 +17,16 @@
     <video
       ref="videoRef"
       v-if="video"
-      autoplay
-      muted
+      :muted="mute"
       playsinline
+      preload="auto"
       class="thumbnail-video-inner"
       :style="contain ? `object-fit: contain;` : `object-fit: cover;`"
       :class="`${nameClass}`"
     >
       <source :src="sourceVideo" type="video/mp4" />
     </video>
+    <div class="btn-mute" v-if="video" @click.prevent="onMute"><img src="/images/volume.jpg"></img></div>
     <img
       v-else
       :style="contain ? `object-fit: contain;` : `object-fit: ${coverimg};`"
@@ -47,11 +48,11 @@ export default {
     },
     alt: {
       type: String,
-      default: "ATV",
+      default: "AVT",
     },
     title: {
       type: String,
-      default: "ATV",
+      default: "AVT",
     },
     src: {
       type: String,
@@ -88,7 +89,8 @@ export default {
   },
   data() {
     return {
-      isOrigin: false
+      isOrigin: false,
+      mute: true
     }
   },
   // watch: {
@@ -103,15 +105,19 @@ export default {
   mounted() {
     if (this.video) {
       setTimeout(() => {
-        if (this.$ref && this.$ref.videoRef) {
-          this.$ref.videoRef.play()
+        if (this.$refs && this.$refs.videoRef) {
+          this.$refs.videoRef.play()
         }
-      }, 3000)
+      }, 4000)
     }
   },
   methods: {
     playVideo() {
-      this.$ref.videoRef.play()
+      this.$refs.videoRef.play()
+    },
+    onMute() {
+      this.mute = !this.mute
+      this.$refs.videoRef.play()
     }
   },
   // created() {
@@ -223,6 +229,15 @@ img:not([src]) {
   &:hover{
     filter: grayscale(0%) !important;
     -webkit-filter: grayscale(0%) !important;
+  }
+}
+.btn-mute{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9000;
+  img{
+    width: 30px;
   }
 }
 @media (max-width: 768px) {

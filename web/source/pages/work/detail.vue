@@ -31,7 +31,7 @@
       </div>
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Typeofproject') }} :
+          {{ $t('Typeofproject') }}:
             <span v-if="$i18n.locale === 'vn'">{{ work.category_name_vn }}</span>
             <span v-else >{{ work.category_name }}</span>
         </div>

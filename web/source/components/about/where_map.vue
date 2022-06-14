@@ -78,7 +78,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -91,7 +91,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -104,7 +104,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -117,7 +117,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -133,7 +133,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -146,7 +146,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -159,7 +159,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -172,7 +172,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -190,7 +190,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -203,7 +203,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -216,7 +216,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -229,7 +229,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -242,7 +242,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -255,7 +255,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -268,7 +268,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -281,7 +281,7 @@
           </div>
           <div class="col-3 col-md-4">
             <!-- <b-icon-arrow-down /> -->
-            <img class="img-arrow-down" src="/images/a_down.png"></img>
+            <!-- <img class="img-arrow-down" src="/images/a_down.png"></img> -->
           </div>
         </div>
         <div class="line-all-s" />
@@ -355,8 +355,8 @@ export default {
         el.scrollIntoView({ behavior: 'smooth' })
         setTimeout(() => {
           let yy = window.pageYOffset
-          window.scrollTo({ top: yy - 90, behavior: 'smooth' })
-        }, 900)
+          window.scrollTo({ top: yy - 90 })
+        }, 720)
       }
     }
   }

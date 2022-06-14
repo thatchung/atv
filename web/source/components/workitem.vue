@@ -13,23 +13,23 @@
     <div class="work-info">
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Year') }} : {{ work.year }}
+          {{ $t('Year') }}: {{ work.year }}
         </div>
         /
         <div class="detail-text">
-          {{ $t('Area') }} : {{ work.area }} m<sup>2</sup>
+          {{ $t('Area') }}: {{ work.area }} m<sup>2</sup>
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Typeofproject') }} :
+          {{ $t('Typeofproject') }}:
           <span v-if="$i18n.locale === 'vn'">{{ work.category_name_vn }}</span>
           <span v-else>{{ work.category_name }}</span>
         </div>
       </div>
       <div class="work-info">
         <div class="detail-text">
-          {{ $t('Location') }} :
+          {{ $t('Location') }}:
           <!-- <span v-if="$i18n.locale === 'vn'">{{ work.address_vn }}</span>
           <span v-else>{{ work.address }}</span> -->
           {{ work.locations && work.locations.length > 0 ? work.locations[0].name : 'HO CHI MINH' }}

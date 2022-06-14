@@ -14,7 +14,6 @@
       <div v-for="(item,index) in listWork" :key="index" class="inno-slider-item">
         <Item v-if="!isMobile" :work="item" />
         <Item2 v-if="isMobile" :work="item" />
-        aa
       </div>
       <template slot="prevArrow">
         <div class="pre-arrow">

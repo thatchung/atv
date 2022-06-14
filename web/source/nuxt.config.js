@@ -12,14 +12,14 @@ const host = 'http://localhost:3000'
 // const hostapi = 'http://localhost:1337'
 
 // const host = 'http://avt.com.vn'
-const hostapi = 'http://191.191.1.121:1337'
+const hostapi = 'http://124.158.15.86:1337'
 
 const getSitemapsConfigurations = () => {
     let list = [{
             path: '/sitemap-work.xml',
             routes: async () => {
                 let list = [];
-                let res = await axios.get(`http://103.39.93.99:1333/works`)
+                let res = await axios.get(`http://124.158.15.86:1337/works`)
                 if (res && res.data) {
                     res.data.map(row => {
                         if (row.url && row.url !== '') {
@@ -41,7 +41,7 @@ const getSitemapsConfigurations = () => {
             path: '/sitemap-innovation.xml',
             routes: async () => {
                 let list = [];
-                let res = await axios.get(`http://103.39.93.99:1333/innovations`)
+                let res = await axios.get(`http://124.158.15.86:1337/innovations`)
                 if (res && res.data) {
                     res.data.map(row => {
                         if (row.url && row.url !== '') {

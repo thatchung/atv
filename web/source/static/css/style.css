@@ -35,6 +35,20 @@ a:hover {
     text-decoration: none !important;
     font-family: 'pp-reg';
 }
+blockquote {
+  quotes: "“" "”" "‘" "’";
+}
+blockquote p{
+  display: inline-block;
+}
+blockquote::before {
+    content: open-quote;
+    display: inline-block;
+}
+blockquote::after {
+    content: close-quote;
+    display: inline-block;
+}
 .line-all{
     border-top: 1.5px solid #7E8083;
     margin: 1rem 0px;

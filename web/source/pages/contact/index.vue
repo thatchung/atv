@@ -42,7 +42,7 @@
               <span v-if="$i18n.locale === 'vn'">{{ contact.location3_vn }}</span>
               <span v-else >{{ contact.location3 }}</span>
             </div>
-            <div class="address">
+            <div class="address" :style="`width:${$i18n.locale === 'vn' ? '63' : '55'}%`">
               <span v-if="$i18n.locale === 'vn'">{{ contact.address3_vn }}</span>
               <span v-else >{{ contact.address3 }}</span>
             </div>

@@ -77,7 +77,7 @@ export default {
       meta : {
         page: 1,
         pageSize: 3,
-        pageCount: 4,
+        pageCount: 1,
         totalItem: 33
       },
       settings:{
@@ -147,12 +147,21 @@ export default {
       listInnovation: "innovation/getListInnovation"
     }),
   },
-  mounted() {
+  async mounted() {
+    if (!this.$route.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
     this.loadData()
+    let res = await this.getCountInnovation()
+    if (res) {
+      this.meta.totalItem = res
+      this.meta.pageCount = this.meta.totalItem / this.meta.pageSize
+    }
   },
   methods: {
     ...mapActions({
-      getListInnovation: "innovation/getListInnovation"
+      getListInnovation: "innovation/getListInnovation",
+      getCountInnovation: "innovation/getCountInnovation",
     }),
     loadSort () {
       this.sort = !this.sort
