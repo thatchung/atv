@@ -106,7 +106,7 @@ export default {
         if (this.$ref && this.$ref.videoRef) {
           this.$ref.videoRef.play()
         }
-      }, 3000)
+      }, 4000)
     }
   },
   methods: {
