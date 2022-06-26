@@ -32,7 +32,9 @@
           {{ $t('Location') }}:
           <!-- <span v-if="$i18n.locale === 'vn'">{{ work.address_vn }}</span>
           <span v-else>{{ work.address }}</span> -->
-          {{ work.locations && work.locations.length > 0 ? work.locations[0].name : 'HO CHI MINH' }}
+          {{ work.locations && work.locations.length > 0 ? 
+            ( $i18n.locale === 'vn' ? work.locations[0].name : getLocationFilter(work.locations[0].name) )
+            : 'HO CHI MINH' }}
         </div>
         <nuxt-link :to="'/work/' + work.url">
           <!-- <b-icon-arrow-right style="margin-left: 1rem;" /> -->
@@ -45,6 +47,7 @@
 
 <script>
 import general from "~/mixins/general"
+import tvkd from 'tieng-viet-khong-dau'
 export default {
   name: 'WorkItem',
   mixins: [general],
@@ -85,17 +88,16 @@ export default {
     const link = this.work.thub.formats.medium ? this.work.thub.formats.medium.url : this.work.thub.url
     this.image = link
   },
-  // methods: {
-  //   checkMobile() {
-  //     if (!process.server) {
-  //       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  //         this.isMobile = true
-  //       } else {
-  //         this.isMobile = false
-  //       }
-  //     }
-  //   }
-  // }
+  methods: {
+    getLocationFilter(state) {
+      if(state === 'Phnôm Pênh_Campuchia') {
+          return 'Phnompenh_Cambodia'
+      } else {
+          let stringState = tvkd.c(state)
+          return stringState
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">

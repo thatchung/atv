@@ -310,11 +310,6 @@ export default {
     if(this.listLocation.length === 0) {
       this.listLocation = this.locations
     }
-    let res = await this.getCountWork()
-    if (res) {
-      this.meta.totalItem = res
-      this.meta.pageCount = this.meta.totalItem / this.meta.pageSize
-    }
   },
   methods: {
     ...mapActions({
@@ -376,6 +371,8 @@ export default {
         await this.loadData()
       } else if (type === 'featured') {
         await this.getListFeatured()
+        this.meta.totalItem = this.listWork.length
+        this.meta.pageCount = 1
       } else if (type === 'category') {
         this.filters = {
           categories : this.categoryActive.id

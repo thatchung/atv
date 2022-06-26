@@ -8,8 +8,21 @@ export default {
             url: '/api/featured-works?_sort=order:desc,id:desc',
             data: data.params ? data.params : {}
         })
+        let res_work = await ApiService.request({
+            method: 'get',
+            url: '/api/works',
+            data: data.params ? data.params : {}
+        })
+        let list_work = []
+        for(let work of res) {
+            let temp = res_work.find(o => o.id === work.work.id)
+            if(temp) {
+                list_work.push(temp)
+            }
+        }
         commit('set_list_work', {
-            list_work: res.map(i => { return i.work })
+            // list_work: res.map(i => { return i.work })
+            list_work: list_work
         })
     },
 
