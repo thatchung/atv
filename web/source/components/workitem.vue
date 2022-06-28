@@ -112,9 +112,4 @@ export default {
 .detail-text{
   display: inline-block;
 }
-.item-arrow{
-  &:hover{
-    animation: run-left 2s linear infinite;
-  }
-}
 </style>

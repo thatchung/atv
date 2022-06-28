@@ -350,14 +350,20 @@ export default {
       }
     },
     goto(hash) {
-      const el = this.$refs[('' + hash)]
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-        setTimeout(() => {
-          let yy = window.pageYOffset
-          window.scrollTo({ top: yy - 90 })
-        }, 720)
+      // const el = this.$refs[('' + hash)]
+      // if (el) {
+      //   el.scrollIntoView({ behavior: 'smooth' })
+      //   setTimeout(() => {
+      //     let yy = window.pageYOffset
+      //     window.scrollTo({ top: yy - 90 })
+      //   }, 720)
+      // }
+      if (hash === 'ournetwork'){
+        window.scrollTo({ top: 5331, behavior: 'smooth' })
+      } else if (hash === 'ouruniqueness'){
+        window.scrollTo({ top: 5876, behavior: 'smooth' })
       }
+
     }
   }
 }

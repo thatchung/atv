@@ -176,6 +176,9 @@ export default {
           this.$refs.videoCut.playVideo()
           this.autoShowPlay()
         }, 4000)
+      } else if (currentPosition >= 1) {
+        clearInterval(this.interval)
+        this.autoPlay()
       }
     },
     render(idx) {

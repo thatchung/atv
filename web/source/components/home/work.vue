@@ -137,17 +137,11 @@ export default {
   position: absolute;
   top: 1rem;
   right: 0rem;
-  &:hover{
-    animation: arrow-left 2s linear infinite;
-  }
 }
 .more-arrow{
   position: absolute;
   top: 0.7rem;
   right: -2rem;
-  &:hover{
-    animation: more-left 2s linear infinite;
-  }
 }
 .pre-arrow{
   z-index: 2;
