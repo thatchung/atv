@@ -23,12 +23,12 @@
         v-for="(type, index) in types"
         :key="index"
         :class="'work-filter-item ' + ( typeActive === type ? 'filter-active': '' ) "
-        @click="loadFilter(type)"
+        @click="onClickFilter(type)"
       >
         <div v-if="$i18n.locale === 'vn'">{{ type | workTypeVNFilter }}</div>
         <div v-else >{{ type | workTypeFilter }}</div>
       </div>
-      <div v-if="!isMobile && typeActive === 'location'" class="filter-item-active">
+      <div v-if="!isMobile && typeActive === 'locations'" class="filter-item-active">
         <!-- <span v-if="!filterChoice">
           <span v-if="$i18n.locale === 'vn'">{{ locationActive.name}}</span>
           <span v-else>{{ locationActive.name | locationFilter }}</span>
@@ -44,7 +44,7 @@
         <b-icon-arrow-down v-if="!filterChoice" @click="showChoiceFilter" />
         <b-icon-arrow-up v-if="filterChoice" @click="closeChoiceFilter" /> -->
       </div>
-      <div v-if="!isMobile && typeActive === 'category'" class="filter-item-active">
+      <div v-if="!isMobile && typeActive === 'categories'" class="filter-item-active">
         <!-- <span v-if="!filterChoice">
           <div style="display: inline-block;" v-if="$i18n.locale === 'vn'">{{ categoryActive.name_vn }}</div>
           <div style="display: inline-block;" v-else >{{ categoryActive.name }}</div>
@@ -75,10 +75,10 @@
       </div>
       <div v-if="isMobile" class="filter-mobile-panel">
         <b-icon-chevron-left class="p-b-left" @click="leftFilter" 
-          v-if="typeActive === 'location' || typeActive === 'category' || typeActive === 'year'"/>
+          v-if="typeActive === 'locations' || typeActive === 'categories' || typeActive === 'year'"/>
         <b-icon-chevron-right class="p-b-right" @click="rightFilter" 
-          v-if="typeActive === 'location' || typeActive === 'category' || typeActive === 'year'"/>
-        <div ref="filterlist" v-if="typeActive === 'location'" class="filter-item-active">
+          v-if="typeActive === 'locations' || typeActive === 'categories' || typeActive === 'year'"/>
+        <div ref="filterlist" v-if="typeActive === 'locations'" class="filter-item-active">
           <div ref="filterall" class="filter-all-items">
             <div v-for="(i, idx) in listLocation" :key="idx"
               :class="`filter-item ${ i.id === locationActive.id ? 'is-active' : ''}`"
@@ -88,7 +88,7 @@
             </div>
           </div>
         </div>
-        <div ref="filterlist" v-if="typeActive === 'category'" class="filter-item-active">
+        <div ref="filterlist" v-if="typeActive === 'categories'" class="filter-item-active">
           <div ref="filterall" class="filter-all-items">
             <div v-for="(i, idx) in listCategory" :key="idx"
               :class="`filter-item ${ i.id === categoryActive.id ? 'is-active' : ''}`"
@@ -164,7 +164,7 @@ export default {
       loading: false,
       isMobile: false,
       filterChoice: false,
-      types: ['featured', 'category', 'year', 'location', 'all'],
+      types: ['featured', 'categories', 'year', 'locations', 'all'],
       typeActive: 'featured',
       locations: [{
           id : 2,
@@ -300,7 +300,16 @@ export default {
     }
     this.typeActive = 'featured'
     this.checkMobile()
-    await this.loadFilter('featured')
+    let filter = this.$route.query && this.$route.query.filter ? this.$route.query.filter : 'featured'
+    if (filter === 'categories') {
+      this.categoryActive.id = this.$route.query && this.$route.query.id ? this.$route.query.id : 2
+    } else if (filter === 'locations') {
+      this.locationActive.id = this.$route.query && this.$route.query.id ? this.$route.query.id : 2
+    } else if (filter === 'year') {
+      this.yearActive = this.$route.query && this.$route.query.id ? this.$route.query.id : '2021'
+    }
+    let page = this.$route.query && this.$route.query.page ? this.$route.query.page : 0
+    await this.loadFilter(filter,page)
     await this.getListCategory()
     await this.getListYear()
     if(this.listYear.length === 0) {
@@ -356,6 +365,13 @@ export default {
         _sort: 'id:DESC'
       }
       this.meta.page = page + 1
+      
+      if(Object.keys(this.filters) && Object.keys(this.filters).length > 0 && Object.keys(this.filters)[0] !== 'featured'){
+        let key = Object.keys(this.filters)[0]
+        this.$router.push(`/work?page=${this.meta.page}&filter=${key}&id=${this.filters[key]}`)
+      } else {
+        this.$router.push(`/work?filter=all&page=${this.meta.page}`)
+      }
       await this.getListWork({ params :query })
       let res = await this.getCountWork({ params :query })
       if (res) {
@@ -364,30 +380,44 @@ export default {
       }
       this.loading = false
     },
-    async loadFilter (type) {
+    async onClickFilter (type) {
+      if (type === 'all') {
+        this.$router.push(`/work?filter=all`)
+      } else if (type === 'featured') {
+        this.$router.push(`/work?filter=featured`)
+      } else if (type === 'categories') {
+        this.$router.push(`/work?filter=categories`)
+      } else if (type === 'locations') {
+        this.$router.push(`/work?filter=locations`)
+      } else if (type === 'year') {
+        this.$router.push(`/work?filter=year`)
+      }
+      this.loadFilter(type)
+    },
+    async loadFilter (type,page) {
       this.typeActive = type
       if (type === 'all') {
         this.filters = { }
-        await this.loadData()
+        await this.loadData(page)
       } else if (type === 'featured') {
         await this.getListFeatured()
         this.meta.totalItem = this.listWork.length
         this.meta.pageCount = 1
-      } else if (type === 'category') {
+      } else if (type === 'categories') {
         this.filters = {
           categories : this.categoryActive.id
         }
-        await this.loadData()
-      } else if (type === 'location') {
+        await this.loadData(page)
+      } else if (type === 'locations') {
         this.filters = {
           locations : this.locationActive.id
         }
-        await this.loadData()
+        await this.loadData(page)
       } else if (type === 'year') {
         this.filters = {
           year : this.yearActive
         }
-        await this.loadData()
+        await this.loadData(page)
       }
     },
     showChoiceFilter () {
@@ -402,6 +432,7 @@ export default {
       this.filters = {
         locations : type.id
       }
+      this.$router.push(`/work?filter=locations&id=${type.id}`)
       this.loadData()
     },
     choiceCategoryFilter(type) {
@@ -410,6 +441,7 @@ export default {
       this.filters = {
         categories : type.id
       }
+      this.$router.push(`/work?filter=categories&id=${type.id}`)
       this.loadData()
     },
     choiceYearFilter(type) {
@@ -418,6 +450,7 @@ export default {
       this.filters = {
         year : this.yearActive
       }
+      this.$router.push(`/work?filter=year&id=${type}`)
       this.loadData()
     }
   }

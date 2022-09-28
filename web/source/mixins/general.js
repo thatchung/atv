@@ -45,8 +45,14 @@ export default {
                 case 'category':
                     stringState = 'By Category'
                     break
+                case 'categories':
+                    stringState = 'By Category'
+                    break
                 case 'year':
                     stringState = 'By Year'
+                    break
+                case 'locations':
+                    stringState = 'By Location'
                     break
                 case 'location':
                     stringState = 'By Location'
