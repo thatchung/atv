@@ -74,8 +74,14 @@ export default {
                 case 'category':
                     stringState = 'Theo Chuyên Mục'
                     break
+                case 'categories':
+                    stringState = 'Theo Chuyên Mục'
+                    break
                 case 'year':
                     stringState = 'Theo Năm'
+                    break
+                case 'locations':
+                    stringState = 'Theo Vị Trí'
                     break
                 case 'location':
                     stringState = 'Theo Vị Trí'
