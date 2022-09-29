@@ -32,5 +32,8 @@ module.exports = {
             await strapi.services.work.update({ id : result.id }, result);
             await clearCacheData(result);
         },
+        async afterDestroy(result, params, data) {
+            await clearCacheData(result);
+        }
     }
 };
