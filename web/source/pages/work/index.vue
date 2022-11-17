@@ -376,7 +376,7 @@ export default {
       let res = await this.getCountWork({ params :query })
       if (res) {
         this.meta.totalItem = res
-        this.meta.pageCount = this.meta.totalItem / this.meta.pageSize
+        this.meta.pageCount = Math.ceil(this.meta.totalItem / this.meta.pageSize)
       }
       this.loading = false
     },
