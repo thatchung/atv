@@ -8,4 +8,4 @@ RUN npm install pm2 -g
 RUN npm run build
 ENV NODE_ENV=production
 ENV NUXT_ENV_STAGE=production
-CMD [ "npm run", "start:production" ]
+CMD [ "yarn", "start:production" ]
