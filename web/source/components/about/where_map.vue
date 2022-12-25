@@ -5,7 +5,7 @@
     </h2>
     <div class="line-all" />
     <div class="row" style="margin-top: 2rem;">
-      <div class="col-12 col-md-4 about-where-network">
+      <!-- <div class="col-12 col-md-4 about-where-network">
         <div class="about-where-a_name font-pp-bold">
           9PMP - </br>{{ $t('SystematicPartner') }}
         </div>
@@ -19,8 +19,8 @@
           </div>
         </a>
         <div v-if="isMobile" class="line-all-w" />
-      </div>
-      <div class="col-12 col-md-4 about-where-network">
+      </div> -->
+      <div class="col-12 col-md-6 about-where-network">
         <div class="about-where-a_name font-pp-bold">
           The Sentry – </br>{{ $t('TechnicalPartner') }}
         </div>
@@ -35,7 +35,7 @@
         </a>
         <div v-if="isMobile" class="line-all-w" />
       </div>
-      <div class="col-12 col-md-4 about-where-network">
+      <div class="col-12 col-md-6 about-where-network">
         <div class="about-where-a_name font-pp-bold">
           K-net Design – </br>{{ $t('DesignPartner') }}
         </div>

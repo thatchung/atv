@@ -89,7 +89,7 @@
       {{ $t('EXPERIENCEDLEADERS') }}
     </div>
     <div class="row">
-      <div class="col-12 col-md-6 about-who-ex-item">
+      <!-- <div class="col-12 col-md-6 about-who-ex-item">
         <People
           thub="/images/people2.png"
           :name="$t('PeopleName2')"
@@ -98,7 +98,7 @@
           :role="$t('PeopleRole2')"
           num="1"
         />
-      </div>
+      </div> -->
       <div class="col-12 col-md-6 about-who-ex-item">
         <People
           thub="/images/people1.png"
@@ -109,6 +109,17 @@
           num="1"
         />
       </div>
+      <div class="col-12 col-md-6 about-who-ex-item">
+        <People
+          thub="/images/p22.png"
+          :name="$t('PeopleName21')"
+          :des="$t('PeopleDes21')"
+          :cut="$t('PeopleDesCut21')"
+          :role="$t('PeopleRole21')"
+          num="1"
+        />
+      </div>
+      
     </div>
     <div class="line-all" />
     <div class="about-who-ex-title font-pp-bold">
@@ -162,7 +173,7 @@
         <TeamList :name="$t('TEAM1')" thub="/images/group1.png" :content="$t('TEAMDES1')" />
       </div>
       <div class="col-12 col-md-6 ex-item">
-        <TeamList :name="$t('TEAM2')" thub="/images/group2.png" :content="$t('TEAMDES2')" />
+        <TeamList :name="$t('TEAM2')" thub="/images/AVT_web_group_update.jpg" :content="$t('TEAMDES2')" />
       </div>
     </div>
   </div>

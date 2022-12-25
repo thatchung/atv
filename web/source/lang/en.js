@@ -152,12 +152,14 @@ module.exports =  {
   WhoSubDes1: 'Competency value',
   WhoSubDes2: 'Service value',
   WhoSubDes3: 'Core values',
-  EXPERIENCEDLEADERS: 'EXPERIENCED LEADERS',
+  EXPERIENCEDLEADERS: 'EXPERIENCED LEADER',
   LeadDes1: 'All leaders at AVT have more than 10 years of experience in project management and interior design–build in various countries like Japan, the USA, and other Asia Pacific nations.',
   LeadDes2: 'In Vietnam, AVT has provided creative solutions for big clients, namely AEON, Toshin Development, Phu My Hung, CJ Group.',
   KEYPEOPLE: 'KEY PEOPLE',
   PeopleName1: 'Vinh Doan',
   PeopleRole1: 'Co-founder & Director',
+  PeopleName21: 'Kuni Hasegawa',
+  PeopleRole21: 'Consultant & Architect',
   PeopleName2: 'Lang Nguyen',
   PeopleRole2: 'Co-founder & Chairman',
   PeopleName3: 'Harada Shinji',
@@ -172,6 +174,9 @@ module.exports =  {
   PeopleDes1: `After years of working in Japan as an architect that specialized in structural steel- work, Vinh Doan returned to Vietnam to set up his business when he and his partner - Lang Nguyen realized the then-unmet needs for shopping mall interior design-build solutions. That marked the birth of AVT in 2015.
     </br>“Talk the talk, walk the walk.” Vinh Doan has a very inspiring mentality, which was heavily influenced by his time in Japan. As a leader, he always pushes for agility, accuracy, integrity, and commitment amongst all AVT members. His biggest ambition right now is to motivate and empower the next generation of key people and company leaders.
     </br>Don’t be surprised if you meet Vinh Doan on a football field, on a motorcycle road trip, or at a swimming pool someday. When he is not devoting his time to AVT or the clients, those are the activities he loves to do. Plus, his impressive memory and quick thinking make him a worthy opponent in any mind game.`,
+  PeopleDesCut21: 'The consultant/architect/partner that we often dearly call “Kuni-san” ...',
+  PeopleDes21: `Kuni Hasegawa – the consultant/architect/partner that we often dearly call “Kuni-san” – excels in delivering beauty in an efficient and flexible manner, as seen in his impressive portfolio.
+    </br>With more than 40 years of experience in the industry, Kuni Hasegawa has left his mark on the world’s biggest cities – New York, Tokyo, Mumbai, Bangkok, and more. His design process does not have an end, because he believes that each and every design can always evolve into a better version of itself with time.`,
   PeopleDesCut2: 'Anyone who has got to know Lang would probably agree that he has an interesting, multifaceted personality...',
   PeopleDes2: `Anyone who has got to know Lang would probably agree that he has an interesting, multifaceted personality.
     </br>Lang takes an in-depth, disciplined, highly-pragmatic approach. He always requires the team to take ownership of their projects and fulfil responsibility to the highest level. He looks for ways to incorporate technology into every aspect of work in order to increase productivity and efficiency. Yet, he is an artistic and free spirit outside of work. In his spare time, Lang would enjoy music, photography, short films, or learning about how the world functions at the comfort of his home.

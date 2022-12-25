@@ -152,12 +152,14 @@ module.exports =  {
   WhoSubDes1: 'Giá trị năng lực',
   WhoSubDes2: 'Giá trị dịch vụ',
   WhoSubDes3: 'Giá trị cốt lõi',
-  EXPERIENCEDLEADERS: 'Những người dẫn dắt giàu kinh nghiệm',
+  EXPERIENCEDLEADERS: 'Người dẫn dắt giàu kinh nghiệm',
   LeadDes1: 'Các vị trí lãnh đạo tại AVT đều có hơn 10 năm kinh nghiệm trong lĩnh vực quản lý dự án và thi công nội thất tại nhiều quốc gia như Nhật Bản, Mỹ và các nước Châu Á – Thái Bình Dương (APAC).',
   LeadDes2: 'Chỉ tính riêng tại thị trường Việt Nam, AVT đã cung cấp giải pháp sáng tạo cho các khách hàng lớn; trong đó có thể kể đến những cái tên như AEON, Toshin Development, Phú Mỹ Hưng, CJ Group.',
   KEYPEOPLE: 'Nhân sự chủ chốt',
   PeopleName1: 'Vinh Đoàn',
-  PeopleRole1: 'Đồng sáng lập & Giám đốc điều hành',
+  PeopleRole1: 'Người sáng lập & Giám đốc điều hành',
+  PeopleName21: 'Kuni Hasegawa',
+  PeopleRole21: 'Cố vấn & Kiến trúc sư',
   PeopleName2: 'Lăng Nguyễn',
   PeopleRole2: 'Đồng sáng lập & Chủ tịch',
   PeopleName3: 'Harada Shinji',
@@ -172,6 +174,9 @@ module.exports =  {
   PeopleDes1: `Sau nhiều năm làm việc tại Nhật Bản trong vai trò một kiến trúc sư chuyên ngành kết cấu thép, Vinh Đoàn trở về Việt Nam lập nghiệp khi anh cùng đối tác của mình - Lăng Nguyễn nhận thấy nhu cầu thiết kế-xây dựng nội thất trung tâm thương mại chưa được đáp ứng. Điều này đã đánh dấu sự ra đời của AVT vào năm 2015.
     </br>“Nói đi đôi với làm.” Thời gian sinh sống và làm việc tại Nhật Bản đã tôi luyện cho anh một phong thái làm việc kỷ luật và uy tín. Trong vai trò một nhà lãnh đạo, anh luôn thúc đẩy sự nhanh nhạy, tính chính xác, minh bạch và tận tụy giữa tất cả các thành viên AVT. Tham vọng lớn nhất của anh tại thời điểm này này là tạo động lực và trao quyền cho những người trẻ - những người sẽ là lãnh đạo và nhân lực chủ chốt của công ty trong tương lai.
     </br>Đừng ngạc nhiên nếu một ngày nào đó bạn bắt gặp Vinh trên sân bóng, trên đường chạy mô tô hoặc ở bể bơi. Đó đều là những hoạt động anh thích làm khi không dành thời gian của mình cho AVT hoặc khách hàng. Thêm vào đó, với trí nhớ ấn tượng và tư duy nhanh nhạy, anh có thể biến thành một đối thủ tầm cỡ trong bất kì trò chơi trí óc nào`,
+  PeopleDesCut21: 'Vị cố vấn/kiến trúc sư/người cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni”...',
+  PeopleDes21: `Vị cố vấn/kiến trúc sư/người cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni” – có một khả năng tuyệt vời trong việc dung hòa cũng như truyền đạt những vẻ đẹp một cách tinh tế và linh hoạt, và đó là điều luôn được thể hiện trong các thiết kế của ông.
+    </br>Là một kiến trúc sư dày dặn kinh nghiệm với những “đứa con tinh thần” trải khắp nhiều thành phố lớn trên thế giới như New York, Tokyo, Mumbai, Bangkok,.... Bác Kuni tin vào khả năng phát triển vô hạn của mỗi bản thiết kế theo dòng chảy thời gian, rằng việc thiết kế sẽ không bao giờ dừng lại mà hoàn toàn có thể thăng hoa trên nền tảng những ý tưởng tốt trước đó.`,
   PeopleDesCut2: 'Bất cứ ai từng biết Lăng có lẽ sẽ đồng ý rằng tính cách của anh rất thú vị và đa chiều...',
   PeopleDes2: `Bất cứ ai từng biết Lăng có lẽ sẽ đồng ý rằng tính cách của anh rất thú vị và đa chiều.
     </br>Phong cách làm việc của anh đề cao tính thực tế và kỷ luật. Anh luôn yêu cầu mọi người phải sâu sát với dự án và hoàn thành chức trách ở mức cao nhất. Anh luôn tìm cách áp dụng công nghệ vào mọi khía cạnh của công việc để tăng năng suất và hiệu quả. Tuy nhiên, ngoài giờ làm, anh lại là một người có tâm hồn bay bổng và tự do. Khi rảnh rỗi, Lăng sẽ ở trong nhà để thưởng thức âm nhạc, nhiếp ảnh, phim ngắn hoặc tìm hiểu những kiến thức mới về thế giới.

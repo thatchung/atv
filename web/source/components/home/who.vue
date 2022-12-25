@@ -97,7 +97,7 @@
           {{ $t('EXPERIENCEDLEADERS') }}
         </div>
         <nuxt-link to="/about#exper">
-          <ThumbImage :src="'/images/proteam2.png'" ratio="16-9" :isgray="true" />
+          <ThumbImage :src="'/images/AVT_web_group_update.jpg'" ratio="16-9" :isgray="true" />
         </nuxt-link>
       </div>
       <div class="col-12 col-sm-6 col-md-6 col-lg-4" style="position: relative;">
