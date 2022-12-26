@@ -152,7 +152,7 @@ module.exports =  {
   WhoSubDes1: 'Giá trị năng lực',
   WhoSubDes2: 'Giá trị dịch vụ',
   WhoSubDes3: 'Giá trị cốt lõi',
-  EXPERIENCEDLEADERS: 'Người dẫn dắt giàu kinh nghiệm',
+  EXPERIENCEDLEADERS: 'Những người dẫn dắt giàu kinh nghiệm',
   LeadDes1: 'Các vị trí lãnh đạo tại AVT đều có hơn 10 năm kinh nghiệm trong lĩnh vực quản lý dự án và thi công nội thất tại nhiều quốc gia như Nhật Bản, Mỹ và các nước Châu Á – Thái Bình Dương (APAC).',
   LeadDes2: 'Chỉ tính riêng tại thị trường Việt Nam, AVT đã cung cấp giải pháp sáng tạo cho các khách hàng lớn; trong đó có thể kể đến những cái tên như AEON, Toshin Development, Phú Mỹ Hưng, CJ Group.',
   KEYPEOPLE: 'Nhân sự chủ chốt',
