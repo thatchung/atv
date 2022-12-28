@@ -159,7 +159,7 @@ module.exports =  {
   PeopleName1: 'Vinh Doan',
   PeopleRole1: 'Co-founder & Director',
   PeopleName21: 'Kuni Hasegawa',
-  PeopleRole21: 'Consultant & Architect',
+  PeopleRole21: 'Architect & Partner',
   PeopleName2: 'Lang Nguyen',
   PeopleRole2: 'Co-founder & Chairman',
   PeopleName3: 'Harada Shinji',
@@ -175,7 +175,7 @@ module.exports =  {
     </br>“Talk the talk, walk the walk.” Vinh Doan has a very inspiring mentality, which was heavily influenced by his time in Japan. As a leader, he always pushes for agility, accuracy, integrity, and commitment amongst all AVT members. His biggest ambition right now is to motivate and empower the next generation of key people and company leaders.
     </br>Don’t be surprised if you meet Vinh Doan on a football field, on a motorcycle road trip, or at a swimming pool someday. When he is not devoting his time to AVT or the clients, those are the activities he loves to do. Plus, his impressive memory and quick thinking make him a worthy opponent in any mind game.`,
   PeopleDesCut21: 'The consultant/architect/partner that we often dearly call “Kuni-san” ...',
-  PeopleDes21: `Kuni Hasegawa – the consultant/architect/partner that we often dearly call “Kuni-san” – excels in delivering beauty in an efficient and flexible manner, as seen in his impressive portfolio.
+  PeopleDes21: `Kuni Hasegawa – The consultant/architect/partner that we often dearly call “Kuni-san” – excels in delivering beauty in an efficient and flexible manner, as seen in his impressive portfolio.
     </br>With more than 40 years of experience in the industry, Kuni Hasegawa has left his mark on the world’s biggest cities – New York, Tokyo, Mumbai, Bangkok, and more. His design process does not have an end, because he believes that each and every design can always evolve into a better version of itself with time.`,
   PeopleDesCut2: 'Anyone who has got to know Lang would probably agree that he has an interesting, multifaceted personality...',
   PeopleDes2: `Anyone who has got to know Lang would probably agree that he has an interesting, multifaceted personality.

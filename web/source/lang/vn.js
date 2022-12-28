@@ -129,7 +129,7 @@ module.exports =  {
   Address3: '267 Trần Phú, Quận Hải Châu, Tp. Đà Nẵng',
   KuniHasegawaAesthetic: 'Kuni Hasegawa (Thẩm mỹ)',
   WhereProcessDes1: '“THIẾT KẾ KHÔNG BAO GIỜ KẾT THÚC”',
-  WhereProcessDes2: 'Kuni Hasegawa - vị cố vấn/kiến trúc sư/người cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni” – có một khả năng tuyệt vời trong việc dung hòa cũng như truyền đạt những vẻ đẹp một cách tinh tế và linh hoạt, và đó là điều luôn được thể hiện trong các thiết kế của ông.',
+  WhereProcessDes2: 'Kuni Hasegawa - Vị cố vấn/kiến trúc sư/cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni” – có một khả năng tuyệt vời trong việc dung hòa cũng như truyền đạt những vẻ đẹp một cách tinh tế và linh hoạt, và đó là điều luôn được thể hiện trong các thiết kế của ông.',
   WhereProcessDes3: 'Là một kiến trúc sư dày dặn kinh nghiệm với những “đứa con tinh thần” trải khắp nhiều thành phố lớn trên thế giới như New York, Tokyo, Mumbai, Bangkok,.... Bác Kuni tin vào khả năng phát triển vô hạn của mỗi bản thiết kế theo dòng chảy thời gian, rằng việc thiết kế sẽ không bao giờ dừng lại mà hoàn toàn có thể thăng hoa trên nền tảng những ý tưởng tốt trước đó.',
   Whoweare: 'Giới thiệu',
   MISSION: 'Sứ mệnh',
@@ -159,7 +159,7 @@ module.exports =  {
   PeopleName1: 'Vinh Đoàn',
   PeopleRole1: 'Người sáng lập & Giám đốc điều hành',
   PeopleName21: 'Kuni Hasegawa',
-  PeopleRole21: 'Cố vấn & Kiến trúc sư',
+  PeopleRole21: 'Kiến trúc sư & Cộng sự',
   PeopleName2: 'Lăng Nguyễn',
   PeopleRole2: 'Đồng sáng lập & Chủ tịch',
   PeopleName3: 'Harada Shinji',
@@ -174,8 +174,8 @@ module.exports =  {
   PeopleDes1: `Sau nhiều năm làm việc tại Nhật Bản trong vai trò một kiến trúc sư chuyên ngành kết cấu thép, Vinh Đoàn trở về Việt Nam lập nghiệp khi anh cùng đối tác của mình - Lăng Nguyễn nhận thấy nhu cầu thiết kế-xây dựng nội thất trung tâm thương mại chưa được đáp ứng. Điều này đã đánh dấu sự ra đời của AVT vào năm 2015.
     </br>“Nói đi đôi với làm.” Thời gian sinh sống và làm việc tại Nhật Bản đã tôi luyện cho anh một phong thái làm việc kỷ luật và uy tín. Trong vai trò một nhà lãnh đạo, anh luôn thúc đẩy sự nhanh nhạy, tính chính xác, minh bạch và tận tụy giữa tất cả các thành viên AVT. Tham vọng lớn nhất của anh tại thời điểm này này là tạo động lực và trao quyền cho những người trẻ - những người sẽ là lãnh đạo và nhân lực chủ chốt của công ty trong tương lai.
     </br>Đừng ngạc nhiên nếu một ngày nào đó bạn bắt gặp Vinh trên sân bóng, trên đường chạy mô tô hoặc ở bể bơi. Đó đều là những hoạt động anh thích làm khi không dành thời gian của mình cho AVT hoặc khách hàng. Thêm vào đó, với trí nhớ ấn tượng và tư duy nhanh nhạy, anh có thể biến thành một đối thủ tầm cỡ trong bất kì trò chơi trí óc nào`,
-  PeopleDesCut21: 'Vị cố vấn/kiến trúc sư/người cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni”...',
-  PeopleDes21: `Vị cố vấn/kiến trúc sư/người cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni” – có một khả năng tuyệt vời trong việc dung hòa cũng như truyền đạt những vẻ đẹp một cách tinh tế và linh hoạt, và đó là điều luôn được thể hiện trong các thiết kế của ông.
+  PeopleDesCut21: 'Vị cố vấn/kiến trúc sư/cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni”...',
+  PeopleDes21: `Vị cố vấn/kiến trúc sư/cộng sự chúng tôi thường trìu mến gọi là “Bác Kuni” – có một khả năng tuyệt vời trong việc dung hòa cũng như truyền đạt những vẻ đẹp một cách tinh tế và linh hoạt, và đó là điều luôn được thể hiện trong các thiết kế của ông.
     </br>Là một kiến trúc sư dày dặn kinh nghiệm với những “đứa con tinh thần” trải khắp nhiều thành phố lớn trên thế giới như New York, Tokyo, Mumbai, Bangkok,.... Bác Kuni tin vào khả năng phát triển vô hạn của mỗi bản thiết kế theo dòng chảy thời gian, rằng việc thiết kế sẽ không bao giờ dừng lại mà hoàn toàn có thể thăng hoa trên nền tảng những ý tưởng tốt trước đó.`,
   PeopleDesCut2: 'Bất cứ ai từng biết Lăng có lẽ sẽ đồng ý rằng tính cách của anh rất thú vị và đa chiều...',
   PeopleDes2: `Bất cứ ai từng biết Lăng có lẽ sẽ đồng ý rằng tính cách của anh rất thú vị và đa chiều.
