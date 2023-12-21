@@ -130,7 +130,14 @@ module.exports = {
         href: '/images/video_atv_cut.mp4'
       }
       // { rel: 'stylesheet', href: '/css/style.css' }
-    ]
+    ],
+    // script: [{
+    //             innerHTML: `window.dataLayer = window.dataLayer || [];
+    //             function gtag(){dataLayer.push(arguments);}
+    //             gtag('js', new Date());
+
+    //             gtag('config', 'G-0C0WWFWPDS');`
+    //         }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -187,11 +194,52 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/proxy',
+    // '@nuxtjs/gtm',
+    '@nuxtjs/google-gtag',
     ['nuxt-modernizr', {
       'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
       options: ['setClasses'],
     }],
   ],
+  // gtm: {
+  //   id: 'GTM-NQ7F7J55',
+  //   enabled: true,
+  //   layer: 'dataLayer',
+  //   variables: {},
+
+  //   pageTracking: false,
+  //   pageViewEventName: 'nuxtRoute',
+
+  //   autoInit: true,
+  //   respectDoNotTrack: true,
+
+  //   scriptId: 'gtm-script',
+  //   scriptDefer: false,
+  //   scriptURL: 'https://www.googletagmanager.com/gtm.js',
+  //   crossOrigin: false,
+
+  //   noscript: true,
+  //   noscriptId: 'gtm-noscript',
+  //   noscriptURL: 'https://www.googletagmanager.com/ns.html?id=GTM-NQ7F7J55'
+  // },
+  'google-gtag': {
+    id: 'G-0C0WWFWPDS',
+    config: {
+      anonymize_ip: true, // anonymize IP 
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+      linker: {
+        domains: ['avt.com.vn']
+      }
+    },
+    debug: true, // enable to track in dev mode
+    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+    additionalAccounts: [{
+      id: 'G-0C0WWFWPDS', // required if you are adding additional accounts
+      config: {
+        send_page_view: false // optional configurations
+      }
+    }]
+  },
   i18n: {
     locales: ['en', 'vn'],
     defaultLocale: 'en',
