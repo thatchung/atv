@@ -187,11 +187,33 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/proxy',
+    '@nuxtjs/gtm',
     ['nuxt-modernizr', {
       'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
       options: ['setClasses'],
     }],
   ],
+  gtm: {
+    id: 'GTM-NQ7F7J55',
+    enabled: true,
+    layer: 'dataLayer',
+    variables: {},
+
+    pageTracking: false,
+    pageViewEventName: 'nuxtRoute',
+
+    autoInit: true,
+    respectDoNotTrack: true,
+
+    scriptId: 'gtm-script',
+    scriptDefer: false,
+    scriptURL: 'https://www.googletagmanager.com/gtm.js',
+    crossOrigin: false,
+
+    noscript: true,
+    noscriptId: 'gtm-noscript',
+    noscriptURL: 'https://www.googletagmanager.com/ns.html?id=GTM-NQ7F7J55'
+  },
   i18n: {
     locales: ['en', 'vn'],
     defaultLocale: 'en',

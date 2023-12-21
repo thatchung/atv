@@ -84,7 +84,7 @@
       </div>
       <div class="menu-backgroud" />
     </div>
-    <Loading />
+    <!-- <Loading /> -->
   </div>
 </template>
 
