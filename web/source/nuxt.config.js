@@ -194,34 +194,30 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/proxy',
-    // '@nuxtjs/gtm',
+    '@nuxtjs/gtm',
     '@nuxtjs/google-gtag',
     ['nuxt-modernizr', {
       'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
       options: ['setClasses'],
     }],
   ],
-  // gtm: {
-  //   id: 'GTM-NQ7F7J55',
-  //   enabled: true,
-  //   layer: 'dataLayer',
-  //   variables: {},
-
-  //   pageTracking: false,
-  //   pageViewEventName: 'nuxtRoute',
-
-  //   autoInit: true,
-  //   respectDoNotTrack: true,
-
-  //   scriptId: 'gtm-script',
-  //   scriptDefer: false,
-  //   scriptURL: 'https://www.googletagmanager.com/gtm.js',
-  //   crossOrigin: false,
-
-  //   noscript: true,
-  //   noscriptId: 'gtm-noscript',
-  //   noscriptURL: 'https://www.googletagmanager.com/ns.html?id=GTM-NQ7F7J55'
-  // },
+  gtm: {
+    id: 'GTM-5TC2N222',
+    enabled: true,
+    layer: 'dataLayer',
+    variables: {},
+    pageTracking: false,
+    pageViewEventName: 'nuxtRoute',
+    autoInit: true,
+    respectDoNotTrack: true,
+    scriptId: 'gtm-script',
+    scriptDefer: false,
+    scriptURL: 'https://www.googletagmanager.com/gtm.js',
+    crossOrigin: false,
+    noscript: true,
+    noscriptId: 'gtm-noscript',
+    noscriptURL: 'https://www.googletagmanager.com/ns.html?id=GTM-5TC2N222'
+  },
   'google-gtag': {
     id: 'G-0C0WWFWPDS',
     config: {
