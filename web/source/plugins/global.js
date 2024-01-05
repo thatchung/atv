@@ -12,9 +12,12 @@ import TeamList from '~/components/teamlist.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '~/static/css/responsive.css'
+import ToastPlugin from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-bootstrap.css';
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(ToastPlugin);
 Vue.component('VueSlickCarousel', VueSlickCarousel)
 // import VueLazyload from 'vue-lazyload'
 // Vue.use(VueLazyload, {

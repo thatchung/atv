@@ -132,6 +132,7 @@
       </div>
     </div>
     <div class="line-all" />
+    <div class="btn-work-contact" @click="goContact">Contact us</div>
     <div class="paging-content">
       <client-only>
         <Paginate
@@ -452,6 +453,9 @@ export default {
       }
       this.$router.push(`/work?filter=year&id=${type}`)
       this.loadData()
+    },
+    goContact() {
+      this.$router.push({ path: '/contact' })
     }
   }
 }
@@ -548,11 +552,21 @@ export default {
   min-height: 200px;
   padding-top: 50px;
 }
+.btn-work-contact{
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  display: inline-block;
+  height: 35px;
+  line-height: 32px;
+  text-align: center;
+  padding: 0px 10px;
+}
 .paging-content{
   float: right;
   margin-top: 0rem;
   margin-right: 95px;
-  line-height: 30px;
+  line-height: 26px;
 }
 .pagination li:first-child {
   position: absolute;
@@ -569,8 +583,8 @@ export default {
 }
 .page-item{
   padding: 0rem 0.5rem;
-  height: 40px;
-  line-height: 40px;
+  height: 30px;
+  line-height: 28px;
 }
 .btn-left img{
   width: 45px;
@@ -583,6 +597,7 @@ export default {
   }
   .paging-content{
     margin-right: 135px;
+    line-height: 30px;
   }
   .btn-left img{
     width: 60px;
@@ -593,7 +608,16 @@ export default {
   }
   .pagination .active{
     height: 40px;
+    line-height: inherit;
+  }
+  .page-item{
+    padding: 0rem 0.5rem;
+    height: 40px;
     line-height: 40px;
+  }
+  .btn-work-contact{
+    height: 38px;
+    line-height: 34px;
   }
 }
 @media (max-width: 575px) {
@@ -657,6 +681,9 @@ export default {
   .work-filter-item{
     height: 30px;
     line-height: 25px;
+  }
+  .page-item{
+    margin-top: 3px;
   }
 }
 </style>

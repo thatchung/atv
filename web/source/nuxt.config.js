@@ -289,7 +289,7 @@ module.exports = {
             //     }
             // }, 
             {
-                test: /\.js$/,
+                test: /\.js$|jsx/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']

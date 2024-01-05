@@ -20,7 +20,7 @@ class ApiService {
                 data.responseType = 'blob'
             if (options.timeout)
                 data.timeout = options.timeout
-            if(apiClient) {
+            if(data.method == 'get') {
                 if (data.params) {
                     response = await apiClient.get(url,{
                         params:  data.params

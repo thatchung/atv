@@ -53,6 +53,7 @@
     </div>
     <div class="work-content">
       <div class="work-content-text white-space-word" v-html="html_content" />
+      <div class="btn-detail-contact" @click="goContact">Contact us</div>
       <div class="work-back-top" @click="toTopAction">
         <!-- <b-icon-arrow-up /> -->
         <img class="img-arrow-up" src="/images/a_up.png"></img>
@@ -65,7 +66,7 @@
 import { mapGetters, mapActions } from "vuex"
 import { marked } from 'marked'
 import ApiService from '@/service/api.service'
-import { stripHtml } from 'string-strip-html'
+// import { stripHtml } from 'string-strip-html'
 import general from "~/mixins/general"
 
 export default {
@@ -81,7 +82,8 @@ export default {
     if (res && res.length > 0) {
       item = res[0]
       item.titleShare = res[0].title
-      item.description = stripHtml(marked.parse(res[0].content)).result
+      // item.description = stripHtml(marked.parse(res[0].content)).result
+      item.description = marked.parse(res[0].content)
       item.image = res[0].thub ? store.state.common.api_host + res[0].thub.url : ''
       item.current_url = store.state.common.api_host + '/' + res[0].url
     }
@@ -270,6 +272,9 @@ export default {
           this.isMobile = false
         }
       }
+    },
+    goContact() {
+      this.$router.push({ path: '/contact' })
     }
   }
 }
@@ -318,6 +323,24 @@ export default {
 }
 .detail-text{
   display: inline-block;
+}
+.btn-detail-contact{
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  display: inline-block;
+  height: 35px;
+  line-height: 32px;
+  text-align: center;
+  padding: 0px 10px;
+  position: absolute;
+  bottom: -3rem;
+}
+@media (min-width: 1700px) {
+  .btn-detail-contact{
+    height: 38px;
+    line-height: 34px;
+  }
 }
 @media (max-width: 575px) {
   .work-back-content svg{

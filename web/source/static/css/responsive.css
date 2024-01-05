@@ -177,9 +177,9 @@
   .section-contact .type{
     float: right;
   }
-  .paging-content{
+  /*.paging-content{
     float: left !important;
-  }
+  }*/
   .about-who-title{
     width:  90%;
   }
