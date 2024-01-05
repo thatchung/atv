@@ -4,9 +4,9 @@ WORKDIR /app/node
 COPY ./source .
 RUN pwd && ls
 RUN echo "====== BUILD APPS ======"
-RUN npm install
+RUN yarn install --ignore-engines
 RUN npm install pm2 -g
-RUN npm run build
+RUN yarn build
 ENV NODE_ENV=production
 ENV NUXT_ENV_STAGE=production
 CMD [ "yarn", "start:production" ]
