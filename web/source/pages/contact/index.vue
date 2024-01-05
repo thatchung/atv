@@ -386,6 +386,17 @@ export default {
   bottom: 1rem;
   right: 1rem;
 }
+@media (min-width: 1700px) {
+  .btn-send{
+    color: white;
+    background-color: black;
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: -1rem;
+    right: 0.5rem;
+  }
+}
 @media (max-width: 575px) {
   .contact-left-info{
     padding: 1.5rem;
