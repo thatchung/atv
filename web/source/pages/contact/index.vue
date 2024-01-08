@@ -315,7 +315,7 @@ export default {
     color: #fff;
     font-weight: bold;
     font-size: 24px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
   }
   .contact-left-text{
     color: #fff;
@@ -362,7 +362,7 @@ export default {
   .c-input:-webkit-autofill:hover,
   .c-input:-webkit-autofill:focus,
   .c-input:-webkit-autofill:active{
-      -webkit-box-shadow: 0 0 0 30px #AFB0B3 inset !important;
+      -webkit-box-shadow: 0 0 0 30px #fff inset !important;
   }
   textarea{
     width: 100%;
