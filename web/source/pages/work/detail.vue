@@ -15,8 +15,8 @@
     <h1 class="work-title font-pp-bold">
       <!-- {{ s_work ? s_work.title : work.title }} -->
       <span v-if="$i18n.locale === 'vn'">{{ s_work ?
-        ( s_work.title_vn ? s_work.title_vn : s_work.title )
-        : ( work.title_vn ? work.title_vn : work.title ) }}</span>
+        (s_work.title_vn ? s_work.title_vn : s_work.title)
+        : (work.title_vn ? work.title_vn : work.title) }}</span>
       <span v-else>{{ s_work ? s_work.title : work.title }}</span>
     </h1>
     <div v-if="!isMobile" class="work-info">
@@ -32,8 +32,8 @@
       <div class="work-info">
         <div class="detail-text">
           {{ $t('Typeofproject') }}:
-            <span v-if="$i18n.locale === 'vn'">{{ work.category_name_vn }}</span>
-            <span v-else >{{ work.category_name }}</span>
+          <span v-if="$i18n.locale === 'vn'">{{ work.category_name_vn }}</span>
+          <span v-else>{{ work.category_name }}</span>
         </div>
       </div>
       <div class="work-info">
@@ -53,7 +53,10 @@
     </div>
     <div class="work-content">
       <div class="work-content-text white-space-word" v-html="html_content" />
-      <div class="btn-detail-contact" @click="goContact">Contact us</div>
+      <div class="contact-detail-btn">
+        <div class="contact-detail-text"><b>{{ $t('ContactHead2') }}</b></div>
+        <div class="btn-detail-contact" @click="goContact">Contact us</div>
+      </div>
       <div class="work-back-top" @click="toTopAction">
         <!-- <b-icon-arrow-up /> -->
         <img class="img-arrow-up" src="/images/a_up.png"></img>
@@ -92,7 +95,7 @@ export default {
   data() {
     return {
       isMobile: false,
-      item_default:{
+      item_default: {
         title: 'Harley Davidson Da Nang',
         url: '/images/slide4.jpg',
         thub: '/images/slide4.jpg',
@@ -221,7 +224,7 @@ export default {
   //   };
   // },
   watch: {
-    '$i18n.locale': function(newVal, oldVal) {
+    '$i18n.locale': function (newVal, oldVal) {
       if (this.work && this.work.content) {
         let lang = 'en'
         let lland = window.localStorage.getItem('lang')
@@ -261,7 +264,7 @@ export default {
         }
       }
     },
-    toTopAction () {
+    toTopAction() {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     },
     checkMobile() {
@@ -280,51 +283,73 @@ export default {
 }
 </script>
 <style lang="scss">
-.section-title{
+.section-title {
   font-size: 5rem;
   margin-top: 2rem;
 }
-.work-back-content{
+
+.work-back-content {
   display: inline-block;
   float: left;
   margin-top: 0rem;
   cursor: pointer;
 }
-.work-back-content svg{
+
+.work-back-content svg {
   font-size: 1.4rem;
 }
-.work-content-text{
+
+.work-content-text {
   font-family: 'pp-reg';
   font-size: 1.2rem;
 }
-.work-date-content{
+
+.work-date-content {
   display: inline-block;
   float: right;
   margin-top: 0rem;
 }
-.work-title{
+
+.work-title {
   font-size: 2rem;
   margin-top: 4rem;
   text-transform: uppercase;
 }
-.work-content{
+
+.work-content {
   position: relative;
   margin-top: 2rem;
   margin-bottom: 5rem;
 }
-.work-content img{
+
+.work-content img {
   width: 100% !important;
 }
-.work-back-top{
+
+.work-back-top {
   position: absolute;
   bottom: -3rem;
   right: 0rem;
   cursor: pointer;
 }
-.detail-text{
+
+.detail-text {
   display: inline-block;
 }
-.btn-detail-contact{
+
+.contact-detail-btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  .contact-detail-text{
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'pp-semi';
+  }
+}
+
+.btn-detail-contact {
   color: white;
   background-color: black;
   cursor: pointer;
@@ -333,18 +358,17 @@ export default {
   line-height: 32px;
   text-align: center;
   padding: 0px 10px;
-  position: absolute;
-  bottom: -3rem;
 }
+
 @media (min-width: 1700px) {
-  .btn-detail-contact{
+  .btn-detail-contact {
     height: 38px;
     line-height: 34px;
   }
 }
+
 @media (max-width: 575px) {
-  .work-back-content svg{
+  .work-back-content svg {
     margin-right: 5px;
   }
-}
-</style>
+}</style>

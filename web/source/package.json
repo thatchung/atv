@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=local NUXT_ENV_STAGE=local nuxt",
+    "dev": "NODE_ENV=local NUXT_ENV_STAGE=local nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start:local": "cross-env NODE_ENV=local NUXT_ENV_STAGE=local node ./server.js",
