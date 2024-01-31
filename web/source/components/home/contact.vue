@@ -65,18 +65,6 @@
         <div class="line-all" />
       </div>
       <div class="contact-info">
-        <div class="contact-left-info">
-          <div class="contact-left-title">Hotline</div>
-          <div class="contact-left-text contact-left-end">{{ contact.phone | formatPhoneNumber }}</div>
-          <div class="contact-left-title">{{ $i18n.locale === 'vn' ? contact.location1_vn : contact.location1 }}</div>
-          <div class="contact-left-text">{{ $i18n.locale === 'vn' ? contact.address1_vn : contact.address1 }}</div>
-          <div class="contact-left-text contact-left-end">{{ $t('HeadOffice') }}</div>
-          <div class="contact-left-title">{{ $i18n.locale === 'vn' ? contact.location2_vn : contact.location2 }}</div>
-          <div class="contact-left-text contact-left-end">{{ $i18n.locale === 'vn' ? contact.address2_vn :
-            contact.address2 }}</div>
-          <div class="contact-left-title">{{ $i18n.locale === 'vn' ? contact.location3_vn : contact.location3 }}</div>
-          <div class="contact-left-text">{{ $i18n.locale === 'vn' ? contact.address3_vn : contact.address3 }}</div>
-        </div>
         <div class="contact-right-info">
           <h2 class="mail-title">
             {{ $t('MailUs') }}
@@ -102,6 +90,19 @@
             {{ $t('Send') }}
           </div>
         </div>
+        <div class="contact-left-info">
+          <div class="contact-left-title">Hotline</div>
+          <div class="contact-left-text contact-left-end">{{ contact.phone | formatPhoneNumber }}</div>
+          <div class="contact-left-title">{{ $i18n.locale === 'vn' ? contact.location1_vn : contact.location1 }}</div>
+          <div class="contact-left-text">{{ $i18n.locale === 'vn' ? contact.address1_vn : contact.address1 }}</div>
+          <div class="contact-left-text contact-left-end">{{ $t('HeadOffice') }}</div>
+          <div class="contact-left-title">{{ $i18n.locale === 'vn' ? contact.location2_vn : contact.location2 }}</div>
+          <div class="contact-left-text contact-left-end">{{ $i18n.locale === 'vn' ? contact.address2_vn :
+            contact.address2 }}</div>
+          <div class="contact-left-title">{{ $i18n.locale === 'vn' ? contact.location3_vn : contact.location3 }}</div>
+          <div class="contact-left-text">{{ $i18n.locale === 'vn' ? contact.address3_vn : contact.address3 }}</div>
+        </div>
+
       </div>
     </div>
     <div class="back-top" @click="toTopAction">
@@ -389,11 +390,16 @@ export default {
     display: contents;
     margin-top: 2rem;
     margin-bottom: 2rem;
+
     div {
       font-weight: bolder;
       font-family: 'pp-reg';
       font-size: 16px;
     }
+  }
+
+  .contact-info {
+    margin-top: 0rem;
   }
 
   .contact-left-info {
@@ -404,6 +410,7 @@ export default {
     padding: 1.5rem;
     padding-right: 1.5rem;
     position: relative;
+    margin-bottom: 60px;
   }
 
   .btn-send {

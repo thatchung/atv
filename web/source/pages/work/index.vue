@@ -685,5 +685,8 @@ export default {
   .page-item{
     margin-top: 3px;
   }
+  .container{
+    margin-bottom: 10px;
+  }
 }
 </style>

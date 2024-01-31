@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="about-container">
     <Who />
     <What />
     <Convention />
@@ -77,3 +77,10 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+@media (max-width: 575px) {
+  .about-container{
+    margin-bottom: 50px;
+  }
+}
+</style>

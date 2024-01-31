@@ -112,4 +112,10 @@ export default {
     display: inline-block;
   }
 }
+
+@media (max-width: 575px) {
+  .container-footer {
+    margin-top: 0rem;
+  }
+}
 </style>
